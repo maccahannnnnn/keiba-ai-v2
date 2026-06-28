@@ -182,6 +182,74 @@ python analyzer/evaluation_engine.py
 実行すると `reports/evaluation_report.txt` に検証レポートを保存します。
 将来的に比較項目を増やしたい場合は、`PredictionRecord`、`ActualResultRecord`、`HorseEvaluationRow` に列を追加して拡張します。
 
+## Self Review Engine
+
+自己採点は `review/self_review.py` で行います。
+予想後に `analysis_result.csv` と `race_result.csv` を読み込み、AI自身がどこを当てて、どこを外したかを確認するための仕組みです。
+
+入力CSV:
+
+- `data/analysis_result.csv`: AIの予想順位、予想スコア、3着内率
+- `data/race_result.csv`: 実際の着順を入れる結果CSV
+- `data/features.csv`: history、相手関係、血統、馬場バイアス、コースなどの特徴量
+
+比較する内容:
+
+- 着順
+- 予想順位
+- 3着内率
+- history_score
+- opponent_score
+- bloodline_score
+- track_bias_score
+- course_score
+
+各項目は「一致」「過大評価」「過小評価」に分けて判定します。
+`python main.py` を実行すると、分析レポートに加えて `reports/review_report.txt` も生成します。
+まだ `data/race_result.csv` がない場合は、採点を保留した案内レポートを出し、プログラムは止まりません。
+
+今回は自己採点だけを行い、重み変更・学習・自動補正は行いません。
+
+## Result CSV Format
+
+KeibaAI v1.0 では、レース結果入力の正式フォーマットを `data/race_result.csv` とします。
+新しく結果を入力するときは、`data/race_result_template.csv` をコピーして同じ列構成で作成します。
+
+正式な列:
+
+```text
+race_date
+racecourse
+race_number
+horse_number
+horse_name
+finish_position
+finish_time
+margin
+corner_positions
+last_3f
+popularity
+win_odds
+```
+
+入力する内容:
+
+- `race_date`: レース日。例: `2026-06-28`
+- `racecourse`: 競馬場。例: `福島`
+- `race_number`: レース番号。例: `9`
+- `horse_number`: 馬番。Self Review Engine はこの列をキーにして予想と結果を照合します。
+- `horse_name`: 馬名。確認用として保存します。
+- `finish_position`: 実際の着順。
+- `finish_time`: 走破タイム。例: `2:00.1`
+- `margin`: 着差。例: `0.2`、`クビ`
+- `corner_positions`: 通過順。例: `3-3-3-2`
+- `last_3f`: 上がり3F。例: `35.4`
+- `popularity`: 人気。
+- `win_odds`: 単勝オッズ。
+
+`data/race_result.csv` が存在しない場合、`reports/review_report.txt` は「採点保留」として生成されます。
+結果CSVが存在する場合は、`analysis_result.csv` と `horse_number` をキーに照合し、予想順位・着順・3着内率・history・相手関係・血統・馬場バイアス・コース評価を比較します。
+
 ## 統合評価エンジン
 
 統合評価は `analyzer/integrated_evaluator.py` で行います。
@@ -214,6 +282,49 @@ python analyzer/evaluation_engine.py
 
 将来JRA、JRA-VAN、netkeibaなどから取得したクラス表記に変わっても、基本的には `knowledge/opponent_profiles.py` に表記を追加すれば対応できる方針です。
 
+## Race Level Engine
+
+KeibaAI v1.0 では、中央競馬のレースレベルを `knowledge/race_level.py` で管理します。
+`G1`、`G2`、`G3`、`L`、`OP`、`3勝クラス`、`2勝クラス`、`1勝クラス`、`未勝利`、`新馬` を `race_level_score` として0〜100点で登録しています。
+
+相手関係エンジンは、直近5走を対象に以下を参照できる構造です。
+
+- レースレベル
+- 着順
+- 着差
+- 人気
+- 上がり順位
+
+現時点のCSVには着差・上がり順位の正式列はないため、データがない場合は欠損として扱います。
+将来TARGET/JRA-VANなどから過去走データを取り込めるようになったら、同じ構造へ値を渡すだけで拡張できます。
+既存互換のため、`knowledge/opponent_profiles.py` は `knowledge/race_level.py` を参照する入口として残しています。
+
+## History Engine
+
+過去走評価は `analyzer/history_analyzer.py` で行います。
+知識側のランク定義とコメントは `knowledge/history_profiles.py` に分け、分析ロジックと知識データを混ぜない設計にしています。
+
+直近5走を対象に、以下の情報を評価できる構造を用意しています。
+
+- 着順推移
+- 着差推移
+- 人気推移
+- 上がり順位推移
+- 通過順推移
+- 距離推移
+- コース推移
+- クラス推移
+- 安定度
+- 上昇度
+- 下降度
+
+現在はCSV仕様を変えないため、主に `last_runs` の着順から `history_score` と `history_comment` を作ります。
+着差・人気・上がり順位などの詳細データがない場合は「不明」として扱います。
+将来TARGET/JRA-VANから詳細な過去走データを取得できるようになったら、`HistoryRun` に値を渡すだけで精度を上げられます。
+
+`analysis_report.txt` には「過去走評価」として、各馬の `history_score`、総合評価、平均着順、安定度、推移、上昇度、下降度、距離推移、クラス推移、コメントを出力します。
+今回は総合スコアの重み調整は行わず、Analyzerへ追加できる独立した評価結果として保持します。
+
 ## 馬場バイアス評価エンジン
 
 馬場バイアス評価は `analyzer/track_bias_analyzer.py` で行います。
@@ -227,8 +338,19 @@ python analyzer/evaluation_engine.py
 - 内有利、外有利
 - 前有利、差し有利
 - 時計が速い、時計が掛かる
+- 追込有利
+- スタミナ要求
+- 瞬発力要求
 - 雨の影響
 - 馬場悪化時の傾向
+
+KeibaAI v1.0 で追加した馬場バイアス辞書:
+
+- 福島: 芝1200m、芝1800m、芝2000m、ダート1700m
+- 函館: 芝1200m、芝1800m、芝2000m、ダート1700m
+- 小倉: 芝1200m、芝1800m、芝2000m、ダート1700m
+
+各コースには、`良`、`稍重`、`重`、`不良` の状態別に、内外・前差し追込・時計・スタミナ・瞬発力の傾向を登録しています。
 
 分析する内容:
 
@@ -289,8 +411,20 @@ python analyzer/evaluation_engine.py
 - コース特徴
 - 有利になりやすい脚質
 - 枠順傾向
+- 脚質傾向
+- ペース傾向
+- 上がり傾向
+- 向くタイプ
+- 不向きなタイプ
 - 求められる能力
+- 向きやすい血統
 - 注意点
+
+KeibaAI v1.0 で追加した今週開催場の主要コース:
+
+- 福島: 芝1200m、芝1800m、芝2000m、ダート1700m
+- 函館: 芝1200m、芝1800m、芝2000m、ダート1700m
+- 小倉: 芝1200m、芝1800m、芝2000m、ダート1700m
 
 データを増やす場合は、`COURSE_PROFILES` に同じ形式でコースを追加します。
 展開予想エンジンとスコア計算は、このコース辞書を参照します。
@@ -317,20 +451,30 @@ knowledge/
 今は `course_profiles.py` と `bloodline_profiles.py` を中心に使います。
 他のファイルは、後から簡単に知識を追加できるように土台だけ用意しています。
 
-## 血統辞書
+## Bloodline Dictionary
 
-血統特徴は `knowledge/bloodline_profiles.py` で管理します。
+血統特徴は `knowledge/bloodline.py` で管理します。
+既存Analyzerとの互換性のため、`knowledge/bloodline_profiles.py` は `knowledge/bloodline.py` を読み込む入口として残しています。
 
 登録できる情報:
 
 - 得意距離
 - 得意馬場
 - 芝/ダート適性
+- 短距離、マイル、中距離、長距離適性
 - 瞬発力型
 - 持続力型
 - 重馬場適性
 - 成長力
+- 福島、函館、小倉適性
+- 先行向き、差し向き
+- 時計勝負
+- パワー型
+- スタミナ型
 - 注意点
+
+KeibaAI v1.0 では、主要種牡馬を40頭登録しています。
+種牡馬を追加する場合は、`knowledge/bloodline.py` の `BLOODLINE_PROFILES` に同じ形式で追記します。
 
 `score_calculator.py` は血統辞書を参照し、血統評価・馬場評価・距離適性評価へ反映します。
 
@@ -349,6 +493,7 @@ race_number
 distance
 surface
 track_condition
+status
 horse_number
 horse_name
 frame_number
@@ -374,6 +519,7 @@ class_level
 - `distance`: 距離。メートルだけを数字で入力。例: `1800`
 - `surface`: 芝/ダート。例: `芝`
 - `track_condition`: 当日馬場状態。例: `良`、`稍重`、`重`、`不良`
+- `status`: 出走状態。通常は `出走`。出走取消は `取消`、競走除外は `除外`
 - `horse_number`: 馬番。例: `1`
 - `horse_name`: 馬名。例: `サンプルスター`
 - `frame_number`: 枠順。例: `1`
@@ -454,3 +600,143 @@ class_level
 - Evaluation Engine の検証指標を増やす
 - 特徴量と検証結果を使って重みを調整する
 - 十分にデータが集まったら機械学習モデルを追加する
+
+## KeibaAI v1.0 標準CSV仕様
+
+KeibaAI v1.0 では、`data/today_entries.csv` を正式な標準入力フォーマットとして扱います。
+今後、TARGET/JRA-VAN CSV、JRA公式HTML、画像OCRなど入力元が増えても、最終的にはすべてこの形式へ変換します。
+
+Analyzer 側は入力元を一切意識しません。
+Analyzer は常に `data/today_entries.csv` だけを読み込みます。
+
+標準CSVの列:
+
+```text
+race_date
+racecourse
+race_number
+distance
+surface
+track_condition
+status
+horse_number
+horse_name
+frame_number
+jockey
+weight
+body_weight
+body_weight_diff
+running_style
+last_runs
+past_lap_note
+expected_lap_note
+sire
+dam_sire
+bloodline_note
+class_level
+```
+
+列定義は `importer/csv_normalizer.py` の `KEIBAAI_V1_COLUMNS` で管理します。
+`data/today_entries_template.csv` も、この標準仕様に合わせています。
+`status` が `取消` または `除外` の馬は、分析・features.csv・analysis_result.csv から外し、`analysis_report.txt` の「分析対象外の馬」に表示します。
+
+## Importer Architecture
+
+Importer は、入力元ごとの差を吸収して `data/today_entries.csv` にそろえるための層です。
+
+```text
+TARGET/JRA-VAN CSV
+JRA公式HTML/出馬表
+JRA出馬表画像
+手入力CSV
+        ↓
+importer/
+        ↓
+data/today_entries.csv
+        ↓
+Analyzer
+```
+
+役割:
+
+- `importer/target_importer.py`
+  - TARGET/JRA-VAN CSVを読み込む入口
+  - `data/raw/` に置いたCSVを `data/today_entries.csv` へ変換する
+  - v1.0以降の本命入力として育てる
+- `importer/jra_importer.py`
+  - JRA公式HTML/出馬表から取得する将来用入口
+  - 公式ページの構造変更に備えてAnalyzerとは分離する
+- `importer/image_importer.py`
+  - JRA出馬表画像からOCRする将来用入口
+  - 予備機能として扱う
+- `importer/csv_normalizer.py`
+  - どの入力元から来ても KeibaAI v1.0 標準CSV形式に変換する中心機能
+  - `data/today_entries.csv` の列定義を管理する
+
+既存の `entry_converter.py`、`source_csv_parser.py`、`html_entry_parser.py` は、手入力CSVや保存済みHTMLを標準CSVへ変換するための補助機能として残しています。
+
+## TARGET CSVを本命にする運用
+
+今後の基本方針は、TARGET/JRA-VAN CSVを本命入力にすることです。
+
+理由:
+
+- レース情報、馬情報、過去走情報をCSVとして扱いやすい
+- 手入力よりミスが減る
+- 将来の検証や機械学習に必要な特徴量を蓄積しやすい
+- 画像OCRより安定しやすい
+
+運用イメージ:
+
+1. TARGET/JRA-VAN からCSVを出力
+2. `importer/target_importer.py` で読み込む
+3. `importer/csv_normalizer.py` で `data/today_entries.csv` に変換
+4. `python main.py` で分析
+5. `data/features.csv` と `reports/analysis_report.txt` を確認
+
+JRA画像読み込みは、CSVやHTMLが使えない場合の予備機能として扱います。
+
+## TARGET CSV Importer の使い方
+
+TARGET/JRA-VAN から出力したCSVは、まず `data/raw/` に置きます。
+KeibaAI v1.0 では、列名の違いを `importer/csv_normalizer.py` のマッピングで吸収し、最終的に `data/today_entries.csv` へ変換します。
+
+試運転用サンプル:
+
+```text
+data/raw/target_sample_entries.csv
+```
+
+変換コマンド:
+
+```powershell
+python importer/target_importer.py
+```
+
+実行すると、以下を生成します。
+
+```text
+data/today_entries.csv
+```
+
+対応している列名の例:
+
+- `年月日` → `race_date`
+- `場名`、`競馬場` → `racecourse`
+- `R`、`レース番号` → `race_number`
+- `馬番` → `horse_number`
+- `馬名` → `horse_name`
+- `枠番` → `frame_number`
+- `騎手` → `jockey`
+- `斤量` → `weight`
+- `馬体重` → `body_weight`
+- `増減` → `body_weight_diff`
+- `脚質` → `running_style`
+- `近走`、`過去走` → `last_runs`
+- `父`、`種牡馬` → `sire`
+- `母父` → `dam_sire`
+- `血統メモ` → `bloodline_note`
+- `クラス` → `class_level`
+
+TARGET側の出力設定で列名が違う場合は、`importer/csv_normalizer.py` の `TARGET_COLUMN_ALIASES` に列名を追加します。
+Analyzer側は入力元を意識せず、常に `data/today_entries.csv` だけを読みます。

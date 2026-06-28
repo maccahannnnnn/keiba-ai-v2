@@ -59,6 +59,54 @@ def export_features(results: list[AnalysisResult], file_path: str) -> str:
     return str(path)
 
 
+ANALYSIS_RESULT_COLUMNS = [
+    "race_date",
+    "racecourse",
+    "race_number",
+    "horse_number",
+    "horse_name",
+    "predicted_rank",
+    "predicted_score",
+    "estimated_top3_rate",
+]
+"""Evaluation Engine が読む、AI予想順位のCSV列です。"""
+
+
+def export_analysis_results(results: list[AnalysisResult], file_path: str) -> str:
+    """分析結果から、検証用の analysis_result.csv を保存します。"""
+
+    path = Path(file_path)
+    path.parent.mkdir(parents=True, exist_ok=True)
+
+    rows = [
+        build_analysis_result_row(rank, result)
+        for rank, result in enumerate(results, start=1)
+    ]
+
+    with path.open("w", encoding="utf-8-sig", newline="") as csv_file:
+        writer = csv.DictWriter(csv_file, fieldnames=ANALYSIS_RESULT_COLUMNS)
+        writer.writeheader()
+        writer.writerows(rows)
+
+    return str(path)
+
+
+def build_analysis_result_row(rank: int, result: AnalysisResult) -> dict[str, object]:
+    """1頭分の予想順位を Evaluation Engine 用CSVの1行へ変換します。"""
+
+    race_info = parse_race_info(result.race_info)
+    return {
+        "race_date": race_info["race_date"],
+        "racecourse": race_info["racecourse"],
+        "race_number": race_info["race_number"],
+        "horse_number": result.horse_number,
+        "horse_name": result.horse_name,
+        "predicted_rank": rank,
+        "predicted_score": round(result.score, 1),
+        "estimated_top3_rate": round(result.in_the_money_rate * 100, 1),
+    }
+
+
 def build_feature_row(result: AnalysisResult) -> dict[str, object]:
     """1頭分の分析結果を、CSVの1行に変換します。"""
 

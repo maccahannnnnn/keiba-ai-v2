@@ -1,5 +1,4 @@
-race_date,racecourse,race_number,horse_number,horse_name,predicted_rank,predicted_score,estimated_top3_rate
-2026-06-28,東京,11,1,Sakura Light,1,100.0,80.0
-2026-06-28,東京,11,3,Blue Moon,2,100.0,80.0
-2026-06-28,東京,11,2,Minato Star,3,71.4,40.0
-2026-06-28,東京,11,4,Green Bell,4,60.8,0.0
+﻿race_date,racecourse,race_number,horse_number,horse_name,predicted_rank,predicted_score,estimated_top3_rate
+2026-06-28,福島,9,1,サンプルスター,1,98.3,80.0
+2026-06-28,福島,9,2,サンプルムーン,2,75.4,40.0
+2026-06-28,福島,9,3,サンプルライト,3,69.9,60.0

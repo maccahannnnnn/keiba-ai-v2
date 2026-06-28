@@ -38,6 +38,9 @@ HEADER_MAP = {
     "母父馬": "dam_sire",
     "血統": "bloodline_note",
     "血統メモ": "bloodline_note",
+    "相手レベル": "class_level",
+    "クラス": "class_level",
+    "class_level": "class_level",
 }
 
 

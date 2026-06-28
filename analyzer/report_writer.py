@@ -3,7 +3,7 @@ from pathlib import Path
 from config import ANALYSIS_CRITERIA, ANALYSIS_RULES, ANALYSIS_WEIGHTS, DESIGN_PIPELINE, WEIGHT_LABELS
 from analyzer.explain_analyzer import ExplainReason
 from analyzer.score_calculator import SCORE_ITEM_NAMES
-from analyzer.schemas import AnalysisResult
+from analyzer.schemas import AnalysisResult, TodayEntry
 
 
 DETAIL_COLUMNS = [
@@ -18,7 +18,11 @@ DETAIL_COLUMNS = [
 ]
 
 
-def build_report_text(results: list[AnalysisResult], feature_file_path: str = "") -> str:
+def build_report_text(
+    results: list[AnalysisResult],
+    feature_file_path: str = "",
+    excluded_entries: list[TodayEntry] | None = None,
+) -> str:
     """分析結果を、画面表示と保存に使える文章へ変換します。"""
 
     lines: list[str] = []
@@ -41,6 +45,11 @@ def build_report_text(results: list[AnalysisResult], feature_file_path: str = ""
         lines.append("=== 特徴量保存 ===")
         lines.append(f"特徴量を保存しました: {feature_file_path}")
 
+    if excluded_entries:
+        lines.append("")
+        lines.append("=== 分析対象外の馬 ===")
+        lines.extend(build_excluded_entries_table(excluded_entries))
+
     lines.append("")
     lines.append("=== 展開予想エンジン ===")
     lines.extend(build_pace_analysis_section(results))
@@ -56,6 +65,10 @@ def build_report_text(results: list[AnalysisResult], feature_file_path: str = ""
     lines.append("")
     lines.append("=== 相手関係評価エンジン ===")
     lines.extend(build_opponent_analysis_section(results))
+
+    lines.append("")
+    lines.append("=== 過去走評価 ===")
+    lines.extend(build_history_analysis_section(results))
 
     lines.append("")
     lines.append("=== 血統辞書分析 ===")
@@ -89,6 +102,22 @@ def build_report_text(results: list[AnalysisResult], feature_file_path: str = ""
     lines.extend(build_in_the_money_table(results))
 
     return "\n".join(lines)
+
+
+def build_excluded_entries_table(excluded_entries: list[TodayEntry]) -> list[str]:
+    """取消・除外など、分析対象から外した馬をレポートに残します。"""
+
+    rows = [["馬番", "馬名", "状態", "理由"]]
+    for entry in sorted(excluded_entries, key=lambda item: item.horse_number):
+        rows.append(
+            [
+                str(entry.horse_number),
+                entry.horse_name,
+                entry.status,
+                entry.bloodline_note,
+            ]
+        )
+    return format_table(rows)
 
 
 def build_summary_table(results: list[AnalysisResult]) -> list[str]:
@@ -381,6 +410,53 @@ def build_opponent_analysis_section(results: list[AnalysisResult]) -> list[str]:
                 analysis.trend,
                 analysis.member_comparison,
                 analysis.reason,
+            ]
+        )
+
+    return format_table(rows)
+
+
+def build_history_analysis_section(results: list[AnalysisResult]) -> list[str]:
+    """過去走評価エンジンの結果を、各馬ごとに一覧表示します。"""
+
+    rows = [
+        [
+            "馬番",
+            "馬名",
+            "history_score",
+            "総合評価",
+            "過去5走平均評価",
+            "安定度",
+            "推移",
+            "上昇度",
+            "下降度",
+            "距離推移",
+            "クラス推移",
+            "history_comment",
+        ]
+    ]
+
+    for result in sorted(results, key=lambda item: item.horse_number):
+        analysis = result.history_analysis
+        if analysis is None:
+            rows.append([str(result.horse_number), result.horse_name, "-", "-", "-", "-", "-", "-", "-", "-", "-", "過去走評価データなし"])
+            continue
+
+        average_finish = "-" if analysis.average_finish is None else f"{analysis.average_finish:.1f}着"
+        rows.append(
+            [
+                str(result.horse_number),
+                result.horse_name,
+                f"{analysis.history_score:.1f}点",
+                analysis.grade,
+                average_finish,
+                analysis.stability,
+                analysis.trend,
+                f"{analysis.rise_degree:.1f}",
+                f"{analysis.decline_degree:.1f}",
+                analysis.distance_transition,
+                analysis.class_transition,
+                analysis.history_comment,
             ]
         )
 

@@ -1,6 +1,9 @@
 import re
 
-from importer.normalized_entry import TARGET_COLUMNS
+from importer.csv_normalizer import KEIBAAI_V1_COLUMNS
+
+
+TARGET_COLUMNS = KEIBAAI_V1_COLUMNS
 
 
 def normalize_row(row: dict[str, str]) -> dict[str, str]:

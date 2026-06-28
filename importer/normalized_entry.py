@@ -1,29 +1,9 @@
 from dataclasses import dataclass
 
+from importer.csv_normalizer import KEIBAAI_V1_COLUMNS
 
-TARGET_COLUMNS = [
-    "race_date",
-    "racecourse",
-    "race_number",
-    "distance",
-    "surface",
-    "track_condition",
-    "horse_number",
-    "horse_name",
-    "frame_number",
-    "jockey",
-    "weight",
-    "body_weight",
-    "body_weight_diff",
-    "running_style",
-    "last_runs",
-    "past_lap_note",
-    "expected_lap_note",
-    "sire",
-    "dam_sire",
-    "bloodline_note",
-]
-"""分析AIが読む today_entries.csv の列順です。"""
+TARGET_COLUMNS = KEIBAAI_V1_COLUMNS
+"""KeibaAI v1.0 標準CSVの列順です。"""
 
 
 @dataclass
@@ -50,6 +30,7 @@ class NormalizedEntry:
     sire: str = ""
     dam_sire: str = ""
     bloodline_note: str = ""
+    class_level: str = ""
 
     def to_row(self) -> dict[str, str]:
         """CSVに書き込むため、辞書形式に変換します。"""

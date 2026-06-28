@@ -1,4 +1,4 @@
-﻿race_date,racecourse,race_number,distance,surface,track_condition,status,horse_number,horse_name,frame_number,jockey,weight,body_weight,body_weight_diff,running_style,last_runs,past_lap_note,expected_lap_note,sire,dam_sire,bloodline_note,class_level
+年月日,場名,R,距離,芝ダ,馬場状態,状態,馬番,馬名,枠番,騎手,斤量,馬体重,増減,脚質,近走,過去ラップ,想定ラップ,父,母父,血統メモ,クラス
 2026-06-28,福島,9,2000,芝,良,出走,1,サンプルスター,1,横山武史,56.0,486,2,先行,1-3-2-4-2,持続戦向き,前半3F:36.0 後半3F:35.2,キズナ,ディープインパクト,芝2000m向き。持続力型。,2勝クラス
 2026-06-28,福島,9,2000,芝,良,出走,2,サンプルムーン,2,戸崎圭太,56.0,472,-4,差し,6-4-3-2-5,瞬発戦向き,前半3F:36.0 後半3F:35.2,エピファネイア,ハーツクライ,中距離向き。差し脚あり。,2勝クラス
 2026-06-28,福島,9,2000,芝,良,出走,3,サンプルライト,3,北村友一,56.0,500,6,逃げ,2-1-7-8-3,消耗戦も可,前半3F:36.0 後半3F:35.2,キタサンブラック,クロフネ,先行力とスタミナがある。,2勝クラス

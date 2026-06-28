@@ -2,6 +2,7 @@ from collections import Counter, defaultdict
 
 from config import ANALYSIS_CRITERIA, ANALYSIS_RULES, PAST_RUN_LIMIT
 from analyzer.explain_analyzer import build_explain_analysis
+from analyzer.history_analyzer import analyze_history
 from analyzer.integrated_evaluator import evaluate_integrated_score
 from analyzer.lap_analyzer import analyze_lap
 from analyzer.opponent_analyzer import analyze_opponents
@@ -46,6 +47,7 @@ class KeibaAnalyzer:
         for entry in entries:
             past_races = limit_past_races(self.past_by_horse.get(entry.horse_name, []))
             opponent_analysis = opponent_analyses[entry.horse_name]
+            history_analysis = analyze_history(entry, past_races)
 
             past_run_analysis, past_score = self.analyze_past_runs(entry, past_races)
             opponent, opponent_score = self.analyze_opponent_level(opponent_analysis)
@@ -105,6 +107,7 @@ class KeibaAnalyzer:
                 opponent_analysis=opponent_analysis,
                 track_bias_analysis=track_bias_analysis,
                 lap_analysis=lap_analysis,
+                history_analysis=history_analysis,
             )
             result.explain_analysis = build_explain_analysis(result)
             results.append(result)

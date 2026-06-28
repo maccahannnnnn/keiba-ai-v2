@@ -44,6 +44,7 @@ class TodayEntry:
     racecourse: str
     race_number: int
     surface: str
+    status: str
     horse_name: str
     horse_number: int
     frame_number: int
@@ -89,6 +90,7 @@ class AnalysisResult:
     opponent_analysis: object
     track_bias_analysis: object
     lap_analysis: object
+    history_analysis: object = None
     explain_analysis: object = None
 
     def to_features(self) -> dict[str, float]:
@@ -119,6 +121,10 @@ class AnalysisResult:
         # ラップ分析もレース質の特徴量として追加します。
         if self.lap_analysis:
             features.update(self.lap_analysis.to_features())
+
+        # 過去走評価は、将来の検証や機械学習に渡せる特徴量として保持します。
+        if self.history_analysis:
+            features.update(self.history_analysis.to_features())
 
         # Explain Engine は、文章ではなく reason_id などの構造化データだけを保存します。
         if self.explain_analysis:

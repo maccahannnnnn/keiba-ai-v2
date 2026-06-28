@@ -1,8 +1,12 @@
 import csv
-from pathlib import Path
 from datetime import datetime
+from pathlib import Path
 
 from analyzer.schemas import PastRace, TodayEntry
+
+
+# この状態の馬は、予想や特徴量出力の対象から外します。
+EXCLUDED_STATUSES = {"取消", "除外"}
 
 
 def load_past_races(file_path: str) -> list[PastRace]:
@@ -41,12 +45,17 @@ def load_past_races(file_path: str) -> list[PastRace]:
 
 
 def load_today_entries(file_path: str) -> list[TodayEntry]:
-    """今回出走する馬のCSVを読み込みます。
+    """分析対象の出走馬だけを読み込みます。取消・除外馬は含めません。"""
 
-    JRAの出走表を見ながら手入力したCSVを想定しています。
-    """
+    active_entries, _ = load_today_entries_with_exclusions(file_path)
+    return active_entries
+
+
+def load_today_entries_with_exclusions(file_path: str) -> tuple[list[TodayEntry], list[TodayEntry]]:
+    """today_entries.csvを読み込み、分析対象馬と分析対象外の馬に分けます。"""
 
     entries: list[TodayEntry] = []
+    excluded_entries: list[TodayEntry] = []
     path = Path(file_path)
 
     if not path.exists():
@@ -59,33 +68,45 @@ def load_today_entries(file_path: str) -> list[TodayEntry]:
         reader = csv.DictReader(file)
 
         for row in reader:
-            entries.append(
-                TodayEntry(
-                    race_date=row_text(row, "race_date"),
-                    racecourse=row_text(row, "racecourse"),
-                    race_number=to_int(row.get("race_number")),
-                    surface=row_text(row, "surface"),
-                    horse_number=to_int(row.get("horse_number")),
-                    horse_name=row_text(row, "horse_name"),
-                    frame_number=to_int(row.get("frame_number")),
-                    jockey=row_text(row, "jockey"),
-                    distance=to_int(row.get("distance")),
-                    track_condition=row_text(row, "track_condition"),
-                    weight=to_float(row.get("weight")),
-                    body_weight=to_int(row.get("body_weight")),
-                    body_weight_diff=to_int(row.get("body_weight_diff")),
-                    running_style=row_text(row, "running_style"),
-                    last_runs=row_text(row, "last_runs"),
-                    past_lap_note=row_text(row, "past_lap_note"),
-                    expected_lap_note=row_text(row, "expected_lap_note"),
-                    sire=row_text(row, "sire"),
-                    dam_sire=row_text(row, "dam_sire"),
-                    bloodline_note=row_text(row, "bloodline_note"),
-                    class_level=row_text(row, "class_level"),
-                )
+            entry = TodayEntry(
+                race_date=row_text(row, "race_date"),
+                racecourse=row_text(row, "racecourse"),
+                race_number=to_int(row.get("race_number")),
+                surface=row_text(row, "surface"),
+                status=normalize_status(row_text(row, "status")),
+                horse_number=to_int(row.get("horse_number")),
+                horse_name=row_text(row, "horse_name"),
+                frame_number=to_int(row.get("frame_number")),
+                jockey=row_text(row, "jockey"),
+                distance=to_int(row.get("distance")),
+                track_condition=row_text(row, "track_condition"),
+                weight=to_float(row.get("weight")),
+                body_weight=to_int(row.get("body_weight")),
+                body_weight_diff=to_int(row.get("body_weight_diff")),
+                running_style=row_text(row, "running_style"),
+                last_runs=row_text(row, "last_runs"),
+                past_lap_note=row_text(row, "past_lap_note"),
+                expected_lap_note=row_text(row, "expected_lap_note"),
+                sire=row_text(row, "sire"),
+                dam_sire=row_text(row, "dam_sire"),
+                bloodline_note=row_text(row, "bloodline_note"),
+                class_level=row_text(row, "class_level"),
             )
 
-    return entries
+            if entry.status in EXCLUDED_STATUSES:
+                excluded_entries.append(entry)
+            else:
+                entries.append(entry)
+
+    return entries, excluded_entries
+
+
+def normalize_status(value: str) -> str:
+    """status が空欄や不明なら、通常出走として扱います。"""
+
+    if value in {"", "不明"}:
+        return "出走"
+    return value
 
 
 def row_text(row: dict[str, str], key: str) -> str:
@@ -98,7 +119,7 @@ def row_text(row: dict[str, str], key: str) -> str:
 
 
 def to_int(value: str | None) -> int:
-    """CSVの文字を整数に変換します。空欄なら0にします。"""
+    """CSVの文字を整数に変換します。空欄や不明は0にします。"""
 
     if value is None or value.strip() in {"", "不明"}:
         return 0
@@ -106,7 +127,7 @@ def to_int(value: str | None) -> int:
 
 
 def to_float(value: str | None) -> float:
-    """CSVの文字を小数に変換します。空欄なら0.0にします。"""
+    """CSVの文字を小数に変換します。空欄や不明は0.0にします。"""
 
     if value is None or value.strip() in {"", "不明"}:
         return 0.0
