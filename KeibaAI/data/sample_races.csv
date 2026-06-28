@@ -1,0 +1,21 @@
+race_date,race_id,horse_name,jockey,distance,track_condition,field_size,class_level,popularity,finish_position,corner_positions,running_style,pace,body_weight,body_weight_diff,sire,dam_sire
+2026-01-05,2026010501,Sakura Light,Tanaka,1600,良,12,2勝,2,1,4-4-3-2,先行,ミドル,486,4,Deep Impact,King Kamehameha
+2026-02-02,2026020201,Sakura Light,Tanaka,1800,稍重,14,2勝,1,2,5-5-4-3,先行,スロー,490,4,Deep Impact,King Kamehameha
+2026-03-01,2026030101,Sakura Light,Tanaka,2000,重,13,3勝,3,4,7-7-7-6,差し,ハイ,482,-8,Deep Impact,King Kamehameha
+2026-04-05,2026040501,Sakura Light,Tanaka,1800,良,16,3勝,4,3,6-6-5-4,差し,ミドル,488,6,Deep Impact,King Kamehameha
+2026-05-10,2026051001,Sakura Light,Tanaka,1600,良,15,3勝,2,1,3-3-3-2,先行,ミドル,492,4,Deep Impact,King Kamehameha
+2026-01-05,2026010501,Minato Star,Sato,1600,良,12,2勝,1,2,2-2-2-1,逃げ,ミドル,510,2,Lord Kanaloa,Sunday Silence
+2026-02-02,2026020201,Minato Star,Sato,1800,稍重,14,2勝,3,5,1-1-1-2,逃げ,スロー,508,-2,Lord Kanaloa,Sunday Silence
+2026-03-01,2026030101,Minato Star,Sato,2000,重,13,3勝,5,8,2-2-3-5,先行,ハイ,514,6,Lord Kanaloa,Sunday Silence
+2026-04-05,2026040501,Minato Star,Sato,1800,良,16,3勝,6,6,1-1-1-1,逃げ,ミドル,512,-2,Lord Kanaloa,Sunday Silence
+2026-05-10,2026051001,Minato Star,Sato,1600,良,15,3勝,4,3,2-2-2-2,逃げ,ミドル,516,4,Lord Kanaloa,Sunday Silence
+2026-01-05,2026010501,Blue Moon,Suzuki,1600,良,12,2勝,5,4,9-9-8-7,差し,ミドル,456,-2,Harbinger,Special Week
+2026-02-02,2026020201,Blue Moon,Suzuki,1800,稍重,14,2勝,4,1,8-8-7-4,差し,スロー,460,4,Harbinger,Special Week
+2026-03-01,2026030101,Blue Moon,Suzuki,2000,重,13,3勝,1,1,10-10-9-4,追込,ハイ,462,2,Harbinger,Special Week
+2026-04-05,2026040501,Blue Moon,Suzuki,1800,良,16,3勝,2,2,8-8-7-5,差し,ミドル,464,2,Harbinger,Special Week
+2026-05-10,2026051001,Blue Moon,Suzuki,1600,良,15,3勝,3,2,7-7-6-4,差し,ミドル,466,2,Harbinger,Special Week
+2026-01-05,2026010501,Green Bell,Takahashi,1600,良,12,2勝,8,7,11-11-10-10,追込,ミドル,440,0,Kizuna,Brian's Time
+2026-02-02,2026020201,Green Bell,Takahashi,1800,稍重,14,2勝,7,6,12-12-11-9,追込,スロー,444,4,Kizuna,Brian's Time
+2026-03-01,2026030101,Green Bell,Takahashi,2000,重,13,3勝,6,5,11-11-10-8,追込,ハイ,446,2,Kizuna,Brian's Time
+2026-04-05,2026040501,Green Bell,Takahashi,1800,良,16,3勝,9,9,13-13-13-12,追込,ミドル,438,-8,Kizuna,Brian's Time
+2026-05-10,2026051001,Green Bell,Takahashi,1600,良,15,3勝,10,8,12-12-12-10,追込,ミドル,442,4,Kizuna,Brian's Time
