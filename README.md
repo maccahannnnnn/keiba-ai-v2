@@ -42,22 +42,25 @@ JRA出走表
 ## フォルダ構成
 
 ```text
-KeibaAI/
-├── data/         # レースデータ
-├── analyzer/     # 分析プログラム
-├── knowledge/    # コース辞書・血統辞書などの競馬知識
-├── models/       # 将来のAIモデル
-├── reports/      # 分析結果
-├── main.py
+keiba-ai-v2/
+├── analyzer/          # 分析プログラム
+├── knowledge/         # コース辞書・血統辞書などの競馬知識
+├── data/              # レースデータ・試運転用CSV
+├── importer/          # HTML/CSV変換・将来のデータ取得入口
+├── models/            # 将来のAIモデル
+├── reports/           # 分析結果・検証結果
+├── config.py          # 分析ルール・重み管理
+├── convert_entries.py # 出走表ファイル変換用
+├── main.py            # 分析実行入口
 └── README.md
 ```
 
 ## 実行方法
 
-`KeibaAI` フォルダへ移動して実行します。
+リポジトリ直下で実行します。
 
 ```powershell
-cd KeibaAI
+cd "C:\Users\hikar\Desktop\keiba AI"
 python main.py
 ```
 
