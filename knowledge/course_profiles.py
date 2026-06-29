@@ -1,4 +1,4 @@
-from dataclasses import dataclass, field
+﻿from dataclasses import dataclass, field
 
 
 @dataclass
@@ -25,6 +25,7 @@ class CourseProfile:
     suitable_types: list[str] = field(default_factory=list)
     unsuitable_types: list[str] = field(default_factory=list)
     bloodline_tendency: list[str] = field(default_factory=list)
+    score_modifiers: dict[str, int] = field(default_factory=dict)
 
     def summary(self) -> str:
         """レポートに表示しやすい短い説明を作ります。"""
@@ -103,72 +104,13 @@ COURSE_PROFILES = {
 """
 
 
+from knowledge.courses.fukushima import FUKUSHIMA_COURSE_PROFILES
+
+COURSE_PROFILES.update(FUKUSHIMA_COURSE_PROFILES)
+
+
 COURSE_PROFILES.update(
     {
-        ("福島", "芝", 1200): CourseProfile(
-            racecourse="福島",
-            surface="芝",
-            distance=1200,
-            features=["小回り", "直線が短い", "スタート後の位置取りが重要"],
-            favorable_styles=["逃げ", "先行"],
-            frame_bias="内枠でロスなく先行できる馬を評価。開催が進むと外差しにも注意",
-            required_abilities=["先行力", "スピード持続力", "コーナー加速"],
-            cautions=["後方一気は届きにくい。馬場悪化時は外目の差しに注意"],
-            course_shape="2コーナー奥からスタートする小回り芝短距離",
-            pace_tendency="前半から流れやすく、先行争いが激しいと差しも届く",
-            closing_tendency="極端な瞬発力よりもスピードを持続する上がりが重要",
-            suitable_types=["先行力のある短距離馬", "小回りで加速できる馬"],
-            unsuitable_types=["スタートが遅い追込馬", "大箱向きの末脚型"],
-            bloodline_tendency=["ロードカナロア系", "サクラバクシンオー系", "ミスタープロスペクター系"],
-        ),
-        ("福島", "芝", 1800): CourseProfile(
-            racecourse="福島",
-            surface="芝",
-            distance=1800,
-            features=["小回り", "コーナー4回", "立ち回りと持続力が重要"],
-            favorable_styles=["先行", "差し"],
-            frame_bias="内で脚をためられる枠を評価。外枠は早めに動ける機動力が必要",
-            required_abilities=["持続力", "器用さ", "コーナーでの加速力"],
-            cautions=["直線だけの瞬発力勝負にはなりにくい"],
-            course_shape="スタンド前から始まる小回り芝中距離",
-            pace_tendency="平均ペースになりやすく、早めに動く競馬が増えやすい",
-            closing_tendency="長く脚を使う上がりが必要",
-            suitable_types=["器用な先行馬", "早めに進出できる差し馬"],
-            unsuitable_types=["大外を回すだけの追込馬", "加速に時間がかかる馬"],
-            bloodline_tendency=["ステイゴールド系", "ロベルト系", "キングマンボ系"],
-        ),
-        ("福島", "芝", 2000): CourseProfile(
-            racecourse="福島",
-            surface="芝",
-            distance=2000,
-            features=["小回り", "コーナー4回", "早めに動ける持続力が重要"],
-            favorable_styles=["先行", "差し"],
-            frame_bias="内で立ち回れる馬を評価しつつ、外から早めに動ける馬も注意",
-            required_abilities=["持続力", "機動力", "コーナー加速"],
-            cautions=["直線だけの瞬発力勝負にはなりにくい"],
-            course_shape="小回りの芝2000m。コーナーを4回通る持続力コース",
-            pace_tendency="平均からややハイになりやすく、早めの仕掛けが入りやすい",
-            closing_tendency="速い上がりよりもバテずに伸びる脚を評価",
-            suitable_types=["持続力型", "小回り巧者", "早めに動ける先行・差し馬"],
-            unsuitable_types=["直線一気型", "コーナー加速が苦手な馬"],
-            bloodline_tendency=["ステイゴールド系", "ハービンジャー系", "ロベルト系"],
-        ),
-        ("福島", "ダート", 1700): CourseProfile(
-            racecourse="福島",
-            surface="ダート",
-            distance=1700,
-            features=["小回りダート", "コーナー4回", "前で運べる馬が有利になりやすい"],
-            favorable_styles=["逃げ", "先行"],
-            frame_bias="内で砂をかぶらず立ち回れる先行馬を評価。外枠はスムーズに先行できれば可",
-            required_abilities=["先行力", "持続力", "砂をかぶる耐性"],
-            cautions=["後方から大外を回す競馬はロスが大きい"],
-            course_shape="小回りのダート1700m。1コーナーまでの位置取りが重要",
-            pace_tendency="前半から位置を取りに行くため平均以上になりやすい",
-            closing_tendency="上がりの速さよりも最後まで止まらない持続力を評価",
-            suitable_types=["逃げ・先行馬", "器用に立ち回れる馬"],
-            unsuitable_types=["揉まれ弱い差し馬", "加速に時間がかかる追込馬"],
-            bloodline_tendency=["シニスターミニスター系", "ヘニーヒューズ系", "キングカメハメハ系"],
-        ),
         ("函館", "芝", 1200): CourseProfile(
             racecourse="函館",
             surface="芝",

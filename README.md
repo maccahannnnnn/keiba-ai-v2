@@ -419,12 +419,35 @@ KeibaAI v1.0 で追加した馬場バイアス辞書:
 - 求められる能力
 - 向きやすい血統
 - 注意点
+- 初期補正辞書 `score_modifiers`
 
 KeibaAI v1.0 で追加した今週開催場の主要コース:
 
-- 福島: 芝1200m、芝1800m、芝2000m、ダート1700m
+- 福島: 芝1200m、芝1800m、芝2000m、芝2600m、ダート1150m、ダート1700m、ダート2400m
 - 函館: 芝1200m、芝1800m、芝2000m、ダート1700m
 - 小倉: 芝1200m、芝1800m、芝2000m、ダート1700m
+
+### Course Knowledge: 福島競馬場
+
+福島競馬場は右回りのローカル小回りコースです。芝直線は約292mと短く、直線だけの瞬発力よりも、位置取り、コーナリング、器用さ、持続力を重視します。
+
+福島芝の基本方針:
+
+- 良馬場では位置取りと内で立ち回れる力を評価
+- 先行から好位差しを安定評価
+- 追込は展開や馬場バイアスの助けが必要
+- 開催後半や雨、馬場悪化時は外差し補正を検討
+- 道悪では持続力、パワー、馬場適性を重視
+
+福島ダートの基本方針:
+
+- 逃げ、先行を強めに評価
+- 差し馬は早めに動けるタイプを評価
+- 追込一辺倒は割引
+- ダート1150mは芝スタート適性とテンの速さも評価
+- ダート1700mは小回りダート実績、先行力、持続力を重視
+
+`score_modifiers` には、教科書の「逃げ+8」「先行+10」のような数値補正を辞書データとして保存しています。現在のAnalyzerの評価式は変更せず、Explain Engineや将来の補正ロジックから参照できる知識として保持します。
 
 データを増やす場合は、`COURSE_PROFILES` に同じ形式でコースを追加します。
 展開予想エンジンとスコア計算は、このコース辞書を参照します。
@@ -435,21 +458,40 @@ KeibaAI v1.0 で追加した今週開催場の主要コース:
 分析プログラム側の `analyzer` は、`knowledge` を参照して分析します。
 知識データと分析ロジックは分離します。
 
-将来的な構成:
+Knowledge Library 構成:
 
 ```text
 knowledge/
+├── courses/
+│   ├── __init__.py
+│   └── fukushima.py
+├── bloodlines/
+│   ├── __init__.py
+│   └── profiles.py
+├── track_bias/
+│   ├── __init__.py
+│   └── profiles.py
+├── pace/
+│   └── __init__.py
+├── running_styles/
+│   └── __init__.py
+├── race_level/
+│   ├── __init__.py
+│   └── profiles.py
+├── jockeys/
+│   └── __init__.py
+├── trainers/
+│   └── __init__.py
 ├── course_profiles.py
 ├── bloodline_profiles.py
-├── opponent_profiles.py
-├── track_bias.py
-├── class_profiles.py
-├── pace_patterns.py
-├── distance_profiles.py
+└── opponent_profiles.py
 ```
 
-今は `course_profiles.py` と `bloodline_profiles.py` を中心に使います。
-他のファイルは、後から簡単に知識を追加できるように土台だけ用意しています。
+`knowledge/course_profiles.py` は互換性維持の入口として残し、内部で `knowledge/courses/fukushima.py` を読み込みます。
+今後、函館・小倉・東京などを追加する場合は、`knowledge/courses/hakodate.py`、`knowledge/courses/kokura.py`、`knowledge/courses/tokyo.py` のように競馬場ごとに分けて追加します。
+
+`knowledge/track_bias/` と `knowledge/race_level/` は、既存の `knowledge.track_bias`、`knowledge.race_level` import を壊さないように `__init__.py` で `profiles.py` の内容を再公開します。
+血統は新しい `knowledge/bloodlines/profiles.py` を用意しつつ、既存Analyzer互換の `knowledge/bloodline.py` と `knowledge/bloodline_profiles.py` も残しています。
 
 ## Bloodline Dictionary
 
