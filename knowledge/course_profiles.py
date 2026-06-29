@@ -1,38 +1,4 @@
-﻿from dataclasses import dataclass, field
-
-
-@dataclass
-class CourseProfile:
-    """競馬場・距離・芝/ダートごとのコース特徴です。
-
-    Analyzer が現在使っている主な項目は features / favorable_styles /
-    frame_bias / required_abilities / cautions です。
-    それ以外の項目は、将来レポートや機械学習用特徴量へ広げるための知識として
-    ここに蓄積しておきます。
-    """
-
-    racecourse: str
-    surface: str
-    distance: int
-    features: list[str]
-    favorable_styles: list[str]
-    frame_bias: str
-    required_abilities: list[str]
-    cautions: list[str]
-    course_shape: str = "不明"
-    pace_tendency: str = "不明"
-    closing_tendency: str = "不明"
-    suitable_types: list[str] = field(default_factory=list)
-    unsuitable_types: list[str] = field(default_factory=list)
-    bloodline_tendency: list[str] = field(default_factory=list)
-    score_modifiers: dict[str, int] = field(default_factory=dict)
-
-    def summary(self) -> str:
-        """レポートに表示しやすい短い説明を作ります。"""
-
-        return " / ".join(self.features)
-
-
+from knowledge.courses.base import CourseProfile
 DEFAULT_COURSE_PROFILE = CourseProfile(
     racecourse="不明",
     surface="不明",
@@ -105,76 +71,14 @@ COURSE_PROFILES = {
 
 
 from knowledge.courses.fukushima import FUKUSHIMA_COURSE_PROFILES
+from knowledge.courses.hakodate import HAKODATE_COURSE_PROFILES
 
 COURSE_PROFILES.update(FUKUSHIMA_COURSE_PROFILES)
+COURSE_PROFILES.update(HAKODATE_COURSE_PROFILES)
 
 
 COURSE_PROFILES.update(
     {
-        ("函館", "芝", 1200): CourseProfile(
-            racecourse="函館",
-            surface="芝",
-            distance=1200,
-            features=["洋芝", "直線が短い", "パワーと先行力が重要"],
-            favorable_styles=["逃げ", "先行"],
-            frame_bias="内枠でロスなく運べる馬を評価。馬場が荒れると外差しも注意",
-            required_abilities=["先行力", "洋芝適性", "パワー"],
-            cautions=["軽い芝専用の瞬発型は割引が必要"],
-            course_shape="洋芝の小回り短距離。直線が短く前の位置が重要",
-            pace_tendency="短距離らしく流れやすいが、前が止まりにくい",
-            closing_tendency="切れ味よりも洋芝で踏ん張る上がりが必要",
-            suitable_types=["パワー型の先行馬", "洋芝実績のある短距離馬"],
-            unsuitable_types=["軽い高速芝向きの差し馬", "スタートが遅い馬"],
-            bloodline_tendency=["ロードカナロア系", "ダイワメジャー系", "ノーザンダンサー系"],
-        ),
-        ("函館", "芝", 1800): CourseProfile(
-            racecourse="函館",
-            surface="芝",
-            distance=1800,
-            features=["洋芝", "小回り", "持続力と立ち回りが重要"],
-            favorable_styles=["先行", "差し"],
-            frame_bias="内で脚をためられる馬を評価。外枠は早めに位置を取れるかが鍵",
-            required_abilities=["洋芝適性", "持続力", "器用さ"],
-            cautions=["瞬発力だけで差す競馬は決まりにくい"],
-            course_shape="コーナー4回の洋芝中距離",
-            pace_tendency="平均ペースになりやすく、早めに動く持続戦が多い",
-            closing_tendency="上がりの速さよりも長く脚を使う力を評価",
-            suitable_types=["洋芝巧者", "先行してしぶとい馬", "持続力型の差し馬"],
-            unsuitable_types=["高速上がり専用型", "小回りで置かれる馬"],
-            bloodline_tendency=["ハービンジャー系", "ステイゴールド系", "ロベルト系"],
-        ),
-        ("函館", "芝", 2000): CourseProfile(
-            racecourse="函館",
-            surface="芝",
-            distance=2000,
-            features=["洋芝", "コーナー4回", "スタミナと持続力が問われる"],
-            favorable_styles=["先行", "差し"],
-            frame_bias="内でロスなく運べる馬を評価。外枠は早めに動けるかが重要",
-            required_abilities=["スタミナ", "洋芝適性", "持続力"],
-            cautions=["軽い瞬発力だけのタイプは過信しない"],
-            course_shape="洋芝の小回り芝2000m。コーナーで動く力が必要",
-            pace_tendency="平均から持続戦になりやすい",
-            closing_tendency="ラストまで脚を使い続ける上がりが重要",
-            suitable_types=["持続力型", "パワー型", "早めに動ける馬"],
-            unsuitable_types=["直線だけの追込馬", "洋芝で止まりやすい軽量型"],
-            bloodline_tendency=["ハービンジャー系", "ハーツクライ系", "ロベルト系"],
-        ),
-        ("函館", "ダート", 1700): CourseProfile(
-            racecourse="函館",
-            surface="ダート",
-            distance=1700,
-            features=["小回りダート", "直線が短い", "先行力と持続力が重要"],
-            favorable_styles=["逃げ", "先行"],
-            frame_bias="内枠で前に行ける馬を評価。外枠でもスムーズに先行できれば可",
-            required_abilities=["先行力", "持続力", "パワー"],
-            cautions=["後方待機は展開待ちになりやすい"],
-            course_shape="小回りのダート1700m。1コーナーまでの入りが重要",
-            pace_tendency="先行争いで流れることもあるが、基本は前有利",
-            closing_tendency="速い上がりよりも粘り込み性能を評価",
-            suitable_types=["逃げ・先行馬", "砂をかぶっても問題ない馬"],
-            unsuitable_types=["追込一辺倒", "揉まれ弱い馬"],
-            bloodline_tendency=["ヘニーヒューズ系", "シニスターミニスター系", "ロベルト系"],
-        ),
         ("小倉", "芝", 1200): CourseProfile(
             racecourse="小倉",
             surface="芝",
@@ -241,6 +145,11 @@ COURSE_PROFILES.update(
         ),
     }
 )
+
+
+from knowledge.courses.kokura import KOKURA_COURSE_PROFILES
+
+COURSE_PROFILES.update(KOKURA_COURSE_PROFILES)
 
 
 def get_course_profile(racecourse: str, surface: str, distance: int) -> CourseProfile:

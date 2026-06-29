@@ -347,8 +347,8 @@ KeibaAI v1.0 では、中央競馬のレースレベルを `knowledge/race_level
 KeibaAI v1.0 で追加した馬場バイアス辞書:
 
 - 福島: 芝1200m、芝1800m、芝2000m、ダート1700m
-- 函館: 芝1200m、芝1800m、芝2000m、ダート1700m
-- 小倉: 芝1200m、芝1800m、芝2000m、ダート1700m
+- 函館: 芝1200m、芝1800m、芝2000m、ダート1000m、ダート1700m
+- 小倉: 芝1000m、芝1200m、芝1700m、芝1800m、芝2000m、芝2600m、ダート1000m、ダート1700m、ダート2400m
 
 各コースには、`良`、`稍重`、`重`、`不良` の状態別に、内外・前差し追込・時計・スタミナ・瞬発力の傾向を登録しています。
 
@@ -449,8 +449,65 @@ KeibaAI v1.0 で追加した今週開催場の主要コース:
 
 `score_modifiers` には、教科書の「逃げ+8」「先行+10」のような数値補正を辞書データとして保存しています。現在のAnalyzerの評価式は変更せず、Explain Engineや将来の補正ロジックから参照できる知識として保持します。
 
+`knowledge/courses/fukushima.py` には、函館と同じ粒度で詳細知識を追加しています。
+
+- ペース別傾向: スロー、ミドル、ハイ
+- 枠順傾向: 開幕週、開催中盤、開催終盤、良馬場、重馬場
+- 開催時期バイアス: 芝、ダート
+- 馬場状態別特徴: 良、稍重、重、不良
+- 血統との相性: 得意、普通、苦手
+- 理由付き `score_modifiers`
+- Explain Engine 用コメント
+
 データを増やす場合は、`COURSE_PROFILES` に同じ形式でコースを追加します。
 展開予想エンジンとスコア計算は、このコース辞書を参照します。
+
+### Course Knowledge: 函館競馬場
+
+函館競馬場は洋芝・小回り・直線262mの短いコースです。直線だけで差し切る競馬になりにくく、コーナーで加速できる持続力型・先行型を重視します。
+
+函館芝の基本方針:
+
+- 良馬場では内枠や先行馬を評価
+- 先行から好位でロスなく立ち回れる馬を評価
+- 重馬場ではパワーとスタミナを重視
+- 直線だけで差すタイプは割引
+
+函館ダートの基本方針:
+
+- ダート1000mはスタート、二の脚、テンの速さを強く評価
+- ダート1700mは先行力、パワー、持続力、スタミナを評価
+- 後方一気型は展開待ちになりやすいため割引
+
+登録コース:
+
+- 芝1200m
+- 芝1800m
+- 芝2000m
+- ダート1000m
+- ダート1700m
+
+`knowledge/courses/hakodate.py` に、教科書の「逃げ+12」「先行+10」のような `score_modifiers` を辞書データとして保存しています。現在のAnalyzerの評価式は変更せず、Explain Engineや将来の補正ロジックから参照できる知識として保持します。
+
+### Course Knowledge: 小倉競馬場
+
+小倉競馬場は右回りのローカル小回りコースです。芝直線は約293m、ダート直線は約291mと短く、平坦スピード、先行力、立ち回り、持続力を重視します。
+
+小倉芝の基本方針:
+
+- 開幕週や開催前半は内枠、逃げ、先行を評価
+- 芝1200mと芝1000mはテンの速さとスピード持続力を強く評価
+- 芝1800m、芝2000mは小回り適性、コーナリング、まくり性能を評価
+- 開催後半は内が荒れると外差し、大外伸びを評価
+
+小倉ダートの基本方針:
+
+- ダート1000mはスタート、二の脚、テンの速さを最重視
+- ダート1700mは逃げ、先行、まくり、パワー、持続力を評価
+- ダート2400mはスタミナ、折り合い、まくり性能を評価
+- 後方一気型は基本的に割引
+
+`knowledge/courses/kokura.py` には、ペース別傾向、枠順傾向、開催時期バイアス、馬場状態別特徴、血統相性、理由付き `score_modifiers`、Explain Engine 用コメントを保存しています。
 
 ## knowledge設計方針
 
@@ -487,8 +544,8 @@ knowledge/
 └── opponent_profiles.py
 ```
 
-`knowledge/course_profiles.py` は互換性維持の入口として残し、内部で `knowledge/courses/fukushima.py` を読み込みます。
-今後、函館・小倉・東京などを追加する場合は、`knowledge/courses/hakodate.py`、`knowledge/courses/kokura.py`、`knowledge/courses/tokyo.py` のように競馬場ごとに分けて追加します。
+`knowledge/course_profiles.py` は互換性維持の入口として残し、内部で `knowledge/courses/fukushima.py`、`knowledge/courses/hakodate.py`、`knowledge/courses/kokura.py` を読み込みます。
+今後、東京・中山・阪神などを追加する場合は、`knowledge/courses/tokyo.py`、`knowledge/courses/nakayama.py`、`knowledge/courses/hanshin.py` のように競馬場ごとに分けて追加します。
 
 `knowledge/track_bias/` と `knowledge/race_level/` は、既存の `knowledge.track_bias`、`knowledge.race_level` import を壊さないように `__init__.py` で `profiles.py` の内容を再公開します。
 血統は新しい `knowledge/bloodlines/profiles.py` を用意しつつ、既存Analyzer互換の `knowledge/bloodline.py` と `knowledge/bloodline_profiles.py` も残しています。
