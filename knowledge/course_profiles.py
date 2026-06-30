@@ -151,6 +151,34 @@ from knowledge.courses.kokura import KOKURA_COURSE_PROFILES
 
 COURSE_PROFILES.update(KOKURA_COURSE_PROFILES)
 
+from knowledge.courses.sapporo import SAPPORO_COURSE_PROFILES
+
+COURSE_PROFILES.update(SAPPORO_COURSE_PROFILES)
+
+from knowledge.courses.niigata import NIIGATA_COURSE_PROFILES
+
+COURSE_PROFILES.update(NIIGATA_COURSE_PROFILES)
+
+from knowledge.courses.tokyo import TOKYO_COURSE_PROFILES
+
+COURSE_PROFILES.update(TOKYO_COURSE_PROFILES)
+
+from knowledge.courses.nakayama import NAKAYAMA_COURSE_PROFILES
+
+COURSE_PROFILES.update(NAKAYAMA_COURSE_PROFILES)
+
+from knowledge.courses.chukyo import CHUKYO_COURSE_PROFILES
+
+COURSE_PROFILES.update(CHUKYO_COURSE_PROFILES)
+
+from knowledge.courses.kyoto import KYOTO_COURSE_PROFILES
+
+COURSE_PROFILES.update(KYOTO_COURSE_PROFILES)
+
+from knowledge.courses.hanshin import HANSHIN_COURSE_PROFILES
+
+COURSE_PROFILES.update(HANSHIN_COURSE_PROFILES)
+
 
 def get_course_profile(racecourse: str, surface: str, distance: int) -> CourseProfile:
     """競馬場・芝/ダート・距離からコース特徴を取得します。"""
