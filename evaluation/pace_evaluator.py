@@ -7,6 +7,7 @@ source_type="pace" として渡すための土台です。
 
 from importlib import import_module
 
+from evaluation.course_name_normalizer import knowledge_course_key, normalize_course_name
 from evaluation.score_modifier_engine import ScoreModifierEngine
 
 
@@ -21,6 +22,7 @@ class PaceEvaluator:
         "tokyo": ("knowledge.courses.tokyo", "TOKYO_COURSE_PROFILES"),
         "nakayama": ("knowledge.courses.nakayama", "NAKAYAMA_COURSE_PROFILES"),
         "chukyo": ("knowledge.courses.chukyo", "CHUKYO_COURSE_PROFILES"),
+        "chuukyou": ("knowledge.courses.chukyo", "CHUKYO_COURSE_PROFILES"),
         "kyoto": ("knowledge.courses.kyoto", "KYOTO_COURSE_PROFILES"),
         "hanshin": ("knowledge.courses.hanshin", "HANSHIN_COURSE_PROFILES"),
         "kokura": ("knowledge.courses.kokura", "KOKURA_COURSE_PROFILES"),
@@ -34,6 +36,7 @@ class PaceEvaluator:
         "tokyo": "東京",
         "nakayama": "中山",
         "chukyo": "中京",
+        "chuukyou": "中京",
         "kyoto": "京都",
         "hanshin": "阪神",
         "kokura": "小倉",
@@ -145,7 +148,9 @@ class PaceEvaluator:
         }
 
     def _load_module(self, racecourse_english):
-        module_info = self.COURSE_MODULES.get(racecourse_english)
+        module_info = self.COURSE_MODULES.get(racecourse_english) or self.COURSE_MODULES.get(
+            knowledge_course_key(racecourse_english)
+        )
         if module_info is None:
             return None
 
@@ -158,7 +163,9 @@ class PaceEvaluator:
         if module is None:
             return {}
 
-        module_info = self.COURSE_MODULES.get(racecourse_english)
+        module_info = self.COURSE_MODULES.get(racecourse_english) or self.COURSE_MODULES.get(
+            knowledge_course_key(racecourse_english)
+        )
         if module_info is None:
             return {}
 
@@ -173,6 +180,7 @@ class PaceEvaluator:
         racecourse_candidates = [
             racecourse_info["japanese"],
             racecourse_info["english"],
+            knowledge_course_key(racecourse_info["english"]),
             racecourse_info["original"],
         ]
         surface_candidates = [
@@ -374,7 +382,7 @@ class PaceEvaluator:
 
     def _normalize_racecourse(self, racecourse):
         original = str(racecourse).strip() if racecourse is not None else ""
-        lower = original.lower()
+        lower = normalize_course_name(original)
 
         if lower in self.RACECOURSE_ALIASES:
             return {

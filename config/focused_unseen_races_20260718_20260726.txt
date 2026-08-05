@@ -1,0 +1,10 @@
+race_20260718_hakodate_8R
+race_20260718_kokura_10R
+race_20260719_fukushima_8R
+race_20260719_fukushima_10R
+race_20260719_kokura_7R
+race_20260725_sapporo_10R
+race_20260725_niigata_12R
+race_20260725_chuukyou_10R
+race_20260726_niigata_5R
+race_20260726_chuukyou_10R

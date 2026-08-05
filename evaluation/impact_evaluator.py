@@ -46,7 +46,12 @@ class ImpactEvaluator:
         """
 
         base_score = self._safe_number(final_score)
-        impact_score = self._impact_from_comment_or_score(shape_comment, shape_score)
+        raw_impact_score = self._impact_from_comment_or_score(shape_comment, shape_score)
+        impact_score, suppression_reason = self._suppress_duplicate_shape_penalty(
+            raw_impact_score,
+            shape_comment,
+            shape_score,
+        )
         adjusted_score = base_score + impact_score
 
         return {
@@ -59,9 +64,17 @@ class ImpactEvaluator:
             "shape_score": self._safe_number(shape_score),
             "shape_comment": shape_comment or self._comment_from_impact(impact_score),
             "final_score": base_score,
+            "raw_impact_score": raw_impact_score,
             "impact_score": impact_score,
             "adjusted_score": adjusted_score,
             "comment": self._build_comment(pace_style, impact_score),
+            "impact_reasons": self._impact_reasons(
+                raw_impact_score,
+                impact_score,
+                suppression_reason,
+            ),
+            "duplicate_shape_impact_suppressed": bool(suppression_reason),
+            "impact_suppression_reason": suppression_reason,
         }
 
     def evaluate_many(self, horses):
@@ -122,6 +135,36 @@ class ImpactEvaluator:
         if score <= -5:
             return -5
         return 0
+
+    def _suppress_duplicate_shape_penalty(self, impact_score, shape_comment, shape_score):
+        """Avoid counting RaceShape downside twice in final and adjusted scores."""
+
+        if impact_score >= 0:
+            return impact_score, ""
+
+        if self._is_race_shape_negative_signal(shape_comment, shape_score):
+            return 0, "RaceShapeで評価済みのため重複Impactは付与しない"
+
+        return impact_score, ""
+
+    def _is_race_shape_negative_signal(self, shape_comment, shape_score):
+        comment = str(shape_comment).strip() if shape_comment is not None else ""
+        if comment in {"展開不向き", "やや不向き"}:
+            return True
+
+        score = self._safe_number(shape_score)
+        return score <= -5
+
+    def _impact_reasons(self, raw_impact_score, impact_score, suppression_reason):
+        if suppression_reason:
+            return [suppression_reason]
+        if impact_score > 0:
+            return ["RaceShape由来の正のImpact"]
+        if impact_score < 0:
+            return ["RaceShape由来の負のImpact"]
+        if raw_impact_score < 0:
+            return ["RaceShape由来の負のImpactを抑制"]
+        return []
 
     def _comment_from_impact(self, impact_score):
         if impact_score >= 10:

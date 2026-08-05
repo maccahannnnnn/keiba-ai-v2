@@ -1,0 +1,402 @@
+{
+  "racecourse": "chukyo",
+  "racecourse_jp": "中京",
+  "source": "manual_template",
+  "scoring_enabled": false,
+  "opening": {
+    "inside_outside_tendency": "inside_to_middle",
+    "front_closer_tendency": "balanced",
+    "turf_condition": "fresh",
+    "features": [
+      "中京の開催前半は馬場状態が良く、内と前目の立ち回りを確認する。",
+      "先行力だけでなく、コーナーで無理なく位置を取れる馬を評価する。",
+      "MeetingBiasは開催全体の傾向であり、当日のTrackBiasとは分けて扱う。"
+    ]
+  },
+  "middle": {
+    "turf_wear": "moderate",
+    "running_style_tendency": "balanced_to_closer",
+    "features": [
+      "中京の開催中盤は極端な内前だけに寄せず、能力と位置取りの両方を確認する。",
+      "馬場の傷みが出始めるため、好位差しや持続力型も評価対象に入れる。",
+      "RaceShapeと異なる方向を示す場合は、開催傾向として補足的に読む。"
+    ]
+  },
+  "closing": {
+    "turf_wear": "moderate_to_high",
+    "closer_tendency": "closer_and_outside_possible",
+    "features": [
+      "中京の開催後半は馬場の傷みや外進路の台頭に注意する。",
+      "前目で粘る馬と、外から長く脚を使う馬の両方を確認する。",
+      "芝では外差し、ダートでは位置取りと4角の形を分けて見る。"
+    ]
+  },
+  "course_rotation": {
+    "A": "内と前目の立ち回りを評価しやすい。",
+    "B": "内の傷みが軽減され、先行・好位が再評価されやすい。",
+    "C": "外差しの台頭を警戒する。",
+    "D": "開催終盤の外進路と持続力を重視する。"
+  },
+  "notes": [
+    "直線の坂とコーナー配置から、持続力と加速力の両方を確認する",
+    "MeetingBiasは開催段階・芝ダート・距離カテゴリを説明するための非スコア情報。"
+  ],
+  "surface_profiles": {
+    "turf": {
+      "sprint": {
+        "opening": {
+          "inside_outside_tendency": "inside_to_neutral",
+          "front_closer_tendency": "front_stalk",
+          "features": [
+            "中京芝短距離の開催前半は、内から中寄りを評価を意識する。",
+            "脚質面では前目から好位を評価。",
+            "直線の坂とコーナー配置から、持続力と加速力の両方を確認する"
+          ],
+          "cautions": [
+            "MeetingBiasは開催全体の傾向であり、DecisionやRaceShapeを直接変更しない。",
+            "当日のTrackBiasと異なる場合は、当日馬場を別レイヤーで確認する。"
+          ],
+          "explain": "中京芝短距離の開催前半。内から中寄りを評価、前目から好位を評価として開催全体の傾向を補足する。"
+        },
+        "middle": {
+          "inside_outside_tendency": "neutral",
+          "front_closer_tendency": "balanced",
+          "features": [
+            "中京芝短距離の開催中盤は、内外は中立を意識する。",
+            "脚質面では脚質は中立。",
+            "直線の坂とコーナー配置から、持続力と加速力の両方を確認する"
+          ],
+          "cautions": [
+            "MeetingBiasは開催全体の傾向であり、DecisionやRaceShapeを直接変更しない。",
+            "当日のTrackBiasと異なる場合は、当日馬場を別レイヤーで確認する。"
+          ],
+          "explain": "中京芝短距離の開催中盤。内外は中立、脚質は中立として開催全体の傾向を補足する。"
+        },
+        "closing": {
+          "inside_outside_tendency": "outside_watch",
+          "front_closer_tendency": "stalk_closer",
+          "features": [
+            "中京芝短距離の開催後半は、外進路に注意を意識する。",
+            "脚質面では好位差しから差しを評価。",
+            "直線の坂とコーナー配置から、持続力と加速力の両方を確認する"
+          ],
+          "cautions": [
+            "MeetingBiasは開催全体の傾向であり、DecisionやRaceShapeを直接変更しない。",
+            "当日のTrackBiasと異なる場合は、当日馬場を別レイヤーで確認する。"
+          ],
+          "explain": "中京芝短距離の開催後半。外進路に注意、好位差しから差しを評価として開催全体の傾向を補足する。"
+        }
+      },
+      "mile": {
+        "opening": {
+          "inside_outside_tendency": "inside_to_neutral",
+          "front_closer_tendency": "front_stalk",
+          "features": [
+            "中京芝マイルの開催前半は、内から中寄りを評価を意識する。",
+            "脚質面では前目から好位を評価。",
+            "直線の坂とコーナー配置から、持続力と加速力の両方を確認する"
+          ],
+          "cautions": [
+            "MeetingBiasは開催全体の傾向であり、DecisionやRaceShapeを直接変更しない。",
+            "当日のTrackBiasと異なる場合は、当日馬場を別レイヤーで確認する。"
+          ],
+          "explain": "中京芝マイルの開催前半。内から中寄りを評価、前目から好位を評価として開催全体の傾向を補足する。"
+        },
+        "middle": {
+          "inside_outside_tendency": "neutral",
+          "front_closer_tendency": "balanced",
+          "features": [
+            "中京芝マイルの開催中盤は、内外は中立を意識する。",
+            "脚質面では脚質は中立。",
+            "直線の坂とコーナー配置から、持続力と加速力の両方を確認する"
+          ],
+          "cautions": [
+            "MeetingBiasは開催全体の傾向であり、DecisionやRaceShapeを直接変更しない。",
+            "当日のTrackBiasと異なる場合は、当日馬場を別レイヤーで確認する。"
+          ],
+          "explain": "中京芝マイルの開催中盤。内外は中立、脚質は中立として開催全体の傾向を補足する。"
+        },
+        "closing": {
+          "inside_outside_tendency": "outside_watch",
+          "front_closer_tendency": "stalk_closer",
+          "features": [
+            "中京芝マイルの開催後半は、外進路に注意を意識する。",
+            "脚質面では好位差しから差しを評価。",
+            "直線の坂とコーナー配置から、持続力と加速力の両方を確認する"
+          ],
+          "cautions": [
+            "MeetingBiasは開催全体の傾向であり、DecisionやRaceShapeを直接変更しない。",
+            "当日のTrackBiasと異なる場合は、当日馬場を別レイヤーで確認する。"
+          ],
+          "explain": "中京芝マイルの開催後半。外進路に注意、好位差しから差しを評価として開催全体の傾向を補足する。"
+        }
+      },
+      "middle": {
+        "opening": {
+          "inside_outside_tendency": "inside_to_neutral",
+          "front_closer_tendency": "front_stalk",
+          "features": [
+            "中京芝中距離の開催前半は、内から中寄りを評価を意識する。",
+            "脚質面では前目から好位を評価。",
+            "直線の坂とコーナー配置から、持続力と加速力の両方を確認する"
+          ],
+          "cautions": [
+            "MeetingBiasは開催全体の傾向であり、DecisionやRaceShapeを直接変更しない。",
+            "当日のTrackBiasと異なる場合は、当日馬場を別レイヤーで確認する。"
+          ],
+          "explain": "中京芝中距離の開催前半。内から中寄りを評価、前目から好位を評価として開催全体の傾向を補足する。"
+        },
+        "middle": {
+          "inside_outside_tendency": "neutral",
+          "front_closer_tendency": "balanced",
+          "features": [
+            "中京芝中距離の開催中盤は、内外は中立を意識する。",
+            "脚質面では脚質は中立。",
+            "直線の坂とコーナー配置から、持続力と加速力の両方を確認する"
+          ],
+          "cautions": [
+            "MeetingBiasは開催全体の傾向であり、DecisionやRaceShapeを直接変更しない。",
+            "当日のTrackBiasと異なる場合は、当日馬場を別レイヤーで確認する。"
+          ],
+          "explain": "中京芝中距離の開催中盤。内外は中立、脚質は中立として開催全体の傾向を補足する。"
+        },
+        "closing": {
+          "inside_outside_tendency": "outside_watch",
+          "front_closer_tendency": "stalk_closer",
+          "features": [
+            "中京芝中距離の開催後半は、外進路に注意を意識する。",
+            "脚質面では好位差しから差しを評価。",
+            "直線の坂とコーナー配置から、持続力と加速力の両方を確認する"
+          ],
+          "cautions": [
+            "MeetingBiasは開催全体の傾向であり、DecisionやRaceShapeを直接変更しない。",
+            "当日のTrackBiasと異なる場合は、当日馬場を別レイヤーで確認する。"
+          ],
+          "explain": "中京芝中距離の開催後半。外進路に注意、好位差しから差しを評価として開催全体の傾向を補足する。"
+        }
+      },
+      "long": {
+        "opening": {
+          "inside_outside_tendency": "inside_to_neutral",
+          "front_closer_tendency": "front_stalk",
+          "features": [
+            "中京芝長距離の開催前半は、内から中寄りを評価を意識する。",
+            "脚質面では前目から好位を評価。",
+            "直線の坂とコーナー配置から、持続力と加速力の両方を確認する"
+          ],
+          "cautions": [
+            "MeetingBiasは開催全体の傾向であり、DecisionやRaceShapeを直接変更しない。",
+            "当日のTrackBiasと異なる場合は、当日馬場を別レイヤーで確認する。"
+          ],
+          "explain": "中京芝長距離の開催前半。内から中寄りを評価、前目から好位を評価として開催全体の傾向を補足する。"
+        },
+        "middle": {
+          "inside_outside_tendency": "neutral",
+          "front_closer_tendency": "balanced",
+          "features": [
+            "中京芝長距離の開催中盤は、内外は中立を意識する。",
+            "脚質面では脚質は中立。",
+            "直線の坂とコーナー配置から、持続力と加速力の両方を確認する"
+          ],
+          "cautions": [
+            "MeetingBiasは開催全体の傾向であり、DecisionやRaceShapeを直接変更しない。",
+            "当日のTrackBiasと異なる場合は、当日馬場を別レイヤーで確認する。"
+          ],
+          "explain": "中京芝長距離の開催中盤。内外は中立、脚質は中立として開催全体の傾向を補足する。"
+        },
+        "closing": {
+          "inside_outside_tendency": "outside_watch",
+          "front_closer_tendency": "stalk_closer",
+          "features": [
+            "中京芝長距離の開催後半は、外進路に注意を意識する。",
+            "脚質面では好位差しから差しを評価。",
+            "直線の坂とコーナー配置から、持続力と加速力の両方を確認する"
+          ],
+          "cautions": [
+            "MeetingBiasは開催全体の傾向であり、DecisionやRaceShapeを直接変更しない。",
+            "当日のTrackBiasと異なる場合は、当日馬場を別レイヤーで確認する。"
+          ],
+          "explain": "中京芝長距離の開催後半。外進路に注意、好位差しから差しを評価として開催全体の傾向を補足する。"
+        }
+      }
+    },
+    "dirt": {
+      "sprint": {
+        "opening": {
+          "inside_outside_tendency": "inside_to_neutral",
+          "front_closer_tendency": "front_stalk",
+          "features": [
+            "中京ダート短距離の開催前半は、内から中寄りを評価を意識する。",
+            "脚質面では前目から好位を評価。",
+            "直線の坂とコーナー配置から、持続力と加速力の両方を確認する"
+          ],
+          "cautions": [
+            "MeetingBiasは開催全体の傾向であり、DecisionやRaceShapeを直接変更しない。",
+            "当日のTrackBiasと異なる場合は、当日馬場を別レイヤーで確認する。"
+          ],
+          "explain": "中京ダート短距離の開催前半。内から中寄りを評価、前目から好位を評価として開催全体の傾向を補足する。"
+        },
+        "middle": {
+          "inside_outside_tendency": "neutral",
+          "front_closer_tendency": "front_stalk",
+          "features": [
+            "中京ダート短距離の開催中盤は、内外は中立を意識する。",
+            "脚質面では前目から好位を評価。",
+            "直線の坂とコーナー配置から、持続力と加速力の両方を確認する"
+          ],
+          "cautions": [
+            "MeetingBiasは開催全体の傾向であり、DecisionやRaceShapeを直接変更しない。",
+            "当日のTrackBiasと異なる場合は、当日馬場を別レイヤーで確認する。"
+          ],
+          "explain": "中京ダート短距離の開催中盤。内外は中立、前目から好位を評価として開催全体の傾向を補足する。"
+        },
+        "closing": {
+          "inside_outside_tendency": "outside_watch",
+          "front_closer_tendency": "front_stalk",
+          "features": [
+            "中京ダート短距離の開催後半は、外進路に注意を意識する。",
+            "脚質面では前目から好位を評価。",
+            "直線の坂とコーナー配置から、持続力と加速力の両方を確認する"
+          ],
+          "cautions": [
+            "MeetingBiasは開催全体の傾向であり、DecisionやRaceShapeを直接変更しない。",
+            "当日のTrackBiasと異なる場合は、当日馬場を別レイヤーで確認する。"
+          ],
+          "explain": "中京ダート短距離の開催後半。外進路に注意、前目から好位を評価として開催全体の傾向を補足する。"
+        }
+      },
+      "mile": {
+        "opening": {
+          "inside_outside_tendency": "inside_to_neutral",
+          "front_closer_tendency": "front_stalk",
+          "features": [
+            "中京ダートマイルの開催前半は、内から中寄りを評価を意識する。",
+            "脚質面では前目から好位を評価。",
+            "直線の坂とコーナー配置から、持続力と加速力の両方を確認する"
+          ],
+          "cautions": [
+            "MeetingBiasは開催全体の傾向であり、DecisionやRaceShapeを直接変更しない。",
+            "当日のTrackBiasと異なる場合は、当日馬場を別レイヤーで確認する。"
+          ],
+          "explain": "中京ダートマイルの開催前半。内から中寄りを評価、前目から好位を評価として開催全体の傾向を補足する。"
+        },
+        "middle": {
+          "inside_outside_tendency": "neutral",
+          "front_closer_tendency": "front_stalk",
+          "features": [
+            "中京ダートマイルの開催中盤は、内外は中立を意識する。",
+            "脚質面では前目から好位を評価。",
+            "直線の坂とコーナー配置から、持続力と加速力の両方を確認する"
+          ],
+          "cautions": [
+            "MeetingBiasは開催全体の傾向であり、DecisionやRaceShapeを直接変更しない。",
+            "当日のTrackBiasと異なる場合は、当日馬場を別レイヤーで確認する。"
+          ],
+          "explain": "中京ダートマイルの開催中盤。内外は中立、前目から好位を評価として開催全体の傾向を補足する。"
+        },
+        "closing": {
+          "inside_outside_tendency": "outside_watch",
+          "front_closer_tendency": "front_stalk",
+          "features": [
+            "中京ダートマイルの開催後半は、外進路に注意を意識する。",
+            "脚質面では前目から好位を評価。",
+            "直線の坂とコーナー配置から、持続力と加速力の両方を確認する"
+          ],
+          "cautions": [
+            "MeetingBiasは開催全体の傾向であり、DecisionやRaceShapeを直接変更しない。",
+            "当日のTrackBiasと異なる場合は、当日馬場を別レイヤーで確認する。"
+          ],
+          "explain": "中京ダートマイルの開催後半。外進路に注意、前目から好位を評価として開催全体の傾向を補足する。"
+        }
+      },
+      "middle": {
+        "opening": {
+          "inside_outside_tendency": "inside_to_neutral",
+          "front_closer_tendency": "front_stalk",
+          "features": [
+            "中京ダート中距離の開催前半は、内から中寄りを評価を意識する。",
+            "脚質面では前目から好位を評価。",
+            "直線の坂とコーナー配置から、持続力と加速力の両方を確認する"
+          ],
+          "cautions": [
+            "MeetingBiasは開催全体の傾向であり、DecisionやRaceShapeを直接変更しない。",
+            "当日のTrackBiasと異なる場合は、当日馬場を別レイヤーで確認する。"
+          ],
+          "explain": "中京ダート1700m前後の開催前半。内から中寄りを評価を確認しつつ、4角で位置を取れる馬と持続力を重視する。"
+        },
+        "middle": {
+          "inside_outside_tendency": "neutral",
+          "front_closer_tendency": "front_stalk",
+          "features": [
+            "中京ダート中距離の開催中盤は、内外は中立を意識する。",
+            "脚質面では前目から好位を評価。",
+            "直線の坂とコーナー配置から、持続力と加速力の両方を確認する"
+          ],
+          "cautions": [
+            "MeetingBiasは開催全体の傾向であり、DecisionやRaceShapeを直接変更しない。",
+            "当日のTrackBiasと異なる場合は、当日馬場を別レイヤーで確認する。"
+          ],
+          "explain": "中京ダート1700m前後の開催中盤。内外は中立を確認しつつ、4角で位置を取れる馬と持続力を重視する。"
+        },
+        "closing": {
+          "inside_outside_tendency": "outside_watch",
+          "front_closer_tendency": "front_stalk",
+          "features": [
+            "中京ダート中距離の開催後半は、外進路に注意を意識する。",
+            "脚質面では前目から好位を評価。",
+            "直線の坂とコーナー配置から、持続力と加速力の両方を確認する"
+          ],
+          "cautions": [
+            "MeetingBiasは開催全体の傾向であり、DecisionやRaceShapeを直接変更しない。",
+            "当日のTrackBiasと異なる場合は、当日馬場を別レイヤーで確認する。"
+          ],
+          "explain": "中京ダート1700m前後の開催後半。外進路に注意を確認しつつ、4角で位置を取れる馬と持続力を重視する。"
+        }
+      },
+      "long": {
+        "opening": {
+          "inside_outside_tendency": "inside_to_neutral",
+          "front_closer_tendency": "front_stalk",
+          "features": [
+            "中京ダート長距離の開催前半は、内から中寄りを評価を意識する。",
+            "脚質面では前目から好位を評価。",
+            "直線の坂とコーナー配置から、持続力と加速力の両方を確認する"
+          ],
+          "cautions": [
+            "MeetingBiasは開催全体の傾向であり、DecisionやRaceShapeを直接変更しない。",
+            "当日のTrackBiasと異なる場合は、当日馬場を別レイヤーで確認する。"
+          ],
+          "explain": "中京ダート長距離の開催前半。内から中寄りを評価、前目から好位を評価として開催全体の傾向を補足する。"
+        },
+        "middle": {
+          "inside_outside_tendency": "neutral",
+          "front_closer_tendency": "front_stalk",
+          "features": [
+            "中京ダート長距離の開催中盤は、内外は中立を意識する。",
+            "脚質面では前目から好位を評価。",
+            "直線の坂とコーナー配置から、持続力と加速力の両方を確認する"
+          ],
+          "cautions": [
+            "MeetingBiasは開催全体の傾向であり、DecisionやRaceShapeを直接変更しない。",
+            "当日のTrackBiasと異なる場合は、当日馬場を別レイヤーで確認する。"
+          ],
+          "explain": "中京ダート長距離の開催中盤。内外は中立、前目から好位を評価として開催全体の傾向を補足する。"
+        },
+        "closing": {
+          "inside_outside_tendency": "outside_watch",
+          "front_closer_tendency": "front_stalk",
+          "features": [
+            "中京ダート長距離の開催後半は、外進路に注意を意識する。",
+            "脚質面では前目から好位を評価。",
+            "直線の坂とコーナー配置から、持続力と加速力の両方を確認する"
+          ],
+          "cautions": [
+            "MeetingBiasは開催全体の傾向であり、DecisionやRaceShapeを直接変更しない。",
+            "当日のTrackBiasと異なる場合は、当日馬場を別レイヤーで確認する。"
+          ],
+          "explain": "中京ダート長距離の開催後半。外進路に注意、前目から好位を評価として開催全体の傾向を補足する。"
+        }
+      }
+    }
+  }
+}

@@ -48,11 +48,11 @@ class TrackConditionSuitabilityEvaluator:
         warnings = []
 
         self._score_same_condition(target_condition, condition_runs, modifiers, reasons, explain_parts)
-        self._score_wet_condition(condition_runs, modifiers, reasons, explain_parts)
-        self._score_firm_only_risk(condition_runs, modifiers, reasons, explain_parts)
+        self._score_wet_condition(target_condition, condition_runs, modifiers, reasons, explain_parts)
+        self._score_firm_only_risk(target_condition, condition_runs, modifiers, reasons, explain_parts)
         self._score_condition_style(target_condition, target_surface, condition_runs, modifiers, reasons, explain_parts)
-        self._score_condition_last_3f(condition_runs, modifiers, reasons, explain_parts)
-        self._score_condition_pci_rpci(condition_runs, modifiers, reasons, explain_parts)
+        self._score_condition_last_3f(target_condition, condition_runs, modifiers, reasons, explain_parts)
+        self._score_condition_pci_rpci(target_condition, condition_runs, modifiers, reasons, explain_parts)
         self._collect_missing_warnings(condition_runs, warnings)
 
         engine = ScoreModifierEngine()
@@ -129,7 +129,10 @@ class TrackConditionSuitabilityEvaluator:
         )
         explain_parts.append(f"同馬場は{len(same_runs)}走、好内容{len(good_runs)}走")
 
-    def _score_wet_condition(self, runs, modifiers, reasons, explain_parts):
+    def _score_wet_condition(self, target_condition, runs, modifiers, reasons, explain_parts):
+        if target_condition not in self.WET_CONDITIONS:
+            return
+
         wet_runs = [
             run for run in runs if self._normalize_condition(run.get("track_condition")) in self.WET_CONDITIONS
         ]
@@ -162,7 +165,10 @@ class TrackConditionSuitabilityEvaluator:
             f"道悪実績は{len(wet_runs)}走、好内容{len(good_wet_runs)}走、着差小{len(close_wet_runs)}走"
         )
 
-    def _score_firm_only_risk(self, runs, modifiers, reasons, explain_parts):
+    def _score_firm_only_risk(self, target_condition, runs, modifiers, reasons, explain_parts):
+        if target_condition not in self.WET_CONDITIONS:
+            return
+
         good_condition_runs = [
             run for run in runs if self._normalize_condition(run.get("track_condition")) == "good"
         ]
@@ -189,6 +195,9 @@ class TrackConditionSuitabilityEvaluator:
             explain_parts.append("良馬場寄りで道悪凡走がある点は割引")
 
     def _score_condition_style(self, target_condition, target_surface, runs, modifiers, reasons, explain_parts):
+        if target_condition not in self.WET_CONDITIONS:
+            return
+
         wet_runs = [
             run for run in runs if self._normalize_condition(run.get("track_condition")) in self.WET_CONDITIONS
         ]
@@ -232,7 +241,10 @@ class TrackConditionSuitabilityEvaluator:
         )
         explain_parts.append(f"馬場と脚質は前目{front_count}回、後方{deep_count}回")
 
-    def _score_condition_last_3f(self, runs, modifiers, reasons, explain_parts):
+    def _score_condition_last_3f(self, target_condition, runs, modifiers, reasons, explain_parts):
+        if target_condition not in self.WET_CONDITIONS:
+            return
+
         wet_runs = [
             run for run in runs if self._normalize_condition(run.get("track_condition")) in self.WET_CONDITIONS
         ]
@@ -260,7 +272,10 @@ class TrackConditionSuitabilityEvaluator:
         )
         explain_parts.append(f"道悪上がりは平均{average:.1f}秒")
 
-    def _score_condition_pci_rpci(self, runs, modifiers, reasons, explain_parts):
+    def _score_condition_pci_rpci(self, target_condition, runs, modifiers, reasons, explain_parts):
+        if target_condition not in self.WET_CONDITIONS:
+            return
+
         wet_runs = [
             run for run in runs if self._normalize_condition(run.get("track_condition")) in self.WET_CONDITIONS
         ]

@@ -1,0 +1,33 @@
+{
+  "racecourse": "template",
+  "source": "manual_template",
+  "meeting_stage": "unknown",
+  "course_rotation": "unknown",
+  "turf_wear": "unknown",
+  "inside_bias": "unknown",
+  "outside_bias": "unknown",
+  "front_bias": "unknown",
+  "closer_bias": "unknown",
+  "speed_bias": "unknown",
+  "stamina_bias": "unknown",
+  "comments": [
+    "MeetingBias template only. No scoring or automatic inference is active."
+  ],
+  "examples": {
+    "opening_turf": {
+      "meeting_stage": "opening",
+      "course_rotation": "A",
+      "turf_wear": "low",
+      "inside_bias": "possible",
+      "front_bias": "possible"
+    },
+    "closing_turf": {
+      "meeting_stage": "closing",
+      "course_rotation": "C_or_D",
+      "turf_wear": "high",
+      "outside_bias": "possible",
+      "closer_bias": "possible",
+      "stamina_bias": "possible"
+    }
+  }
+}

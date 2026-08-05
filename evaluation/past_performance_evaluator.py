@@ -351,16 +351,19 @@ class PastPerformanceEvaluator:
         explain_parts.append(f"上がり3Fは平均{average:.1f}秒")
 
     def _score_pci_rpci(self, runs, modifiers, reasons, explain_parts):
-        pci_values = [self._to_float(run.get("pci")) for run in runs]
-        rpci_values = [self._to_float(run.get("rpci")) for run in runs]
-        pci_values = [value for value in pci_values if value is not None]
-        rpci_values = [value for value in rpci_values if value is not None]
-        if not pci_values and not rpci_values:
+        pairs = []
+        for run in runs:
+            pci = self._to_float(run.get("pci"))
+            rpci = self._to_float(run.get("rpci"))
+            if pci is not None and rpci is not None:
+                pairs.append((pci, rpci))
+
+        if not pairs:
             return
 
         stable_count = 0
-        for index in range(min(len(pci_values), len(rpci_values))):
-            if abs(pci_values[index] - rpci_values[index]) <= 5:
+        for pci, rpci in pairs:
+            if abs(pci - rpci) <= 5:
                 stable_count += 1
 
         score = 0

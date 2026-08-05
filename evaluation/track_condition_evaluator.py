@@ -11,6 +11,16 @@ class TrackConditionEvaluator:
     """馬場状態・馬場傾向からTrack Condition Profileを評価するクラスです。"""
 
     CONDITION_PROFILE_MAP = {
+        "good": ["良馬場巧者"],
+        "良": ["良馬場巧者"],
+        "yielding": ["稍重巧者"],
+        "稍": ["稍重巧者"],
+        "稍重": ["稍重巧者"],
+        "soft": ["重馬場巧者"],
+        "重": ["重馬場巧者"],
+        "heavy": ["不良馬場巧者"],
+        "不": ["不良馬場巧者"],
+        "不良": ["不良馬場巧者"],
         "firm": ["高速決着型"],
         "good": ["良馬場巧者"],
         "良": ["良馬場巧者"],
@@ -118,6 +128,21 @@ class TrackConditionEvaluator:
 
         for profile_name in self.CONDITION_PROFILE_MAP.get(condition, []):
             candidates.append(profile_name)
+
+        actual_condition_profiles = {
+            "good": "良馬場巧者",
+            "良": "良馬場巧者",
+            "yielding": "稍重巧者",
+            "稍": "稍重巧者",
+            "稍重": "稍重巧者",
+            "soft": "重馬場巧者",
+            "重": "重馬場巧者",
+            "heavy": "不良馬場巧者",
+            "不": "不良馬場巧者",
+            "不良": "不良馬場巧者",
+        }
+        if condition in actual_condition_profiles:
+            candidates.append(actual_condition_profiles[condition])
 
         for profile_name in self.BIAS_PROFILE_MAP.get(bias_type, []):
             candidates.append(profile_name)

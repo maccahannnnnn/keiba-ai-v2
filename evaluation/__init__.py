@@ -9,11 +9,15 @@ from .pace_evaluator import PaceEvaluator
 from .pace_style_evaluator import PaceStyleEvaluator
 from .past_performance_evaluator import PastPerformanceEvaluator
 from .race_context_builder import RaceContextBuilder
+from .race_file_locator import RaceFileLocator
 from .score_modifier_engine import ScoreModifierEngine
 from .target_trial_adapter import TargetTrialAdapter
+from .target_result_adapter import TargetResultAdapter
+from .track_bias_result_comparator import TrackBiasResultComparator
 from .track_condition_evaluator import TrackConditionEvaluator
 from .track_condition_suitability_evaluator import TrackConditionSuitabilityEvaluator
 from .trial_analyzer import TrialAnalyzer
+from .trial_batch_runner import TrialBatchRunner
 from .trial_cli import TrialCLI
 from .trial_csv_loader import TrialCSVLoader
 from .trial_horse_analyzer import TrialHorseAnalyzer
@@ -31,11 +35,15 @@ __all__ = [
     "PaceStyleEvaluator",
     "PastPerformanceEvaluator",
     "RaceContextBuilder",
+    "RaceFileLocator",
     "ScoreModifierEngine",
     "TargetTrialAdapter",
+    "TargetResultAdapter",
+    "TrackBiasResultComparator",
     "TrackConditionEvaluator",
     "TrackConditionSuitabilityEvaluator",
     "TrialAnalyzer",
+    "TrialBatchRunner",
     "TrialCLI",
     "TrialCSVLoader",
     "TrialHorseAnalyzer",

@@ -5,7 +5,6 @@ module that reads race-level facts, summarizes the likely race structure, and
 returns context that later engines can reference safely.
 """
 
-
 class RaceStructureEngine:
     """Analyze the whole race structure and return neutral context data."""
 
@@ -341,7 +340,9 @@ class RaceStructureEngine:
             "札幌": "sapporo",
             "新潟": "niigata",
         }
-        return mapping.get(text, text)
+        from evaluation.course_name_normalizer import normalize_course_name
+
+        return normalize_course_name(mapping.get(text, text))
 
     def _normalize_surface(self, value):
         text = self._text(value).lower()

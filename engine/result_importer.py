@@ -6,6 +6,8 @@ trial reports.
 """
 
 import csv
+import re
+import unicodedata
 from pathlib import Path
 
 
@@ -15,6 +17,15 @@ class ResultImporter:
     RESULT_ENCODINGS = ["utf-8-sig", "cp932", "shift_jis"]
 
     COLUMN_ALIASES = {
+        "race_id": ["race_id", "レースID"],
+        "race_date": ["race_date", "開催日", "日付"],
+        "racecourse": ["racecourse", "競馬場"],
+        "race_number": ["race_number", "race_no", "R", "レース番号"],
+        "surface": ["surface", "芝ダート"],
+        "distance": ["distance", "距離"],
+        "track_condition": ["track_condition", "馬場状態"],
+        "frame_number": ["frame_number", "枠番"],
+        "horse_number": ["horse_number", "馬番"],
         "horse_name": ["horse_name", "\u99ac\u540d", "name"],
         "finish_position": ["finish_position", "\u7740\u9806", "\u9806\u4f4d"],
         "official_time": [
@@ -26,7 +37,43 @@ class ResultImporter:
         "margin": ["margin", "\u7740\u5dee"],
         "passing_order": ["passing_order", "corner_positions", "\u901a\u904e\u9806"],
         "last3f": ["last3f", "last_3f", "\u4e0a\u304c\u308a3F", "\u4e0a3F"],
+        "last_3f_rank": ["last_3f_rank", "上がり順位", "上3F順位"],
         "result_note": ["result_note", "\u5099\u8003", "note"],
+    }
+
+    COURSE_MAP = {
+        "札幌": "sapporo",
+        "函館": "hakodate",
+        "福島": "fukushima",
+        "新潟": "niigata",
+        "東京": "tokyo",
+        "中山": "nakayama",
+        "中京": "chukyo",
+        "京都": "kyoto",
+        "阪神": "hanshin",
+        "小倉": "kokura",
+    }
+
+    SURFACE_MAP = {
+        "芝": "turf",
+        "turf": "turf",
+        "Turf": "turf",
+        "ダート": "dirt",
+        "ダ": "dirt",
+        "dirt": "dirt",
+        "Dirt": "dirt",
+    }
+
+    CONDITION_MAP = {
+        "良": "firm",
+        "稍重": "yielding",
+        "重": "soft",
+        "不良": "heavy",
+        "firm": "firm",
+        "good": "good",
+        "yielding": "yielding",
+        "soft": "soft",
+        "heavy": "heavy",
     }
 
     def import_result(
@@ -69,9 +116,17 @@ class ResultImporter:
         if not race_name:
             race_name = self._race_name_from_review(review_record, prediction_snapshot)
 
+        race_meta = self._race_meta_from_rows(horse_results)
         race_result = {
             "prediction_id": prediction_id,
             "race_name": race_name,
+            "race_id": self._race_id_from_rows(horse_results),
+            "race_date": race_meta.get("race_date"),
+            "racecourse": race_meta.get("racecourse"),
+            "race_number": race_meta.get("race_number"),
+            "surface": race_meta.get("surface"),
+            "distance": race_meta.get("distance"),
+            "track_condition": race_meta.get("track_condition"),
             "result_status": status,
             "result_loaded": loaded,
             "horse_results": horse_results,
@@ -79,6 +134,7 @@ class ResultImporter:
 
         return {
             "prediction_id": prediction_id,
+            "race_id": race_result.get("race_id"),
             "result_loaded": loaded,
             "result_status": status,
             "race_result": race_result,
@@ -119,13 +175,37 @@ class ResultImporter:
 
     def _horse_result(self, row):
         item = row if isinstance(row, dict) else {}
+        race_date = self._normalize_date(self._pick(item, "race_date"))
+        racecourse = self._normalize_racecourse(self._pick(item, "racecourse"))
+        race_number = self._normalize_race_number(self._pick(item, "race_number"))
+        surface = self._normalize_surface(self._pick(item, "surface"))
+        corner_positions = self._pick(item, "passing_order") or ""
+        race_id = self._pick(item, "race_id") or self._build_race_id(
+            race_date,
+            racecourse,
+            race_number,
+        )
         return {
-            "horse_name": self._pick(item, "horse_name") or "unknown",
+            "race_id": race_id,
+            "race_date": race_date,
+            "racecourse": racecourse,
+            "race_number": race_number,
+            "surface": surface,
+            "distance": self._to_int(self._pick(item, "distance")),
+            "track_condition": self._normalize_track_condition(self._pick(item, "track_condition")),
+            "frame_number": self._to_int(self._pick(item, "frame_number")),
+            "horse_number": self._to_int(self._pick(item, "horse_number")),
+            "horse_name": self._normalize_name(self._pick(item, "horse_name")) or "unknown",
             "finish_position": self._to_int(self._pick(item, "finish_position")),
             "official_time": self._pick(item, "official_time") or "",
+            "finish_time": self._pick(item, "official_time") or "",
             "margin": self._pick(item, "margin") or "",
-            "passing_order": self._pick(item, "passing_order") or "",
+            "passing_order": corner_positions,
+            "corner_positions": corner_positions,
+            "fourth_corner_position": self._fourth_corner_position(corner_positions),
             "last3f": self._pick(item, "last3f") or "",
+            "last_3f": self._pick(item, "last3f") or "",
+            "last_3f_rank": self._to_int(self._pick(item, "last_3f_rank")),
             "result_note": self._pick(item, "result_note") or "",
         }
 
@@ -143,6 +223,87 @@ class ResultImporter:
             return int(float(str(value).strip()))
         except (TypeError, ValueError):
             return None
+
+    def _normalize_date(self, value):
+        text = str(value or "").strip()
+        digits = "".join(ch for ch in text if ch.isdigit())
+        if len(digits) >= 8:
+            return digits[:8]
+        return text or None
+
+    def _normalize_racecourse(self, value):
+        text = str(value or "").strip()
+        if not text:
+            return None
+        normalized = self.COURSE_MAP.get(text)
+        if normalized:
+            return normalized
+        return text.lower()
+
+    def _normalize_race_number(self, value):
+        text = str(value or "").strip()
+        if not text:
+            return None
+        match = re.search(r"\d+", text)
+        if not match:
+            return text.upper()
+        return f"{int(match.group(0))}R"
+
+    def _normalize_surface(self, value):
+        text = str(value or "").strip()
+        if not text:
+            return None
+        return self.SURFACE_MAP.get(text, text.lower())
+
+    def _normalize_track_condition(self, value):
+        text = str(value or "").strip()
+        if not text:
+            return None
+        return self.CONDITION_MAP.get(text, text.lower())
+
+    def _build_race_id(self, race_date, racecourse, race_number):
+        if race_date and racecourse and race_number:
+            return f"race_{race_date}_{racecourse}_{race_number}"
+        return None
+
+    def _race_id_from_rows(self, rows):
+        for row in rows:
+            if isinstance(row, dict) and row.get("race_id"):
+                return row.get("race_id")
+        return None
+
+    def _race_meta_from_rows(self, rows):
+        meta = {}
+        for row in rows:
+            if not isinstance(row, dict):
+                continue
+            for key in [
+                "race_date",
+                "racecourse",
+                "race_number",
+                "surface",
+                "distance",
+                "track_condition",
+            ]:
+                if key not in meta and row.get(key) not in (None, ""):
+                    meta[key] = row.get(key)
+        return meta
+
+    def _fourth_corner_position(self, value):
+        text = unicodedata.normalize("NFKC", str(value or "")).strip()
+        if not text:
+            return None
+        numbers = re.findall(r"\d+", text)
+        if not numbers:
+            return None
+        try:
+            return int(numbers[-1])
+        except (TypeError, ValueError):
+            return None
+
+    def _normalize_name(self, value):
+        text = unicodedata.normalize("NFKC", str(value or "")).strip()
+        return text.replace(" ", "").replace("　", "")
 
     def _looks_like_horse(self, row):
         return any(alias in row for alias in self.COLUMN_ALIASES["horse_name"])

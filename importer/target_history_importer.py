@@ -38,6 +38,9 @@ class HistoryRun:
     last_3f: str | None = None
     body_weight: str | None = None
     body_weight_diff: str | None = None
+    sire: str | None = None
+    dam: str | None = None
+    broodmare_sire: str | None = None
     pci: str | None = None
     rpci: str | None = None
 
@@ -124,6 +127,9 @@ class TargetHistoryImporter:
             last_3f=self._value(row, "last_3f"),
             body_weight=self._value(row, "body_weight"),
             body_weight_diff=self._value(row, "body_weight_diff"),
+            sire=self._value(row, "sire"),
+            dam=self._value(row, "dam"),
+            broodmare_sire=self._value(row, "broodmare_sire"),
             pci=self._value(row, "pci"),
             rpci=self._value(row, "rpci"),
         )

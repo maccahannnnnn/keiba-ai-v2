@@ -206,6 +206,9 @@ class PaceStyleEvaluator:
         reasons,
         explain_parts,
     ):
+        if not self._is_kokura_dirt_1700(racecourse, surface, distance):
+            return
+
         score_by_style = {
             "escape": 4,
             "front": 8,
@@ -225,6 +228,16 @@ class PaceStyleEvaluator:
         )
         explain_parts.append(
             f"小倉ダ1700m適性は{self.STYLE_LABELS.get(dominant_style)}型として評価"
+        )
+
+    def _is_kokura_dirt_1700(self, racecourse, surface, distance):
+        racecourse_text = str(racecourse or "").strip().lower()
+        surface_text = str(surface or "").strip().lower()
+        distance_value = self._to_int(distance)
+        return (
+            racecourse_text in {"kokura", "小倉"}
+            and surface_text in {"dirt", "ダート", "ダ"}
+            and distance_value == 1700
         )
 
     def _score_positioning(self, corner_runs, modifiers, reasons, explain_parts):

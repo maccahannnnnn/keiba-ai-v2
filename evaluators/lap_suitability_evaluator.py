@@ -75,11 +75,16 @@ class LapSuitabilityEvaluator:
 
         lap_score += self._small_adjustments(horse_lap_style, horse_data, metrics)
         lap_score = self._clamp(lap_score, -10, 10)
+        anxiety_mitigated, mitigation_reasons = self._lap_anxiety_mitigation(
+            lap_score,
+            metrics,
+        )
         lap_comment = self._build_comment(
             lap_score,
             horse_lap_style,
             expected_lap_style,
             horse_reasons,
+            anxiety_mitigated,
         )
 
         return {
@@ -89,6 +94,8 @@ class LapSuitabilityEvaluator:
             "lap_score": lap_score,
             "lap_comment": lap_comment,
             "lap_reasons": horse_reasons,
+            "lap_anxiety_mitigated": anxiety_mitigated,
+            "lap_anxiety_mitigation_reasons": mitigation_reasons,
             "lap_matched": True,
         }
 
@@ -281,10 +288,12 @@ class LapSuitabilityEvaluator:
             "lap_score": 0,
             "lap_comment": self.NEUTRAL_COMMENT,
             "lap_reasons": [self.NEUTRAL_COMMENT],
+            "lap_anxiety_mitigated": False,
+            "lap_anxiety_mitigation_reasons": [],
             "lap_matched": False,
         }
 
-    def _build_comment(self, score, lap_style, expected_lap_style, reasons):
+    def _build_comment(self, score, lap_style, expected_lap_style, reasons, anxiety_mitigated=False):
         style_label = self.STYLE_LABELS.get(lap_style, "判定不能")
         expected_label = self.STYLE_LABELS.get(expected_lap_style, "判定不能")
 
@@ -300,8 +309,28 @@ class LapSuitabilityEvaluator:
             base = f"{expected_label}想定に対してラップ適性は普通"
 
         if reasons:
-            return f"{base}。{reasons[0]}"
+            base = f"{base}。{reasons[0]}"
+        if anxiety_mitigated:
+            return f"{base}。終い性能により一定程度補える可能性がある"
         return base
+
+    def _lap_anxiety_mitigation(self, score, metrics):
+        if score > 0:
+            return False, []
+
+        reasons = []
+        last_3f_values = metrics.get("last_3f_values") or []
+        last_3f_avg = self._average(last_3f_values)
+        last_3f_spread = self._spread(last_3f_values)
+
+        if last_3f_avg is not None and last_3f_avg <= 36.0:
+            reasons.append("過去走平均上がり3Fが良好")
+        if last_3f_avg is not None and last_3f_avg <= 37.0 and last_3f_spread is not None and last_3f_spread <= 1.0:
+            reasons.append("過去走の終い性能が安定")
+        if sum(1 for value in last_3f_values if value <= 36.0) >= 2:
+            reasons.append("上がり性能評価が一定以上")
+
+        return bool(reasons), reasons
 
     def _normalize_pace(self, value):
         text = str(value).strip().lower() if value is not None else "average"

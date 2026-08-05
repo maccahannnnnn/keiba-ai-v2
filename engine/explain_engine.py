@@ -63,6 +63,8 @@ class ExplainEngine:
             "summary": summary,
             "consistency_explanation": consistency_explanation,
             "consistency_summary": consistency_summary,
+            "meeting_bias_comment": item.get("meeting_bias_comment", ""),
+            "meeting_bias_result": item.get("meeting_bias_result", {}),
             "strengths": strengths,
             "weaknesses": weaknesses,
             "risk_factors": risk_factors,
@@ -168,12 +170,27 @@ class ExplainEngine:
         parts = []
         structure_comment = item.get("structure_comment")
         if structure_comment:
-            parts.append(str(structure_comment))
+            parts.append(
+                "【Race Structure】\n"
+                "役割: レース条件と重要評価ポイントの整理\n"
+                f"{structure_comment}"
+            )
+
+        shape_comment = item.get("shape_comment")
+        if shape_comment:
+            parts.append(self._race_shape_layer(item, shape_comment))
+
+        track_bias_comment = item.get("track_bias_comment")
+        race_track_bias = self._race_structure(item).get("track_bias")
+        if track_bias_comment or race_track_bias:
+            parts.append(self._track_bias_layer(item, track_bias_comment))
+
+        meeting_bias_comment = item.get("meeting_bias_comment")
+        if item.get("meeting_bias_ready") and meeting_bias_comment:
+            parts.append(self._meeting_bias_layer(item, meeting_bias_comment))
 
         for key in [
-            "shape_comment",
             "course_shape_comment",
-            "track_bias_comment",
             "lap_comment",
             "weight_comment",
         ]:
@@ -189,6 +206,63 @@ class ExplainEngine:
         if risk_factors:
             parts.append("リスク: " + "、".join(risk_factors))
         return "\n".join(parts)
+
+    def _race_shape_layer(self, item, comment):
+        structure = self._race_structure(item)
+        lines = [
+            "【Race Shape】",
+            "役割: 今回のレース展開予測（ペース・脚質・隊列）",
+        ]
+        pace = structure.get("pace") or item.get("race_pace_prediction")
+        pressure = structure.get("pace_pressure")
+        style = item.get("pace_style")
+        if pace:
+            lines.append(f"想定ペース: {pace}")
+        if pressure:
+            lines.append(f"ペース圧: {pressure}")
+        if style:
+            lines.append(f"対象脚質: {style}")
+        lines.append(f"評価: {comment}")
+        return "\n".join(lines)
+
+    def _track_bias_layer(self, item, comment):
+        structure = self._race_structure(item)
+        lines = [
+            "【Track Bias】",
+            "役割: 当日の馬場傾向（内外・前後・馬場バイアス）",
+        ]
+        track_bias = structure.get("track_bias")
+        if track_bias:
+            lines.append(f"現在値: {track_bias}")
+        if comment:
+            lines.append(f"評価: {comment}")
+        else:
+            lines.append("評価: 当日バイアスは限定的またはneutralとして扱います。")
+        return "\n".join(lines)
+
+    def _meeting_bias_layer(self, item, comment):
+        result = item.get("meeting_bias_result")
+        if not isinstance(result, dict):
+            result = {}
+        meeting_bias = item.get("meeting_bias")
+        if not isinstance(meeting_bias, dict):
+            meeting_bias = result.get("meeting_bias") if isinstance(result.get("meeting_bias"), dict) else {}
+        lines = [
+            "【Meeting Bias】",
+            "役割: 開催全体・コース全体の傾向（開催段階・コース特性・芝/ダート・距離カテゴリ）",
+        ]
+        stage = result.get("selected_meeting_stage") or meeting_bias.get("meeting_stage")
+        surface = result.get("selected_surface") or meeting_bias.get("surface")
+        distance_category = result.get("selected_distance_category") or meeting_bias.get("distance_category")
+        if stage:
+            lines.append(f"開催段階: {stage}")
+        if surface:
+            lines.append(f"surface: {surface}")
+        if distance_category:
+            lines.append(f"距離カテゴリ: {distance_category}")
+        lines.append("注記: RaceShapeと方向が異なる場合も、これは開催全体の傾向として参照します。")
+        lines.append(f"説明: {comment}")
+        return "\n".join(lines)
 
     def _race_structure(self, item):
         value = item.get("race_structure")

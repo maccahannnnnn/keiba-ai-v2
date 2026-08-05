@@ -1,0 +1,3 @@
+race_id,horse_number,actual_finish,actual_top3,actual_top5,valid_result,invalid_result_reason
+race_20260809_tokyo_1R,1,1,True,True,True,
+race_20260809_tokyo_1R,2,5,False,True,True,

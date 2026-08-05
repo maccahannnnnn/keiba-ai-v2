@@ -10,6 +10,12 @@ class RaceDecisionEngine:
     """Create a race-level PLAY / CAUTION / PASS decision."""
 
     SCORE_KEYS = ["adjusted_score", "integrated_score", "weighted_score", "final_score"]
+    ACTIVE_DECISIONS = ("PLAY", "CAUTION", "PASS")
+    FUTURE_DECISIONS = ("PLAY", "SKIP")
+    DECISION_EXTENSION_NOTE = (
+        "SKIP is reserved for future BUY Specification phases and is not emitted "
+        "by the current logic."
+    )
 
     def decide(self, race_context=None, horses=None):
         """Return race_decision_result without mutating horses or scores."""
@@ -26,7 +32,18 @@ class RaceDecisionEngine:
         volatility = self._volatility(stats)
         score, factors, risks = self._score(stats, confidence, complexity, volatility, structure)
 
-        decision = self._decision(score, stats, confidence, complexity, volatility)
+        decision_before_guard = self._decision(score, stats, confidence, complexity, volatility)
+        guard = self._track_bias_play_promotion_guard(
+            context,
+            rows,
+            stats,
+            decision_before_guard,
+            score,
+            confidence,
+            complexity,
+            volatility,
+        )
+        decision = guard.get("race_decision_after_promotion_guard", decision_before_guard)
         level = self._level(score, decision)
         reason = self._reason(decision, confidence, complexity, volatility, factors, risks)
 
@@ -41,6 +58,28 @@ class RaceDecisionEngine:
             "race_complexity": complexity,
             "race_volatility": volatility,
             "race_stats": stats,
+            "baseline_race_decision": guard.get("baseline_race_decision"),
+            "baseline_race_decision_score": guard.get("baseline_race_decision_score"),
+            "baseline_buy_count": guard.get("baseline_buy_count"),
+            "baseline_core_buy_count": guard.get("baseline_core_buy_count"),
+            "baseline_race_complexity": guard.get("baseline_race_complexity"),
+            "baseline_race_volatility": guard.get("baseline_race_volatility"),
+            "baseline_race_confidence": guard.get("baseline_race_confidence"),
+            "race_decision_before_promotion_guard": decision_before_guard,
+            "race_decision_after_promotion_guard": decision,
+            "race_decision_promoted_by_track_bias": guard.get("race_decision_promoted_by_track_bias", False),
+            "play_promoted_by_track_bias": guard.get("play_promoted_by_track_bias", False),
+            "play_promotion_guard_applied": guard.get("play_promotion_guard_applied", False),
+            "play_promotion_guard_reasons": guard.get("play_promotion_guard_reasons", []),
+            "play_promotion_guard_skipped_reason": guard.get("play_promotion_guard_skipped_reason", ""),
+            "core_buy_count": guard.get("core_buy_count", 0),
+            "track_bias_promoted_buy_count": guard.get("track_bias_promoted_buy_count", 0),
+            "guarded_buy_count": guard.get("guarded_buy_count", 0),
+            "complexity_only_promotion": guard.get("complexity_only_promotion", False),
+            "baseline_available": guard.get("baseline_available", False),
+            "active_race_decisions": list(self.ACTIVE_DECISIONS),
+            "future_race_decisions": list(self.FUTURE_DECISIONS),
+            "race_decision_extension_note": self.DECISION_EXTENSION_NOTE,
         }
 
     def _stats(self, rows):
@@ -266,6 +305,140 @@ class RaceDecisionEngine:
         if score < 0.5 or stats["buy_count"] == 0 or volatility == "high":
             return "PASS"
         return "CAUTION"
+
+    def _track_bias_play_promotion_guard(
+        self,
+        context,
+        rows,
+        stats,
+        decision_before_guard,
+        score,
+        confidence,
+        complexity,
+        volatility,
+    ):
+        baseline = context.get("baseline_race_decision_result")
+        manual_active = bool(context.get("manual_track_bias_active"))
+        baseline_decision = ""
+        if isinstance(baseline, dict):
+            baseline_decision = str(baseline.get("race_decision") or "").upper()
+
+        diagnostics = {
+            "baseline_race_decision": baseline_decision or None,
+            "baseline_race_decision_score": self._number_or_none(
+                baseline.get("race_decision_score") if isinstance(baseline, dict) else None
+            ),
+            "baseline_buy_count": self._baseline_stat(baseline, "buy_count"),
+            "baseline_core_buy_count": self._baseline_stat(baseline, "buy_count"),
+            "baseline_race_complexity": baseline.get("race_complexity") if isinstance(baseline, dict) else None,
+            "baseline_race_volatility": baseline.get("race_volatility") if isinstance(baseline, dict) else None,
+            "baseline_race_confidence": baseline.get("race_confidence") if isinstance(baseline, dict) else None,
+            "race_decision_after_promotion_guard": decision_before_guard,
+            "race_decision_promoted_by_track_bias": False,
+            "play_promoted_by_track_bias": False,
+            "play_promotion_guard_applied": False,
+            "play_promotion_guard_reasons": [],
+            "play_promotion_guard_skipped_reason": "",
+            "core_buy_count": self._core_buy_count(rows),
+            "track_bias_promoted_buy_count": self._track_bias_promoted_buy_count(rows),
+            "guarded_buy_count": self._guarded_buy_count(rows),
+            "complexity_only_promotion": False,
+            "baseline_available": bool(isinstance(baseline, dict) and baseline_decision),
+        }
+
+        if not manual_active:
+            diagnostics["play_promotion_guard_skipped_reason"] = "manual_track_bias_inactive"
+            return diagnostics
+        if not diagnostics["baseline_available"]:
+            diagnostics["play_promotion_guard_skipped_reason"] = "baseline_information_unavailable"
+            return diagnostics
+        if baseline_decision == "PLAY":
+            diagnostics["play_promotion_guard_skipped_reason"] = "neutral_race_decision_is_play"
+            return diagnostics
+        if decision_before_guard != "PLAY":
+            diagnostics["play_promotion_guard_skipped_reason"] = "bias_result_is_not_play"
+            return diagnostics
+
+        diagnostics["race_decision_promoted_by_track_bias"] = True
+        diagnostics["play_promoted_by_track_bias"] = True
+        diagnostics["complexity_only_promotion"] = self._complexity_only_promotion(
+            diagnostics,
+            stats,
+            confidence,
+            complexity,
+            volatility,
+        )
+
+        reasons = []
+        if diagnostics["core_buy_count"] == 0:
+            reasons.append("core_buy_count is zero")
+        if diagnostics["complexity_only_promotion"]:
+            reasons.append("complexity improvement is the main promotion factor")
+        if stats.get("buy_count", 0) <= 1 and diagnostics["core_buy_count"] <= 1 and score < 0.85:
+            reasons.append("BUY support is thin and race_decision_score is below 0.85")
+
+        if reasons:
+            diagnostics["race_decision_after_promotion_guard"] = "CAUTION"
+            diagnostics["play_promotion_guard_applied"] = True
+            diagnostics["play_promotion_guard_reasons"] = reasons
+            return diagnostics
+
+        diagnostics["play_promotion_guard_skipped_reason"] = "promotion_supported_by_core_buy_or_score_margin"
+        return diagnostics
+
+    def _baseline_stat(self, baseline, key):
+        if not isinstance(baseline, dict):
+            return None
+        stats = baseline.get("race_stats")
+        if not isinstance(stats, dict):
+            return None
+        return stats.get(key)
+
+    def _core_buy_count(self, rows):
+        count = 0
+        for row in rows:
+            decision = str(row.get("decision") or "").upper()
+            baseline_decision = str(row.get("baseline_decision") or "").upper()
+            if decision != "BUY":
+                continue
+            if baseline_decision == "BUY":
+                count += 1
+                continue
+            if (
+                baseline_decision
+                and not row.get("buy_suppressed")
+                and row.get("guard_skipped_reason") == "top5_rank_improved"
+            ):
+                count += 1
+        return count
+
+    def _track_bias_promoted_buy_count(self, rows):
+        count = 0
+        for row in rows:
+            baseline_decision = str(row.get("baseline_decision") or "").upper()
+            if not baseline_decision or baseline_decision == "BUY":
+                continue
+            if str(row.get("decision") or "").upper() == "BUY" or row.get("buy_suppressed"):
+                count += 1
+        return count
+
+    def _guarded_buy_count(self, rows):
+        return sum(1 for row in rows if row.get("buy_suppressed"))
+
+    def _complexity_only_promotion(self, diagnostics, stats, confidence, complexity, volatility):
+        baseline_buy_count = diagnostics.get("baseline_buy_count")
+        baseline_core_buy_count = diagnostics.get("baseline_core_buy_count")
+        if baseline_buy_count is None or baseline_core_buy_count is None:
+            return False
+        return (
+            diagnostics.get("baseline_race_decision") != "PLAY"
+            and diagnostics.get("baseline_race_complexity") == "high"
+            and complexity in {"medium", "low"}
+            and diagnostics.get("core_buy_count", 0) <= baseline_core_buy_count
+            and stats.get("buy_count", 0) <= baseline_buy_count
+            and confidence == diagnostics.get("baseline_race_confidence")
+            and volatility == diagnostics.get("baseline_race_volatility")
+        )
 
     def _level(self, score, decision):
         if decision == "PASS":

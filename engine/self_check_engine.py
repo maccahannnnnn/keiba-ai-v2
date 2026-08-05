@@ -82,12 +82,12 @@ class SelfCheckEngine:
 
         if race_decision == "PLAY" and buy_count == 0:
             warnings.append("RaceDecisionがPLAYなのにBUY馬ゼロ")
-        if race_decision == "PASS" and buy_count >= 2:
-            warnings.append("RaceDecisionがPASSなのにBUY馬が複数")
+        if race_decision == "PASS" and buy_count >= 1:
+            warnings.append("SELF_CHECK_CONFLICT: RaceDecisionがPASSなのにBUY馬が存在")
         if buy_count == 0:
             warnings.append("BUY馬ゼロ")
         if rows and pass_count == len(rows):
-            warnings.append("PASS馬だけです")
+            warnings.append("全馬PASS")
         if race_confidence == "high" and isinstance(confidence_summary, dict):
             counts = confidence_summary.get("counts", {})
             high_count = counts.get("very_high", 0) + counts.get("high", 0)
@@ -116,7 +116,7 @@ class SelfCheckEngine:
         if passed:
             return "軽微な注意点はありますが、自己チェックは通過しました。"
         if level == "fair":
-            return "評価は利用可能ですが、いくつかの説明不足や矛盾候補があります。"
+            return "評価は利用可能ですが、説明不足または矛盾候補があります。"
         return "危険な評価、説明不足、または判定矛盾が検出されました。"
 
     def _has_critical_warning(self, warnings):
@@ -124,7 +124,8 @@ class SelfCheckEngine:
             "BUYなのにConfidence低",
             "BUYなのにConsistency低",
             "RaceDecisionがPLAYなのにBUY馬ゼロ",
-            "PASS馬だけ",
+            "SELF_CHECK_CONFLICT",
+            "全馬PASS",
             "TopHorseがPASS",
         ]
         return any(any(word in warning for word in critical_words) for warning in warnings)

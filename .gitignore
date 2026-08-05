@@ -2,3 +2,39 @@ __pycache__/
 *.pyc
 reports/*.txt
 !reports/.gitkeep
+
+# Python/test caches and disposable work directories
+.pytest_cache/
+.coverage
+htmlcov/
+reports/test_tmp/
+reports/tmp*/
+reports/**/tmp*/
+reports/**/*_tmp_tests/
+
+# Generated diagnostic/replay outputs (keep locally or in external artifact storage)
+reports/**/*.csv
+reports/**/*.json
+reports/**/*.jsonl
+reports/**/*.md
+reports/**/*.log
+reports/**/*.txt
+reports/historical_replay_current_code/
+reports/ranking_provenance/safety_fix_fixtures/
+reports/ranking_provenance/test_output/
+
+# Historical/raw race assets and generated analysis datasets
+data/**/*.csv
+data/**/*.json
+data/**/*.jsonl
+analysis/**/*.csv
+analysis/**/*.json
+analysis/**/*.jsonl
+analysis/reports/
+
+# Runtime learning state; source code under learning/ remains tracked
+learning/*.json
+learning/*.jsonl
+
+# Local logs
+*.log

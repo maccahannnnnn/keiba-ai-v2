@@ -60,6 +60,7 @@ class ScoreWeightEvaluator:
             comments.append("全体の情報量から標準重みで評価")
 
         weighted_score = self._clean_number(weighted_score)
+        evaluator_provenance = self._build_evaluator_provenance(data, breakdown)
         return {
             "horse_name": data.get("horse_name") or data.get("name"),
             "score_weights": weights,
@@ -69,7 +70,52 @@ class ScoreWeightEvaluator:
             "integrated_score": weighted_score,
             "weighted_score_breakdown": breakdown,
             "consistency_weight_adjustments": consistency_adjustments,
+            "evaluator_provenance": evaluator_provenance,
+            "score_weight_provenance_version": "SWP_V1",
+            "weight_calculation_version": "UNKNOWN_EXISTING_LOGIC",
         }
+
+    def _build_evaluator_provenance(self, data, breakdown):
+        """Copy already-calculated weight evidence without affecting scoring."""
+
+        evaluator_names = {
+            "bloodline_score": "Bloodline",
+            "past_performance_score": "PastPerformance",
+            "pace_style_score": "PaceStyle",
+            "distance_score": "Distance",
+            "track_condition_score": "TrackCondition",
+            "shape_score": "RaceShape",
+            "course_shape_score": "CourseShape",
+            "track_bias_score": "TrackBias",
+            "lap_score": "LapSuitability",
+        }
+        aliases = {
+            "past_performance_score": ("past_performance_score", "past_score"),
+            "pace_style_score": ("pace_style_score", "pace_score"),
+        }
+        rows = []
+        for key in self.SCORE_KEYS:
+            source_field = next(
+                (candidate for candidate in aliases.get(key, (key,))
+                 if self._to_float(data.get(candidate)) is not None),
+                key,
+            )
+            raw_exposed = self._to_float(data.get(source_field)) is not None
+            calculated = breakdown[key]
+            missing = [] if raw_exposed else ["raw_score"]
+            rows.append({
+                "evaluator_name": evaluator_names[key],
+                "raw_score": calculated["raw_score"] if raw_exposed else "",
+                "weight": calculated["weight"],
+                "weighted_contribution": calculated["weighted_value"] if raw_exposed else "",
+                "weight_reason": "",
+                "weight_reason_status": "NOT_EXPOSED",
+                "weight_status": "COMPLETE" if raw_exposed else "TRACE",
+                "missing_fields": missing,
+                "calculation_version": "UNKNOWN_EXISTING_LOGIC",
+                "source_field": source_field,
+            })
+        return rows
 
     def evaluate_many(self, horses=None):
         """Evaluate many horses while preserving input order."""

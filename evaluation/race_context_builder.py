@@ -6,10 +6,15 @@ CSV / Importer / Analyzer / main.py には接続しない独立モジュール�
 """
 
 
+from evaluation.course_name_normalizer import normalize_course_name
+
+
 class RaceContextBuilder:
     """さまざまな入力dictを TrialAnalyzer が使える共通形式へ整えます。"""
 
     RACECOURSE_ALIASES = {
+        "chukyo": "chuukyou",
+        "chuukyou": "chuukyou",
         "札幌": "sapporo",
         "函館": "hakodate",
         "福島": "fukushima",
@@ -142,7 +147,7 @@ class RaceContextBuilder:
         text = self._normalize_text(value)
         if text is None:
             return None
-        return self.RACECOURSE_ALIASES.get(text, text)
+        return normalize_course_name(self.RACECOURSE_ALIASES.get(text, text))
 
     def normalize_pace(self, value):
         """ペース表記を slow / average / fast へ寄せます。"""
