@@ -1,0 +1,17 @@
+{
+  "indexed_artifacts": {
+    "buy_authority_validation.json": "c70b4b94cbbc265462b8cd102d1ef7e222f1688bc5fefd09344477d02afafd0f",
+    "dataset.csv": "02d2471f11c1069ebb264946eacdc55fe3ea673c8812b6d17c8fd973af538b53",
+    "dataset_manifest.json": "98a623a7561af504a3c6e69c7d357eb17e919522aedec8417b648c01e0707c38",
+    "dataset_schema.json": "b12a76f61639e474fc2fb999a4543655064e6b57ddb1ff4a5c9051909b7a6bed",
+    "dataset_summary.json": "cb036a9cb8949e95259d30bf82e27ec7081d4b7d28952fb426d8c0d1ef17af88",
+    "feature_matrix.csv": "d9490b5f6d571efa84817a295f2e509d2dd1c015bf23a074bff2e596cde42603",
+    "feature_schema.json": "10f576bb55a23225c84634a5c79e21fa7f54ee239977d0faf8743042eb31aaa0",
+    "leakage_validation.json": "bbeaa7ec97d88f822c3f23e181a2ab293cb42cffc354983e58bd4c956f85f917",
+    "lineage.json": "6573346a728f9767b8f45e3cebe71ad29b5b254023692d1efbcd4e4f711a76d2",
+    "source_manifest.json": "34cacecde057a36382bd0c5c158850fd5db63b19931a67aae1acb571600f42b0",
+    "target.csv": "54299a445fa53c98d49646320b0bc7a80508079e58c9c9c45b133ac21b849f06",
+    "validation.json": "b4920fbb93a720a0f939587a42f867d4a2d2b0a621b59c0d42df1920bd474286"
+  },
+  "self_hash_excluded": true
+}

@@ -1,0 +1,26 @@
+{
+  "blocking": [],
+  "cf_eligible_race_count": 54,
+  "cf_selected_horse_count": 162,
+  "current_buy_count": 181,
+  "final_status": "MAY_2026_CURRENT_CF_V4_PRE_FROZEN",
+  "independent_review_ready": "YES",
+  "major": [],
+  "may_pre_status": "PASS",
+  "minor": [],
+  "model_fit_count": 0,
+  "p50_race_count": 100,
+  "performance_calculation_count": 0,
+  "prediction_horse_count": 2645,
+  "prediction_race_count": 192,
+  "race_state_counts": {
+    "PLAY_CONVERGED": 100,
+    "PLAY_UNCONVERGED_4PLUS": 54,
+    "SKIP": 38
+  },
+  "result_access_count": 0,
+  "scaler_fit_count": 0,
+  "source_date_count": 10,
+  "source_preflight": "PASS",
+  "v4_eligible_benchmark_race_count": 100
+}

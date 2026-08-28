@@ -1,0 +1,29 @@
+{
+  "current_ai_race_count": 192,
+  "current_ai_roots": [
+    "reports\\may_2026_multi_system_oos_v1\\pre_retry_v5\\current_ai\\20260502",
+    "reports\\may_2026_multi_system_oos_v1\\pre_retry_v5\\current_ai\\20260503",
+    "reports\\may_2026_multi_system_oos_v1\\pre_retry_v5\\current_ai\\20260509",
+    "reports\\may_2026_multi_system_oos_v1\\pre_retry_v5\\current_ai\\20260510",
+    "reports\\may_2026_multi_system_oos_v1\\pre_retry_v5\\current_ai\\20260516",
+    "reports\\may_2026_multi_system_oos_v1\\pre_retry_v5\\current_ai\\20260517",
+    "reports\\may_2026_multi_system_oos_v1\\pre_retry_v5\\current_ai\\20260523",
+    "reports\\may_2026_multi_system_oos_v1\\pre_retry_v5\\current_ai\\20260524",
+    "reports\\may_2026_multi_system_oos_v1\\pre_retry_v5\\current_ai\\20260530",
+    "reports\\may_2026_multi_system_oos_v1\\pre_retry_v5\\current_ai\\20260531"
+  ],
+  "current_buy_count": 181,
+  "dates": [
+    "20260502",
+    "20260503",
+    "20260509",
+    "20260510",
+    "20260516",
+    "20260517",
+    "20260523",
+    "20260524",
+    "20260530",
+    "20260531"
+  ],
+  "horse_count": 2645
+}

@@ -1,0 +1,62 @@
+{
+  "accept_authority": {
+    "allows": [
+      "Production design review",
+      "formal 0-3 BUY policy design"
+    ],
+    "does_not_allow": [
+      "automatic Production adoption",
+      "automatic current BUY replacement",
+      "SKIP override",
+      "UNCONVERGED override",
+      "May retuning/re-evaluation"
+    ],
+    "human_approval_required": true
+  },
+  "action_boundary": {
+    "PLAY_CONVERGED": "Initial V4 evaluation scope",
+    "PLAY_UNCONVERGED_4PLUS": "Existing CF area; no V4 initial Action override",
+    "SKIP": "Existing race gate retained; no V4 initial Action override"
+  },
+  "final_train_usage": "Fit all 2,283 TRAIN rows; no permanent internal validation split",
+  "internal_cv": "NONE",
+  "may_boundary": {
+    "forbidden_after_consumption": [
+      "feature/algo/C/threshold/policy change followed by May re-evaluation"
+    ],
+    "next_independent_evidence": [
+      "March or earlier",
+      "Future Prospective"
+    ],
+    "status_after_aggregate_disclosure": "CONSUMED_OOS",
+    "status_before_access": "UNTOUCHED_INDEPENDENT_OOS"
+  },
+  "model_recipe": {
+    "C": 1.0,
+    "algorithm": "LogisticRegression",
+    "class_weight": null,
+    "feature_selection": null,
+    "hyperparameter_search": null,
+    "penalty": "L2",
+    "resampling": null,
+    "solver": "lbfgs"
+  },
+  "output_semantics": "RAW_MODEL_PROBABILITY = P(actual_top3); no Platt/isotonic/additional calibration",
+  "preprocessing": {
+    "fit_scope": "TRAIN dataset only",
+    "oos_use": "transform only; refit forbidden",
+    "scaler": "StandardScaler"
+  },
+  "sanity_checks_after_future_training": [
+    "solver convergence",
+    "finite coefficients",
+    "finite probabilities",
+    "probabilities within [0,1]",
+    "row/probability alignment",
+    "deterministic reproduction",
+    "non-constant output",
+    "21 transformed columns",
+    "2,283 train rows"
+  ],
+  "train_scope": "Top5 valid all race_state values: PLAY_CONVERGED, PLAY_UNCONVERGED_4PLUS, SKIP"
+}

@@ -211,6 +211,7 @@ class ShadowBUYDecisionEngine:
         candidate = bool(absolute and relative and effective_reliability and risk_guard)
         return {
             "race_id": "",
+            "horse_number": horse.get("horse_number"),
             "horse_name": horse.get("horse_name") or horse.get("name") or "",
             "current_decision": current_decision,
             "shadow_decision": current_decision,

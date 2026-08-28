@@ -1,0 +1,249 @@
+{
+  "dataset_authority": {
+    "negative": 1500,
+    "path": "reports\\ml_v4_buy_selection_dataset_v1",
+    "positive": 783,
+    "sha256": {
+      "dataset": "02d2471f11c1069ebb264946eacdc55fe3ea673c8812b6d17c8fd973af538b53",
+      "dataset_manifest": "98a623a7561af504a3c6e69c7d357eb17e919522aedec8417b648c01e0707c38",
+      "feature_schema": "10f576bb55a23225c84634a5c79e21fa7f54ee239977d0faf8743042eb31aaa0"
+    },
+    "target": "actual_top3",
+    "train_rows": 2283
+  },
+  "evaluation": {
+    "formal_model_gate": {
+      "conditions": [
+        "eligible independent races >= 20",
+        "eligible dates >= 4",
+        "V4_SELECTION_LIFT >= +0.0pt"
+      ],
+      "fail": "V4_MODEL_OOS_REJECT",
+      "operator": "AND",
+      "pass": "V4_MODEL_OOS_ACCEPT"
+    },
+    "lodo": {
+      "rule": "If any leave-one-date-out pooled lift reverses sign and main gate passes, record V4_MODEL_OOS_ACCEPT_WITH_TEMPORAL_FRAGILITY_FLAG. It does not override the main gate.",
+      "status": "PREREGISTERED_DIAGNOSTIC"
+    },
+    "p50_reference_classifier_diagnostic": {
+      "not_a_buy_policy": true,
+      "not_used_for": [
+        "formal ACCEPT/REJECT",
+        "Production adoption",
+        "BUY policy",
+        "May threshold retuning"
+      ],
+      "required_paired_reporting": [
+        "selected horse count",
+        "selected race count",
+        "zero-selection race count",
+        "BUY_TOP3_RATE",
+        "difference from current BUY",
+        "volume change"
+      ],
+      "rule": "P(actual_top3) >= 0.50; max 3 selected; sort by P DESC, shadow_ai_rank ASC, horse_number ASC",
+      "scope": "PLAY_CONVERGED_ONLY",
+      "status": "P50_REFERENCE_CLASSIFIER_DIAGNOSTIC"
+    },
+    "primary_benchmark": {
+      "eligible_race": [
+        "Top5 population exists",
+        "current BUY count N >= 1",
+        "both current and V4 sides have at least one valid_result=true evaluable horse"
+      ],
+      "invalid_result": "valid_result=false is excluded symmetrically; a race with all current BUY invalid is ineligible",
+      "metric": "V4_SELECTION_LIFT = V4 same-volume selected BUY_TOP3_RATE - current BUY_TOP3_RATE, horse-level valid denominator",
+      "name": "CURRENT_BUY_RACE_RESELECTION_BENCHMARK",
+      "scope": "PLAY_CONVERGED_ONLY",
+      "selection": "Within Top5, select exactly N horses by V4 P(actual_top3) DESC",
+      "tie_break": [
+        "P(actual_top3) DESC",
+        "safe shadow_ai_rank ASC",
+        "horse_number ASC"
+      ]
+    },
+    "secondary_diagnostics": [
+      "TOP5_NONBUY_MISSED recovery",
+      "BUY_FALSE_POSITIVE demotion",
+      "race_state composition",
+      "LODO",
+      "P50_REFERENCE_CLASSIFIER_DIAGNOSTIC"
+    ]
+  },
+  "feature_transform": {
+    "boolean": {
+      "absolute_quality_pass": {
+        "false": 0,
+        "other": "FAIL_CLOSED",
+        "true": 1
+      },
+      "effective_reliability_pass": {
+        "false": 0,
+        "other": "FAIL_CLOSED",
+        "true": 1
+      },
+      "relative_advantage_pass": {
+        "false": 0,
+        "other": "FAIL_CLOSED",
+        "true": 1
+      },
+      "risk_guard_pass": {
+        "false": 0,
+        "other": "FAIL_CLOSED",
+        "true": 1
+      }
+    },
+    "categorical": {
+      "race_state": {
+        "allowed_categories": [
+          "PLAY_CONVERGED",
+          "PLAY_UNCONVERGED_4PLUS",
+          "SKIP"
+        ],
+        "dummy_columns_in_order": [
+          "is_PLAY_UNCONVERGED_4PLUS",
+          "is_SKIP"
+        ],
+        "encoding": "one_hot_drop_reference",
+        "ordinal_encoding": "FORBIDDEN",
+        "raw_feature_model_input": "DROP",
+        "reference": "PLAY_CONVERGED",
+        "unknown_category": "FAIL_CLOSED"
+      }
+    },
+    "semantic_feature_count": 20,
+    "semantic_feature_order": [
+      "Ability",
+      "PastPerformance",
+      "Distance",
+      "CourseShape",
+      "LapSuitability",
+      "RaceShape",
+      "PaceStyle",
+      "shadow_ai_rank",
+      "decision_score",
+      "final_score",
+      "adjusted_score",
+      "absolute_quality_pass",
+      "relative_advantage_pass",
+      "effective_reliability_pass",
+      "risk_guard_pass",
+      "consensus_positive_count",
+      "consensus_negative_count",
+      "risk_count",
+      "conflict_count",
+      "race_state"
+    ],
+    "semantic_feature_order_authority": "Training Protocol v2 §Authoritative Semantic Feature Order",
+    "transformed_model_input_column_count": 21,
+    "transformed_model_input_columns": [
+      "Ability",
+      "PastPerformance",
+      "Distance",
+      "CourseShape",
+      "LapSuitability",
+      "RaceShape",
+      "PaceStyle",
+      "shadow_ai_rank",
+      "decision_score",
+      "final_score",
+      "adjusted_score",
+      "absolute_quality_pass",
+      "relative_advantage_pass",
+      "effective_reliability_pass",
+      "risk_guard_pass",
+      "consensus_positive_count",
+      "consensus_negative_count",
+      "risk_count",
+      "conflict_count",
+      "is_PLAY_UNCONVERGED_4PLUS",
+      "is_SKIP"
+    ]
+  },
+  "freeze_validators": {
+    "dataset_sha": "PASS",
+    "encoding": "PASS",
+    "feature_schema_sha": "PASS",
+    "internal_cv_none": "PASS",
+    "lodo": "PASS",
+    "march_or_earlier_access_count": 0,
+    "may_access_count": 0,
+    "model_fit_count": 0,
+    "model_recipe": "PASS",
+    "p50": "PASS",
+    "primary_gate_three_conditions_only": "PASS",
+    "sanity_protocol": "PASS",
+    "scaler_fit_count": 0,
+    "scaler_scope": "PASS",
+    "semantic_features": "PASS",
+    "transformed_input_count": "PASS"
+  },
+  "governance": {
+    "accept_authority": {
+      "allows": [
+        "Production design review",
+        "formal 0-3 BUY policy design"
+      ],
+      "does_not_allow": [
+        "automatic Production adoption",
+        "automatic current BUY replacement",
+        "SKIP override",
+        "UNCONVERGED override",
+        "May retuning/re-evaluation"
+      ],
+      "human_approval_required": true
+    },
+    "action_boundary": {
+      "PLAY_CONVERGED": "Initial V4 evaluation scope",
+      "PLAY_UNCONVERGED_4PLUS": "Existing CF area; no V4 initial Action override",
+      "SKIP": "Existing race gate retained; no V4 initial Action override"
+    },
+    "final_train_usage": "Fit all 2,283 TRAIN rows; no permanent internal validation split",
+    "internal_cv": "NONE",
+    "may_boundary": {
+      "forbidden_after_consumption": [
+        "feature/algo/C/threshold/policy change followed by May re-evaluation"
+      ],
+      "next_independent_evidence": [
+        "March or earlier",
+        "Future Prospective"
+      ],
+      "status_after_aggregate_disclosure": "CONSUMED_OOS",
+      "status_before_access": "UNTOUCHED_INDEPENDENT_OOS"
+    },
+    "model_recipe": {
+      "C": 1.0,
+      "algorithm": "LogisticRegression",
+      "class_weight": null,
+      "feature_selection": null,
+      "hyperparameter_search": null,
+      "penalty": "L2",
+      "resampling": null,
+      "solver": "lbfgs"
+    },
+    "output_semantics": "RAW_MODEL_PROBABILITY = P(actual_top3); no Platt/isotonic/additional calibration",
+    "preprocessing": {
+      "fit_scope": "TRAIN dataset only",
+      "oos_use": "transform only; refit forbidden",
+      "scaler": "StandardScaler"
+    },
+    "sanity_checks_after_future_training": [
+      "solver convergence",
+      "finite coefficients",
+      "finite probabilities",
+      "probabilities within [0,1]",
+      "row/probability alignment",
+      "deterministic reproduction",
+      "non-constant output",
+      "21 transformed columns",
+      "2,283 train rows"
+    ],
+    "train_scope": "Top5 valid all race_state values: PLAY_CONVERGED, PLAY_UNCONVERGED_4PLUS, SKIP"
+  },
+  "protocol_version": "ML_V4_BUY_SELECTION_TRAINING_PROTOCOL_V2",
+  "round1_scope": "Top5 valid all race_state values: PLAY_CONVERGED, PLAY_UNCONVERGED_4PLUS, SKIP",
+  "status": "FROZEN",
+  "supersede_reason": "FEATURE_TRANSFORM_SPEC_CORRECTION",
+  "supersedes": "ML_V4_BUY_SELECTION_TRAINING_PROTOCOL_V1"
+}

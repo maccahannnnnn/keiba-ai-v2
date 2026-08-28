@@ -1,0 +1,74 @@
+{
+  "gates": {
+    "false": 0,
+    "other": "FAIL_CLOSED",
+    "true": 1
+  },
+  "race_state": {
+    "dummies": [
+      "is_PLAY_UNCONVERGED_4PLUS",
+      "is_SKIP"
+    ],
+    "raw_model_input": "DROP",
+    "reference": "PLAY_CONVERGED",
+    "unknown": "FAIL_CLOSED"
+  },
+  "semantic_feature_count": 20,
+  "semantic_feature_order": [
+    "Ability",
+    "PastPerformance",
+    "Distance",
+    "CourseShape",
+    "LapSuitability",
+    "RaceShape",
+    "PaceStyle",
+    "shadow_ai_rank",
+    "decision_score",
+    "final_score",
+    "adjusted_score",
+    "absolute_quality_pass",
+    "relative_advantage_pass",
+    "effective_reliability_pass",
+    "risk_guard_pass",
+    "consensus_positive_count",
+    "consensus_negative_count",
+    "risk_count",
+    "conflict_count",
+    "race_state"
+  ],
+  "source_protocol_v2_sha256": "be8764d425650a067e4ddaca96f2cc52b9dff371c336676e51d52e3eaf502100",
+  "structural_validators": {
+    "duplicate_column_count": 0,
+    "missing_expected_column_count": 0,
+    "pace_style_transformed_present": true,
+    "race_state_dummy_columns_present": true,
+    "raw_race_state_transformed_absent": true,
+    "transformed_order_equality": true,
+    "transformed_set_equality": true,
+    "unexpected_column_count": 0
+  },
+  "transformed_model_input_column_count": 21,
+  "transformed_model_input_columns": [
+    "Ability",
+    "PastPerformance",
+    "Distance",
+    "CourseShape",
+    "LapSuitability",
+    "RaceShape",
+    "PaceStyle",
+    "shadow_ai_rank",
+    "decision_score",
+    "final_score",
+    "adjusted_score",
+    "absolute_quality_pass",
+    "relative_advantage_pass",
+    "effective_reliability_pass",
+    "risk_guard_pass",
+    "consensus_positive_count",
+    "consensus_negative_count",
+    "risk_count",
+    "conflict_count",
+    "is_PLAY_UNCONVERGED_4PLUS",
+    "is_SKIP"
+  ]
+}

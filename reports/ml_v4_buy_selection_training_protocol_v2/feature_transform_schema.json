@@ -1,0 +1,90 @@
+{
+  "boolean": {
+    "absolute_quality_pass": {
+      "false": 0,
+      "other": "FAIL_CLOSED",
+      "true": 1
+    },
+    "effective_reliability_pass": {
+      "false": 0,
+      "other": "FAIL_CLOSED",
+      "true": 1
+    },
+    "relative_advantage_pass": {
+      "false": 0,
+      "other": "FAIL_CLOSED",
+      "true": 1
+    },
+    "risk_guard_pass": {
+      "false": 0,
+      "other": "FAIL_CLOSED",
+      "true": 1
+    }
+  },
+  "categorical": {
+    "race_state": {
+      "allowed_categories": [
+        "PLAY_CONVERGED",
+        "PLAY_UNCONVERGED_4PLUS",
+        "SKIP"
+      ],
+      "dummy_columns_in_order": [
+        "is_PLAY_UNCONVERGED_4PLUS",
+        "is_SKIP"
+      ],
+      "encoding": "one_hot_drop_reference",
+      "ordinal_encoding": "FORBIDDEN",
+      "raw_feature_model_input": "DROP",
+      "reference": "PLAY_CONVERGED",
+      "unknown_category": "FAIL_CLOSED"
+    }
+  },
+  "semantic_feature_count": 20,
+  "semantic_feature_order": [
+    "Ability",
+    "PastPerformance",
+    "Distance",
+    "CourseShape",
+    "LapSuitability",
+    "RaceShape",
+    "PaceStyle",
+    "shadow_ai_rank",
+    "decision_score",
+    "final_score",
+    "adjusted_score",
+    "absolute_quality_pass",
+    "relative_advantage_pass",
+    "effective_reliability_pass",
+    "risk_guard_pass",
+    "consensus_positive_count",
+    "consensus_negative_count",
+    "risk_count",
+    "conflict_count",
+    "race_state"
+  ],
+  "semantic_feature_order_authority": "Training Protocol v2 §Authoritative Semantic Feature Order",
+  "transformed_model_input_column_count": 21,
+  "transformed_model_input_columns": [
+    "Ability",
+    "PastPerformance",
+    "Distance",
+    "CourseShape",
+    "LapSuitability",
+    "RaceShape",
+    "PaceStyle",
+    "shadow_ai_rank",
+    "decision_score",
+    "final_score",
+    "adjusted_score",
+    "absolute_quality_pass",
+    "relative_advantage_pass",
+    "effective_reliability_pass",
+    "risk_guard_pass",
+    "consensus_positive_count",
+    "consensus_negative_count",
+    "risk_count",
+    "conflict_count",
+    "is_PLAY_UNCONVERGED_4PLUS",
+    "is_SKIP"
+  ]
+}

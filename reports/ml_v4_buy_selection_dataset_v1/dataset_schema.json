@@ -1,0 +1,56 @@
+{
+  "audit_only_columns": [
+    "actual_finish",
+    "valid_result"
+  ],
+  "context_columns": [
+    "current_buy",
+    "current_top5",
+    "selection_error_category"
+  ],
+  "dataset_version": "ML_V4_TRAIN_DATASET_V1",
+  "feature_columns": [
+    "shadow_ai_rank",
+    "decision_score",
+    "final_score",
+    "adjusted_score",
+    "absolute_quality_pass",
+    "relative_advantage_pass",
+    "effective_reliability_pass",
+    "risk_guard_pass",
+    "consensus_positive_count",
+    "consensus_negative_count",
+    "risk_count",
+    "conflict_count",
+    "race_state",
+    "Ability",
+    "PastPerformance",
+    "Distance",
+    "CourseShape",
+    "LapSuitability",
+    "RaceShape",
+    "PaceStyle"
+  ],
+  "identity_columns": [
+    "row_id",
+    "date",
+    "race_id",
+    "target_race_key",
+    "horse_number",
+    "horse_name"
+  ],
+  "provenance_columns": [
+    "source_prediction_artifact_path",
+    "source_prediction_artifact_sha256",
+    "source_result_artifact_path",
+    "source_result_artifact_sha256",
+    "source_block",
+    "evidence_role_note",
+    "dataset_version",
+    "split_role"
+  ],
+  "row_identity": "date:race_id:horse_number",
+  "row_order": "date ASC, race_id ASC, horse_number ASC",
+  "split_role": "TRAIN",
+  "target_column": "actual_top3"
+}

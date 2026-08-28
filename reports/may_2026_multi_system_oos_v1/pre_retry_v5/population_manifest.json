@@ -1,0 +1,96 @@
+{
+  "definition": "JRA flat 1-win class or above; newcomer/maiden/jump excluded",
+  "population_scope_id": "PREDICTION_BUY_1WIN_PLUS_FLAT",
+  "preflight": [
+    {
+      "ambiguity_count": 0,
+      "date": "20260502",
+      "de_ds_horse_set": "PASS",
+      "duplicate_race_count": 0,
+      "horse_count": 278,
+      "race_count": 21,
+      "status": "PASS"
+    },
+    {
+      "ambiguity_count": 0,
+      "date": "20260503",
+      "de_ds_horse_set": "PASS",
+      "duplicate_race_count": 0,
+      "horse_count": 298,
+      "race_count": 21,
+      "status": "PASS"
+    },
+    {
+      "ambiguity_count": 0,
+      "date": "20260509",
+      "de_ds_horse_set": "PASS",
+      "duplicate_race_count": 0,
+      "horse_count": 278,
+      "race_count": 21,
+      "status": "PASS"
+    },
+    {
+      "ambiguity_count": 0,
+      "date": "20260510",
+      "de_ds_horse_set": "PASS",
+      "duplicate_race_count": 0,
+      "horse_count": 281,
+      "race_count": 21,
+      "status": "PASS"
+    },
+    {
+      "ambiguity_count": 0,
+      "date": "20260516",
+      "de_ds_horse_set": "PASS",
+      "duplicate_race_count": 0,
+      "horse_count": 250,
+      "race_count": 19,
+      "status": "PASS"
+    },
+    {
+      "ambiguity_count": 0,
+      "date": "20260517",
+      "de_ds_horse_set": "PASS",
+      "duplicate_race_count": 0,
+      "horse_count": 262,
+      "race_count": 20,
+      "status": "PASS"
+    },
+    {
+      "ambiguity_count": 0,
+      "date": "20260523",
+      "de_ds_horse_set": "PASS",
+      "duplicate_race_count": 0,
+      "horse_count": 289,
+      "race_count": 19,
+      "status": "PASS"
+    },
+    {
+      "ambiguity_count": 0,
+      "date": "20260524",
+      "de_ds_horse_set": "PASS",
+      "duplicate_race_count": 0,
+      "horse_count": 307,
+      "race_count": 21,
+      "status": "PASS"
+    },
+    {
+      "ambiguity_count": 0,
+      "date": "20260530",
+      "de_ds_horse_set": "PASS",
+      "duplicate_race_count": 0,
+      "horse_count": 196,
+      "race_count": 14,
+      "status": "PASS"
+    },
+    {
+      "ambiguity_count": 0,
+      "date": "20260531",
+      "de_ds_horse_set": "PASS",
+      "duplicate_race_count": 0,
+      "horse_count": 206,
+      "race_count": 15,
+      "status": "PASS"
+    }
+  ]
+}

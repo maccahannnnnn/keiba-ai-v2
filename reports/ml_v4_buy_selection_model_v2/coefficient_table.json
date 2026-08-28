@@ -1,0 +1,90 @@
+{
+  "coefficients": [
+    {
+      "coefficient": -0.043598098261980404,
+      "feature_name": "Ability"
+    },
+    {
+      "coefficient": 0.2501080815252929,
+      "feature_name": "PastPerformance"
+    },
+    {
+      "coefficient": -0.0005258193726792306,
+      "feature_name": "Distance"
+    },
+    {
+      "coefficient": -0.01558173685644652,
+      "feature_name": "CourseShape"
+    },
+    {
+      "coefficient": -0.07173203555030513,
+      "feature_name": "LapSuitability"
+    },
+    {
+      "coefficient": -0.07264859117273958,
+      "feature_name": "RaceShape"
+    },
+    {
+      "coefficient": -0.07663888217453717,
+      "feature_name": "PaceStyle"
+    },
+    {
+      "coefficient": -0.1783464822287701,
+      "feature_name": "shadow_ai_rank"
+    },
+    {
+      "coefficient": -0.1558600977003107,
+      "feature_name": "decision_score"
+    },
+    {
+      "coefficient": 0.28796587201701057,
+      "feature_name": "final_score"
+    },
+    {
+      "coefficient": -0.273278352601209,
+      "feature_name": "adjusted_score"
+    },
+    {
+      "coefficient": -0.11572747392996247,
+      "feature_name": "absolute_quality_pass"
+    },
+    {
+      "coefficient": -0.011129828469368006,
+      "feature_name": "relative_advantage_pass"
+    },
+    {
+      "coefficient": 0.017837502280352736,
+      "feature_name": "effective_reliability_pass"
+    },
+    {
+      "coefficient": 0.0036835018326210143,
+      "feature_name": "risk_guard_pass"
+    },
+    {
+      "coefficient": 0.04677844932588362,
+      "feature_name": "consensus_positive_count"
+    },
+    {
+      "coefficient": -0.1226373515703023,
+      "feature_name": "consensus_negative_count"
+    },
+    {
+      "coefficient": 0.07495000733025592,
+      "feature_name": "risk_count"
+    },
+    {
+      "coefficient": -0.169024455732714,
+      "feature_name": "conflict_count"
+    },
+    {
+      "coefficient": 0.10499147121713491,
+      "feature_name": "is_PLAY_UNCONVERGED_4PLUS"
+    },
+    {
+      "coefficient": 0.009091647408022489,
+      "feature_name": "is_SKIP"
+    }
+  ],
+  "inspection_only": true,
+  "intercept": -0.6834425219514385
+}

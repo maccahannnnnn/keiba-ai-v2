@@ -1,0 +1,63 @@
+{
+  "MAY_OOS_STATUS": "CONSUMED_INDEPENDENT_OOS_FOR_V4_MODEL_V2",
+  "POST_STATUS": "PASS",
+  "blocking": [],
+  "cf": {
+    "eligible_race_count": 54,
+    "lift": 0.06694381456286219,
+    "pool": {
+      "invalid_result_count": 0,
+      "selected_count": 245,
+      "top3_count": 94,
+      "top3_rate": 0.3836734693877551,
+      "valid_selected_count": 245
+    },
+    "selected": {
+      "invalid_result_count": 0,
+      "selected_count": 162,
+      "top3_count": 73,
+      "top3_rate": 0.4506172839506173,
+      "valid_selected_count": 162
+    }
+  },
+  "current_ai": {
+    "invalid_result_count": 0,
+    "selected_count": 181,
+    "top3_count": 59,
+    "top3_rate": 0.3259668508287293,
+    "valid_selected_count": 181
+  },
+  "major": [],
+  "minor": [],
+  "p50": {
+    "invalid_result_count": 0,
+    "rate_difference_vs_current": -0.15930018416206262,
+    "selected_count": 12,
+    "selected_race_count": 10,
+    "top3_count": 2,
+    "top3_rate": 0.16666666666666666,
+    "valid_selected_count": 12,
+    "volume_difference_vs_current": -169,
+    "zero_selection_race_count": 90
+  },
+  "v4": {
+    "current": {
+      "invalid_result_count": 0,
+      "selected_count": 181,
+      "top3_count": 59,
+      "top3_rate": 0.3259668508287293,
+      "valid_selected_count": 181
+    },
+    "eligible_date_count": 10,
+    "eligible_race_count": 100,
+    "lift": 0.06077348066298344,
+    "selected": {
+      "invalid_result_count": 0,
+      "selected_count": 181,
+      "top3_count": 70,
+      "top3_rate": 0.3867403314917127,
+      "valid_selected_count": 181
+    },
+    "verdict": "V4_MODEL_OOS_ACCEPT"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "dataset_sha256": "02d2471f11c1069ebb264946eacdc55fe3ea673c8812b6d17c8fd973af538b53",
+  "feature_transform_schema_sha256": "678518c4c0534100857a04385b26fe3fbbdce8128cb137cdf0868b9dbc894455",
+  "formal_model_fit_count": 1,
+  "formal_scaler_fit_count": 1,
+  "may_access_count": 0,
+  "model_metadata_v2_sha256": "1f39b8589f0a1962381fdc0b2ad3f5e2bb5a87cabaa0e8585d75172b849b6578",
+  "model_status": "TRAINED_CANDIDATE",
+  "model_v2_sha256": "faab21d7ae16cbd9475a621bf4b592c30cce1358e46e7a5f55ffb34dc46af093",
+  "protocol_v2_sha256": "be8764d425650a067e4ddaca96f2cc52b9dff371c336676e51d52e3eaf502100",
+  "runtime_manifest_sha256": "efd36424206dfd54c16b0517d9832338bbb61f286a1725c2ddde6c69058182a5",
+  "scaler_v2_sha256": "d07201b81f8de215e747fb950269f825e8ea851655d9fedfa5da6d8844a93eaa",
+  "status": "MODEL_V2_FIT_COMPLETE_FREEZE_READY"
+}

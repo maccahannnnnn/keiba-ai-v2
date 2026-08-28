@@ -31,6 +31,11 @@ class PastRace:
     body_weight_diff: int
     sire: str
     dam_sire: str
+    surface: str | None = None
+    margin: float | None = None
+    last_3f: float | None = None
+    pci: float | None = None
+    rpci: float | None = None
 
 
 @dataclass

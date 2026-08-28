@@ -1,0 +1,9 @@
+{
+  "indexed_artifacts": {
+    "python_environment.txt": "e531daaf1bf6b6ece0181ce335584d025eca06122dbae360bf2779e8e1baaf28",
+    "requirements_frozen.txt": "30a9ca043286755020691f7040ff0946c1427aa6fedae9daa04d0239e1998dff",
+    "runtime_manifest.json": "efd36424206dfd54c16b0517d9832338bbb61f286a1725c2ddde6c69058182a5",
+    "runtime_validation.json": "ba33b137a778ba70171f9ccb725154ba90dce527a7f193cbf4df9270f4997302"
+  },
+  "self_hash_excluded": true
+}

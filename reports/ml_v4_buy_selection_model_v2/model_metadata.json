@@ -1,0 +1,36 @@
+{
+  "C": 1.0,
+  "algorithm": "LogisticRegression",
+  "authority_sha256": {
+    "dataset": "02d2471f11c1069ebb264946eacdc55fe3ea673c8812b6d17c8fd973af538b53",
+    "feature_schema": "10f576bb55a23225c84634a5c79e21fa7f54ee239977d0faf8743042eb31aaa0",
+    "protocol": "be8764d425650a067e4ddaca96f2cc52b9dff371c336676e51d52e3eaf502100",
+    "protocol_manifest": "8ebaf317c3d0c916d30ee023f48ff52750d2aeb5dd0ca0ac9e1f8e06f0fac696",
+    "runtime_manifest": "efd36424206dfd54c16b0517d9832338bbb61f286a1725c2ddde6c69058182a5",
+    "runtime_requirements": "30a9ca043286755020691f7040ff0946c1427aa6fedae9daa04d0239e1998dff"
+  },
+  "class_weight": null,
+  "deterministic_reproduction_refit_count": 1,
+  "formal_model_fit_count": 1,
+  "formal_scaler_fit_count": 1,
+  "model": "KeibaAI_V4_BUY_Selection_Model_V2",
+  "model_input_columns": 21,
+  "output": "RAW_MODEL_PROBABILITY=P(actual_top3)",
+  "penalty": "l2",
+  "runtime": {
+    "implementation": "CPython",
+    "joblib": "1.5.3",
+    "numpy": "2.3.5",
+    "python": "3.12.13 (main, Aug  7 2026, 02:26:41) [MSC v.1944 64 bit (AMD64)]",
+    "scikit_learn": "1.9.0",
+    "scipy": "1.18.1"
+  },
+  "semantic_features": 20,
+  "solver": "lbfgs",
+  "target": {
+    "actual_top3_positive": 783,
+    "negative": 1500
+  },
+  "timestamp": "2026-08-27T13:41:29.120055+00:00",
+  "train_rows": 2283
+}

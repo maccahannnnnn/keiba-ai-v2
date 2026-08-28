@@ -1,0 +1,14 @@
+{
+  "april_lineage_status": "April historical evidence role preserved; V4 TRAIN reuse is additive.",
+  "candidate_generation_diagnostic_reference": {
+    "miss": 595,
+    "top5_capture": {
+      "denominator": 1378,
+      "numerator": 783,
+      "rate": 0.5682148040638607
+    }
+  },
+  "existing_april_cf_v3_evidence_status": "RETROSPECTIVE_EXTERNAL_HOLDOUT_UNCHANGED",
+  "may_role": "UNTOUCHED_RESERVE_FUTURE_INDEPENDENT_OOS_CANDIDATE",
+  "v4_train_role": "TRAIN_DEVELOPMENT_ELIGIBLE"
+}

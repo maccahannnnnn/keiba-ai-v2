@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "trace_artifact_roots": [
+    "reports\\may_2026_multi_system_oos_v1\\pre_retry_v5\\current_ai\\20260502",
+    "reports\\may_2026_multi_system_oos_v1\\pre_retry_v5\\current_ai\\20260503",
+    "reports\\may_2026_multi_system_oos_v1\\pre_retry_v5\\current_ai\\20260509",
+    "reports\\may_2026_multi_system_oos_v1\\pre_retry_v5\\current_ai\\20260510",
+    "reports\\may_2026_multi_system_oos_v1\\pre_retry_v5\\current_ai\\20260516",
+    "reports\\may_2026_multi_system_oos_v1\\pre_retry_v5\\current_ai\\20260517",
+    "reports\\may_2026_multi_system_oos_v1\\pre_retry_v5\\current_ai\\20260523",
+    "reports\\may_2026_multi_system_oos_v1\\pre_retry_v5\\current_ai\\20260524",
+    "reports\\may_2026_multi_system_oos_v1\\pre_retry_v5\\current_ai\\20260530",
+    "reports\\may_2026_multi_system_oos_v1\\pre_retry_v5\\current_ai\\20260531"
+  ],
+  "trace_race_count": 192
+}

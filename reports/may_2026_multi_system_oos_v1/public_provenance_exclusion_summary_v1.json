@@ -1,0 +1,42 @@
+{
+  "summary_version": "MAY_2026_PUBLIC_PROVENANCE_EXCLUSION_SUMMARY_V1",
+  "summary_role": "PUBLIC_AUDIT_AID_ONLY_NOT_A_REPLACEMENT_AUTHORITY",
+  "original_evidence_unchanged": true,
+  "semantics_impact": {
+    "model": "NONE",
+    "dataset": "NONE",
+    "training_protocol": "NONE",
+    "result_semantics": "NONE",
+    "gate_verdict": "NONE",
+    "model_artifact": "NONE"
+  },
+  "excluded_original_artifacts": [
+    {
+      "original_artifact_relative_path": "reports/ml_v4_training_runtime_v1/python_environment.txt",
+      "sha256": "e531daaf1bf6b6ece0181ce335584d025eca06122dbae360bf2779e8e1baaf28",
+      "artifact_role": "V4_TRAINING_RUNTIME_ENVIRONMENT_EVIDENCE",
+      "frozen_status": "FROZEN_IMMUTABLE_LOCAL_ORIGINAL",
+      "git_tracking": "EXCLUDED_FROM_PUBLIC_CHECKPOINT",
+      "git_exclusion_reason": "contains environment-specific local absolute-path metadata",
+      "original_evidence_modified": false
+    },
+    {
+      "original_artifact_relative_path": "reports/ml_v4_training_runtime_v1/runtime_manifest.json",
+      "sha256": "efd36424206dfd54c16b0517d9832338bbb61f286a1725c2ddde6c69058182a5",
+      "artifact_role": "V4_TRAINING_RUNTIME_FROZEN_MANIFEST",
+      "frozen_status": "FROZEN_IMMUTABLE_LOCAL_ORIGINAL",
+      "git_tracking": "EXCLUDED_FROM_PUBLIC_CHECKPOINT",
+      "git_exclusion_reason": "contains environment-specific local absolute-path metadata",
+      "original_evidence_modified": false
+    },
+    {
+      "original_artifact_relative_path": "reports/may_2026_multi_system_oos_v1/post_v1/result_source_manifest.json",
+      "sha256": "07df05818518c59467f8ab98fa6ca990b7f8f3d0feb6e5b9eb952cc49895b1c7",
+      "artifact_role": "MAY_2026_POST_RESULT_SOURCE_LINEAGE",
+      "frozen_status": "FROZEN_IMMUTABLE_LOCAL_ORIGINAL",
+      "git_tracking": "EXCLUDED_FROM_PUBLIC_CHECKPOINT",
+      "git_exclusion_reason": "contains environment-specific local absolute-path metadata",
+      "original_evidence_modified": false
+    }
+  ]
+}

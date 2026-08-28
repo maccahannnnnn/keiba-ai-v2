@@ -1,0 +1,16 @@
+{
+  "PLAY_CONVERGED": {
+    "current_ai_and_v4_benchmark": 100
+  },
+  "PLAY_UNCONVERGED_4PLUS": {
+    "current_ai_and_cf_only": 54,
+    "v4_override": 0
+  },
+  "SKIP": {
+    "cf_override": 0,
+    "current_ai_only": 38,
+    "v4_override": 0
+  },
+  "mixed_selection_authority": false,
+  "status": "PASS"
+}

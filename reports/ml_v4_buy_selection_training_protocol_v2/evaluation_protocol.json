@@ -1,0 +1,60 @@
+{
+  "formal_model_gate": {
+    "conditions": [
+      "eligible independent races >= 20",
+      "eligible dates >= 4",
+      "V4_SELECTION_LIFT >= +0.0pt"
+    ],
+    "fail": "V4_MODEL_OOS_REJECT",
+    "operator": "AND",
+    "pass": "V4_MODEL_OOS_ACCEPT"
+  },
+  "lodo": {
+    "rule": "If any leave-one-date-out pooled lift reverses sign and main gate passes, record V4_MODEL_OOS_ACCEPT_WITH_TEMPORAL_FRAGILITY_FLAG. It does not override the main gate.",
+    "status": "PREREGISTERED_DIAGNOSTIC"
+  },
+  "p50_reference_classifier_diagnostic": {
+    "not_a_buy_policy": true,
+    "not_used_for": [
+      "formal ACCEPT/REJECT",
+      "Production adoption",
+      "BUY policy",
+      "May threshold retuning"
+    ],
+    "required_paired_reporting": [
+      "selected horse count",
+      "selected race count",
+      "zero-selection race count",
+      "BUY_TOP3_RATE",
+      "difference from current BUY",
+      "volume change"
+    ],
+    "rule": "P(actual_top3) >= 0.50; max 3 selected; sort by P DESC, shadow_ai_rank ASC, horse_number ASC",
+    "scope": "PLAY_CONVERGED_ONLY",
+    "status": "P50_REFERENCE_CLASSIFIER_DIAGNOSTIC"
+  },
+  "primary_benchmark": {
+    "eligible_race": [
+      "Top5 population exists",
+      "current BUY count N >= 1",
+      "both current and V4 sides have at least one valid_result=true evaluable horse"
+    ],
+    "invalid_result": "valid_result=false is excluded symmetrically; a race with all current BUY invalid is ineligible",
+    "metric": "V4_SELECTION_LIFT = V4 same-volume selected BUY_TOP3_RATE - current BUY_TOP3_RATE, horse-level valid denominator",
+    "name": "CURRENT_BUY_RACE_RESELECTION_BENCHMARK",
+    "scope": "PLAY_CONVERGED_ONLY",
+    "selection": "Within Top5, select exactly N horses by V4 P(actual_top3) DESC",
+    "tie_break": [
+      "P(actual_top3) DESC",
+      "safe shadow_ai_rank ASC",
+      "horse_number ASC"
+    ]
+  },
+  "secondary_diagnostics": [
+    "TOP5_NONBUY_MISSED recovery",
+    "BUY_FALSE_POSITIVE demotion",
+    "race_state composition",
+    "LODO",
+    "P50_REFERENCE_CLASSIFIER_DIAGNOSTIC"
+  ]
+}

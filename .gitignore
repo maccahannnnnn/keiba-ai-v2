@@ -38,3 +38,77 @@ learning/*.jsonl
 
 # Local logs
 *.log
+
+# Local environments and local assistant settings
+.venv_keibaai_ml_v4/
+.claude/settings.json
+
+# Local inaccessible/temp directory
+tmpz4uj1ulk/
+
+# Secrets and certificates
+.env
+.env.*
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Immutable V4 Model v2 checkpoint evidence (intentionally narrow exceptions)
+!reports/ml_v4_buy_selection_model_v2/artifact_hashes.json
+!reports/ml_v4_buy_selection_model_v2/model_metadata.json
+!reports/ml_v4_buy_selection_model_v2/training_manifest.json
+!reports/ml_v4_buy_selection_model_v2/training_validation.json
+!reports/ml_v4_buy_selection_model_v2/feature_transform_schema.json
+!reports/ml_v4_buy_selection_model_v2/coefficient_table.json
+!reports/ml_v4_buy_selection_model_v2/model.joblib
+!reports/ml_v4_buy_selection_model_v2/scaler.joblib
+
+# Immutable V4 Training Protocol v2 checkpoint evidence
+!reports/ml_v4_buy_selection_training_protocol_v2/artifact_hashes.json
+!reports/ml_v4_buy_selection_training_protocol_v2/evaluation_protocol.json
+!reports/ml_v4_buy_selection_training_protocol_v2/feature_transform_schema.json
+!reports/ml_v4_buy_selection_training_protocol_v2/governance_boundary.json
+!reports/ml_v4_buy_selection_training_protocol_v2/protocol_correction_record.json
+!reports/ml_v4_buy_selection_training_protocol_v2/protocol_manifest.json
+!reports/ml_v4_buy_selection_training_protocol_v2/training_protocol.json
+!reports/ml_v4_buy_selection_training_protocol_v2/training_protocol.md
+
+# Immutable V4 runtime checkpoint evidence
+!reports/ml_v4_training_runtime_v1/artifact_hashes.json
+!reports/ml_v4_training_runtime_v1/requirements_frozen.txt
+!reports/ml_v4_training_runtime_v1/runtime_validation.json
+
+# Immutable V4 dataset provenance; raw matrices remain ignored
+!reports/ml_v4_buy_selection_dataset_v1/artifact_hashes.json
+!reports/ml_v4_buy_selection_dataset_v1/dataset_manifest.json
+!reports/ml_v4_buy_selection_dataset_v1/dataset_schema.json
+!reports/ml_v4_buy_selection_dataset_v1/feature_schema.json
+!reports/ml_v4_buy_selection_dataset_v1/lineage.json
+!reports/ml_v4_buy_selection_dataset_v1/source_manifest.json
+!reports/ml_v4_buy_selection_dataset_v1/validation.json
+
+# Lightweight May 2026 PRE v5 freeze evidence; per-race predictions remain ignored
+!reports/may_2026_multi_system_oos_v1/pre_retry_v5/artifact_hashes.json
+!reports/may_2026_multi_system_oos_v1/pre_retry_v5/buy_gate_trace_manifest.json
+!reports/may_2026_multi_system_oos_v1/pre_retry_v5/population_manifest.json
+!reports/may_2026_multi_system_oos_v1/pre_retry_v5/pre_freeze_manifest.json
+!reports/may_2026_multi_system_oos_v1/pre_retry_v5/prediction_manifest.json
+!reports/may_2026_multi_system_oos_v1/pre_retry_v5/safety.json
+!reports/may_2026_multi_system_oos_v1/pre_retry_v5/scope_separation_validation.json
+!reports/may_2026_multi_system_oos_v1/pre_retry_v5/source_manifest.json
+!reports/may_2026_multi_system_oos_v1/pre_retry_v5/v4_feature_validation.json
+!reports/may_2026_multi_system_oos_v1/pre_retry_v5/v4_inference_manifest.json
+
+# Lightweight May 2026 POST v1 final evidence
+!reports/may_2026_multi_system_oos_v1/post_v1/artifact_hashes.json
+!reports/may_2026_multi_system_oos_v1/post_v1/current_ai_evaluation.json
+!reports/may_2026_multi_system_oos_v1/post_v1/final_report.json
+!reports/may_2026_multi_system_oos_v1/post_v1/final_report.md
+!reports/may_2026_multi_system_oos_v1/post_v1/may_oos_consumption_record.json
+!reports/may_2026_multi_system_oos_v1/post_v1/result_join_manifest.json
+!reports/may_2026_multi_system_oos_v1/post_v1/safety.json
+!reports/may_2026_multi_system_oos_v1/post_v1/v4_gate_decision.json
+
+# Public-only index for immutable local evidence intentionally excluded from Git
+!reports/may_2026_multi_system_oos_v1/public_provenance_exclusion_summary_v1.json

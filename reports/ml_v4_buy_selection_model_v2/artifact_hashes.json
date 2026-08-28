@@ -1,0 +1,15 @@
+{
+  "indexed_artifacts": {
+    "coefficient_table.json": "845d44e230c61b2d5960d835ac7a951b3ffe73130679abb98d2f1ca94cb2d43b",
+    "feature_transform_schema.json": "678518c4c0534100857a04385b26fe3fbbdce8128cb137cdf0868b9dbc894455",
+    "governance_boundary.json": "6f0ffe4b1e32cc38fac73db33d854500f3b831146bae45a28e43727f5b206a68",
+    "model.joblib": "faab21d7ae16cbd9475a621bf4b592c30cce1358e46e7a5f55ffb34dc46af093",
+    "model_correction_lineage.json": "4ed9753b5eb17579e8f2c8fd14471a3ff33238c9a93854942751600157966e88",
+    "model_metadata.json": "1f39b8589f0a1962381fdc0b2ad3f5e2bb5a87cabaa0e8585d75172b849b6578",
+    "model_output_schema.json": "894f6acc21eea25908f8a7c9b3c2587501a755f0317ceab7aebeacec65eca747",
+    "scaler.joblib": "d07201b81f8de215e747fb950269f825e8ea851655d9fedfa5da6d8844a93eaa",
+    "training_manifest.json": "ffe04d1ec46d513fc67b0c3876e0218e23ae32e7eec1ee1ce6c0c504cf712bb5",
+    "training_validation.json": "3c415d69423ff5030e8d34faa53a03623ae689ef7f2abc53ee74403e740040e8"
+  },
+  "self_hash_excluded": true
+}

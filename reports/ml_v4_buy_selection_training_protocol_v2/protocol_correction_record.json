@@ -1,0 +1,36 @@
+{
+  "bug": {
+    "pace_style": "omitted from v1 transformed input",
+    "raw_race_state": "retained in v1 transformed input"
+  },
+  "discovery_stage": "POST_TRAIN_PRE_OOS_INDEPENDENT_REVIEW",
+  "expected": {
+    "pace_style": "retained",
+    "raw_race_state": "replaced by is_PLAY_UNCONVERGED_4PLUS and is_SKIP"
+  },
+  "may_access_count": 0,
+  "mechanical_correction_only": true,
+  "model_v1_artifact_mutation": 0,
+  "model_v1_status": "FREEZE_REJECT_DUE_TO_SUPERSEDED_PROTOCOL",
+  "non_feature_protocol_change_count": 0,
+  "oos_contamination": "NO",
+  "performance_disclosure_count": 0,
+  "protocol_v1_status": "SUPERSEDED_DUE_TO_FEATURE_TRANSFORM_SPEC_ERROR",
+  "reason": "FEATURE_TRANSFORM_SPEC_CORRECTION",
+  "status": "PASS",
+  "supersedes": "training_protocol_v1",
+  "validators": {
+    "duplicate_column_count": 0,
+    "missing_expected_column_count": 0,
+    "pace_style_semantic_present": true,
+    "pace_style_transformed_present": true,
+    "race_state_dummy_columns_present": true,
+    "raw_race_state_semantic_present": true,
+    "raw_race_state_transformed_absent": true,
+    "semantic_feature_count": true,
+    "transformed_model_input_count": true,
+    "transformed_order_equality": true,
+    "transformed_set_equality": true,
+    "unexpected_column_count": 0
+  }
+}

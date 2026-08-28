@@ -1,0 +1,3710 @@
+{
+  "inference": [
+    {
+      "date": "20260502",
+      "probabilities": [
+        {
+          "horse_name": "シルバーレシオ",
+          "horse_number": 4,
+          "probability": 0.495578292200214,
+          "shadow_ai_rank": 2.0
+        },
+        {
+          "horse_name": "ケイアイアギト",
+          "horse_number": 2,
+          "probability": 0.42765814072068736,
+          "shadow_ai_rank": 3.0
+        },
+        {
+          "horse_name": "ガウラディスコ",
+          "horse_number": 3,
+          "probability": 0.36989783021099953,
+          "shadow_ai_rank": 1.0
+        },
+        {
+          "horse_name": "シャローファースト",
+          "horse_number": 8,
+          "probability": 0.36553375518392145,
+          "shadow_ai_rank": 4.0
+        },
+        {
+          "horse_name": "ヴィエントデコラ",
+          "horse_number": 6,
+          "probability": 0.34431972341741784,
+          "shadow_ai_rank": 5.0
+        }
+      ],
+      "race_id": "race_20260502_kyoto_11R",
+      "race_state": "PLAY_CONVERGED"
+    },
+    {
+      "date": "20260502",
+      "probabilities": [
+        {
+          "horse_name": "ヤエギリ",
+          "horse_number": 5,
+          "probability": 0.47436153583587737,
+          "shadow_ai_rank": 3.0
+        },
+        {
+          "horse_name": "ペールノエル",
+          "horse_number": 9,
+          "probability": 0.45371710984113184,
+          "shadow_ai_rank": 1.0
+        },
+        {
+          "horse_name": "ダノンクロム",
+          "horse_number": 6,
+          "probability": 0.452693301436831,
+          "shadow_ai_rank": 4.0
+        },
+        {
+          "horse_name": "ミッキースターダム",
+          "horse_number": 4,
+          "probability": 0.27257583986784256,
+          "shadow_ai_rank": 2.0
+        },
+        {
+          "horse_name": "ギザキズラヴ",
+          "horse_number": 3,
+          "probability": 0.15630382451607777,
+          "shadow_ai_rank": 5.0
+        }
+      ],
+      "race_id": "race_20260502_kyoto_12R",
+      "race_state": "PLAY_CONVERGED"
+    },
+    {
+      "date": "20260502",
+      "probabilities": [
+        {
+          "horse_name": "アロマフェリス",
+          "horse_number": 11,
+          "probability": 0.4966458596096513,
+          "shadow_ai_rank": 1.0
+        },
+        {
+          "horse_name": "シュドゥン",
+          "horse_number": 7,
+          "probability": 0.4452066820522667,
+          "shadow_ai_rank": 2.0
+        },
+        {
+          "horse_name": "アリストクラシア",
+          "horse_number": 4,
+          "probability": 0.4290917247027568,
+          "shadow_ai_rank": 4.0
+        },
+        {
+          "horse_name": "バシリス",
+          "horse_number": 6,
+          "probability": 0.3535438595478099,
+          "shadow_ai_rank": 5.0
+        },
+        {
+          "horse_name": "ラテライト",
+          "horse_number": 3,
+          "probability": 0.31271480847921784,
+          "shadow_ai_rank": 3.0
+        }
+      ],
+      "race_id": "race_20260502_kyoto_6R",
+      "race_state": "PLAY_CONVERGED"
+    },
+    {
+      "date": "20260502",
+      "probabilities": [
+        {
+          "horse_name": "マイネルフルムーン",
+          "horse_number": 4,
+          "probability": 0.31832495193368326,
+          "shadow_ai_rank": 3.0
+        },
+        {
+          "horse_name": "ラブリーリディア",
+          "horse_number": 14,
+          "probability": 0.2740533163554736,
+          "shadow_ai_rank": 1.0
+        },
+        {
+          "horse_name": "コンフォルツァ",
+          "horse_number": 15,
+          "probability": 0.22965159006279365,
+          "shadow_ai_rank": 2.0
+        },
+        {
+          "horse_name": "エンジェルマーク",
+          "horse_number": 11,
+          "probability": 0.19199574282193763,
+          "shadow_ai_rank": 5.0
+        },
+        {
+          "horse_name": "ジャルディニエ",
+          "horse_number": 13,
+          "probability": 0.15288853506611585,
+          "shadow_ai_rank": 4.0
+        }
+      ],
+      "race_id": "race_20260502_niigata_10R",
+      "race_state": "PLAY_CONVERGED"
+    },
+    {
+      "date": "20260502",
+      "probabilities": [
+        {
+          "horse_name": "エルフストラック",
+          "horse_number": 12,
+          "probability": 0.457615468873911,
+          "shadow_ai_rank": 2.0
+        },
+        {
+          "horse_name": "エリカサファイア",
+          "horse_number": 8,
+          "probability": 0.304277323134348,
+          "shadow_ai_rank": 1.0
+        },
+        {
+          "horse_name": "ゴールドアローン",
+          "horse_number": 7,
+          "probability": 0.24109188731191447,
+          "shadow_ai_rank": 5.0
+        },
+        {
+          "horse_name": "ウィンターダフネ",
+          "horse_number": 13,
+          "probability": 0.2358454294657857,
+          "shadow_ai_rank": 3.0
+        },
+        {
+          "horse_name": "ドゥラリス",
+          "horse_number": 11,
+          "probability": 0.14626851709711958,
+          "shadow_ai_rank": 4.0
+        }
+      ],
+      "race_id": "race_20260502_niigata_11R",
+      "race_state": "PLAY_CONVERGED"
+    },
+    {
+      "date": "20260502",
+      "probabilities": [
+        {
+          "horse_name": "レッドイステル",
+          "horse_number": 1,
+          "probability": 0.4699952489566792,
+          "shadow_ai_rank": 2.0
+        },
+        {
+          "horse_name": "リュミナーズ",
+          "horse_number": 12,
+          "probability": 0.3717454827451088,
+          "shadow_ai_rank": 1.0
+        },
+        {
+          "horse_name": "コスモフレディ",
+          "horse_number": 5,
+          "probability": 0.3189333985869937,
+          "shadow_ai_rank": 3.0
+        },
+        {
+          "horse_name": "ビリングス",
+          "horse_number": 10,
+          "probability": 0.301337557493762,
+          "shadow_ai_rank": 4.0
+        },
+        {
+          "horse_name": "ヴィーデ",
+          "horse_number": 15,
+          "probability": 0.16359113662037283,
+          "shadow_ai_rank": 5.0
+        }
+      ],
+      "race_id": "race_20260502_niigata_7R",
+      "race_state": "PLAY_CONVERGED"
+    },
+    {
+      "date": "20260502",
+      "probabilities": [
+        {
+          "horse_name": "サンデースマッシュ",
+          "horse_number": 10,
+          "probability": 0.5112445836262643,
+          "shadow_ai_rank": 3.0
+        },
+        {
+          "horse_name": "グロリアスマーチ",
+          "horse_number": 15,
+          "probability": 0.5104784362822048,
+          "shadow_ai_rank": 1.0
+        },
+        {
+          "horse_name": "タイキプレジール",
+          "horse_number": 18,
+          "probability": 0.4379370790148946,
+          "shadow_ai_rank": 2.0
+        },
+        {
+          "horse_name": "レオアジャイル",
+          "horse_number": 6,
+          "probability": 0.39891579201808985,
+          "shadow_ai_rank": 5.0
+        },
+        {
+          "horse_name": "シャルトル",
+          "horse_number": 5,
+          "probability": 0.3538156866635724,
+          "shadow_ai_rank": 4.0
+        }
+      ],
+      "race_id": "race_20260502_tokyo_5R",
+      "race_state": "PLAY_CONVERGED"
+    },
+    {
+      "date": "20260502",
+      "probabilities": [
+        {
+          "horse_name": "ノクターン",
+          "horse_number": 6,
+          "probability": 0.45501786333724015,
+          "shadow_ai_rank": 1.0
+        },
+        {
+          "horse_name": "リポサンテ",
+          "horse_number": 7,
+          "probability": 0.3844335727159308,
+          "shadow_ai_rank": 2.0
+        },
+        {
+          "horse_name": "ポッポノフェスタ",
+          "horse_number": 3,
+          "probability": 0.3369065713018008,
+          "shadow_ai_rank": 3.0
+        },
+        {
+          "horse_name": "オプレントジュエル",
+          "horse_number": 4,
+          "probability": 0.33422810203475706,
+          "shadow_ai_rank": 4.0
+        },
+        {
+          "horse_name": "チャイボーグ",
+          "horse_number": 2,
+          "probability": 0.18039697382265057,
+          "shadow_ai_rank": 5.0
+        }
+      ],
+      "race_id": "race_20260502_tokyo_6R",
+      "race_state": "PLAY_CONVERGED"
+    },
+    {
+      "date": "20260502",
+      "probabilities": [
+        {
+          "horse_name": "ドリーミングアップ",
+          "horse_number": 15,
+          "probability": 0.3720493660806371,
+          "shadow_ai_rank": 1.0
+        },
+        {
+          "horse_name": "キョウエイスレーヴ",
+          "horse_number": 12,
+          "probability": 0.3187640813467791,
+          "shadow_ai_rank": 2.0
+        },
+        {
+          "horse_name": "トウタツ",
+          "horse_number": 8,
+          "probability": 0.27682107089318503,
+          "shadow_ai_rank": 5.0
+        },
+        {
+          "horse_name": "リプレゼント",
+          "horse_number": 2,
+          "probability": 0.24464329568144014,
+          "shadow_ai_rank": 3.0
+        },
+        {
+          "horse_name": "キングクレオール",
+          "horse_number": 7,
+          "probability": 0.14073944682944417,
+          "shadow_ai_rank": 4.0
+        }
+      ],
+      "race_id": "race_20260502_tokyo_7R",
+      "race_state": "PLAY_CONVERGED"
+    },
+    {
+      "date": "20260502",
+      "probabilities": [
+        {
+          "horse_name": "アカデミア",
+          "horse_number": 14,
+          "probability": 0.4844214903337309,
+          "shadow_ai_rank": 2.0
+        },
+        {
+          "horse_name": "ダカラフェスティヴ",
+          "horse_number": 3,
+          "probability": 0.3411584438343573,
+          "shadow_ai_rank": 3.0
+        },
+        {
+          "horse_name": "タイセイアディクト",
+          "horse_number": 1,
+          "probability": 0.34113414439158685,
+          "shadow_ai_rank": 1.0
+        },
+        {
+          "horse_name": "パカーラン",
+          "horse_number": 4,
+          "probability": 0.32675413925277663,
+          "shadow_ai_rank": 5.0
+        },
+        {
+          "horse_name": "マテンロウガイ",
+          "horse_number": 6,
+          "probability": 0.2985846706928807,
+          "shadow_ai_rank": 4.0
+        }
+      ],
+      "race_id": "race_20260502_tokyo_9R",
+      "race_state": "PLAY_CONVERGED"
+    },
+    {
+      "date": "20260503",
+      "probabilities": [
+        {
+          "horse_name": "トーラスシャイン",
+          "horse_number": 15,
+          "probability": 0.38432170586832193,
+          "shadow_ai_rank": 4.0
+        },
+        {
+          "horse_name": "レッドエヴァンス",
+          "horse_number": 4,
+          "probability": 0.2762179947883004,
+          "shadow_ai_rank": 1.0
+        },
+        {
+          "horse_name": "エヴァンスウィート",
+          "horse_number": 14,
+          "probability": 0.2737594180914387,
+          "shadow_ai_rank": 2.0
+        },
+        {
+          "horse_name": "アンビバレント",
+          "horse_number": 7,
+          "probability": 0.20374841493050672,
+          "shadow_ai_rank": 5.0
+        },
+        {
+          "horse_name": "タガノシャーンス",
+          "horse_number": 13,
+          "probability": 0.1581707094398261,
+          "shadow_ai_rank": 3.0
+        }
+      ],
+      "race_id": "race_20260503_kyoto_10R",
+      "race_state": "PLAY_CONVERGED"
+    },
+    {
+      "date": "20260503",
+      "probabilities": [
+        {
+          "horse_name": "ヘデントール",
+          "horse_number": 12,
+          "probability": 0.3881300888218331,
+          "shadow_ai_rank": 2.0
+        },
+        {
+          "horse_name": "アクアヴァーナル",
+          "horse_number": 4,
+          "probability": 0.36493521067185986,
+          "shadow_ai_rank": 3.0
+        },
+        {
+          "horse_name": "マイネルカンパーナ",
+          "horse_number": 10,
+          "probability": 0.3302347815247266,
+          "shadow_ai_rank": 4.0
+        },
+        {
+          "horse_name": "ヴェルテンベルク",
+          "horse_number": 15,
+          "probability": 0.2850211588604129,
+          "shadow_ai_rank": 1.0
+        },
+        {
+          "horse_name": "プレシャスデイ",
+          "horse_number": 9,
+          "probability": 0.1713283256258672,
+          "shadow_ai_rank": 5.0
+        }
+      ],
+      "race_id": "race_20260503_kyoto_11R",
+      "race_state": "PLAY_CONVERGED"
+    },
+    {
+      "date": "20260503",
+      "probabilities": [
+        {
+          "horse_name": "マッシャーブルム",
+          "horse_number": 14,
+          "probability": 0.4470322139417405,
+          "shadow_ai_rank": 4.0
+        },
+        {
+          "horse_name": "スニーカースキル",
+          "horse_number": 10,
+          "probability": 0.3900849241650513,
+          "shadow_ai_rank": 1.0
+        },
+        {
+          "horse_name": "ヤマニンアストロン",
+          "horse_number": 16,
+          "probability": 0.2381353996272709,
+          "shadow_ai_rank": 2.0
+        },
+        {
+          "horse_name": "サンダーバース",
+          "horse_number": 8,
+          "probability": 0.22633925920182998,
+          "shadow_ai_rank": 3.0
+        },
+        {
+          "horse_name": "トラペジスト",
+          "horse_number": 12,
+          "probability": 0.15757251939732234,
+          "shadow_ai_rank": 5.0
+        }
+      ],
+      "race_id": "race_20260503_kyoto_12R",
+      "race_state": "PLAY_CONVERGED"
+    },
+    {
+      "date": "20260503",
+      "probabilities": [
+        {
+          "horse_name": "タンテドヴィーヴル",
+          "horse_number": 7,
+          "probability": 0.40197196372759175,
+          "shadow_ai_rank": 1.0
+        },
+        {
+          "horse_name": "サラコスティ",
+          "horse_number": 4,
+          "probability": 0.2905434176604188,
+          "shadow_ai_rank": 3.0
+        },
+        {
+          "horse_name": "ジェロニモス",
+          "horse_number": 6,
+          "probability": 0.278333547634597,
+          "shadow_ai_rank": 2.0
+        },
+        {
+          "horse_name": "アンビアンス",
+          "horse_number": 8,
+          "probability": 0.27509036385775687,
+          "shadow_ai_rank": 5.0
+        },
+        {
+          "horse_name": "レイデラティエラ",
+          "horse_number": 5,
+          "probability": 0.19541668764924777,
+          "shadow_ai_rank": 4.0
+        }
+      ],
+      "race_id": "race_20260503_kyoto_7R",
+      "race_state": "PLAY_CONVERGED"
+    },
+    {
+      "date": "20260503",
+      "probabilities": [
+        {
+          "horse_name": "レヴァンテシチー",
+          "horse_number": 6,
+          "probability": 0.4060718125017714,
+          "shadow_ai_rank": 3.0
+        },
+        {
+          "horse_name": "サンライズバレット",
+          "horse_number": 8,
+          "probability": 0.3758494988571622,
+          "shadow_ai_rank": 1.0
+        },
+        {
+          "horse_name": "テーオーライマン",
+          "horse_number": 5,
+          "probability": 0.33037533102023936,
+          "shadow_ai_rank": 2.0
+        },
+        {
+          "horse_name": "ジョータルマエ",
+          "horse_number": 3,
+          "probability": 0.24404303194541221,
+          "shadow_ai_rank": 5.0
+        },
+        {
+          "horse_name": "サパテアール",
+          "horse_number": 4,
+          "probability": 0.20555675077121247,
+          "shadow_ai_rank": 4.0
+        }
+      ],
+      "race_id": "race_20260503_kyoto_9R",
+      "race_state": "PLAY_CONVERGED"
+    },
+    {
+      "date": "20260503",
+      "probabilities": [
+        {
+          "horse_name": "ブレーザー",
+          "horse_number": 4,
+          "probability": 0.3934167923797975,
+          "shadow_ai_rank": 2.0
+        },
+        {
+          "horse_name": "ショウナンアビアス",
+          "horse_number": 3,
+          "probability": 0.3164952739119999,
+          "shadow_ai_rank": 1.0
+        },
+        {
+          "horse_name": "エスカル",
+          "horse_number": 7,
+          "probability": 0.29924427335499765,
+          "shadow_ai_rank": 5.0
+        },
+        {
+          "horse_name": "スリーピース",
+          "horse_number": 12,
+          "probability": 0.27702219112650633,
+          "shadow_ai_rank": 3.0
+        },
+        {
+          "horse_name": "サンライズパスカル",
+          "horse_number": 8,
+          "probability": 0.2393866662751179,
+          "shadow_ai_rank": 4.0
+        }
+      ],
+      "race_id": "race_20260503_niigata_11R",
+      "race_state": "PLAY_CONVERGED"
+    },
+    {
+      "date": "20260503",
+      "probabilities": [
+        {
+          "horse_name": "タケルハーロック",
+          "horse_number": 3,
+          "probability": 0.41405112338004685,
+          "shadow_ai_rank": 1.0
+        },
+        {
+          "horse_name": "リッキースタイル",
+          "horse_number": 10,
+          "probability": 0.344486914593503,
+          "shadow_ai_rank": 2.0
+        },
+        {
+          "horse_name": "バルジール",
+          "horse_number": 4,
+          "probability": 0.2760182655176271,
+          "shadow_ai_rank": 5.0
+        },
+        {
+          "horse_name": "フルドド",
+          "horse_number": 5,
+          "probability": 0.2624792732127597,
+          "shadow_ai_rank": 3.0
+        },
+        {
+          "horse_name": "クリノミニスター",
+          "horse_number": 7,
+          "probability": 0.2297115643798101,
+          "shadow_ai_rank": 4.0
+        }
+      ],
+      "race_id": "race_20260503_niigata_12R",
+      "race_state": "PLAY_CONVERGED"
+    },
+    {
+      "date": "20260503",
+      "probabilities": [
+        {
+          "horse_name": "ベルサ",
+          "horse_number": 13,
+          "probability": 0.2967979947912286,
+          "shadow_ai_rank": 1.0
+        },
+        {
+          "horse_name": "ストレイトアスク",
+          "horse_number": 4,
+          "probability": 0.27582215154703393,
+          "shadow_ai_rank": 2.0
+        },
+        {
+          "horse_name": "マーゴットカーラ",
+          "horse_number": 3,
+          "probability": 0.20878813119505654,
+          "shadow_ai_rank": 5.0
+        },
+        {
+          "horse_name": "ラブリーガール",
+          "horse_number": 5,
+          "probability": 0.19794576976143446,
+          "shadow_ai_rank": 3.0
+        },
+        {
+          "horse_name": "マリーヌ",
+          "horse_number": 14,
+          "probability": 0.17166701455482822,
+          "shadow_ai_rank": 4.0
+        }
+      ],
+      "race_id": "race_20260503_niigata_7R",
+      "race_state": "PLAY_CONVERGED"
+    },
+    {
+      "date": "20260503",
+      "probabilities": [
+        {
+          "horse_name": "クールミラボー",
+          "horse_number": 8,
+          "probability": 0.4922836679936472,
+          "shadow_ai_rank": 2.0
+        },
+        {
+          "horse_name": "ゼットリアン",
+          "horse_number": 5,
+          "probability": 0.40415469725154823,
+          "shadow_ai_rank": 1.0
+        },
+        {
+          "horse_name": "レッドプロフェシー",
+          "horse_number": 15,
+          "probability": 0.35945245708209195,
+          "shadow_ai_rank": 4.0
+        },
+        {
+          "horse_name": "リアレスト",
+          "horse_number": 12,
+          "probability": 0.257206138246704,
+          "shadow_ai_rank": 3.0
+        },
+        {
+          "horse_name": "ロードプレジール",
+          "horse_number": 4,
+          "probability": 0.1729595938568756,
+          "shadow_ai_rank": 5.0
+        }
+      ],
+      "race_id": "race_20260503_tokyo_10R",
+      "race_state": "PLAY_CONVERGED"
+    },
+    {
+      "date": "20260503",
+      "probabilities": [
+        {
+          "horse_name": "レッドラージャ",
+          "horse_number": 2,
+          "probability": 0.4559592925417043,
+          "shadow_ai_rank": 1.0
+        },
+        {
+          "horse_name": "ウィロークリーク",
+          "horse_number": 5,
+          "probability": 0.44373947352490134,
+          "shadow_ai_rank": 5.0
+        },
+        {
+          "horse_name": "オルフセン",
+          "horse_number": 11,
+          "probability": 0.24659943651410257,
+          "shadow_ai_rank": 2.0
+        },
+        {
+          "horse_name": "ヘイジュード",
+          "horse_number": 4,
+          "probability": 0.21959180345620288,
+          "shadow_ai_rank": 4.0
+        },
+        {
+          "horse_name": "ヴィサージュ",
+          "horse_number": 7,
+          "probability": 0.17743649231159508,
+          "shadow_ai_rank": 3.0
+        }
+      ],
+      "race_id": "race_20260503_tokyo_11R",
+      "race_state": "PLAY_CONVERGED"
+    },
+    {
+      "date": "20260503",
+      "probabilities": [
+        {
+          "horse_name": "スーパーガール",
+          "horse_number": 1,
+          "probability": 0.4570358290805378,
+          "shadow_ai_rank": 2.0
+        },
+        {
+          "horse_name": "ゴディアンフィンチ",
+          "horse_number": 12,
+          "probability": 0.4249813441227321,
+          "shadow_ai_rank": 3.0
+        },
+        {
+          "horse_name": "グラティアム",
+          "horse_number": 9,
+          "probability": 0.3659175513117077,
+          "shadow_ai_rank": 1.0
+        },
+        {
+          "horse_name": "パータリプトラ",
+          "horse_number": 13,
+          "probability": 0.3573977095140577,
+          "shadow_ai_rank": 4.0
+        },
+        {
+          "horse_name": "ワンモメンタム",
+          "horse_number": 2,
+          "probability": 0.19086841898837387,
+          "shadow_ai_rank": 5.0
+        }
+      ],
+      "race_id": "race_20260503_tokyo_6R",
+      "race_state": "PLAY_CONVERGED"
+    },
+    {
+      "date": "20260503",
+      "probabilities": [
+        {
+          "horse_name": "コーシューパンジャ",
+          "horse_number": 9,
+          "probability": 0.4105329981781074,
+          "shadow_ai_rank": 2.0
+        },
+        {
+          "horse_name": "レッドベルダンス",
+          "horse_number": 10,
+          "probability": 0.26993983957178824,
+          "shadow_ai_rank": 1.0
+        },
+        {
+          "horse_name": "ビービーバザーク",
+          "horse_number": 14,
+          "probability": 0.2561978899160556,
+          "shadow_ai_rank": 5.0
+        },
+        {
+          "horse_name": "ミスティマウンテン",
+          "horse_number": 12,
+          "probability": 0.17300866545198545,
+          "shadow_ai_rank": 4.0
+        },
+        {
+          "horse_name": "ライズトゥザトップ",
+          "horse_number": 15,
+          "probability": 0.1598873836062653,
+          "shadow_ai_rank": 3.0
+        }
+      ],
+      "race_id": "race_20260503_tokyo_7R",
+      "race_state": "PLAY_CONVERGED"
+    },
+    {
+      "date": "20260503",
+      "probabilities": [
+        {
+          "horse_name": "アスクセクシーモア",
+          "horse_number": 5,
+          "probability": 0.390793842725218,
+          "shadow_ai_rank": 4.0
+        },
+        {
+          "horse_name": "チルカーノ",
+          "horse_number": 16,
+          "probability": 0.37444720065671333,
+          "shadow_ai_rank": 3.0
+        },
+        {
+          "horse_name": "キャントウェイト",
+          "horse_number": 7,
+          "probability": 0.32803180526531067,
+          "shadow_ai_rank": 1.0
+        },
+        {
+          "horse_name": "ユキワリザクラ",
+          "horse_number": 17,
+          "probability": 0.28555217788307424,
+          "shadow_ai_rank": 2.0
+        },
+        {
+          "horse_name": "モズロックンロール",
+          "horse_number": 18,
+          "probability": 0.1807269465804122,
+          "shadow_ai_rank": 5.0
+        }
+      ],
+      "race_id": "race_20260503_tokyo_9R",
+      "race_state": "PLAY_CONVERGED"
+    },
+    {
+      "date": "20260509",
+      "probabilities": [
+        {
+          "horse_name": "ナムラヒナギク",
+          "horse_number": 8,
+          "probability": 0.4456024553733837,
+          "shadow_ai_rank": 1.0
+        },
+        {
+          "horse_name": "ルートサーティーン",
+          "horse_number": 2,
+          "probability": 0.4238508329312421,
+          "shadow_ai_rank": 3.0
+        },
+        {
+          "horse_name": "マイリトルヒーロー",
+          "horse_number": 1,
+          "probability": 0.3557218029289385,
+          "shadow_ai_rank": 5.0
+        },
+        {
+          "horse_name": "カクウチ",
+          "horse_number": 5,
+          "probability": 0.3336806808743242,
+          "shadow_ai_rank": 2.0
+        },
+        {
+          "horse_name": "レッドリガーレ",
+          "horse_number": 4,
+          "probability": 0.31711103170469623,
+          "shadow_ai_rank": 4.0
+        }
+      ],
+      "race_id": "race_20260509_kyoto_5R",
+      "race_state": "PLAY_CONVERGED"
+    },
+    {
+      "date": "20260509",
+      "probabilities": [
+        {
+          "horse_name": "ランスオブキング",
+          "horse_number": 13,
+          "probability": 0.4119686804067115,
+          "shadow_ai_rank": 4.0
+        },
+        {
+          "horse_name": "ビップムーラン",
+          "horse_number": 14,
+          "probability": 0.40189402165324495,
+          "shadow_ai_rank": 3.0
+        },
+        {
+          "horse_name": "メイショウイブキ",
+          "horse_number": 9,
+          "probability": 0.3826702726952038,
+          "shadow_ai_rank": 5.0
+        },
+        {
+          "horse_name": "ラテラルパーム",
+          "horse_number": 4,
+          "probability": 0.37087551541590763,
+          "shadow_ai_rank": 1.0
+        },
+        {
+          "horse_name": "ハードシングス",
+          "horse_number": 6,
+          "probability": 0.3259149124537186,
+          "shadow_ai_rank": 2.0
+        }
+      ],
+      "race_id": "race_20260509_kyoto_6R",
+      "race_state": "PLAY_CONVERGED"
+    },
+    {
+      "date": "20260509",
+      "probabilities": [
+        {
+          "horse_name": "メイショウコナン",
+          "horse_number": 11,
+          "probability": 0.36993798013380197,
+          "shadow_ai_rank": 1.0
+        },
+        {
+          "horse_name": "ロードシュヴァリエ",
+          "horse_number": 3,
+          "probability": 0.2972620187976748,
+          "shadow_ai_rank": 3.0
+        },
+        {
+          "horse_name": "テンエースワン",
+          "horse_number": 8,
+          "probability": 0.2949510280087111,
+          "shadow_ai_rank": 5.0
+        },
+        {
+          "horse_name": "ミラクルブルー",
+          "horse_number": 10,
+          "probability": 0.16986234885317059,
+          "shadow_ai_rank": 2.0
+        },
+        {
+          "horse_name": "ステイクオール",
+          "horse_number": 5,
+          "probability": 0.15126376100241462,
+          "shadow_ai_rank": 4.0
+        }
+      ],
+      "race_id": "race_20260509_kyoto_7R",
+      "race_state": "PLAY_CONVERGED"
+    },
+    {
+      "date": "20260509",
+      "probabilities": [
+        {
+          "horse_name": "ルクスコスモス",
+          "horse_number": 15,
+          "probability": 0.49842505687014965,
+          "shadow_ai_rank": 1.0
+        },
+        {
+          "horse_name": "ララバッカナール",
+          "horse_number": 1,
+          "probability": 0.49665360915444434,
+          "shadow_ai_rank": 2.0
+        },
+        {
+          "horse_name": "ワンダーイロネ",
+          "horse_number": 13,
+          "probability": 0.2718964856128991,
+          "shadow_ai_rank": 4.0
+        },
+        {
+          "horse_name": "グディンナ",
+          "horse_number": 14,
+          "probability": 0.23640880499426353,
+          "shadow_ai_rank": 3.0
+        },
+        {
+          "horse_name": "ペガサスノース",
+          "horse_number": 7,
+          "probability": 0.1677927161593502,
+          "shadow_ai_rank": 5.0
+        }
+      ],
+      "race_id": "race_20260509_kyoto_8R",
+      "race_state": "PLAY_CONVERGED"
+    },
+    {
+      "date": "20260509",
+      "probabilities": [
+        {
+          "horse_name": "ツーエムクロノス",
+          "horse_number": 5,
+          "probability": 0.4332618562775441,
+          "shadow_ai_rank": 5.0
+        },
+        {
+          "horse_name": "ウォータークラーク",
+          "horse_number": 7,
+          "probability": 0.39327646477301437,
+          "shadow_ai_rank": 4.0
+        },
+        {
+          "horse_name": "ダイヤモンドハンズ",
+          "horse_number": 6,
+          "probability": 0.3649468161794457,
+          "shadow_ai_rank": 2.0
+        },
+        {
+          "horse_name": "スナークピカソ",
+          "horse_number": 3,
+          "probability": 0.354522598865208,
+          "shadow_ai_rank": 1.0
+        },
+        {
+          "horse_name": "マルカオペラ",
+          "horse_number": 11,
+          "probability": 0.2540256129537467,
+          "shadow_ai_rank": 3.0
+        }
+      ],
+      "race_id": "race_20260509_kyoto_9R",
+      "race_state": "PLAY_CONVERGED"
+    },
+    {
+      "date": "20260509",
+      "probabilities": [
+        {
+          "horse_name": "ハイクオリティ",
+          "horse_number": 11,
+          "probability": 0.44792760363467354,
+          "shadow_ai_rank": 3.0
+        },
+        {
+          "horse_name": "トーアケルキラ",
+          "horse_number": 2,
+          "probability": 0.324667857987641,
+          "shadow_ai_rank": 4.0
+        },
+        {
+          "horse_name": "チュウワダイオウ",
+          "horse_number": 1,
+          "probability": 0.25283841745546026,
+          "shadow_ai_rank": 1.0
+        },
+        {
+          "horse_name": "マテンロウミラクル",
+          "horse_number": 12,
+          "probability": 0.17867941894101458,
+          "shadow_ai_rank": 2.0
+        },
+        {
+          "horse_name": "ナムラジミー",
+          "horse_number": 9,
+          "probability": 0.08772581316669063,
+          "shadow_ai_rank": 5.0
+        }
+      ],
+      "race_id": "race_20260509_niigata_12R",
+      "race_state": "PLAY_CONVERGED"
+    },
+    {
+      "date": "20260509",
+      "probabilities": [
+        {
+          "horse_name": "ミルミナーヴァ",
+          "horse_number": 11,
+          "probability": 0.43668773342906364,
+          "shadow_ai_rank": 3.0
+        },
+        {
+          "horse_name": "ソードマスター",
+          "horse_number": 8,
+          "probability": 0.26849954451836844,
+          "shadow_ai_rank": 1.0
+        },
+        {
+          "horse_name": "アースミューズ",
+          "horse_number": 4,
+          "probability": 0.2499220028327308,
+          "shadow_ai_rank": 4.0
+        },
+        {
+          "horse_name": "ナンヨークリスタル",
+          "horse_number": 15,
+          "probability": 0.22130145281742394,
+          "shadow_ai_rank": 2.0
+        },
+        {
+          "horse_name": "サンライズジュピタ",
+          "horse_number": 3,
+          "probability": 0.15069949931386206,
+          "shadow_ai_rank": 5.0
+        }
+      ],
+      "race_id": "race_20260509_niigata_7R",
+      "race_state": "PLAY_CONVERGED"
+    },
+    {
+      "date": "20260509",
+      "probabilities": [
+        {
+          "horse_name": "ラグナトーレ",
+          "horse_number": 5,
+          "probability": 0.36612148645644205,
+          "shadow_ai_rank": 2.0
+        },
+        {
+          "horse_name": "ベルフィーヌ",
+          "horse_number": 10,
+          "probability": 0.34874377565011916,
+          "shadow_ai_rank": 1.0
+        },
+        {
+          "horse_name": "ライヴスプーン",
+          "horse_number": 9,
+          "probability": 0.2505280961337089,
+          "shadow_ai_rank": 4.0
+        },
+        {
+          "horse_name": "ブーケドグレイス",
+          "horse_number": 2,
+          "probability": 0.2254747921140386,
+          "shadow_ai_rank": 5.0
+        },
+        {
+          "horse_name": "ヴァズレーヌ",
+          "horse_number": 3,
+          "probability": 0.18358425784737814,
+          "shadow_ai_rank": 3.0
+        }
+      ],
+      "race_id": "race_20260509_niigata_8R",
+      "race_state": "PLAY_CONVERGED"
+    },
+    {
+      "date": "20260509",
+      "probabilities": [
+        {
+          "horse_name": "フィオラーノ",
+          "horse_number": 9,
+          "probability": 0.37008908112751837,
+          "shadow_ai_rank": 4.0
+        },
+        {
+          "horse_name": "トップアタック",
+          "horse_number": 11,
+          "probability": 0.33453176286384756,
+          "shadow_ai_rank": 3.0
+        },
+        {
+          "horse_name": "ツルノマイハシ",
+          "horse_number": 4,
+          "probability": 0.29866150812161024,
+          "shadow_ai_rank": 1.0
+        },
+        {
+          "horse_name": "コパノトーマス",
+          "horse_number": 14,
+          "probability": 0.29560725741761706,
+          "shadow_ai_rank": 2.0
+        },
+        {
+          "horse_name": "マーシャルアン",
+          "horse_number": 2,
+          "probability": 0.15625925306201574,
+          "shadow_ai_rank": 5.0
+        }
+      ],
+      "race_id": "race_20260509_niigata_9R",
+      "race_state": "PLAY_CONVERGED"
+    },
+    {
+      "date": "20260509",
+      "probabilities": [
+        {
+          "horse_name": "メイショウバルク",
+          "horse_number": 14,
+          "probability": 0.44323292211701354,
+          "shadow_ai_rank": 2.0
+        },
+        {
+          "horse_name": "マクリール",
+          "horse_number": 2,
+          "probability": 0.4317376720749012,
+          "shadow_ai_rank": 1.0
+        },
+        {
+          "horse_name": "ケブランリ",
+          "horse_number": 11,
+          "probability": 0.3974086309395821,
+          "shadow_ai_rank": 4.0
+        },
+        {
+          "horse_name": "ドンエレクトス",
+          "horse_number": 10,
+          "probability": 0.36779376453776447,
+          "shadow_ai_rank": 5.0
+        },
+        {
+          "horse_name": "アルデトップガン",
+          "horse_number": 13,
+          "probability": 0.24903434437533428,
+          "shadow_ai_rank": 3.0
+        }
+      ],
+      "race_id": "race_20260509_tokyo_10R",
+      "race_state": "PLAY_CONVERGED"
+    },
+    {
+      "date": "20260509",
+      "probabilities": [
+        {
+          "horse_name": "ナックホワイト",
+          "horse_number": 3,
+          "probability": 0.45078259068859156,
+          "shadow_ai_rank": 4.0
+        },
+        {
+          "horse_name": "アメテュストス",
+          "horse_number": 12,
+          "probability": 0.4292456107742315,
+          "shadow_ai_rank": 3.0
+        },
+        {
+          "horse_name": "マイネルシンベリン",
+          "horse_number": 8,
+          "probability": 0.3924731523359947,
+          "shadow_ai_rank": 1.0
+        },
+        {
+          "horse_name": "ショウナンダイン",
+          "horse_number": 4,
+          "probability": 0.2528444559193204,
+          "shadow_ai_rank": 2.0
+        },
+        {
+          "horse_name": "ホールドザデイ",
+          "horse_number": 6,
+          "probability": 0.25035131858372545,
+          "shadow_ai_rank": 5.0
+        }
+      ],
+      "race_id": "race_20260509_tokyo_6R",
+      "race_state": "PLAY_CONVERGED"
+    },
+    {
+      "date": "20260509",
+      "probabilities": [
+        {
+          "horse_name": "タマモトリノ",
+          "horse_number": 3,
+          "probability": 0.39240209510588725,
+          "shadow_ai_rank": 3.0
+        },
+        {
+          "horse_name": "タケルゴールド",
+          "horse_number": 11,
+          "probability": 0.3538455308960328,
+          "shadow_ai_rank": 4.0
+        },
+        {
+          "horse_name": "ロードインフェルノ",
+          "horse_number": 9,
+          "probability": 0.327544686376408,
+          "shadow_ai_rank": 1.0
+        },
+        {
+          "horse_name": "メイショウコウベ",
+          "horse_number": 7,
+          "probability": 0.28642588710461214,
+          "shadow_ai_rank": 2.0
+        },
+        {
+          "horse_name": "ローズマイスター",
+          "horse_number": 14,
+          "probability": 0.19173322171542445,
+          "shadow_ai_rank": 5.0
+        }
+      ],
+      "race_id": "race_20260509_tokyo_7R",
+      "race_state": "PLAY_CONVERGED"
+    },
+    {
+      "date": "20260509",
+      "probabilities": [
+        {
+          "horse_name": "ミッドセンチュリー",
+          "horse_number": 5,
+          "probability": 0.4286324741998738,
+          "shadow_ai_rank": 4.0
+        },
+        {
+          "horse_name": "ウィッシュツリー",
+          "horse_number": 2,
+          "probability": 0.3473166488945749,
+          "shadow_ai_rank": 1.0
+        },
+        {
+          "horse_name": "カリーニョ",
+          "horse_number": 6,
+          "probability": 0.32790186520288034,
+          "shadow_ai_rank": 3.0
+        },
+        {
+          "horse_name": "ショウナンマクベス",
+          "horse_number": 8,
+          "probability": 0.30314953501415953,
+          "shadow_ai_rank": 2.0
+        },
+        {
+          "horse_name": "チャイボーグ",
+          "horse_number": 7,
+          "probability": 0.23942575629186133,
+          "shadow_ai_rank": 5.0
+        }
+      ],
+      "race_id": "race_20260509_tokyo_8R",
+      "race_state": "PLAY_CONVERGED"
+    },
+    {
+      "date": "20260510",
+      "probabilities": [
+        {
+          "horse_name": "ルージュアベリア",
+          "horse_number": 2,
+          "probability": 0.5234193625252416,
+          "shadow_ai_rank": 2.0
+        },
+        {
+          "horse_name": "ルヴァンユニベール",
+          "horse_number": 7,
+          "probability": 0.3972740984688096,
+          "shadow_ai_rank": 3.0
+        },
+        {
+          "horse_name": "ヴァンヤール",
+          "horse_number": 9,
+          "probability": 0.3882907937332053,
+          "shadow_ai_rank": 1.0
+        },
+        {
+          "horse_name": "グランドプラージュ",
+          "horse_number": 10,
+          "probability": 0.37631974377865146,
+          "shadow_ai_rank": 5.0
+        },
+        {
+          "horse_name": "ワイドブリザード",
+          "horse_number": 5,
+          "probability": 0.3552667967446213,
+          "shadow_ai_rank": 4.0
+        }
+      ],
+      "race_id": "race_20260510_kyoto_11R",
+      "race_state": "PLAY_CONVERGED"
+    },
+    {
+      "date": "20260510",
+      "probabilities": [
+        {
+          "horse_name": "ランスオブセヘル",
+          "horse_number": 8,
+          "probability": 0.48333870084238145,
+          "shadow_ai_rank": 4.0
+        },
+        {
+          "horse_name": "レッドダンルース",
+          "horse_number": 10,
+          "probability": 0.4046966672831068,
+          "shadow_ai_rank": 2.0
+        },
+        {
+          "horse_name": "ユウトザレン",
+          "horse_number": 11,
+          "probability": 0.3739992487990158,
+          "shadow_ai_rank": 1.0
+        },
+        {
+          "horse_name": "メイショウタムシバ",
+          "horse_number": 2,
+          "probability": 0.36041346711380895,
+          "shadow_ai_rank": 3.0
+        },
+        {
+          "horse_name": "ロードオルデン",
+          "horse_number": 3,
+          "probability": 0.18360872694287678,
+          "shadow_ai_rank": 5.0
+        }
+      ],
+      "race_id": "race_20260510_kyoto_12R",
+      "race_state": "PLAY_CONVERGED"
+    },
+    {
+      "date": "20260510",
+      "probabilities": [
+        {
+          "horse_name": "シェーラ",
+          "horse_number": 8,
+          "probability": 0.3654944281545906,
+          "shadow_ai_rank": 1.0
+        },
+        {
+          "horse_name": "レジェンドシップ",
+          "horse_number": 5,
+          "probability": 0.3607434288568642,
+          "shadow_ai_rank": 3.0
+        },
+        {
+          "horse_name": "ドルチェリターン",
+          "horse_number": 2,
+          "probability": 0.3448233646672183,
+          "shadow_ai_rank": 5.0
+        },
+        {
+          "horse_name": "アットアブラスト",
+          "horse_number": 7,
+          "probability": 0.27043319715660674,
+          "shadow_ai_rank": 4.0
+        },
+        {
+          "horse_name": "ニホンピロゴルディ",
+          "horse_number": 6,
+          "probability": 0.2611888996371308,
+          "shadow_ai_rank": 2.0
+        }
+      ],
+      "race_id": "race_20260510_kyoto_6R",
+      "race_state": "PLAY_CONVERGED"
+    },
+    {
+      "date": "20260510",
+      "probabilities": [
+        {
+          "horse_name": "シュネルアンジュ",
+          "horse_number": 6,
+          "probability": 0.42838999149717627,
+          "shadow_ai_rank": 1.0
+        },
+        {
+          "horse_name": "ショコラプリン",
+          "horse_number": 1,
+          "probability": 0.39666920300753256,
+          "shadow_ai_rank": 3.0
+        },
+        {
+          "horse_name": "エコロストーム",
+          "horse_number": 8,
+          "probability": 0.33963746094897723,
+          "shadow_ai_rank": 2.0
+        },
+        {
+          "horse_name": "オラヴィンリンナ",
+          "horse_number": 5,
+          "probability": 0.3187216173840911,
+          "shadow_ai_rank": 5.0
+        },
+        {
+          "horse_name": "ベルソテイラ",
+          "horse_number": 11,
+          "probability": 0.3000826802410994,
+          "shadow_ai_rank": 4.0
+        }
+      ],
+      "race_id": "race_20260510_kyoto_7R",
+      "race_state": "PLAY_CONVERGED"
+    },
+    {
+      "date": "20260510",
+      "probabilities": [
+        {
+          "horse_name": "ベトルス",
+          "horse_number": 13,
+          "probability": 0.3912657006386711,
+          "shadow_ai_rank": 3.0
+        },
+        {
+          "horse_name": "レクスノヴァス",
+          "horse_number": 6,
+          "probability": 0.3203265125901736,
+          "shadow_ai_rank": 4.0
+        },
+        {
+          "horse_name": "ウインデイジー",
+          "horse_number": 10,
+          "probability": 0.3157135299051688,
+          "shadow_ai_rank": 1.0
+        },
+        {
+          "horse_name": "ミスタージーティー",
+          "horse_number": 9,
+          "probability": 0.2011128351420751,
+          "shadow_ai_rank": 2.0
+        },
+        {
+          "horse_name": "ナムラフッカー",
+          "horse_number": 3,
+          "probability": 0.1273470374669522,
+          "shadow_ai_rank": 5.0
+        }
+      ],
+      "race_id": "race_20260510_kyoto_9R",
+      "race_state": "PLAY_CONVERGED"
+    },
+    {
+      "date": "20260510",
+      "probabilities": [
+        {
+          "horse_name": "メイショウクーガー",
+          "horse_number": 9,
+          "probability": 0.4518785004379415,
+          "shadow_ai_rank": 4.0
+        },
+        {
+          "horse_name": "ケーヴァラ",
+          "horse_number": 7,
+          "probability": 0.4436174715570548,
+          "shadow_ai_rank": 3.0
+        },
+        {
+          "horse_name": "マンオブザマッチ",
+          "horse_number": 11,
+          "probability": 0.43420994752246805,
+          "shadow_ai_rank": 2.0
+        },
+        {
+          "horse_name": "エイカイソウル",
+          "horse_number": 5,
+          "probability": 0.42792076943281154,
+          "shadow_ai_rank": 5.0
+        },
+        {
+          "horse_name": "タカサンフェイス",
+          "horse_number": 4,
+          "probability": 0.2508721123466031,
+          "shadow_ai_rank": 1.0
+        }
+      ],
+      "race_id": "race_20260510_niigata_10R",
+      "race_state": "PLAY_CONVERGED"
+    },
+    {
+      "date": "20260510",
+      "probabilities": [
+        {
+          "horse_name": "クランフォード",
+          "horse_number": 11,
+          "probability": 0.424493315944913,
+          "shadow_ai_rank": 1.0
+        },
+        {
+          "horse_name": "アルテヴェローチェ",
+          "horse_number": 9,
+          "probability": 0.30429916619973185,
+          "shadow_ai_rank": 3.0
+        },
+        {
+          "horse_name": "ナムラアトム",
+          "horse_number": 12,
+          "probability": 0.28156354214814633,
+          "shadow_ai_rank": 4.0
+        },
+        {
+          "horse_name": "アクートゥス",
+          "horse_number": 8,
+          "probability": 0.24357260033799244,
+          "shadow_ai_rank": 5.0
+        },
+        {
+          "horse_name": "ランフォーヴァウ",
+          "horse_number": 7,
+          "probability": 0.19967171677900117,
+          "shadow_ai_rank": 2.0
+        }
+      ],
+      "race_id": "race_20260510_niigata_11R",
+      "race_state": "PLAY_CONVERGED"
+    },
+    {
+      "date": "20260510",
+      "probabilities": [
+        {
+          "horse_name": "ゴメンネジロー",
+          "horse_number": 15,
+          "probability": 0.4508779542438182,
+          "shadow_ai_rank": 1.0
+        },
+        {
+          "horse_name": "ミライハーモニー",
+          "horse_number": 14,
+          "probability": 0.44723192629353414,
+          "shadow_ai_rank": 3.0
+        },
+        {
+          "horse_name": "フォンメイリー",
+          "horse_number": 10,
+          "probability": 0.3563265289435515,
+          "shadow_ai_rank": 2.0
+        },
+        {
+          "horse_name": "アツキヤマト",
+          "horse_number": 3,
+          "probability": 0.32756067816198975,
+          "shadow_ai_rank": 4.0
+        },
+        {
+          "horse_name": "ウインレアリゼ",
+          "horse_number": 11,
+          "probability": 0.1406107144380416,
+          "shadow_ai_rank": 5.0
+        }
+      ],
+      "race_id": "race_20260510_niigata_7R",
+      "race_state": "PLAY_CONVERGED"
+    },
+    {
+      "date": "20260510",
+      "probabilities": [
+        {
+          "horse_name": "レッドヴァリアート",
+          "horse_number": 3,
+          "probability": 0.47476771723085986,
+          "shadow_ai_rank": 1.0
+        },
+        {
+          "horse_name": "ムーンストラック",
+          "horse_number": 9,
+          "probability": 0.2417649517387791,
+          "shadow_ai_rank": 5.0
+        },
+        {
+          "horse_name": "ガンバルマン",
+          "horse_number": 4,
+          "probability": 0.2020865857599758,
+          "shadow_ai_rank": 4.0
+        },
+        {
+          "horse_name": "サンセットビュー",
+          "horse_number": 13,
+          "probability": 0.1744221987537311,
+          "shadow_ai_rank": 2.0
+        },
+        {
+          "horse_name": "ラブカ",
+          "horse_number": 11,
+          "probability": 0.16988038950081663,
+          "shadow_ai_rank": 3.0
+        }
+      ],
+      "race_id": "race_20260510_niigata_9R",
+      "race_state": "PLAY_CONVERGED"
+    },
+    {
+      "date": "20260510",
+      "probabilities": [
+        {
+          "horse_name": "シャイニングソード",
+          "horse_number": 10,
+          "probability": 0.2748872456558868,
+          "shadow_ai_rank": 1.0
+        },
+        {
+          "horse_name": "マイネルケレリウス",
+          "horse_number": 8,
+          "probability": 0.2427056500313045,
+          "shadow_ai_rank": 3.0
+        },
+        {
+          "horse_name": "ドクタードリトル",
+          "horse_number": 6,
+          "probability": 0.23975570170862884,
+          "shadow_ai_rank": 2.0
+        },
+        {
+          "horse_name": "ワイドエンペラー",
+          "horse_number": 4,
+          "probability": 0.15620756178773756,
+          "shadow_ai_rank": 4.0
+        },
+        {
+          "horse_name": "ウエストナウ",
+          "horse_number": 12,
+          "probability": 0.14202970650680752,
+          "shadow_ai_rank": 5.0
+        }
+      ],
+      "race_id": "race_20260510_tokyo_10R",
+      "race_state": "PLAY_CONVERGED"
+    },
+    {
+      "date": "20260510",
+      "probabilities": [
+        {
+          "horse_name": "レザベーション",
+          "horse_number": 15,
+          "probability": 0.3931967665993904,
+          "shadow_ai_rank": 5.0
+        },
+        {
+          "horse_name": "バルセシート",
+          "horse_number": 14,
+          "probability": 0.3031304586972607,
+          "shadow_ai_rank": 1.0
+        },
+        {
+          "horse_name": "アドマイヤクワッズ",
+          "horse_number": 11,
+          "probability": 0.22838810916609972,
+          "shadow_ai_rank": 2.0
+        },
+        {
+          "horse_name": "エコロアルバ",
+          "horse_number": 10,
+          "probability": 0.20519414111588727,
+          "shadow_ai_rank": 3.0
+        },
+        {
+          "horse_name": "ギリーズボール",
+          "horse_number": 5,
+          "probability": 0.12471586530102295,
+          "shadow_ai_rank": 4.0
+        }
+      ],
+      "race_id": "race_20260510_tokyo_11R",
+      "race_state": "PLAY_CONVERGED"
+    },
+    {
+      "date": "20260510",
+      "probabilities": [
+        {
+          "horse_name": "セギレエルビエント",
+          "horse_number": 3,
+          "probability": 0.4786625279947224,
+          "shadow_ai_rank": 1.0
+        },
+        {
+          "horse_name": "レディーフランシス",
+          "horse_number": 8,
+          "probability": 0.32338931924467207,
+          "shadow_ai_rank": 5.0
+        },
+        {
+          "horse_name": "ミライヘノカギ",
+          "horse_number": 13,
+          "probability": 0.3196152874787022,
+          "shadow_ai_rank": 4.0
+        },
+        {
+          "horse_name": "フルオール",
+          "horse_number": 15,
+          "probability": 0.2824033340281636,
+          "shadow_ai_rank": 2.0
+        },
+        {
+          "horse_name": "クールブロン",
+          "horse_number": 9,
+          "probability": 0.2772386144062443,
+          "shadow_ai_rank": 3.0
+        }
+      ],
+      "race_id": "race_20260510_tokyo_12R",
+      "race_state": "PLAY_CONVERGED"
+    },
+    {
+      "date": "20260510",
+      "probabilities": [
+        {
+          "horse_name": "ゴールドシーン",
+          "horse_number": 8,
+          "probability": 0.4249744619310612,
+          "shadow_ai_rank": 1.0
+        },
+        {
+          "horse_name": "アセンブリールーム",
+          "horse_number": 10,
+          "probability": 0.33857046002795976,
+          "shadow_ai_rank": 2.0
+        },
+        {
+          "horse_name": "オタルグリーン",
+          "horse_number": 11,
+          "probability": 0.27690613957208987,
+          "shadow_ai_rank": 4.0
+        },
+        {
+          "horse_name": "ウインイザナミ",
+          "horse_number": 5,
+          "probability": 0.19581472251735157,
+          "shadow_ai_rank": 3.0
+        },
+        {
+          "horse_name": "ゴガツノアマノガワ",
+          "horse_number": 4,
+          "probability": 0.16790305059373045,
+          "shadow_ai_rank": 5.0
+        }
+      ],
+      "race_id": "race_20260510_tokyo_6R",
+      "race_state": "PLAY_CONVERGED"
+    },
+    {
+      "date": "20260510",
+      "probabilities": [
+        {
+          "horse_name": "タイセイカイザー",
+          "horse_number": 8,
+          "probability": 0.3445267056395667,
+          "shadow_ai_rank": 5.0
+        },
+        {
+          "horse_name": "オオタチ",
+          "horse_number": 3,
+          "probability": 0.3139519891697813,
+          "shadow_ai_rank": 2.0
+        },
+        {
+          "horse_name": "ドゥラエテルノ",
+          "horse_number": 7,
+          "probability": 0.30680521702850555,
+          "shadow_ai_rank": 4.0
+        },
+        {
+          "horse_name": "ロードブレイズ",
+          "horse_number": 4,
+          "probability": 0.2793331023816262,
+          "shadow_ai_rank": 1.0
+        },
+        {
+          "horse_name": "ダブルメッセージ",
+          "horse_number": 5,
+          "probability": 0.12145978106223762,
+          "shadow_ai_rank": 3.0
+        }
+      ],
+      "race_id": "race_20260510_tokyo_9R",
+      "race_state": "PLAY_CONVERGED"
+    },
+    {
+      "date": "20260516",
+      "probabilities": [
+        {
+          "horse_name": "タガノマカシヤ",
+          "horse_number": 10,
+          "probability": 0.5318145615844353,
+          "shadow_ai_rank": 1.0
+        },
+        {
+          "horse_name": "ペンナヴェローチェ",
+          "horse_number": 1,
+          "probability": 0.4914763534593969,
+          "shadow_ai_rank": 3.0
+        },
+        {
+          "horse_name": "タイセイアディクト",
+          "horse_number": 14,
+          "probability": 0.31238881210654584,
+          "shadow_ai_rank": 2.0
+        },
+        {
+          "horse_name": "メイショウシナノ",
+          "horse_number": 8,
+          "probability": 0.26853026012938874,
+          "shadow_ai_rank": 5.0
+        },
+        {
+          "horse_name": "シャルクハフト",
+          "horse_number": 6,
+          "probability": 0.16012162767754226,
+          "shadow_ai_rank": 4.0
+        }
+      ],
+      "race_id": "race_20260516_kyoto_10R",
+      "race_state": "PLAY_CONVERGED"
+    },
+    {
+      "date": "20260516",
+      "probabilities": [
+        {
+          "horse_name": "ワンコールアウェイ",
+          "horse_number": 11,
+          "probability": 0.42865793162493504,
+          "shadow_ai_rank": 2.0
+        },
+        {
+          "horse_name": "サンタアニタ",
+          "horse_number": 10,
+          "probability": 0.40963645117268754,
+          "shadow_ai_rank": 4.0
+        },
+        {
+          "horse_name": "ピアストイヤーズ",
+          "horse_number": 5,
+          "probability": 0.36765904183843745,
+          "shadow_ai_rank": 5.0
+        },
+        {
+          "horse_name": "エイヘンハールト",
+          "horse_number": 16,
+          "probability": 0.32984978801428144,
+          "shadow_ai_rank": 1.0
+        },
+        {
+          "horse_name": "ラヴスコール",
+          "horse_number": 3,
+          "probability": 0.19403167958332557,
+          "shadow_ai_rank": 3.0
+        }
+      ],
+      "race_id": "race_20260516_niigata_12R",
+      "race_state": "PLAY_CONVERGED"
+    },
+    {
+      "date": "20260516",
+      "probabilities": [
+        {
+          "horse_name": "アルヘンティニータ",
+          "horse_number": 11,
+          "probability": 0.4731561114425328,
+          "shadow_ai_rank": 3.0
+        },
+        {
+          "horse_name": "フルドド",
+          "horse_number": 1,
+          "probability": 0.35651205479813064,
+          "shadow_ai_rank": 1.0
+        },
+        {
+          "horse_name": "クインズシャウラ",
+          "horse_number": 4,
+          "probability": 0.3258478496390157,
+          "shadow_ai_rank": 2.0
+        },
+        {
+          "horse_name": "アルバニー",
+          "horse_number": 13,
+          "probability": 0.2777393631927015,
+          "shadow_ai_rank": 4.0
+        },
+        {
+          "horse_name": "ガールネクストドア",
+          "horse_number": 5,
+          "probability": 0.23645315717071305,
+          "shadow_ai_rank": 5.0
+        }
+      ],
+      "race_id": "race_20260516_niigata_7R",
+      "race_state": "PLAY_CONVERGED"
+    },
+    {
+      "date": "20260516",
+      "probabilities": [
+        {
+          "horse_name": "ダノンヴェステル",
+          "horse_number": 5,
+          "probability": 0.47917826420839144,
+          "shadow_ai_rank": 3.0
+        },
+        {
+          "horse_name": "ファルコンミノル",
+          "horse_number": 9,
+          "probability": 0.40726958896140836,
+          "shadow_ai_rank": 1.0
+        },
+        {
+          "horse_name": "ソナタン",
+          "horse_number": 6,
+          "probability": 0.33063757723426057,
+          "shadow_ai_rank": 2.0
+        },
+        {
+          "horse_name": "イーサンハンター",
+          "horse_number": 8,
+          "probability": 0.17600539438972945,
+          "shadow_ai_rank": 4.0
+        },
+        {
+          "horse_name": "ザラタン",
+          "horse_number": 7,
+          "probability": 0.14434689841890827,
+          "shadow_ai_rank": 5.0
+        }
+      ],
+      "race_id": "race_20260516_niigata_8R",
+      "race_state": "PLAY_CONVERGED"
+    },
+    {
+      "date": "20260516",
+      "probabilities": [
+        {
+          "horse_name": "クイーンズワーフ",
+          "horse_number": 8,
+          "probability": 0.42634126411913736,
+          "shadow_ai_rank": 5.0
+        },
+        {
+          "horse_name": "ルールーリマ",
+          "horse_number": 12,
+          "probability": 0.32785938030175155,
+          "shadow_ai_rank": 1.0
+        },
+        {
+          "horse_name": "シェーンシュティア",
+          "horse_number": 6,
+          "probability": 0.32465892115533257,
+          "shadow_ai_rank": 4.0
+        },
+        {
+          "horse_name": "ソニックドライブ",
+          "horse_number": 3,
+          "probability": 0.2675786056888134,
+          "shadow_ai_rank": 2.0
+        },
+        {
+          "horse_name": "ブルバンビーナ",
+          "horse_number": 13,
+          "probability": 0.19950732255000286,
+          "shadow_ai_rank": 3.0
+        }
+      ],
+      "race_id": "race_20260516_niigata_9R",
+      "race_state": "PLAY_CONVERGED"
+    },
+    {
+      "date": "20260516",
+      "probabilities": [
+        {
+          "horse_name": "チギリ",
+          "horse_number": 4,
+          "probability": 0.35840391870598726,
+          "shadow_ai_rank": 1.0
+        },
+        {
+          "horse_name": "ケープウィッカム",
+          "horse_number": 9,
+          "probability": 0.32571449767117455,
+          "shadow_ai_rank": 2.0
+        },
+        {
+          "horse_name": "ノンスタンダルド",
+          "horse_number": 5,
+          "probability": 0.22121391171818128,
+          "shadow_ai_rank": 3.0
+        },
+        {
+          "horse_name": "ザローズハーツ",
+          "horse_number": 3,
+          "probability": 0.21241382054665495,
+          "shadow_ai_rank": 4.0
+        },
+        {
+          "horse_name": "ゴールドシャーク",
+          "horse_number": 7,
+          "probability": 0.19092982566033295,
+          "shadow_ai_rank": 5.0
+        }
+      ],
+      "race_id": "race_20260516_tokyo_12R",
+      "race_state": "PLAY_CONVERGED"
+    },
+    {
+      "date": "20260516",
+      "probabilities": [
+        {
+          "horse_name": "マジョレルブルー",
+          "horse_number": 3,
+          "probability": 0.40318125437320657,
+          "shadow_ai_rank": 1.0
+        },
+        {
+          "horse_name": "イブキ",
+          "horse_number": 4,
+          "probability": 0.3386573972603806,
+          "shadow_ai_rank": 3.0
+        },
+        {
+          "horse_name": "ブラウンバナナ",
+          "horse_number": 8,
+          "probability": 0.2925142399241128,
+          "shadow_ai_rank": 2.0
+        },
+        {
+          "horse_name": "ガローファノ",
+          "horse_number": 7,
+          "probability": 0.17562591157578858,
+          "shadow_ai_rank": 4.0
+        },
+        {
+          "horse_name": "パッセージピーク",
+          "horse_number": 1,
+          "probability": 0.1392867594147084,
+          "shadow_ai_rank": 5.0
+        }
+      ],
+      "race_id": "race_20260516_tokyo_6R",
+      "race_state": "PLAY_CONVERGED"
+    },
+    {
+      "date": "20260516",
+      "probabilities": [
+        {
+          "horse_name": "マーガレットクレア",
+          "horse_number": 5,
+          "probability": 0.36710388136723243,
+          "shadow_ai_rank": 1.0
+        },
+        {
+          "horse_name": "アンプイットアップ",
+          "horse_number": 15,
+          "probability": 0.2787506168991629,
+          "shadow_ai_rank": 2.0
+        },
+        {
+          "horse_name": "アンバサダネージュ",
+          "horse_number": 1,
+          "probability": 0.2290487537925294,
+          "shadow_ai_rank": 5.0
+        },
+        {
+          "horse_name": "トップマジシャン",
+          "horse_number": 7,
+          "probability": 0.17618176216611034,
+          "shadow_ai_rank": 3.0
+        },
+        {
+          "horse_name": "エスカレイト",
+          "horse_number": 10,
+          "probability": 0.12798482499961775,
+          "shadow_ai_rank": 4.0
+        }
+      ],
+      "race_id": "race_20260516_tokyo_7R",
+      "race_state": "PLAY_CONVERGED"
+    },
+    {
+      "date": "20260516",
+      "probabilities": [
+        {
+          "horse_name": "ドリーミングアップ",
+          "horse_number": 2,
+          "probability": 0.5083527470394461,
+          "shadow_ai_rank": 1.0
+        },
+        {
+          "horse_name": "ハクシンブライアン",
+          "horse_number": 15,
+          "probability": 0.44669109726378164,
+          "shadow_ai_rank": 2.0
+        },
+        {
+          "horse_name": "ノアヴィヴァーチェ",
+          "horse_number": 1,
+          "probability": 0.3898614553233541,
+          "shadow_ai_rank": 3.0
+        },
+        {
+          "horse_name": "ビービーバザーク",
+          "horse_number": 12,
+          "probability": 0.35780192441271524,
+          "shadow_ai_rank": 4.0
+        },
+        {
+          "horse_name": "ファンタイムギフト",
+          "horse_number": 11,
+          "probability": 0.27494254452944317,
+          "shadow_ai_rank": 5.0
+        }
+      ],
+      "race_id": "race_20260516_tokyo_8R",
+      "race_state": "PLAY_CONVERGED"
+    },
+    {
+      "date": "20260517",
+      "probabilities": [
+        {
+          "horse_name": "ベルジュロネット",
+          "horse_number": 11,
+          "probability": 0.49628169722664356,
+          "shadow_ai_rank": 1.0
+        },
+        {
+          "horse_name": "ルークススペイ",
+          "horse_number": 6,
+          "probability": 0.48947909425552544,
+          "shadow_ai_rank": 2.0
+        },
+        {
+          "horse_name": "ジャスティンアース",
+          "horse_number": 13,
+          "probability": 0.4578716377859934,
+          "shadow_ai_rank": 3.0
+        },
+        {
+          "horse_name": "ナムラクララ",
+          "horse_number": 16,
+          "probability": 0.31956928469075657,
+          "shadow_ai_rank": 4.0
+        },
+        {
+          "horse_name": "ハッピーマン",
+          "horse_number": 10,
+          "probability": 0.12459332710129016,
+          "shadow_ai_rank": 5.0
+        }
+      ],
+      "race_id": "race_20260517_kyoto_11R",
+      "race_state": "PLAY_CONVERGED"
+    },
+    {
+      "date": "20260517",
+      "probabilities": [
+        {
+          "horse_name": "ロードアマルフィ",
+          "horse_number": 14,
+          "probability": 0.4559238941759231,
+          "shadow_ai_rank": 3.0
+        },
+        {
+          "horse_name": "システマソラー",
+          "horse_number": 6,
+          "probability": 0.4121131400278831,
+          "shadow_ai_rank": 2.0
+        },
+        {
+          "horse_name": "バケラッタ",
+          "horse_number": 1,
+          "probability": 0.3705071996348453,
+          "shadow_ai_rank": 1.0
+        },
+        {
+          "horse_name": "テスタヴェローチェ",
+          "horse_number": 7,
+          "probability": 0.3357444309406043,
+          "shadow_ai_rank": 5.0
+        },
+        {
+          "horse_name": "アビラーシャ",
+          "horse_number": 10,
+          "probability": 0.3112343645100634,
+          "shadow_ai_rank": 4.0
+        }
+      ],
+      "race_id": "race_20260517_kyoto_6R",
+      "race_state": "PLAY_CONVERGED"
+    },
+    {
+      "date": "20260517",
+      "probabilities": [
+        {
+          "horse_name": "サトノソティラス",
+          "horse_number": 1,
+          "probability": 0.4248579499987782,
+          "shadow_ai_rank": 2.0
+        },
+        {
+          "horse_name": "ベイラム",
+          "horse_number": 3,
+          "probability": 0.3883609613969463,
+          "shadow_ai_rank": 3.0
+        },
+        {
+          "horse_name": "アスクデッドヒート",
+          "horse_number": 6,
+          "probability": 0.37059067140641333,
+          "shadow_ai_rank": 1.0
+        },
+        {
+          "horse_name": "ファーングロット",
+          "horse_number": 5,
+          "probability": 0.32743437000578657,
+          "shadow_ai_rank": 4.0
+        },
+        {
+          "horse_name": "エルディアブロ",
+          "horse_number": 9,
+          "probability": 0.2876700173705626,
+          "shadow_ai_rank": 5.0
+        }
+      ],
+      "race_id": "race_20260517_kyoto_9R",
+      "race_state": "PLAY_CONVERGED"
+    },
+    {
+      "date": "20260517",
+      "probabilities": [
+        {
+          "horse_name": "ジーティームッシュ",
+          "horse_number": 5,
+          "probability": 0.4118137974507402,
+          "shadow_ai_rank": 2.0
+        },
+        {
+          "horse_name": "ワンウェイトゥヘル",
+          "horse_number": 1,
+          "probability": 0.3875227841568187,
+          "shadow_ai_rank": 1.0
+        },
+        {
+          "horse_name": "シルフレイ",
+          "horse_number": 4,
+          "probability": 0.3585800803955394,
+          "shadow_ai_rank": 3.0
+        },
+        {
+          "horse_name": "エルムラント",
+          "horse_number": 7,
+          "probability": 0.2644370878007665,
+          "shadow_ai_rank": 5.0
+        },
+        {
+          "horse_name": "スーパーバイザー",
+          "horse_number": 10,
+          "probability": 0.15597030286466054,
+          "shadow_ai_rank": 4.0
+        }
+      ],
+      "race_id": "race_20260517_niigata_12R",
+      "race_state": "PLAY_CONVERGED"
+    },
+    {
+      "date": "20260517",
+      "probabilities": [
+        {
+          "horse_name": "ベルタソ",
+          "horse_number": 4,
+          "probability": 0.3881085398274573,
+          "shadow_ai_rank": 1.0
+        },
+        {
+          "horse_name": "ウインマスカレード",
+          "horse_number": 12,
+          "probability": 0.32124995094048187,
+          "shadow_ai_rank": 3.0
+        },
+        {
+          "horse_name": "マグネシアブリック",
+          "horse_number": 10,
+          "probability": 0.31788356415152647,
+          "shadow_ai_rank": 2.0
+        },
+        {
+          "horse_name": "ブラックティンカー",
+          "horse_number": 8,
+          "probability": 0.29407512107716655,
+          "shadow_ai_rank": 4.0
+        },
+        {
+          "horse_name": "グッバイウェーブ",
+          "horse_number": 9,
+          "probability": 0.15900160135698854,
+          "shadow_ai_rank": 5.0
+        }
+      ],
+      "race_id": "race_20260517_niigata_9R",
+      "race_state": "PLAY_CONVERGED"
+    },
+    {
+      "date": "20260517",
+      "probabilities": [
+        {
+          "horse_name": "アイサンサン",
+          "horse_number": 15,
+          "probability": 0.44775783315687107,
+          "shadow_ai_rank": 2.0
+        },
+        {
+          "horse_name": "マピュース",
+          "horse_number": 3,
+          "probability": 0.3499354676700759,
+          "shadow_ai_rank": 5.0
+        },
+        {
+          "horse_name": "ニシノティアモ",
+          "horse_number": 16,
+          "probability": 0.30361842556259755,
+          "shadow_ai_rank": 3.0
+        },
+        {
+          "horse_name": "ココナッツブラウン",
+          "horse_number": 9,
+          "probability": 0.28263877286503875,
+          "shadow_ai_rank": 1.0
+        },
+        {
+          "horse_name": "ワイドラトゥール",
+          "horse_number": 2,
+          "probability": 0.21768691495030254,
+          "shadow_ai_rank": 4.0
+        }
+      ],
+      "race_id": "race_20260517_tokyo_11R",
+      "race_state": "PLAY_CONVERGED"
+    },
+    {
+      "date": "20260517",
+      "probabilities": [
+        {
+          "horse_name": "ヴァーナリー",
+          "horse_number": 2,
+          "probability": 0.38168079281544004,
+          "shadow_ai_rank": 3.0
+        },
+        {
+          "horse_name": "ホウオウペトリュス",
+          "horse_number": 9,
+          "probability": 0.2987160095766574,
+          "shadow_ai_rank": 1.0
+        },
+        {
+          "horse_name": "ペプロス",
+          "horse_number": 4,
+          "probability": 0.29244963089058673,
+          "shadow_ai_rank": 5.0
+        },
+        {
+          "horse_name": "クモヒトツナイ",
+          "horse_number": 13,
+          "probability": 0.2923088322059359,
+          "shadow_ai_rank": 2.0
+        },
+        {
+          "horse_name": "バズアップビート",
+          "horse_number": 10,
+          "probability": 0.15582489495547452,
+          "shadow_ai_rank": 4.0
+        }
+      ],
+      "race_id": "race_20260517_tokyo_8R",
+      "race_state": "PLAY_CONVERGED"
+    },
+    {
+      "date": "20260517",
+      "probabilities": [
+        {
+          "horse_name": "ジーティーマン",
+          "horse_number": 4,
+          "probability": 0.3421807534547579,
+          "shadow_ai_rank": 5.0
+        },
+        {
+          "horse_name": "エルマーゴ",
+          "horse_number": 12,
+          "probability": 0.3317074459321295,
+          "shadow_ai_rank": 2.0
+        },
+        {
+          "horse_name": "ミッキースターダム",
+          "horse_number": 7,
+          "probability": 0.3240159561264812,
+          "shadow_ai_rank": 1.0
+        },
+        {
+          "horse_name": "オリバナム",
+          "horse_number": 1,
+          "probability": 0.28695448925847816,
+          "shadow_ai_rank": 4.0
+        },
+        {
+          "horse_name": "ケイケイ",
+          "horse_number": 2,
+          "probability": 0.24627122008059676,
+          "shadow_ai_rank": 3.0
+        }
+      ],
+      "race_id": "race_20260517_tokyo_9R",
+      "race_state": "PLAY_CONVERGED"
+    },
+    {
+      "date": "20260523",
+      "probabilities": [
+        {
+          "horse_name": "ラブリージャブリー",
+          "horse_number": 2,
+          "probability": 0.3994104649592875,
+          "shadow_ai_rank": 4.0
+        },
+        {
+          "horse_name": "マカナ",
+          "horse_number": 11,
+          "probability": 0.3614800241786111,
+          "shadow_ai_rank": 2.0
+        },
+        {
+          "horse_name": "シャドウメテオ",
+          "horse_number": 4,
+          "probability": 0.3209540440590829,
+          "shadow_ai_rank": 1.0
+        },
+        {
+          "horse_name": "ノーランサンライズ",
+          "horse_number": 7,
+          "probability": 0.29538264605460646,
+          "shadow_ai_rank": 5.0
+        },
+        {
+          "horse_name": "アラベラ",
+          "horse_number": 3,
+          "probability": 0.22800062870582288,
+          "shadow_ai_rank": 3.0
+        }
+      ],
+      "race_id": "race_20260523_kyoto_10R",
+      "race_state": "PLAY_CONVERGED"
+    },
+    {
+      "date": "20260523",
+      "probabilities": [
+        {
+          "horse_name": "メリークリスマス",
+          "horse_number": 9,
+          "probability": 0.4926111273040071,
+          "shadow_ai_rank": 2.0
+        },
+        {
+          "horse_name": "ロードクロンヌ",
+          "horse_number": 14,
+          "probability": 0.36005758199781845,
+          "shadow_ai_rank": 5.0
+        },
+        {
+          "horse_name": "ゼットリアン",
+          "horse_number": 7,
+          "probability": 0.3469887422930698,
+          "shadow_ai_rank": 1.0
+        },
+        {
+          "horse_name": "タイトニット",
+          "horse_number": 11,
+          "probability": 0.34400990919731783,
+          "shadow_ai_rank": 3.0
+        },
+        {
+          "horse_name": "ポッドロゴ",
+          "horse_number": 1,
+          "probability": 0.244056511810895,
+          "shadow_ai_rank": 4.0
+        }
+      ],
+      "race_id": "race_20260523_kyoto_11R",
+      "race_state": "PLAY_CONVERGED"
+    },
+    {
+      "date": "20260523",
+      "probabilities": [
+        {
+          "horse_name": "テーオーナタリー",
+          "horse_number": 8,
+          "probability": 0.36884476846540454,
+          "shadow_ai_rank": 1.0
+        },
+        {
+          "horse_name": "フリッシュ",
+          "horse_number": 6,
+          "probability": 0.3308523288469235,
+          "shadow_ai_rank": 3.0
+        },
+        {
+          "horse_name": "カフジクロミエ",
+          "horse_number": 9,
+          "probability": 0.3296270962641517,
+          "shadow_ai_rank": 2.0
+        },
+        {
+          "horse_name": "シュテフィ",
+          "horse_number": 2,
+          "probability": 0.15883405649921517,
+          "shadow_ai_rank": 4.0
+        },
+        {
+          "horse_name": "クリノセーラーマン",
+          "horse_number": 16,
+          "probability": 0.12287237305834063,
+          "shadow_ai_rank": 5.0
+        }
+      ],
+      "race_id": "race_20260523_kyoto_6R",
+      "race_state": "PLAY_CONVERGED"
+    },
+    {
+      "date": "20260523",
+      "probabilities": [
+        {
+          "horse_name": "ポイントネモ",
+          "horse_number": 5,
+          "probability": 0.45237906470548783,
+          "shadow_ai_rank": 3.0
+        },
+        {
+          "horse_name": "メイショウコナン",
+          "horse_number": 12,
+          "probability": 0.42680586776277446,
+          "shadow_ai_rank": 4.0
+        },
+        {
+          "horse_name": "デルマサクラサク",
+          "horse_number": 8,
+          "probability": 0.3250161180290956,
+          "shadow_ai_rank": 1.0
+        },
+        {
+          "horse_name": "サマーナイト",
+          "horse_number": 7,
+          "probability": 0.32492209290067114,
+          "shadow_ai_rank": 2.0
+        },
+        {
+          "horse_name": "ビルンバウム",
+          "horse_number": 3,
+          "probability": 0.2993880226413221,
+          "shadow_ai_rank": 5.0
+        }
+      ],
+      "race_id": "race_20260523_kyoto_7R",
+      "race_state": "PLAY_CONVERGED"
+    },
+    {
+      "date": "20260523",
+      "probabilities": [
+        {
+          "horse_name": "マイネルアズーロ",
+          "horse_number": 9,
+          "probability": 0.4652949302173091,
+          "shadow_ai_rank": 1.0
+        },
+        {
+          "horse_name": "クラウディアイ",
+          "horse_number": 15,
+          "probability": 0.39686176992566896,
+          "shadow_ai_rank": 2.0
+        },
+        {
+          "horse_name": "トゥルーサクセサー",
+          "horse_number": 2,
+          "probability": 0.25270254684418464,
+          "shadow_ai_rank": 3.0
+        },
+        {
+          "horse_name": "マイネルモメンタム",
+          "horse_number": 14,
+          "probability": 0.19966694767193688,
+          "shadow_ai_rank": 4.0
+        },
+        {
+          "horse_name": "エコログロス",
+          "horse_number": 3,
+          "probability": 0.1561723463861993,
+          "shadow_ai_rank": 5.0
+        }
+      ],
+      "race_id": "race_20260523_niigata_10R",
+      "race_state": "PLAY_CONVERGED"
+    },
+    {
+      "date": "20260523",
+      "probabilities": [
+        {
+          "horse_name": "ハギノコラソン",
+          "horse_number": 15,
+          "probability": 0.4727902877536652,
+          "shadow_ai_rank": 2.0
+        },
+        {
+          "horse_name": "マタミカンサン",
+          "horse_number": 1,
+          "probability": 0.4359583770611008,
+          "shadow_ai_rank": 3.0
+        },
+        {
+          "horse_name": "カルミアクラウン",
+          "horse_number": 11,
+          "probability": 0.32301043265079726,
+          "shadow_ai_rank": 1.0
+        },
+        {
+          "horse_name": "ブーケドグレイス",
+          "horse_number": 14,
+          "probability": 0.2614542684975638,
+          "shadow_ai_rank": 4.0
+        },
+        {
+          "horse_name": "ニシノエピカリ",
+          "horse_number": 9,
+          "probability": 0.19992548926742393,
+          "shadow_ai_rank": 5.0
+        }
+      ],
+      "race_id": "race_20260523_niigata_8R",
+      "race_state": "PLAY_CONVERGED"
+    },
+    {
+      "date": "20260523",
+      "probabilities": [
+        {
+          "horse_name": "パイシャオピン",
+          "horse_number": 3,
+          "probability": 0.39013835363828486,
+          "shadow_ai_rank": 1.0
+        },
+        {
+          "horse_name": "エーリアル",
+          "horse_number": 5,
+          "probability": 0.3656906610229276,
+          "shadow_ai_rank": 4.0
+        },
+        {
+          "horse_name": "マジックローズ",
+          "horse_number": 14,
+          "probability": 0.33334281245098457,
+          "shadow_ai_rank": 3.0
+        },
+        {
+          "horse_name": "タマモカンパネラ",
+          "horse_number": 10,
+          "probability": 0.30173653786906085,
+          "shadow_ai_rank": 2.0
+        },
+        {
+          "horse_name": "カーラデマドレ",
+          "horse_number": 15,
+          "probability": 0.26807008928682863,
+          "shadow_ai_rank": 5.0
+        }
+      ],
+      "race_id": "race_20260523_tokyo_12R",
+      "race_state": "PLAY_CONVERGED"
+    },
+    {
+      "date": "20260523",
+      "probabilities": [
+        {
+          "horse_name": "メディチパワー",
+          "horse_number": 12,
+          "probability": 0.4647976158934906,
+          "shadow_ai_rank": 2.0
+        },
+        {
+          "horse_name": "タケルムサシ",
+          "horse_number": 7,
+          "probability": 0.4095033488612403,
+          "shadow_ai_rank": 4.0
+        },
+        {
+          "horse_name": "テイクオンミー",
+          "horse_number": 4,
+          "probability": 0.40216888769369125,
+          "shadow_ai_rank": 5.0
+        },
+        {
+          "horse_name": "アミラル",
+          "horse_number": 13,
+          "probability": 0.3303893337945512,
+          "shadow_ai_rank": 1.0
+        },
+        {
+          "horse_name": "ランニングビーチ",
+          "horse_number": 3,
+          "probability": 0.27344027826261064,
+          "shadow_ai_rank": 3.0
+        }
+      ],
+      "race_id": "race_20260523_tokyo_6R",
+      "race_state": "PLAY_CONVERGED"
+    },
+    {
+      "date": "20260523",
+      "probabilities": [
+        {
+          "horse_name": "ヘルヴェティオス",
+          "horse_number": 13,
+          "probability": 0.47617052342595007,
+          "shadow_ai_rank": 1.0
+        },
+        {
+          "horse_name": "ブライトビギニング",
+          "horse_number": 9,
+          "probability": 0.3695504794050664,
+          "shadow_ai_rank": 5.0
+        },
+        {
+          "horse_name": "サトノセレナーデ",
+          "horse_number": 5,
+          "probability": 0.33689570933977553,
+          "shadow_ai_rank": 4.0
+        },
+        {
+          "horse_name": "ウフドゥウフ",
+          "horse_number": 16,
+          "probability": 0.3094128850251557,
+          "shadow_ai_rank": 2.0
+        },
+        {
+          "horse_name": "ハルノアラシ",
+          "horse_number": 14,
+          "probability": 0.18092285022623172,
+          "shadow_ai_rank": 3.0
+        }
+      ],
+      "race_id": "race_20260523_tokyo_8R",
+      "race_state": "PLAY_CONVERGED"
+    },
+    {
+      "date": "20260523",
+      "probabilities": [
+        {
+          "horse_name": "ルージュリリック",
+          "horse_number": 2,
+          "probability": 0.40784967066394834,
+          "shadow_ai_rank": 1.0
+        },
+        {
+          "horse_name": "ロザーンジュ",
+          "horse_number": 4,
+          "probability": 0.34833559669854164,
+          "shadow_ai_rank": 3.0
+        },
+        {
+          "horse_name": "ファンクション",
+          "horse_number": 9,
+          "probability": 0.30951412392422606,
+          "shadow_ai_rank": 2.0
+        },
+        {
+          "horse_name": "ガーヴィ",
+          "horse_number": 8,
+          "probability": 0.2264472480658223,
+          "shadow_ai_rank": 4.0
+        },
+        {
+          "horse_name": "イクシード",
+          "horse_number": 10,
+          "probability": 0.21314179090687624,
+          "shadow_ai_rank": 5.0
+        }
+      ],
+      "race_id": "race_20260523_tokyo_9R",
+      "race_state": "PLAY_CONVERGED"
+    },
+    {
+      "date": "20260524",
+      "probabilities": [
+        {
+          "horse_name": "チェルビアット",
+          "horse_number": 10,
+          "probability": 0.419563236845337,
+          "shadow_ai_rank": 2.0
+        },
+        {
+          "horse_name": "ナムラエイハブ",
+          "horse_number": 6,
+          "probability": 0.39392271218619296,
+          "shadow_ai_rank": 3.0
+        },
+        {
+          "horse_name": "メリオーレム",
+          "horse_number": 8,
+          "probability": 0.3070884935306532,
+          "shadow_ai_rank": 5.0
+        },
+        {
+          "horse_name": "ガイアメンテ",
+          "horse_number": 2,
+          "probability": 0.27544597017846334,
+          "shadow_ai_rank": 4.0
+        },
+        {
+          "horse_name": "オーロラエックス",
+          "horse_number": 7,
+          "probability": 0.2213398732808754,
+          "shadow_ai_rank": 1.0
+        }
+      ],
+      "race_id": "race_20260524_kyoto_11R",
+      "race_state": "PLAY_CONVERGED"
+    },
+    {
+      "date": "20260524",
+      "probabilities": [
+        {
+          "horse_name": "ララバッカナール",
+          "horse_number": 13,
+          "probability": 0.45456479268998273,
+          "shadow_ai_rank": 1.0
+        },
+        {
+          "horse_name": "ウォーターパラディ",
+          "horse_number": 7,
+          "probability": 0.389515527068316,
+          "shadow_ai_rank": 2.0
+        },
+        {
+          "horse_name": "レイム",
+          "horse_number": 2,
+          "probability": 0.3833980409694388,
+          "shadow_ai_rank": 3.0
+        },
+        {
+          "horse_name": "グディンナ",
+          "horse_number": 1,
+          "probability": 0.2124758194043737,
+          "shadow_ai_rank": 5.0
+        },
+        {
+          "horse_name": "ブルーミングローズ",
+          "horse_number": 12,
+          "probability": 0.15762575841867313,
+          "shadow_ai_rank": 4.0
+        }
+      ],
+      "race_id": "race_20260524_kyoto_12R",
+      "race_state": "PLAY_CONVERGED"
+    },
+    {
+      "date": "20260524",
+      "probabilities": [
+        {
+          "horse_name": "レイサンソク",
+          "horse_number": 4,
+          "probability": 0.5075276870266151,
+          "shadow_ai_rank": 1.0
+        },
+        {
+          "horse_name": "ミスターエメラルド",
+          "horse_number": 6,
+          "probability": 0.38979801308195045,
+          "shadow_ai_rank": 4.0
+        },
+        {
+          "horse_name": "アスクドゥチャンプ",
+          "horse_number": 9,
+          "probability": 0.34458946481443864,
+          "shadow_ai_rank": 3.0
+        },
+        {
+          "horse_name": "ボクマダネムイヨ",
+          "horse_number": 12,
+          "probability": 0.2834725500256966,
+          "shadow_ai_rank": 2.0
+        },
+        {
+          "horse_name": "ホールオブミラーズ",
+          "horse_number": 7,
+          "probability": 0.2433556138515409,
+          "shadow_ai_rank": 5.0
+        }
+      ],
+      "race_id": "race_20260524_kyoto_6R",
+      "race_state": "PLAY_CONVERGED"
+    },
+    {
+      "date": "20260524",
+      "probabilities": [
+        {
+          "horse_name": "ノボリリア",
+          "horse_number": 16,
+          "probability": 0.5192001315499108,
+          "shadow_ai_rank": 1.0
+        },
+        {
+          "horse_name": "ペールノエル",
+          "horse_number": 12,
+          "probability": 0.510471609077799,
+          "shadow_ai_rank": 3.0
+        },
+        {
+          "horse_name": "ハッピーサプライズ",
+          "horse_number": 13,
+          "probability": 0.2865404281944462,
+          "shadow_ai_rank": 5.0
+        },
+        {
+          "horse_name": "サリュエ",
+          "horse_number": 11,
+          "probability": 0.2713533374460524,
+          "shadow_ai_rank": 2.0
+        },
+        {
+          "horse_name": "ウォーターエアリー",
+          "horse_number": 4,
+          "probability": 0.20648006364834529,
+          "shadow_ai_rank": 4.0
+        }
+      ],
+      "race_id": "race_20260524_kyoto_7R",
+      "race_state": "PLAY_CONVERGED"
+    },
+    {
+      "date": "20260524",
+      "probabilities": [
+        {
+          "horse_name": "セイプリーズ",
+          "horse_number": 6,
+          "probability": 0.4237436690314515,
+          "shadow_ai_rank": 1.0
+        },
+        {
+          "horse_name": "セガンティーニ",
+          "horse_number": 9,
+          "probability": 0.39349027834607453,
+          "shadow_ai_rank": 4.0
+        },
+        {
+          "horse_name": "アーサーズウェイン",
+          "horse_number": 12,
+          "probability": 0.2941922116495362,
+          "shadow_ai_rank": 2.0
+        },
+        {
+          "horse_name": "スカイブルー",
+          "horse_number": 7,
+          "probability": 0.1832066069040989,
+          "shadow_ai_rank": 3.0
+        },
+        {
+          "horse_name": "スプリングデイ",
+          "horse_number": 14,
+          "probability": 0.1784064476036877,
+          "shadow_ai_rank": 5.0
+        }
+      ],
+      "race_id": "race_20260524_niigata_8R",
+      "race_state": "PLAY_CONVERGED"
+    },
+    {
+      "date": "20260524",
+      "probabilities": [
+        {
+          "horse_name": "ホレーショ",
+          "horse_number": 16,
+          "probability": 0.5021095425209098,
+          "shadow_ai_rank": 3.0
+        },
+        {
+          "horse_name": "ライフゲート",
+          "horse_number": 4,
+          "probability": 0.4640466550600589,
+          "shadow_ai_rank": 1.0
+        },
+        {
+          "horse_name": "ディーズゴールド",
+          "horse_number": 5,
+          "probability": 0.4243764026894621,
+          "shadow_ai_rank": 2.0
+        },
+        {
+          "horse_name": "シンボリノエル",
+          "horse_number": 12,
+          "probability": 0.21475195012609302,
+          "shadow_ai_rank": 4.0
+        },
+        {
+          "horse_name": "ペッレグリーニ",
+          "horse_number": 13,
+          "probability": 0.13791181360894028,
+          "shadow_ai_rank": 5.0
+        }
+      ],
+      "race_id": "race_20260524_tokyo_8R",
+      "race_state": "PLAY_CONVERGED"
+    },
+    {
+      "date": "20260530",
+      "probabilities": [
+        {
+          "horse_name": "マンオブザマッチ",
+          "horse_number": 10,
+          "probability": 0.4995019090706902,
+          "shadow_ai_rank": 1.0
+        },
+        {
+          "horse_name": "キングブルー",
+          "horse_number": 5,
+          "probability": 0.4770879208411979,
+          "shadow_ai_rank": 2.0
+        },
+        {
+          "horse_name": "ペンナヴェローチェ",
+          "horse_number": 12,
+          "probability": 0.4588892722919269,
+          "shadow_ai_rank": 4.0
+        },
+        {
+          "horse_name": "オリーブグリーン",
+          "horse_number": 1,
+          "probability": 0.4304856215339576,
+          "shadow_ai_rank": 3.0
+        },
+        {
+          "horse_name": "サノノワンダー",
+          "horse_number": 3,
+          "probability": 0.38390333985133573,
+          "shadow_ai_rank": 5.0
+        }
+      ],
+      "race_id": "race_20260530_kyoto_10R",
+      "race_state": "PLAY_CONVERGED"
+    },
+    {
+      "date": "20260530",
+      "probabilities": [
+        {
+          "horse_name": "エイシンディード",
+          "horse_number": 5,
+          "probability": 0.45479371369795846,
+          "shadow_ai_rank": 3.0
+        },
+        {
+          "horse_name": "ガラベイヤ",
+          "horse_number": 3,
+          "probability": 0.434890009557734,
+          "shadow_ai_rank": 1.0
+        },
+        {
+          "horse_name": "デアヴェローチェ",
+          "horse_number": 2,
+          "probability": 0.4167869341557472,
+          "shadow_ai_rank": 2.0
+        },
+        {
+          "horse_name": "フォーゲル",
+          "horse_number": 4,
+          "probability": 0.40585766366117254,
+          "shadow_ai_rank": 5.0
+        },
+        {
+          "horse_name": "ショウナンカリス",
+          "horse_number": 16,
+          "probability": 0.20348231946083434,
+          "shadow_ai_rank": 4.0
+        }
+      ],
+      "race_id": "race_20260530_kyoto_11R",
+      "race_state": "PLAY_CONVERGED"
+    },
+    {
+      "date": "20260530",
+      "probabilities": [
+        {
+          "horse_name": "メイショウドライブ",
+          "horse_number": 6,
+          "probability": 0.4564636378668546,
+          "shadow_ai_rank": 5.0
+        },
+        {
+          "horse_name": "タイセイルヴァン",
+          "horse_number": 2,
+          "probability": 0.441337881224466,
+          "shadow_ai_rank": 1.0
+        },
+        {
+          "horse_name": "ウルスクローム",
+          "horse_number": 5,
+          "probability": 0.3794398188835576,
+          "shadow_ai_rank": 4.0
+        },
+        {
+          "horse_name": "ベンダバール",
+          "horse_number": 15,
+          "probability": 0.27705129656570776,
+          "shadow_ai_rank": 2.0
+        },
+        {
+          "horse_name": "カワキタマナレア",
+          "horse_number": 16,
+          "probability": 0.16955805460873188,
+          "shadow_ai_rank": 3.0
+        }
+      ],
+      "race_id": "race_20260530_kyoto_12R",
+      "race_state": "PLAY_CONVERGED"
+    },
+    {
+      "date": "20260530",
+      "probabilities": [
+        {
+          "horse_name": "ユキノクラウン",
+          "horse_number": 2,
+          "probability": 0.40288412509695487,
+          "shadow_ai_rank": 2.0
+        },
+        {
+          "horse_name": "チュウワダイオウ",
+          "horse_number": 11,
+          "probability": 0.388951527580376,
+          "shadow_ai_rank": 3.0
+        },
+        {
+          "horse_name": "ディニテ",
+          "horse_number": 6,
+          "probability": 0.351960750784748,
+          "shadow_ai_rank": 1.0
+        },
+        {
+          "horse_name": "ロードシュヴァリエ",
+          "horse_number": 4,
+          "probability": 0.33463127706989415,
+          "shadow_ai_rank": 5.0
+        },
+        {
+          "horse_name": "ラグナトーレ",
+          "horse_number": 9,
+          "probability": 0.2677627869753231,
+          "shadow_ai_rank": 4.0
+        }
+      ],
+      "race_id": "race_20260530_kyoto_6R",
+      "race_state": "PLAY_CONVERGED"
+    },
+    {
+      "date": "20260530",
+      "probabilities": [
+        {
+          "horse_name": "エイヘンハールト",
+          "horse_number": 5,
+          "probability": 0.36338182117359114,
+          "shadow_ai_rank": 1.0
+        },
+        {
+          "horse_name": "メイショウビストロ",
+          "horse_number": 6,
+          "probability": 0.34185745045045896,
+          "shadow_ai_rank": 5.0
+        },
+        {
+          "horse_name": "ムーンライトラガー",
+          "horse_number": 14,
+          "probability": 0.30806453863151445,
+          "shadow_ai_rank": 4.0
+        },
+        {
+          "horse_name": "エイカイカッシーナ",
+          "horse_number": 11,
+          "probability": 0.3066189109477647,
+          "shadow_ai_rank": 3.0
+        },
+        {
+          "horse_name": "ベイリークロア",
+          "horse_number": 2,
+          "probability": 0.2279606260987689,
+          "shadow_ai_rank": 2.0
+        }
+      ],
+      "race_id": "race_20260530_kyoto_7R",
+      "race_state": "PLAY_CONVERGED"
+    },
+    {
+      "date": "20260530",
+      "probabilities": [
+        {
+          "horse_name": "ライラ",
+          "horse_number": 6,
+          "probability": 0.3998641188955851,
+          "shadow_ai_rank": 1.0
+        },
+        {
+          "horse_name": "エーデルヴェーグ",
+          "horse_number": 10,
+          "probability": 0.37001361873632327,
+          "shadow_ai_rank": 2.0
+        },
+        {
+          "horse_name": "ロンドボス",
+          "horse_number": 7,
+          "probability": 0.36926787569368763,
+          "shadow_ai_rank": 3.0
+        },
+        {
+          "horse_name": "アジュマン",
+          "horse_number": 5,
+          "probability": 0.30821629390738964,
+          "shadow_ai_rank": 5.0
+        },
+        {
+          "horse_name": "テーオーシュタイン",
+          "horse_number": 3,
+          "probability": 0.2729127543140916,
+          "shadow_ai_rank": 4.0
+        }
+      ],
+      "race_id": "race_20260530_kyoto_8R",
+      "race_state": "PLAY_CONVERGED"
+    },
+    {
+      "date": "20260530",
+      "probabilities": [
+        {
+          "horse_name": "アマンテビアンコ",
+          "horse_number": 6,
+          "probability": 0.4575324960719055,
+          "shadow_ai_rank": 2.0
+        },
+        {
+          "horse_name": "テーオーパスワード",
+          "horse_number": 16,
+          "probability": 0.33426974644573715,
+          "shadow_ai_rank": 1.0
+        },
+        {
+          "horse_name": "ハビレ",
+          "horse_number": 13,
+          "probability": 0.2808451968489792,
+          "shadow_ai_rank": 3.0
+        },
+        {
+          "horse_name": "マーズオデッセイ",
+          "horse_number": 9,
+          "probability": 0.23135626634643192,
+          "shadow_ai_rank": 5.0
+        },
+        {
+          "horse_name": "ナイトアクアリウム",
+          "horse_number": 8,
+          "probability": 0.2094626881682745,
+          "shadow_ai_rank": 4.0
+        }
+      ],
+      "race_id": "race_20260530_tokyo_11R",
+      "race_state": "PLAY_CONVERGED"
+    },
+    {
+      "date": "20260530",
+      "probabilities": [
+        {
+          "horse_name": "ムーランオランジュ",
+          "horse_number": 12,
+          "probability": 0.41949894511833474,
+          "shadow_ai_rank": 1.0
+        },
+        {
+          "horse_name": "バトルアックス",
+          "horse_number": 5,
+          "probability": 0.38543902001209845,
+          "shadow_ai_rank": 4.0
+        },
+        {
+          "horse_name": "カシノスパーク",
+          "horse_number": 9,
+          "probability": 0.3510015359561766,
+          "shadow_ai_rank": 5.0
+        },
+        {
+          "horse_name": "ラフレードピエル",
+          "horse_number": 11,
+          "probability": 0.22751533314195263,
+          "shadow_ai_rank": 3.0
+        },
+        {
+          "horse_name": "ショウナンダイン",
+          "horse_number": 6,
+          "probability": 0.17794995473086708,
+          "shadow_ai_rank": 2.0
+        }
+      ],
+      "race_id": "race_20260530_tokyo_6R",
+      "race_state": "PLAY_CONVERGED"
+    },
+    {
+      "date": "20260530",
+      "probabilities": [
+        {
+          "horse_name": "リラ",
+          "horse_number": 9,
+          "probability": 0.5489380050906993,
+          "shadow_ai_rank": 2.0
+        },
+        {
+          "horse_name": "グロリアスマーチ",
+          "horse_number": 10,
+          "probability": 0.44101486015958496,
+          "shadow_ai_rank": 3.0
+        },
+        {
+          "horse_name": "レオアジャイル",
+          "horse_number": 8,
+          "probability": 0.42855625120175,
+          "shadow_ai_rank": 5.0
+        },
+        {
+          "horse_name": "ラプランセス",
+          "horse_number": 12,
+          "probability": 0.3623380030026214,
+          "shadow_ai_rank": 1.0
+        },
+        {
+          "horse_name": "アイアムアヒーロー",
+          "horse_number": 1,
+          "probability": 0.23895329391650236,
+          "shadow_ai_rank": 4.0
+        }
+      ],
+      "race_id": "race_20260530_tokyo_7R",
+      "race_state": "PLAY_CONVERGED"
+    },
+    {
+      "date": "20260530",
+      "probabilities": [
+        {
+          "horse_name": "ラルフテソーロ",
+          "horse_number": 9,
+          "probability": 0.43879830998708597,
+          "shadow_ai_rank": 3.0
+        },
+        {
+          "horse_name": "アイファーシャドー",
+          "horse_number": 13,
+          "probability": 0.4259767336511215,
+          "shadow_ai_rank": 1.0
+        },
+        {
+          "horse_name": "ベルチュガダン",
+          "horse_number": 1,
+          "probability": 0.34038706516611267,
+          "shadow_ai_rank": 4.0
+        },
+        {
+          "horse_name": "コーシューパンジャ",
+          "horse_number": 10,
+          "probability": 0.3348306458853113,
+          "shadow_ai_rank": 2.0
+        },
+        {
+          "horse_name": "ミスティマウンテン",
+          "horse_number": 14,
+          "probability": 0.16253201699610292,
+          "shadow_ai_rank": 5.0
+        }
+      ],
+      "race_id": "race_20260530_tokyo_8R",
+      "race_state": "PLAY_CONVERGED"
+    },
+    {
+      "date": "20260530",
+      "probabilities": [
+        {
+          "horse_name": "マクミランテソーロ",
+          "horse_number": 14,
+          "probability": 0.5518306104353222,
+          "shadow_ai_rank": 1.0
+        },
+        {
+          "horse_name": "キミハスコール",
+          "horse_number": 9,
+          "probability": 0.4142534978539539,
+          "shadow_ai_rank": 2.0
+        },
+        {
+          "horse_name": "キョウエイスレーヴ",
+          "horse_number": 8,
+          "probability": 0.2700832408676271,
+          "shadow_ai_rank": 3.0
+        },
+        {
+          "horse_name": "ノルドヴェスト",
+          "horse_number": 5,
+          "probability": 0.23863477602032437,
+          "shadow_ai_rank": 4.0
+        },
+        {
+          "horse_name": "ジェミート",
+          "horse_number": 7,
+          "probability": 0.23505042787742017,
+          "shadow_ai_rank": 5.0
+        }
+      ],
+      "race_id": "race_20260530_tokyo_9R",
+      "race_state": "PLAY_CONVERGED"
+    },
+    {
+      "date": "20260531",
+      "probabilities": [
+        {
+          "horse_name": "エコロブルーム",
+          "horse_number": 17,
+          "probability": 0.4447639657170669,
+          "shadow_ai_rank": 5.0
+        },
+        {
+          "horse_name": "タガノエルピーダ",
+          "horse_number": 5,
+          "probability": 0.4275412523013101,
+          "shadow_ai_rank": 4.0
+        },
+        {
+          "horse_name": "ヨシノイースター",
+          "horse_number": 12,
+          "probability": 0.3463041096635252,
+          "shadow_ai_rank": 3.0
+        },
+        {
+          "horse_name": "アスクワンタイム",
+          "horse_number": 16,
+          "probability": 0.25375530279779424,
+          "shadow_ai_rank": 1.0
+        },
+        {
+          "horse_name": "ヤブサメ",
+          "horse_number": 1,
+          "probability": 0.24570127426899932,
+          "shadow_ai_rank": 2.0
+        }
+      ],
+      "race_id": "race_20260531_kyoto_10R",
+      "race_state": "PLAY_CONVERGED"
+    },
+    {
+      "date": "20260531",
+      "probabilities": [
+        {
+          "horse_name": "ゴディアンフィンチ",
+          "horse_number": 7,
+          "probability": 0.47873349396602327,
+          "shadow_ai_rank": 2.0
+        },
+        {
+          "horse_name": "エコロボルト",
+          "horse_number": 10,
+          "probability": 0.4126423469140548,
+          "shadow_ai_rank": 5.0
+        },
+        {
+          "horse_name": "メイショウイブキ",
+          "horse_number": 6,
+          "probability": 0.3840220008037111,
+          "shadow_ai_rank": 4.0
+        },
+        {
+          "horse_name": "フィアーブル",
+          "horse_number": 12,
+          "probability": 0.3330488910967434,
+          "shadow_ai_rank": 1.0
+        },
+        {
+          "horse_name": "タイニーワンダー",
+          "horse_number": 3,
+          "probability": 0.2822924134267827,
+          "shadow_ai_rank": 3.0
+        }
+      ],
+      "race_id": "race_20260531_kyoto_6R",
+      "race_state": "PLAY_CONVERGED"
+    },
+    {
+      "date": "20260531",
+      "probabilities": [
+        {
+          "horse_name": "パフュームセント",
+          "horse_number": 8,
+          "probability": 0.5370848078606816,
+          "shadow_ai_rank": 2.0
+        },
+        {
+          "horse_name": "フィオレストラーダ",
+          "horse_number": 1,
+          "probability": 0.48359288366231723,
+          "shadow_ai_rank": 3.0
+        },
+        {
+          "horse_name": "スターリングアップ",
+          "horse_number": 7,
+          "probability": 0.4174476003160791,
+          "shadow_ai_rank": 4.0
+        },
+        {
+          "horse_name": "ステラクラウン",
+          "horse_number": 2,
+          "probability": 0.3847369207602452,
+          "shadow_ai_rank": 1.0
+        },
+        {
+          "horse_name": "モモンウールー",
+          "horse_number": 6,
+          "probability": 0.34685165419290104,
+          "shadow_ai_rank": 5.0
+        }
+      ],
+      "race_id": "race_20260531_kyoto_8R",
+      "race_state": "PLAY_CONVERGED"
+    },
+    {
+      "date": "20260531",
+      "probabilities": [
+        {
+          "horse_name": "ゴーイントゥスカイ",
+          "horse_number": 14,
+          "probability": 0.3353424945022063,
+          "shadow_ai_rank": 1.0
+        },
+        {
+          "horse_name": "アウダーシア",
+          "horse_number": 9,
+          "probability": 0.3275261359571129,
+          "shadow_ai_rank": 4.0
+        },
+        {
+          "horse_name": "エムズビギン",
+          "horse_number": 18,
+          "probability": 0.2541673232333752,
+          "shadow_ai_rank": 3.0
+        },
+        {
+          "horse_name": "コンジェスタス",
+          "horse_number": 6,
+          "probability": 0.2425909988969268,
+          "shadow_ai_rank": 5.0
+        },
+        {
+          "horse_name": "ケントン",
+          "horse_number": 3,
+          "probability": 0.208084759554104,
+          "shadow_ai_rank": 2.0
+        }
+      ],
+      "race_id": "race_20260531_tokyo_11R",
+      "race_state": "PLAY_CONVERGED"
+    },
+    {
+      "date": "20260531",
+      "probabilities": [
+        {
+          "horse_name": "マイネルケレリウス",
+          "horse_number": 10,
+          "probability": 0.27996050579051207,
+          "shadow_ai_rank": 1.0
+        },
+        {
+          "horse_name": "ハーツコンチェルト",
+          "horse_number": 9,
+          "probability": 0.23894656830704308,
+          "shadow_ai_rank": 4.0
+        },
+        {
+          "horse_name": "ファイアンクランツ",
+          "horse_number": 4,
+          "probability": 0.2104968653633138,
+          "shadow_ai_rank": 2.0
+        },
+        {
+          "horse_name": "ボーンディスウェイ",
+          "horse_number": 3,
+          "probability": 0.183726252430851,
+          "shadow_ai_rank": 3.0
+        },
+        {
+          "horse_name": "ギャンブルルーム",
+          "horse_number": 5,
+          "probability": 0.17322830407066597,
+          "shadow_ai_rank": 5.0
+        }
+      ],
+      "race_id": "race_20260531_tokyo_12R",
+      "race_state": "PLAY_CONVERGED"
+    },
+    {
+      "date": "20260531",
+      "probabilities": [
+        {
+          "horse_name": "セイラダンサー",
+          "horse_number": 6,
+          "probability": 0.4857117591652752,
+          "shadow_ai_rank": 3.0
+        },
+        {
+          "horse_name": "マックスキュー",
+          "horse_number": 5,
+          "probability": 0.4793935330708798,
+          "shadow_ai_rank": 2.0
+        },
+        {
+          "horse_name": "シュレン",
+          "horse_number": 2,
+          "probability": 0.44375813721213464,
+          "shadow_ai_rank": 4.0
+        },
+        {
+          "horse_name": "フォースミラクル",
+          "horse_number": 13,
+          "probability": 0.3248034495926037,
+          "shadow_ai_rank": 1.0
+        },
+        {
+          "horse_name": "パシーヴ",
+          "horse_number": 1,
+          "probability": 0.30917059365718547,
+          "shadow_ai_rank": 5.0
+        }
+      ],
+      "race_id": "race_20260531_tokyo_7R",
+      "race_state": "PLAY_CONVERGED"
+    }
+  ],
+  "model_fit_count": 0,
+  "model_sha256": "faab21d7ae16cbd9475a621bf4b592c30cce1358e46e7a5f55ffb34dc46af093",
+  "scaler_fit_count": 0,
+  "scaler_sha256": "d07201b81f8de215e747fb950269f825e8ea851655d9fedfa5da6d8844a93eaa",
+  "scope": "PLAY_CONVERGED Top5 only; no non-converged/SKIP action",
+  "status": "PASS"
+}

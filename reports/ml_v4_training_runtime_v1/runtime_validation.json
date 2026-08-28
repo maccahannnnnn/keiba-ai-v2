@@ -1,0 +1,23 @@
+{
+  "joblib_version": "1.5.3",
+  "lbfgs_recipe_constructor_check": "PASS",
+  "logistic_regression_import": "PASS",
+  "march_or_earlier_access_count": 0,
+  "may_access_count": 0,
+  "model_fit_count": 0,
+  "numpy_version": "2.3.5",
+  "package_versions_match": {
+    "joblib": true,
+    "numpy": true,
+    "scikit_learn": true,
+    "scipy": true
+  },
+  "python_version_actual": "3.12.13",
+  "python_version_expected": "3.12.13",
+  "python_version_match": true,
+  "scaler_fit_count": 0,
+  "scikit_learn_version": "1.9.0",
+  "scipy_version": "1.18.1",
+  "standard_scaler_import": "PASS",
+  "status": "PASS"
+}

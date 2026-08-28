@@ -1,0 +1,18 @@
+{
+  "indexed_artifacts": {
+    "buy_gate_trace_manifest.json": "133619a6317b5c3171684010216bc7c415b86e71ead5449723987d65f2321742",
+    "cf_pre_selection.json": "82f976ad2370dee613b7761a397634b6916a1d1cea317a8cdbe5fe52d239f4e2",
+    "current_ai_pre.json": "2a9463c617bdf86f9046bde634076729482c5892f9a05f2ba47f065d65c181f5",
+    "p50_reference_pre.json": "108252df31e9e1c93b4d35071d6a6703ae5624afacaa1f82e7e8ab80426e5513",
+    "population_manifest.json": "bbcffa62d40fc432ecd734db83ae2073ea9c205fd1414a5c4ccfb4ac4bcd683c",
+    "pre_freeze_manifest.json": "f236d99ae1eece1ad8865155ea78bd844f5848e761e2d40e97b1e1d645347b09",
+    "prediction_manifest.json": "60f143da1ec0f1fb033b407c6012d56d11c4a55cb720c9e5d4e12c54674fa3fd",
+    "safety.json": "8a1e796c61322823dba8ab89755f8c09bd3bec66040488ff1593f3197a2666a6",
+    "scope_separation_validation.json": "950af8aeeda1e4d2dc8a421d6d4ee96b81c778ab7e3f46a5233d13f9b7dac0ce",
+    "source_manifest.json": "eceb3a78899c5e833c69b9ed25951519b928cd5ba5188c97c26dadb98554de23",
+    "v4_feature_validation.json": "921ada8e07565706f136ed0d5b286d946f2e8ff4292ae230c57f0da7d2116f56",
+    "v4_inference_manifest.json": "7202da488495c17e1d01c3175382ddae2ebf08f662e96d9f327151c51413d193",
+    "v4_reselection_pre.json": "69f8253a7f06cf269b1660344a6df9dabfd2bb20a2ca91416fa411c0974b5ed1"
+  },
+  "self_hash_excluded": true
+}

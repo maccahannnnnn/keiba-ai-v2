@@ -1,0 +1,16 @@
+{
+  "formal_verdict": "V4_MODEL_OOS_ACCEPT",
+  "gate_date_count": {
+    "pass": true,
+    "threshold": 4
+  },
+  "gate_lift": {
+    "pass": true,
+    "threshold_percentage_points": 0.0
+  },
+  "gate_race_count": {
+    "pass": true,
+    "threshold": 20
+  },
+  "lodo_temporal_fragility": false
+}

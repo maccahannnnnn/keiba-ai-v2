@@ -1,0 +1,19 @@
+{
+  "correction_record_sha256": "5b4c23012e1a79f3f6df9df16596fe902ec47ad583b30eeedce0206cf40f851b",
+  "dataset_sha256": "02d2471f11c1069ebb264946eacdc55fe3ea673c8812b6d17c8fd973af538b53",
+  "evaluation_protocol_sha256": "10d6232fad939140e8fe2582c3c358d2f6e04676e1a2a680e498a12558d9decc",
+  "feature_transform_schema_sha256": "04937fe52d3bc502a71e39a7967d743b015130e23056d2451e101bd87a18cdda",
+  "governance_boundary_sha256": "add24b6aeb86cef20746102a9d158ab27a17301be9441d5714896aee8f543d44",
+  "march_or_earlier_access_count": 0,
+  "may_access_count": 0,
+  "model_fit_count": 0,
+  "protocol_version": "ML_V4_BUY_SELECTION_TRAINING_PROTOCOL_V2",
+  "reason": "FEATURE_TRANSFORM_SPEC_CORRECTION",
+  "scaler_fit_count": 0,
+  "status": "FROZEN",
+  "supersedes": "training_protocol_v1",
+  "training_protocol_json_sha256": "6a752646e1308f6fbe4c947c823060d9f05313ffa49033e785bb5db7f1654599",
+  "training_protocol_sha256": "be8764d425650a067e4ddaca96f2cc52b9dff371c336676e51d52e3eaf502100",
+  "v1_protocol_manifest_sha256": "847e9f94acc4e4d16c4efa4a8be774ba2e2a53fa82b2a0035ef2de5302fb5d2c",
+  "v1_protocol_sha256": "97e783a8c63c7a8ff446b14bb7ec6f17001d43128eb215eda994b96be44d1ebd"
+}

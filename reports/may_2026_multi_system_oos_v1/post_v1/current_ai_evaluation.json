@@ -1,0 +1,80 @@
+{
+  "date_breakdown": {
+    "20260502": {
+      "invalid_result_count": 0,
+      "selected_count": 18,
+      "top3_count": 6,
+      "top3_rate": 0.3333333333333333,
+      "valid_selected_count": 18
+    },
+    "20260503": {
+      "invalid_result_count": 0,
+      "selected_count": 24,
+      "top3_count": 8,
+      "top3_rate": 0.3333333333333333,
+      "valid_selected_count": 24
+    },
+    "20260509": {
+      "invalid_result_count": 0,
+      "selected_count": 23,
+      "top3_count": 6,
+      "top3_rate": 0.2608695652173913,
+      "valid_selected_count": 23
+    },
+    "20260510": {
+      "invalid_result_count": 0,
+      "selected_count": 22,
+      "top3_count": 8,
+      "top3_rate": 0.36363636363636365,
+      "valid_selected_count": 22
+    },
+    "20260516": {
+      "invalid_result_count": 0,
+      "selected_count": 16,
+      "top3_count": 10,
+      "top3_rate": 0.625,
+      "valid_selected_count": 16
+    },
+    "20260517": {
+      "invalid_result_count": 0,
+      "selected_count": 14,
+      "top3_count": 3,
+      "top3_rate": 0.21428571428571427,
+      "valid_selected_count": 14
+    },
+    "20260523": {
+      "invalid_result_count": 0,
+      "selected_count": 22,
+      "top3_count": 7,
+      "top3_rate": 0.3181818181818182,
+      "valid_selected_count": 22
+    },
+    "20260524": {
+      "invalid_result_count": 0,
+      "selected_count": 11,
+      "top3_count": 5,
+      "top3_rate": 0.45454545454545453,
+      "valid_selected_count": 11
+    },
+    "20260530": {
+      "invalid_result_count": 0,
+      "selected_count": 20,
+      "top3_count": 5,
+      "top3_rate": 0.25,
+      "valid_selected_count": 20
+    },
+    "20260531": {
+      "invalid_result_count": 0,
+      "selected_count": 11,
+      "top3_count": 1,
+      "top3_rate": 0.09090909090909091,
+      "valid_selected_count": 11
+    }
+  },
+  "frozen_current_buy_count": 181,
+  "invalid_result_count": 0,
+  "selected_count": 181,
+  "top3_count": 59,
+  "top3_rate": 0.3259668508287293,
+  "valid_selected_count": 181
+}

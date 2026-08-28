@@ -1,0 +1,26 @@
+{
+  "buy_authority_validation": "PASS",
+  "existing_source_overwrite_count": 0,
+  "feature_column_count": 20,
+  "feature_missing_count": 0,
+  "feature_row_count": 2283,
+  "march_or_earlier_access_count": 0,
+  "may_access_count": 0,
+  "prediction_regeneration_count": 0,
+  "race_population_source_consistency": "PASS",
+  "result_leakage_validation": "PASS",
+  "row_duplicate_count": 0,
+  "selection_error_counts": {
+    "BUY_FALSE_POSITIVE": 209,
+    "TOP5_NONBUY_MISSED": 675,
+    "TRUE_BUY_ABSTENTION": 1291,
+    "TRUE_BUY_SUCCESS": 108
+  },
+  "status": "PASS",
+  "target_balance": {
+    "negative": 1500,
+    "positive": 783
+  },
+  "target_row_count": 2283,
+  "train_row_count": 2283
+}
