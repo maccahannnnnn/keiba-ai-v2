@@ -1,0 +1,12 @@
+{
+  "dataset_v1": {
+    "dataset_sha256": "02d2471f11c1069ebb264946eacdc55fe3ea673c8812b6d17c8fd973af538b53",
+    "role": "PRESERVED_BYTE_AND_ROW_CONTENT_SOURCE"
+  },
+  "may_2026": {
+    "model_v2_role": "CONSUMED_INDEPENDENT_OOS_FOR_V4_MODEL_V2",
+    "model_v3_plus_role": "ADDITIVE_TRAIN_REUSE",
+    "oos_evidence_reinterpretation": "PROHIBITED"
+  },
+  "model_v3_training": "NOT_EXECUTED"
+}

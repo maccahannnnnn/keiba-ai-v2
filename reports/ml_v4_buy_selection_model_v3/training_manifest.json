@@ -1,0 +1,65 @@
+{
+  "dataset_v2_sha256": "b61994c2a488696a2fcc70f4b4f24e4756e4b6562ca751fa1f30819d30e535e2",
+  "feature_transform_schema_sha256": "b30a4142b23ed3eecd6a24d516b3e020b213994798f776e2a97f444e60fd9fe2",
+  "frozen_artifact_integrity_after": [
+    {
+      "artifact_count": 12,
+      "path": "reports\\ml_v4_buy_selection_dataset_v1",
+      "status": "PASS"
+    },
+    {
+      "artifact_count": 10,
+      "path": "reports\\ml_v4_buy_selection_dataset_v2",
+      "status": "PASS"
+    },
+    {
+      "artifact_count": 10,
+      "path": "reports\\ml_v4_buy_selection_model_v2",
+      "status": "PASS"
+    },
+    {
+      "artifact_count": 13,
+      "path": "reports\\may_2026_multi_system_oos_v1\\pre_retry_v5",
+      "status": "PASS"
+    },
+    {
+      "artifact_count": 15,
+      "path": "reports\\may_2026_multi_system_oos_v1\\post_v1",
+      "status": "PASS"
+    }
+  ],
+  "frozen_artifact_integrity_before": [
+    {
+      "artifact_count": 12,
+      "path": "reports\\ml_v4_buy_selection_dataset_v1",
+      "status": "PASS"
+    },
+    {
+      "artifact_count": 10,
+      "path": "reports\\ml_v4_buy_selection_dataset_v2",
+      "status": "PASS"
+    },
+    {
+      "artifact_count": 10,
+      "path": "reports\\ml_v4_buy_selection_model_v2",
+      "status": "PASS"
+    },
+    {
+      "artifact_count": 13,
+      "path": "reports\\may_2026_multi_system_oos_v1\\pre_retry_v5",
+      "status": "PASS"
+    },
+    {
+      "artifact_count": 15,
+      "path": "reports\\may_2026_multi_system_oos_v1\\post_v1",
+      "status": "PASS"
+    }
+  ],
+  "model_metadata_v3_sha256": "c401b64a5877ae9b7b0d5448bda9747fd03fc17c36c92d13d1648f0bb4024b46",
+  "model_status": "TRAINED_CANDIDATE",
+  "model_v3_sha256": "7f06d9e3ba2f330b6f42d699ee25ea64d83a5287c3b7f72fb0233e14c755312d",
+  "protocol_v2_sha256": "be8764d425650a067e4ddaca96f2cc52b9dff371c336676e51d52e3eaf502100",
+  "runtime_manifest_sha256": "efd36424206dfd54c16b0517d9832338bbb61f286a1725c2ddde6c69058182a5",
+  "scaler_v3_sha256": "800a0d54307e0caafef7b8efd131f5ab60f1d75d1e021dae7627d690187d103c",
+  "status": "MODEL_V3_FIT_COMPLETE_FREEZE_READY"
+}

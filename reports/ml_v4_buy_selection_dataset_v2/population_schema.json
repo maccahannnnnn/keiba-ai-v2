@@ -1,0 +1,8 @@
+{
+  "May_inclusion": "payload.top5 AND trace.shadow_ai_rank <= 5 AND valid_result",
+  "current_buy": "context_only_not_feature",
+  "current_top5": "population_only_not_feature",
+  "population": "V1_TRAIN_PLUS_MAY_TOP5_VALID",
+  "resampling": "PROHIBITED",
+  "row_weighting": "ONE_VALID_TOP5_ROW_EQUALS_ONE_TRAINING_SAMPLE"
+}

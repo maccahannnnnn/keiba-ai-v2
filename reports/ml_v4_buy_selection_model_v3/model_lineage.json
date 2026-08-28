@@ -1,0 +1,10 @@
+{
+  "change_reason": "TRAIN_POPULATION_EXPANSION_ONLY",
+  "dataset_v2_sha256": "b61994c2a488696a2fcc70f4b4f24e4756e4b6562ca751fa1f30819d30e535e2",
+  "feature_target_algorithm_selection_semantics": "UNCHANGED",
+  "may_model_v2_oos_evidence_reinterpretation": "PROHIBITED",
+  "may_role_for_model_v2": "CONSUMED_INDEPENDENT_OOS_FOR_V4_MODEL_V2",
+  "may_role_for_model_v3_plus": "ADDITIVE_TRAIN_REUSE",
+  "previous_frozen_model": "V4 Model v2",
+  "train_dataset": "V4 TRAIN Dataset v2"
+}

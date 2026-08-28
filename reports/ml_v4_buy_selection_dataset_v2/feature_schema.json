@@ -1,0 +1,28 @@
+{
+  "dataset_version": "ML_V4_TRAIN_DATASET_V2",
+  "feature_column_count": 20,
+  "feature_order": [
+    "shadow_ai_rank",
+    "decision_score",
+    "final_score",
+    "adjusted_score",
+    "absolute_quality_pass",
+    "relative_advantage_pass",
+    "effective_reliability_pass",
+    "risk_guard_pass",
+    "consensus_positive_count",
+    "consensus_negative_count",
+    "risk_count",
+    "conflict_count",
+    "race_state",
+    "Ability",
+    "PastPerformance",
+    "Distance",
+    "CourseShape",
+    "LapSuitability",
+    "RaceShape",
+    "PaceStyle"
+  ],
+  "frozen": true,
+  "same_as_v1": true
+}

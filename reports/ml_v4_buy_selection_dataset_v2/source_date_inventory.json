@@ -1,0 +1,136 @@
+{
+  "date_overlap": [],
+  "may_dates": [
+    "20260502",
+    "20260503",
+    "20260509",
+    "20260510",
+    "20260516",
+    "20260517",
+    "20260523",
+    "20260524",
+    "20260530",
+    "20260531"
+  ],
+  "may_sources": [
+    {
+      "date": "20260502",
+      "prediction_artifact_count": 21,
+      "race_count": 21,
+      "result_source_path": "data\\raw\\target\\daily_result_list\\馬番順着順_20260502.csv",
+      "result_source_sha256": "c66d2e5af6a33c7279d67b57885f7204bfba8a4058981a50d37e5523aa66e3e9",
+      "status": "PASS",
+      "top5_valid_rows": 105
+    },
+    {
+      "date": "20260503",
+      "prediction_artifact_count": 21,
+      "race_count": 21,
+      "result_source_path": "data\\raw\\target\\daily_result_list\\馬番順着順_20260503.csv",
+      "result_source_sha256": "8845c56ac0e49986da8d3005c5b23e2be0844cfbeb6f9bf91c47787e3b18db70",
+      "status": "PASS",
+      "top5_valid_rows": 105
+    },
+    {
+      "date": "20260509",
+      "prediction_artifact_count": 21,
+      "race_count": 21,
+      "result_source_path": "data\\raw\\target\\daily_result_list\\馬番順着順_20260509.csv",
+      "result_source_sha256": "3cb145f39b957685e1c547c357966cf7132dce825911ce10cc73ac051a4cf473",
+      "status": "PASS",
+      "top5_valid_rows": 105
+    },
+    {
+      "date": "20260510",
+      "prediction_artifact_count": 21,
+      "race_count": 21,
+      "result_source_path": "data\\raw\\target\\daily_result_list\\馬番順着順_20260510.csv",
+      "result_source_sha256": "1587aed6e2d7b7c92dd8fbd600ab01c3eddad268b572535c779cda91da7d2d8c",
+      "status": "PASS",
+      "top5_valid_rows": 104
+    },
+    {
+      "date": "20260516",
+      "prediction_artifact_count": 19,
+      "race_count": 19,
+      "result_source_path": "data\\raw\\target\\daily_result_list\\馬番順着順_20260516.csv",
+      "result_source_sha256": "5c842d9172a7f1852569058c5ed2f89aeafc414fb87da4547302d8732b383d0d",
+      "status": "PASS",
+      "top5_valid_rows": 95
+    },
+    {
+      "date": "20260517",
+      "prediction_artifact_count": 20,
+      "race_count": 20,
+      "result_source_path": "data\\raw\\target\\daily_result_list\\馬番順着順_20260517.csv",
+      "result_source_sha256": "65771fed8cb2b7345c76a9174920df11f441d0bb5b2c0e78f836c1f824aed1af",
+      "status": "PASS",
+      "top5_valid_rows": 99
+    },
+    {
+      "date": "20260523",
+      "prediction_artifact_count": 19,
+      "race_count": 19,
+      "result_source_path": "data\\raw\\target\\daily_result_list\\馬番順着順_20260523.csv",
+      "result_source_sha256": "026f99b7988b62d638929db961649ec8615c0ec629e6e62fd6ccd6d795068f10",
+      "status": "PASS",
+      "top5_valid_rows": 95
+    },
+    {
+      "date": "20260524",
+      "prediction_artifact_count": 21,
+      "race_count": 21,
+      "result_source_path": "data\\raw\\target\\daily_result_list\\馬番順着順_20260524.csv",
+      "result_source_sha256": "2412131377ea15a74e44ec8598a4282803c1dcbe8e516df1e5f0fe1dd9701604",
+      "status": "PASS",
+      "top5_valid_rows": 104
+    },
+    {
+      "date": "20260530",
+      "prediction_artifact_count": 14,
+      "race_count": 14,
+      "result_source_path": "data\\raw\\target\\daily_result_list\\馬番順着順_20260530.csv",
+      "result_source_sha256": "7b3f82ef9a4951bd6143365f66e589bd1e96c77713e6a092187c907edeb97a7e",
+      "status": "PASS",
+      "top5_valid_rows": 70
+    },
+    {
+      "date": "20260531",
+      "prediction_artifact_count": 15,
+      "race_count": 15,
+      "result_source_path": "data\\raw\\target\\daily_result_list\\馬番順着順_20260531.csv",
+      "result_source_sha256": "660f93f74307ad63cd115aa0c3a35feefefe0073ea0d44e2aab25bc3922a7e50",
+      "status": "PASS",
+      "top5_valid_rows": 75
+    }
+  ],
+  "v1_date_count": 26,
+  "v1_dates": [
+    "20260404",
+    "20260405",
+    "20260411",
+    "20260412",
+    "20260418",
+    "20260419",
+    "20260425",
+    "20260426",
+    "20260620",
+    "20260621",
+    "20260627",
+    "20260628",
+    "20260704",
+    "20260705",
+    "20260711",
+    "20260712",
+    "20260718",
+    "20260719",
+    "20260725",
+    "20260726",
+    "20260801",
+    "20260802",
+    "20260808",
+    "20260809",
+    "20260815",
+    "20260816"
+  ]
+}

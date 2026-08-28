@@ -1,0 +1,11 @@
+{
+  "dataset_sha256": "b61994c2a488696a2fcc70f4b4f24e4756e4b6562ca751fa1f30819d30e535e2",
+  "dataset_version": "ML_V4_TRAIN_DATASET_V2",
+  "feature_count": 20,
+  "feature_schema_sha256": "d30597a96f43bd04ba491eac75925b2fd254df50c3e1372790d86b92eebb8eb1",
+  "lineage_sha256": "a41491bc3a1ecafb4368c4638e449aa5502bf2d12e369edf684a25720bf01e28",
+  "model_v3_training": "NOT_EXECUTED",
+  "row_count": 3240,
+  "status": "FROZEN_BUILD_ARTIFACT",
+  "validation_sha256": "3330aceb325232c782538cafbcd098767aa7140c8bfa3b74a57b0050ae2dae70"
+}

@@ -1,0 +1,14 @@
+{
+  "indexed_artifacts": {
+    "coefficient_table.json": "fe4bd43009f2fab989eef9bc341cb98f68a8a28e6482b19141e2e0bdcda72310",
+    "feature_transform_schema.json": "b30a4142b23ed3eecd6a24d516b3e020b213994798f776e2a97f444e60fd9fe2",
+    "model.joblib": "7f06d9e3ba2f330b6f42d699ee25ea64d83a5287c3b7f72fb0233e14c755312d",
+    "model_lineage.json": "977780fd30f2b1f8dd418718552d34053ed4f56d8f5d05c36be254a6181d36c9",
+    "model_metadata.json": "c401b64a5877ae9b7b0d5448bda9747fd03fc17c36c92d13d1648f0bb4024b46",
+    "model_output_schema.json": "e3adf36b1af985b64b96378b49d4f3ff1db75bb6607975b95dabcb8837d98658",
+    "scaler.joblib": "800a0d54307e0caafef7b8efd131f5ab60f1d75d1e021dae7627d690187d103c",
+    "training_manifest.json": "18a3361bc4789c4e998a4d1acf3432227b52935a4d82f3548bbff77b930b027d",
+    "training_validation.json": "5083e59ba499853ea45617dd2bafc0417f867c9b76b0d9081366279e13fe1d98"
+  },
+  "self_hash_excluded": true
+}

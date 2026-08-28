@@ -1,0 +1,41 @@
+{
+  "actual_counts": {
+    "categories": {
+      "BUY_FALSE_POSITIVE": 331,
+      "TOP5_NONBUY_MISSED": 941,
+      "TRUE_BUY_ABSTENTION": 1801,
+      "TRUE_BUY_SUCCESS": 167
+    },
+    "may_top5_valid_rows": 957,
+    "negative": 2132,
+    "positive": 1108,
+    "rows": 3240
+  },
+  "duplicate_race_count": 0,
+  "duplicate_row_count": 0,
+  "expected_counts": {
+    "categories": {
+      "BUY_FALSE_POSITIVE": 331,
+      "TOP5_NONBUY_MISSED": 941,
+      "TRUE_BUY_ABSTENTION": 1801,
+      "TRUE_BUY_SUCCESS": 167
+    },
+    "may_top5_valid_rows": 957,
+    "negative": 2132,
+    "positive": 1108,
+    "rows": 3240,
+    "v1_rows": 2283
+  },
+  "feature_count": 20,
+  "feature_missing_count": 0,
+  "invalid_category_count": 0,
+  "invalid_valid_result_count": 0,
+  "model_fit_count": 0,
+  "performance_evaluation_count": 0,
+  "prediction_execution_count": 0,
+  "scaler_fit_count": 0,
+  "status": "PASS",
+  "target_missing_count": 0,
+  "top5_semantics_validation": "PASS",
+  "v1_row_content_unchanged": true
+}

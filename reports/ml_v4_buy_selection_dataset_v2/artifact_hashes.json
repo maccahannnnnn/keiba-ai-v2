@@ -1,0 +1,15 @@
+{
+  "indexed_artifacts": {
+    "dataset.csv": "b61994c2a488696a2fcc70f4b4f24e4756e4b6562ca751fa1f30819d30e535e2",
+    "dataset_manifest.json": "9c71da008dd5a968a7d9a9c01b99456491c5518e8a57c2a18f2c47cf5d02566d",
+    "dataset_summary.json": "9a8fb6dc8f10b65d55844340ffcde9add12ddae50500dfbeefdfe441acfe705f",
+    "feature_matrix.csv": "4b1d7e1daebd35ca21c68aa170eaa3cdf2486a401a7cafeb964fa40da38d5a4a",
+    "feature_schema.json": "d30597a96f43bd04ba491eac75925b2fd254df50c3e1372790d86b92eebb8eb1",
+    "lineage.json": "a41491bc3a1ecafb4368c4638e449aa5502bf2d12e369edf684a25720bf01e28",
+    "population_schema.json": "d65bef79cd0acf33a519d1cbebadf53fbbfa3d4685dc85747c081d27804aa18d",
+    "source_date_inventory.json": "bc59cd4c7a7de9047e113116e4376fd37fcbed0c978523dd702dcf10c588f8af",
+    "target.csv": "8808648f54e3a3c57aa540123bcb3969a10a9c10c9189a62fe8b4b918abf7e90",
+    "validation.json": "3330aceb325232c782538cafbcd098767aa7140c8bfa3b74a57b0050ae2dae70"
+  },
+  "self_hash_excluded": true
+}

@@ -1,0 +1,17 @@
+{
+  "category_counts": {
+    "BUY_FALSE_POSITIVE": 331,
+    "TOP5_NONBUY_MISSED": 941,
+    "TRUE_BUY_ABSTENTION": 1801,
+    "TRUE_BUY_SUCCESS": 167
+  },
+  "final_status": "V4_TRAIN_DATASET_V2_BUILT",
+  "may_top5_valid_rows": 957,
+  "model_v3_training": "NOT_EXECUTED",
+  "row_count": 3240,
+  "status": "PASS",
+  "target_balance": {
+    "negative": 2132,
+    "positive": 1108
+  }
+}

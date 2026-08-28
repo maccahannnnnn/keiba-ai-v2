@@ -112,3 +112,24 @@ tmpz4uj1ulk/
 
 # Public-only index for immutable local evidence intentionally excluded from Git
 !reports/may_2026_multi_system_oos_v1/public_provenance_exclusion_summary_v1.json
+
+# Immutable V4 dataset v2 provenance; raw matrices remain ignored
+!reports/ml_v4_buy_selection_dataset_v2/artifact_hashes.json
+!reports/ml_v4_buy_selection_dataset_v2/dataset_manifest.json
+!reports/ml_v4_buy_selection_dataset_v2/dataset_summary.json
+!reports/ml_v4_buy_selection_dataset_v2/feature_schema.json
+!reports/ml_v4_buy_selection_dataset_v2/lineage.json
+!reports/ml_v4_buy_selection_dataset_v2/population_schema.json
+!reports/ml_v4_buy_selection_dataset_v2/source_date_inventory.json
+!reports/ml_v4_buy_selection_dataset_v2/validation.json
+
+# Immutable V4 Model v3 frozen-candidate evidence
+!reports/ml_v4_buy_selection_model_v3/artifact_hashes.json
+!reports/ml_v4_buy_selection_model_v3/coefficient_table.json
+!reports/ml_v4_buy_selection_model_v3/feature_transform_schema.json
+!reports/ml_v4_buy_selection_model_v3/model_lineage.json
+!reports/ml_v4_buy_selection_model_v3/model_metadata.json
+!reports/ml_v4_buy_selection_model_v3/model.joblib
+!reports/ml_v4_buy_selection_model_v3/scaler.joblib
+!reports/ml_v4_buy_selection_model_v3/training_manifest.json
+!reports/ml_v4_buy_selection_model_v3/training_validation.json
