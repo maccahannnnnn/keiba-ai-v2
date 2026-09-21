@@ -1,0 +1,22 @@
+{
+  "protocol_version": "INDEPENDENT_RACE_SELECTION_PROSPECTIVE_PROTOCOL_V1",
+  "role": "FORMAL_PROSPECTIVE_INDEPENDENT_RACE_SELECTION_SHADOW",
+  "evidence_role": "FORMAL_PROSPECTIVE_INDEPENDENT_RACE_SELECTION_SHADOW",
+  "human_approval_date": "20260920",
+  "production_authorization": false,
+  "model": {"name": "V4 Model v5", "model_sha256": "d3b17e3022768690d0b1013ab131b35c5a64aa8e4a816fb3e1349bad95fb87a2", "scaler_sha256": "2855f19c43b0fc70e106a85a2c61716d532694c90efc42580b937d5d7bab504d", "feature_schema_sha256": "f34ee9bd74f9ad04d157e0a9d735137c8a050003aab51f725126431719142c28", "feature_transform_schema_sha256": "f50039929b823f2821b4bde6a0cdc41f8be1c4c45cb55682c8a312e811e112c0", "dataset_sha256": "15c77e5c13ccbff2255912fa5440e68baf43e0df753218d84420d4bf29da3b3a", "training_end": "2026-09-13"},
+  "tau": 0.3796765822155326,
+  "tau_037": {"accepted": false, "provenance": "POST_DEVELOPMENT_COUNTERFACTUAL"},
+  "candidate_pool": "CURRENT_TOP5 AND shadow_ai_rank<=5 AND risk_guard_pass==TRUE",
+  "risk_guard_semantics": "ELIGIBILITY_VETO_ONLY",
+  "race_selection": "SELECT p_top3>=tau; order probability DESC, shadow_ai_rank ASC, horse_number ASC; retain at most 3; race_selected iff retained>=1",
+  "race_state": "NOT_A_SELECTION_GATE; frozen model feature only",
+  "volume": {"primary": "NATURAL_VOLUME", "matched_volume": "DIAGNOSTIC_ONLY"},
+  "invalid_result": "Exclude from numerator and denominator; no substitution; report invalid_n",
+  "start_boundary": {"G1": "target_date>=human_approval_date", "G2": "target_date>=runner_execution_date_JST", "G3": "Current PRE generated on/after approval", "G4": "provenance target_date == summary date == requested target_date"},
+  "prospective_block": "Different central-JRA meeting week; model/tau/candidate-pool/risk-guard semantics immutable between blocks",
+  "minimum_evidence": {"independent_blocks": 2, "race_dates": 4, "selected_races": 60, "selected_race_denominator_only": true},
+  "decision_rules": {"before_minimum": "HOLD_ACCUMULATE", "accept": "integrity=0 AND semantics_unchanged AND cumulative_rate>=Current AND cumulative_hits>=Current AND at_least_two_blocks_rate_delta>=0", "extend": "HOLD_EXTEND_WITHOUT_RETUNE", "reject": "REJECT_CONTROLLED_TRIAL when cumulative_rate<Current AND cumulative_hits<=Current"},
+  "controlled_trial": {"implementation": "OUT_OF_SCOPE", "human_approval_required": true, "future_rollback_record_only": ["PRE freeze violation", "result leakage", "hash mismatch", "wrong model/tau/version", "population deviation", "unauthorized scope", "rollback path failure", "valid BUY N=60 and hits<=18"]},
+  "non_goals": ["Current BUY change", "CF/Daily/Formal V5/V6 change", "full-field Exact5", "risk_guard removal", "tau refinement", "Production activation", "Historical backfill as formal prospective evidence"]
+}

@@ -1,0 +1,21 @@
+{
+  "status": "INDEPENDENT_POST_VENUE_MAP_FIX_COMPLETE",
+  "fix_scope": "POST_VENUE_MAP_ONLY",
+  "venue_mapping_source": "review.target_bulk_prediction_input_adapter_v1.COURSE_KEYS",
+  "all_10_jra_venues_supported": "PASS",
+  "unknown_venue_fail_closed": "PASS",
+  "post_path_tests": {"tokyo": "PASS", "kyoto": "PASS", "hanshin": "PASS", "nakayama": "PASS"},
+  "protocol_sha256": "781d075a90e113d7528be5caa81ca49d99f788679e39471691bb75a30d0dce04",
+  "protocol_sha_unchanged": "PASS",
+  "frozen_tau": 0.3796765822155326,
+  "frozen_tau_unchanged": "PASS",
+  "pre_runner_unchanged": "PASS",
+  "ledger_unchanged": "PASS",
+  "production_unchanged": "PASS",
+  "historical_reproduction": {"status": "PASS", "selected_races": 492, "horses": 791, "hits": 346, "rate": 0.43742098609355246},
+  "tests": {"independent_total": 10, "independent_pass": 10, "independent_fail": 0, "regression_total": 22, "regression_pass": 22, "regression_fail": 0, "py_compile": "PASS"},
+  "real_20260926_pre_executed": "NO",
+  "result_access": 0,
+  "git_commit": 0,
+  "git_push": 0
+}
