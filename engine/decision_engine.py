@@ -170,9 +170,9 @@ class DecisionEngine:
         context = self._rank_context(rows)
         rank_map = self._score_rank_map(rows)
         results = []
-        for row in rows:
+        for index, row in enumerate(rows):
             row_context = dict(context)
-            row_context["rank"] = rank_map.get(id(row))
+            row_context["rank"] = rank_map.get(index)
             results.append(self.decide(row, row_context))
         return results
 
@@ -537,15 +537,22 @@ class DecisionEngine:
 
     def _score_rank_map(self, rows):
         scored = []
-        for row in rows:
+        for index, row in enumerate(rows):
             if not isinstance(row, dict):
                 continue
             score = self._best_score(row)
             if score is None:
                 continue
-            scored.append((score, id(row)))
-        scored.sort(reverse=True)
-        return {row_id: index + 1 for index, (_, row_id) in enumerate(scored)}
+            # Match the canonical final ranking used by TargetTrialAdapter:
+            # adjusted score descending, then horse number descending.  The
+            # former object-id secondary key made tied scores process-specific.
+            try:
+                horse_number = int(row.get("horse_number") or 0)
+            except (TypeError, ValueError):
+                horse_number = 0
+            scored.append((score, horse_number, index))
+        scored.sort(key=lambda item: (item[0], item[1]), reverse=True)
+        return {original_index: rank + 1 for rank, (_, _, original_index) in enumerate(scored)}
 
     def _weighted_track_bias_score(self, item):
         breakdown = item.get("weighted_score_breakdown")

@@ -1,0 +1,42 @@
+{
+  "schema_version": "BUY_GATE_TRACE_SCHEMA_V1_2",
+  "classification": "NON_SEMANTIC_OBSERVABILITY",
+  "compatibility": {
+    "extends": "BUY_GATE_TRACE_SCHEMA_V1_1",
+    "preserves_existing_race_fields": true,
+    "preserves_existing_horse_fields": true,
+    "applies_to": "newly generated trace-enabled prediction artifacts only",
+    "retroactive_rewrite": false
+  },
+  "trace_key": "buy_gate_trace",
+  "race_fields": [
+    "shadow_candidate_count",
+    "shadow_race_state",
+    "shadow_spec_converged"
+  ],
+  "horse_fields_added": [
+    "decision_engine_rank",
+    "rank_context_rank",
+    "pre_rc1_decision",
+    "post_rc1_decision"
+  ],
+  "field_provenance": {
+    "decision_engine_rank": "ranked_results[].decision_result.ai_rank",
+    "rank_context_rank": "ranked_results[].decision_result.ai_rank",
+    "pre_rc1_decision": "ranked_results[].decision_result.decision",
+    "post_rc1_decision": "ranked_results[].decision after BUY v1 RC1 application"
+  },
+  "missing_value_semantics": "Required runtime fields must be present. No value is inferred or recomputed.",
+  "forbidden_result_fields": [
+    "finish",
+    "finish_position",
+    "actual_top3",
+    "valid_result",
+    "payout",
+    "placement",
+    "placement_outcome",
+    "result",
+    "result_outcome",
+    "top3_result"
+  ]
+}

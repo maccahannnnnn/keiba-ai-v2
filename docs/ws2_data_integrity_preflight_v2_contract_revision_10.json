@@ -1,0 +1,17 @@
+{
+  "schema_version": "ws2_data_integrity_preflight_v2_contract_revision_10",
+  "supersedes_for_public_entrypoint": "docs/ws2_data_integrity_preflight_v2_contract_revision_9.json",
+  "base_contract_path": "docs/ws2_data_integrity_preflight_v2_contract_revision_9.json",
+  "base_contract_sha256": "c6f79b95a02bbd81bfd74a2045707ad62d6c099f3a155aae5f6063c61f581267",
+  "fixed_policy_path": "docs/ws2_v5_feature_source_policy_v5.json",
+  "FORMAL_READINESS_GATE_CORRECTION": "ADDITIVE_FAIL_CLOSED",
+  "PIT_EVIDENCE_SOURCE": "PER_PREDICTION_PROVENANCE_AND_GIT_IDENTITY",
+  "DEPENDENCY_DOCSTRING_FALSE_POSITIVE": "PROHIBITED",
+  "ITERATION_SHARED_SAFETY_PREREQUISITES": ["label_integrity", "feature_integrity", "pit", "dependency", "code_provenance", "fold_validity", "role_validity"],
+  "ITERATION_1_REQUIRES_SHARED_SAFETY_PASS": true,
+  "ACTUAL_FINISH_VALIDATION_REQUIREMENT": "OPTIONAL_DIAGNOSTIC",
+  "RACE_LEVEL_TOP3_COUNT_VALIDATION": "BACKLOG_MINOR",
+  "FULL_COMPATIBILITY_RERUN_REQUIRED": false,
+  "training": "PROHIBITED",
+  "production_change": false
+}
