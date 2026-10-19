@@ -427,3 +427,22 @@ GATE-001のimmutable base `evidence_gate_status = PENDING` は履歴fieldとし�
 
 `LEDGER_SUMMARY_COUNTER_UPDATE = DEFERRED_UNRESOLVED`。本記録は既存closed familyの状態を置換せず、Human承認済みの別sibling scopeをadditiveに登録する。
 
+## Authoritative Additive Entry — 2026-10-18 — EXP-024
+
+| Field | Value |
+|---|---|
+| Identity | `PL_SAME_VOLUME_RESELECTION_SHADOW_V1`; `EXP-022` Selection Authority sibling, not a rerun or a new independent family. |
+| Authority | Race = `CURRENT`; selection = frozen `PL_FORWARD_FULL_FIELD_RANK`; volume = `CURRENT_BUY_COUNT_FIXED`. No new Volume Authority claim. |
+| Distinctions | Unlike Formal V5, Treatment is not filtered by Current risk guard; unlike Lane D, selection uses PL full-field ranking, not Current Top5 only. |
+| Protocol | `docs/KeibaAI_PL_SAME_VOLUME_RESELECTION_SHADOW_V1_PROTOCOL.md`; SHA256 `8f1adabf7e5798519ca73c5d58e36599547da39d039e4243cef51d282c618352`. |
+| Model | PL Forward model `418fc9b4cefe1757f79dfc22a7d49b7c1592b91084cca97f88f55bb1389b0585`; manifest `18443426b16dba4c28374d39841eeac0a98af4dd4e617b8ae8457dcee2f6494e`; inference code `1a36902f2afee91bd03f99394cc52bf15ba8a8e2b1e99afa009b8df159f8b3cc`. |
+| Status | `IMPLEMENTATION_PENDING_INDEPENDENT_REVIEW_AND_HUMAN_FINAL_APPROVAL`; `PROSPECTIVE_EVIDENCE_STARTED = FALSE`; `PRODUCTION_PROMOTION = NOT_AUTHORIZED`. Historical smoke is non-evidential. |
+
+## Authoritative Additive Status Update — 2026-10-19 — EXP-024
+
+| Field | Value |
+|---|---|
+| Independent review | Claude final implementation review: `PASS`. |
+| Human decision | Human final implementation approval granted; prospective start authorized subject to the frozen protocol and the operational freeze deadline. |
+| Evidence | `PROSPECTIVE_EVIDENCE_COUNT = 0`; historical 10/17 and 10/18 outputs and smoke remain non-evidential. |
+| Environment | `ENVIRONMENT_BLOCK_001 = PENDING_FIRST_ELIGIBLE_PRE`. |
