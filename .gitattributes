@@ -1,2 +1,29 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+
+# EXP-024 and PL Forward SHA-pinned source and authority records.
+docs/KeibaAI_PL_SAME_VOLUME_RESELECTION_SHADOW_V1_PROTOCOL.md text eol=lf
+docs/KeibaAI_PL_SAME_VOLUME_RESELECTION_SHADOW_V1_RUNBOOK.md text eol=lf
+docs/KeibaAI_EXP024_IMPLEMENTATION_APPROVAL_SUPERSESSION_V1.md text eol=lf
+docs/KeibaAI_EXP024_HUMAN_FINAL_APPROVAL_V1.json text eol=lf
+docs/buy_gate_trace_schema_v1_1.json text eol=lf
+review/pl_same_volume_reselection_shadow_v1.py text eol=lf
+review/prospective_prediction_runner_v1.py text eol=lf
+review/current_environment_tree_hash_v1.py text eol=lf
+review/target_bulk_prediction_input_adapter_v1.py text eol=lf
+review/pl_forward_shadow_v1.py text eol=lf
+review/full_field_redesign_iteration1_completion_v1.py text eol=lf
+review/full_field_redesign_iteration2_v1.py text eol=lf
+review/full_field_redesign_iter0_retry7.py text eol=lf
+review/ws2_deterministic_pre_only_regeneration_v1.py text eol=lf
+tests/test_pl_forward_shadow_v1.py text eol=lf
+tests/test_pl_same_volume_reselection_shadow_v1.py text eol=lf
+tests/test_exp024_environment_provenance_fix.py text eol=lf
+tests/test_exp024_current_pre_tree_integration.py text eol=lf
+tests/test_exp024_non_evidential_post_smoke.py text eol=lf
+tests/test_exp024_checkpoint_prevalidation.py text eol=lf
+
+# Frozen PL artifacts are byte authorities, not normalized text.
+models/pl_forward_shadow_v1/pl_forward_shadow_v1_model.json -text
+models/pl_forward_shadow_v1/pl_forward_shadow_v1_manifest.json -text
+models/pl_forward_shadow_v1/artifact_hashes.json -text

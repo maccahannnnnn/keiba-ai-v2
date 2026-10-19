@@ -1,0 +1,77 @@
+{
+  "schema_version": "BUY_GATE_TRACE_SCHEMA_V1_1",
+  "classification": "NON_SEMANTIC_OBSERVABILITY",
+  "compatibility": {
+    "extends": "BUY_GATE_TRACE_SCHEMA_V1",
+    "preserves_existing_race_fields": true,
+    "preserves_existing_horse_fields": true,
+    "applies_to": "newly generated trace-enabled prediction artifacts only",
+    "retroactive_rewrite": false
+  },
+  "trace_key": "buy_gate_trace",
+  "race_fields": [
+    "shadow_candidate_count",
+    "shadow_race_state",
+    "shadow_spec_converged"
+  ],
+  "horse_fields": [
+    "horse_number",
+    "prediction_rank",
+    "shadow_ai_rank",
+    "decision_score",
+    "final_score",
+    "adjusted_score",
+    "evaluator_score_snapshot",
+    "positive_evaluators",
+    "negative_evaluators",
+    "missing_evaluators",
+    "blocking_missing_evaluators",
+    "positive_count",
+    "negative_count",
+    "strong_positive_count",
+    "strong_negative_count",
+    "net_consensus_score",
+    "risk_summary",
+    "conflict_factors",
+    "absolute_quality_pass",
+    "relative_advantage_pass",
+    "reliability_pass",
+    "effective_reliability_pass",
+    "risk_guard_pass",
+    "shadow_buy_candidate",
+    "shadow_buy",
+    "pace_prediction",
+    "pace_style",
+    "course_profile_matched",
+    "race_shape_adjustment_id"
+  ],
+  "field_provenance": {
+    "pace_prediction": "ranked_results[].shape_result.pace_prediction",
+    "pace_style": "ranked_results[].shape_result.pace_style",
+    "course_profile_matched": "ranked_results[].course_shape_result.course_profile_matched",
+    "race_shape_adjustment_id": "ranked_results[].shape_result.race_shape_adjustment_id"
+  },
+  "missing_value_semantics": "If the evaluator payload or requested field is absent at runtime, persist JSON null. Do not infer, normalize, or recompute a replacement.",
+  "identity": {
+    "shadow_source": "buy.shadow_result.horse_records[].horse_number",
+    "final_mapping": "ranked_results[].horse_number equality only"
+  },
+  "forbidden_result_fields": [
+    "finish",
+    "finish_position",
+    "actual_top3",
+    "valid_result",
+    "payout",
+    "placement",
+    "placement_outcome",
+    "result",
+    "result_outcome",
+    "top3_result"
+  ],
+  "tier_2_hold": [
+    "top_score",
+    "numeric_score_gap",
+    "severe_risk_match",
+    "data_limitation_match"
+  ]
+}
