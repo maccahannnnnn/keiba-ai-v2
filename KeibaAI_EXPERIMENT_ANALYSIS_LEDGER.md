@@ -446,3 +446,17 @@ GATE-001のimmutable base `evidence_gate_status = PENDING` は履歴fieldとし�
 | Human decision | Human final implementation approval granted; prospective start authorized subject to the frozen protocol and the operational freeze deadline. |
 | Evidence | `PROSPECTIVE_EVIDENCE_COUNT = 0`; historical 10/17 and 10/18 outputs and smoke remain non-evidential. |
 | Environment | `ENVIRONMENT_BLOCK_001 = PENDING_FIRST_ELIGIBLE_PRE`. |
+
+## Authoritative Additive Entry — 2026-10-20 — EXP-025
+
+| Field | Value |
+|---|---|
+| Identity | `ITERATION3_OFFSET_PL_RAW_HISTORY_V1`; Offset Plackett–Luce Raw History development candidate. |
+| Status | `PREREGISTERED_FROZEN_BEFORE_TRAINING_AND_RESULT_EVALUATION`; development-only and non-evidential. |
+| Preregistration | `docs/KeibaAI_Iteration3_Offset_PL_Raw_History_V1_Preregistration.md`; SHA256 `88e8a9dca64a0c520f79880e3eb73d5e4bc318fc0052e28b4a543de4cac79a29`. |
+| Scope | Seven fixed Raw History coefficients with the frozen base PL utility as offset; no model implementation, fit, inference, performance evaluation, Result access, or threshold search is authorized by this record. |
+| PIT authority | `APPROVED_NAME_SIRE_MATERNAL_GRANDSIRE_V1`; final qualified population is 74 dates / 1,285 flat races / 17,344 horses. The final PIT audit is development-only. |
+| Offset boundary | Rolling OOS refits its base PL only on prior months and must reproduce corrected Iteration 2 `p_hgb` per fold; final-only fitting uses PL Forward v1 SHA `418fc9b4cefe1757f79dfc22a7d49b7c1592b91084cca97f88f55bb1389b0585` as offset. |
+| Frozen gate | 10,000-iteration date-cluster bootstrap seed `20261020`, monthly, Rank1, Brier, and existing Roadmap Candidate Gate requirements are fixed in the preregistration. |
+| Non-generalization | No Production, EXP-024, Formal Evidence, Prospective Evidence, Current BUY, Current Top5, race authority, or BUY-volume authority is changed. Fingerprint Index remains unchanged. |
+
