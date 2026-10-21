@@ -1,0 +1,64 @@
+{
+  "base_model": "PL_FORWARD_SHADOW_V1",
+  "base_model_sha256": "418fc9b4cefe1757f79dfc22a7d49b7c1592b91084cca97f88f55bb1389b0585",
+  "continuous_scaler": {
+    "continuous_indices": [
+      0,
+      1,
+      2,
+      3,
+      5
+    ],
+    "fit_rows": 14781,
+    "mean": [
+      0.41798799572629763,
+      0.8751358726292762,
+      0.41266137488146065,
+      0.0687422366551654,
+      3.766553258532736
+    ],
+    "scale": [
+      0.2239681616915814,
+      0.5752051004117802,
+      0.2305693996462506,
+      0.1303060772377121,
+      0.774728075896152
+    ]
+  },
+  "feature_order": [
+    "RECENT_FINISH_PCT",
+    "RECENT_MARGIN",
+    "RECENT_CORNER4_PCT",
+    "DISTANCE_GAP",
+    "SURFACE_SWITCH",
+    "LOG_REST",
+    "HISTORY_DEPTH"
+  ],
+  "history_window": "LATEST_UP_TO_3_VALID_RACES",
+  "identity_rule": "APPROVED_NAME_SIRE_MATERNAL_GRANDSIRE_V1",
+  "l2_regularization": 0.0,
+  "model": "OFFSET_PL_RAW_HISTORY_V2",
+  "offset_coefficients": [
+    -0.20245025462393765,
+    0.06668506465584557,
+    -0.017876250822704907,
+    -0.009053068257691367,
+    -0.2801281826153573,
+    0.023474012968011042,
+    -2.0056870135314933
+  ],
+  "optimizer": {
+    "iterations": 21,
+    "l2_regularization": 0.0,
+    "objective": 6.863347306901614,
+    "optimizer_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "optimizer_success": true,
+    "training_races": 1103
+  },
+  "production_override": false,
+  "role": "DEVELOPMENT_ONLY_NON_EVIDENTIAL",
+  "training_dates": [
+    "20260201",
+    "20260913"
+  ]
+}

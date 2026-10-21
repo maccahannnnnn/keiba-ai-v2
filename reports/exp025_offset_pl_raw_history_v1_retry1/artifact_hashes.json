@@ -1,0 +1,57 @@
+{
+  "artifacts": {
+    "authority_verification.json": {
+      "sha256": "173753c0e02da1988a751c35028856046c81a6d5066609a9de7c6c861841a417",
+      "size": 360
+    },
+    "final_offset_pl_v2_model.json": {
+      "sha256": "069acd3f99689ab6565b98a27e8d38f0ad0fc5539629a96e5ee85d807de03d68",
+      "size": 1582
+    },
+    "fold_audit.json": {
+      "sha256": "2945e7423768c95c6c7e0b8e2ad3027a02f0933484c49ccb541c3dc8f47da5ee",
+      "size": 19799
+    },
+    "gate_evaluation.json": {
+      "sha256": "779a4e4f12affd5baed34433d0bb5a2a5e6f542abf1172794515c2a29f2709e5",
+      "size": 1702
+    },
+    "global_daily_topn_detail.csv": {
+      "sha256": "7522cf225667048923d03a94757d339fa06424e626fed7b9d7ae201f98792eec",
+      "size": 15977
+    },
+    "monthly_table.csv": {
+      "sha256": "fc5a3c932fab1af7ad7e216347aa67e54810e00ca91f9497fac9aa9ddb2a4045",
+      "size": 887
+    },
+    "phase5_secondary_diagnostics.json": {
+      "sha256": "e82f05d075ddade74345a6f2b46d0587418194087b02180fd4863235ad78fddf",
+      "size": 7039
+    },
+    "race_top3_delta.csv": {
+      "sha256": "351d63d0421eb5b518cbeb5c476c1ef42c67f8c4b835cff64537db9235aa65cd",
+      "size": 22758
+    },
+    "secondary_0919_1012.json": {
+      "sha256": "eb99d91ccc8e454d09b449468ae74104a1352ada2d43f5c99eff7629b6f0a671",
+      "size": 194
+    },
+    "selected_horses.csv": {
+      "sha256": "27b9bb74cffbb10b400a34a066f8d60ec848c1758542e029e5bc7a2435c1f57d",
+      "size": 249757
+    },
+    "source_identity_audit.json": {
+      "sha256": "b0f4309958a2dde632838c66eeed1f0ec9be11c73ad99588e4b1e0672e5fe742",
+      "size": 50829
+    },
+    "summary.json": {
+      "sha256": "befcf6d2b7c608ef604d8e3f5c7156bec8d4087921bedd4fabc8737cc8e15719",
+      "size": 2345
+    },
+    "summary.md": {
+      "sha256": "d17833fdc7ce9109a8e640a28032fabfeaf09d6b7396623cb7866fb94a45344e",
+      "size": 2174
+    }
+  },
+  "self_hash_excluded": true
+}

@@ -460,3 +460,17 @@ GATE-001のimmutable base `evidence_gate_status = PENDING` は履歴fieldとし�
 | Frozen gate | 10,000-iteration date-cluster bootstrap seed `20261020`, monthly, Rank1, Brier, and existing Roadmap Candidate Gate requirements are fixed in the preregistration. |
 | Non-generalization | No Production, EXP-024, Formal Evidence, Prospective Evidence, Current BUY, Current Top5, race authority, or BUY-volume authority is changed. Fingerprint Index remains unchanged. |
 
+
+## Authoritative Closure — 2026-10-21 — EXP-025
+
+| Field | Value |
+|---|---|
+| Final status | `DEVELOPMENT_GATE_FAIL_CLOSED`; Claude independent review confirmed the failure. This closes EXP-025 without rescue, modification, or a replacement experiment. |
+| Non-rescue rule | `DO_NOT_RESCUE_WITHIN_EXP025 = TRUE`. The post-hoc `HISTORY_DEPTH` coefficient range (approximately -1.90 to -2.04 across folds) is diagnostic-only and must not be used to modify this experiment. |
+| Reproduction / integrity | Implementation correctness, fold-local base PL reproduction (`p_hgb`), PIT identity controls, leakage controls, and deterministic rerun passed. There is no identified implementation, leakage, or PIT/identity defect explaining the outcome. |
+| Primary result | Current `240 / 714 = 33.61%`; Base PL `293 / 715 = 40.98%`; Offset PL V2 `291 / 713 = 40.81%`; V2 minus Base PL `-0.17pt`. Race delta sum `-2`; mean `-0.00463`; 10,000 date-cluster bootstrap 95% CI `[-0.03464, +0.02381]`. |
+| Gate closure | `G1 = FAIL`; `G2 = FAIL` (`4/7` months); `G3 = FAIL` (Rank1 difference `-1.63pt`); `G4 = PASS`; `G5 = PASS`; `DEVELOPMENT_GATE = FAIL`. |
+| Final artifact authority | Result artifact index SHA256 `1b49741284cdce0a09b247d8e0cc077358b807367f7db4163106dc9bbeb285db`; archival non-candidate model SHA256 `069acd3f99689ab6565b98a27e8d38f0ad0fc5539629a96e5ee85d807de03d68`. |
+| Final model role | `ARCHIVAL_NON_CANDIDATE`; it is retained only for reproducibility and has no Production, candidate, Formal Evidence, or prospective role. |
+| Secondary diagnostics | Top5 and other secondary diagnostic reporting is implemented and archived; it is `MINOR` only and has no gate impact. The consumed 2026-09-19 to 2026-10-12 secondary check remains `NOT_AVAILABLE` and was not replayed. |
+| Authority boundary | `PROSPECTIVE_AUTHORIZED = FALSE`; `PRODUCTION_AUTHORIZED = FALSE`; `PROSPECTIVE_EVIDENCE_CREDIT = 0`; `EXP024_CHANGED = FALSE`; `PRODUCTION_CHANGED = FALSE`. |

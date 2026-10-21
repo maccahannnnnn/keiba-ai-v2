@@ -1,0 +1,89 @@
+{
+  "BASE_PL": {
+    "invalid_n": 1,
+    "selected_n": 716,
+    "top3_hits": 293,
+    "top3_rate": 0.4097902097902098,
+    "valid_n": 715
+  },
+  "BASE_PL_REPRODUCTION": "PASS",
+  "BOOTSTRAP_CI_LOWER": -0.03464203233256351,
+  "BOOTSTRAP_CI_UPPER": 0.023809523809523808,
+  "BOOTSTRAP_SEED": 20261020,
+  "BRIER_BASE_PL": 0.1596513685556559,
+  "BRIER_MONTHS_WORSE": 0,
+  "BRIER_V2": 0.1582335376452241,
+  "CURRENT": {
+    "invalid_n": 2,
+    "selected_n": 716,
+    "top3_hits": 240,
+    "top3_rate": 0.33613445378151263,
+    "valid_n": 714
+  },
+  "DEVELOPMENT_GATE": "FAIL",
+  "EXP024_CHANGED": false,
+  "EXPERIMENT_ID": "EXP-025",
+  "FEATURE_SET_MATCH_PREREG": "PASS",
+  "FINAL_MODEL_SHA256": "069acd3f99689ab6565b98a27e8d38f0ad0fc5539629a96e5ee85d807de03d68",
+  "FINAL_MODEL_TRAINED": true,
+  "FOLDS_COMPLETED": 7,
+  "GATE_1": "FAIL",
+  "GATE_2": "FAIL",
+  "GATE_3": "FAIL",
+  "GATE_4": "PASS",
+  "GATE_5": "PASS",
+  "GLOBAL_DAILY_TOPN_BASE_PL": {
+    "invalid_n": 2,
+    "selected_n": 716,
+    "top3_hits": 359,
+    "top3_rate": 0.5028011204481793,
+    "valid_n": 714
+  },
+  "GLOBAL_DAILY_TOPN_CURRENT": {
+    "invalid_n": 1,
+    "selected_n": 716,
+    "top3_hits": 293,
+    "top3_rate": 0.4097902097902098,
+    "valid_n": 715
+  },
+  "GLOBAL_DAILY_TOPN_V2": {
+    "invalid_n": 6,
+    "selected_n": 716,
+    "top3_hits": 364,
+    "top3_rate": 0.5126760563380282,
+    "valid_n": 710
+  },
+  "IMPLEMENTATION_STATUS": "COMPLETE",
+  "MEAN_RACE_DELTA": -0.004629629629629629,
+  "MONTHS_V2_GE_BASE_PL": "4/7",
+  "PRODUCTION_CHANGED": false,
+  "PROSPECTIVE_EVIDENCE_CREDIT": 0,
+  "RACE_DELTA_SUM": -2,
+  "RANK1_BASE_PL": {
+    "invalid_n": 0,
+    "selected_n": 430,
+    "top3_hits": 184,
+    "top3_rate": 0.42790697674418604,
+    "valid_n": 430
+  },
+  "RANK1_DIFFERENCE": -0.016279069767441867,
+  "RANK1_V2": {
+    "invalid_n": 0,
+    "selected_n": 430,
+    "top3_hits": 177,
+    "top3_rate": 0.4116279069767442,
+    "valid_n": 430
+  },
+  "RESULT_DEPENDENT_FEATURES": 0,
+  "ROADMAP_GATE_STATUS": "PASS",
+  "SECONDARY_0919_1012_STATUS": "NOT_AVAILABLE",
+  "STATUS": "COMPLETE",
+  "V2": {
+    "invalid_n": 3,
+    "selected_n": 716,
+    "top3_hits": 291,
+    "top3_rate": 0.40813464235624125,
+    "valid_n": 713
+  },
+  "V2_MINUS_BASE_PL_RATE": -0.0016555674339685522
+}
