@@ -76,8 +76,8 @@ TARGET_HISTORY_FIXED_COLUMN_MAP = {
     "last_3f": 35,
     "body_weight": 37,
     "body_weight_diff": 38,
-    "pci": 51,
-    "rpci": 52,
+    "pci": 52,
+    "rpci": 51,
 }
 """Headerless TARGET S fixed column map.
 
