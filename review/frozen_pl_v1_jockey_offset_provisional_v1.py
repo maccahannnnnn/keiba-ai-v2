@@ -30,13 +30,15 @@ BETA = 1.1118321180295676
 FEATURE_SHA = '11831ba888ee35c935b42d3713c523b13d8d1e1cfbed4096e0a3c60b27040a27'
 HISTORY_MANIFEST = ROOT / 'models/adaptive_pl_jockey_research_v1/jockey_history_manifest.json'
 HISTORY_SHA = '092debc076d2dc1b2524da759b9a21d8df845203729ae5c1ed0ba4aab074013c'
-KNOWN_LATE = {
-    '20261024': (ROOT / 'data/raw/prediction_input/DS261024.CSV',
-                 ROOT / 'reports/prospective_prediction_20261024_v1/input_manifest.json',
-                 ('sources', 'DS', 'sha256')),
-    '20261025': (ROOT / 'reports/20261025_pre_v1/filtered_source/DS261025.CSV',
-                 ROOT / 'reports/20261025_pre_v1/filtered_source_manifest.json',
-                 ('filtered_source', 'DS', 'sha256')),
+FORMAL_SNAPSHOT_MANIFEST = ROOT / 'docs/KeibaAI_JOCKEY_FORMAL_PRE_SNAPSHOT_MANIFEST_V1.json'
+FORMAL_GENESIS_ENTRIES_SHA = 'd490ec635b9c263dcb5e29d6f384b2a837b8ce8686543613e5bef09d4b1d3629'
+FORMAL_EXPECTED_PREFIX_SHA = '13a8696e01bddf3e98ef9a78b04666431a209aa3127a3bd533e0effa70d87773'
+RUNTIME_DEPENDENCIES = {
+    'review/adaptive_pl_jockey_research_v1.py': '6914f9942338a12ccf86e1762bf56ec4fc1ff031d8462009d22f06486f98c73d',
+    'review/pl_adaptive_shadow_v1.py': '2ab88d7da2aec0802b43a60d89fc1ea81a5cf89d44436c9cbfcfb9ffbe4fc109',
+    'review/jockey_context_cross_snapshot_pit_audit_v1.py': '30a49b9be5bafaa50380ff39887492e11f28d16a6a0482352c36b2e6123009d7',
+    'review/post_ws2_jockey_mechanism_research_v1_preonly.py': '390eea727bd338f22bece3928a0987786a2ba5002498203c82498bce7558b695',
+    'review/post_ws2_jockey_mechanism_research_v1_model.py': FEATURE_SHA,
 }
 
 
@@ -61,6 +63,10 @@ def verify_identity() -> tuple[dict, float]:
                            (Path(jockey.__file__), FEATURE_SHA), (HISTORY_MANIFEST, HISTORY_SHA)):
         if not path.is_file() or sha(path) != expected:
             raise Stop('STOP_FROZEN_AUTHORITY_SHA:' + str(path))
+    for relative, expected in RUNTIME_DEPENDENCIES.items():
+        path = ROOT / relative
+        if not path.is_file() or sha(path) != expected:
+            raise Stop('STOP_RUNTIME_DEPENDENCY_SHA:' + relative)
     model, model_sha = forward.load_model()
     beta = load(BETA_PATH)
     if (model_sha != MODEL_SHA or beta.get('feature') != jockey.FEATURE or
@@ -71,24 +77,64 @@ def verify_identity() -> tuple[dict, float]:
     return model, beta['beta_jockey']
 
 
-def _late_authority(date: str, path: Path, authority: Path, keys: tuple[str, ...]) -> dict:
-    if not authority.is_file() or not path.is_file():
-        raise Stop('STOP_JOCKEY_SNAPSHOT_MISSING:' + date)
-    value = load(authority)
-    for key in keys:
-        if not isinstance(value, dict) or key not in value:
-            raise Stop('STOP_JOCKEY_SNAPSHOT_AUTHORITY:' + date)
-        value = value[key]
-    actual = sha(path)
-    if actual != value:
-        raise Stop('STOP_JOCKEY_SNAPSHOT_SHA:' + date)
-    return {'snapshot_date': date, 'path': str(path.relative_to(ROOT)).replace('\\', '/'),
-            'sha256': actual, 'included': True, 'authority_path': str(authority.relative_to(ROOT)).replace('\\', '/'),
-            'authority_sha256': sha(authority), 'reason_for_exclusion': None}
+def validate_formal_manifest(date: str, *, require_target_entry: bool = True,
+                             value: dict | None = None) -> list[dict]:
+    """Append-only registry: no expected prior formal date can disappear."""
+    if value is None:
+        value = load(FORMAL_SNAPSHOT_MANIFEST)
+    if value.get('manifest_version') != 1:
+        raise Stop('STOP_FORMAL_SNAPSHOT_MANIFEST_VERSION')
+    expected = value.get('expected_formal_pre_dates')
+    entries = value.get('entries')
+    if not isinstance(expected, list) or not isinstance(entries, list):
+        raise Stop('STOP_FORMAL_SNAPSHOT_MANIFEST_SCHEMA')
+    if (len(expected) < 3 or hashlib.sha256(canonical(expected[:3])).hexdigest() != FORMAL_EXPECTED_PREFIX_SHA or
+            len(entries) < 2 or hashlib.sha256(canonical(entries[:2])).hexdigest() != FORMAL_GENESIS_ENTRIES_SHA):
+        raise Stop('STOP_FORMAL_SNAPSHOT_GENESIS_CHANGED')
+    dates = [str(row.get('date')) for row in entries]
+    if (expected != sorted(set(expected)) or dates != sorted(set(dates)) or
+            any(d not in expected for d in dates)):
+        raise Stop('STOP_FORMAL_SNAPSHOT_DUPLICATE_OR_ORDER')
+    for index, row in enumerate(entries[2:], start=2):
+        preceding_sha = hashlib.sha256(canonical(entries[:index])).hexdigest()
+        if row.get('previous_entries_sha256') != preceding_sha:
+            raise Stop('STOP_FORMAL_SNAPSHOT_APPEND_CHAIN:' + str(row.get('date')))
+    required = {d for d in expected if d < date or (require_target_entry and d == date)}
+    missing = required - set(dates)
+    if missing:
+        raise Stop('STOP_EXPECTED_FORMAL_PRE_SNAPSHOT_MISSING:' + ','.join(sorted(missing)))
+    if require_target_entry and date not in dates:
+        raise Stop('STOP_TARGET_FORMAL_PRE_SNAPSHOT_MISSING:' + date)
+    output = []
+    for row in entries:
+        snapshot_date = row['date']
+        if snapshot_date > date or (snapshot_date == date and not require_target_entry):
+            continue
+        for name in ('current_pre_path', 'current_pre_sha256', 'ds_snapshot_path', 'ds_snapshot_sha256',
+                     'input_manifest_path', 'input_manifest_sha256', 'status'):
+            if not row.get(name):
+                raise Stop('STOP_FORMAL_SNAPSHOT_REQUIRED_FIELD:' + snapshot_date + ':' + name)
+        if row['status'] != 'FROZEN_PRE_SOURCE':
+            raise Stop('STOP_FORMAL_SNAPSHOT_STATUS:' + snapshot_date)
+        if snapshot_date not in row['current_pre_path']:
+            raise Stop('STOP_FORMAL_SNAPSHOT_DATE_PROVENANCE:' + snapshot_date)
+        paths = {name: ROOT / row[name] for name in ('current_pre_path', 'ds_snapshot_path', 'input_manifest_path')}
+        for name, path in paths.items():
+            expected_sha = row[name.replace('_path', '_sha256')]
+            if not path.is_file() or sha(path) != expected_sha:
+                raise Stop('STOP_FORMAL_SNAPSHOT_SHA:' + snapshot_date + ':' + name)
+        input_manifest = load(paths['input_manifest_path'])
+        source = input_manifest.get('sources', {}).get('DS')
+        if (not isinstance(source, dict) or source.get('sha256') != row['ds_snapshot_sha256'] or
+                (ROOT / str(source.get('path', '')).replace('\\', '/')).resolve() != paths['ds_snapshot_path'].resolve() or
+                paths['current_pre_path'].parent != paths['input_manifest_path'].parent):
+            raise Stop('STOP_FORMAL_SNAPSHOT_PROVENANCE:' + snapshot_date)
+        output.append(row)
+    return output
 
 
 def snapshot_manifest(date: str, target_ds: Path, current_input_manifest: Path | None = None) -> list[dict]:
-    """Explicit authorized source universe; includes the same-day DS snapshot."""
+    """Historical authority plus every registered formal PRE snapshot through date."""
     frozen = load(HISTORY_MANIFEST)
     authorities = {item['date']: item for item in frozen['authorities']}
     result = []
@@ -107,16 +153,17 @@ def snapshot_manifest(date: str, target_ds: Path, current_input_manifest: Path |
         result.append({'snapshot_date': snapshot_date, 'path': item['ds_path'],
                        'sha256': sha(path), 'included': True, 'authority_path': item['authority_artifact'],
                        'authority_sha256': item['authority_artifact_sha256'], 'reason_for_exclusion': None})
-    for snapshot_date, (path, authority, keys) in sorted(KNOWN_LATE.items()):
-        if snapshot_date <= date:
-            if snapshot_date == date and path.resolve() != target_ds.resolve():
-                raise Stop('STOP_TARGET_DS_AUTHORITY_MISMATCH')
-            result.append(_late_authority(snapshot_date, path, authority, keys))
-    if date not in {item['snapshot_date'] for item in result}:
-        # Future same-day snapshot is authorized by its own frozen Current input manifest.
-        if current_input_manifest is None:
-            raise Stop('STOP_TARGET_SNAPSHOT_AUTHORITY_NOT_REGISTERED:' + date)
-        result.append(_late_authority(date, target_ds, current_input_manifest, ('sources', 'DS', 'sha256')))
+    formal = validate_formal_manifest(date)
+    for row in formal:
+        if row['date'] == date and (ROOT / row['ds_snapshot_path']).resolve() != target_ds.resolve():
+            raise Stop('STOP_TARGET_DS_AUTHORITY_MISMATCH')
+        if row['date'] == date and (current_input_manifest is None or
+                                    (ROOT / row['input_manifest_path']).resolve() != current_input_manifest.resolve()):
+            raise Stop('STOP_TARGET_INPUT_MANIFEST_AUTHORITY_MISMATCH')
+        result.append({'snapshot_date': row['date'], 'path': row['ds_snapshot_path'],
+                       'sha256': row['ds_snapshot_sha256'], 'included': True,
+                       'authority_path': row['input_manifest_path'],
+                       'authority_sha256': row['input_manifest_sha256'], 'reason_for_exclusion': None})
     if len(result) != len({item['snapshot_date'] for item in result}):
         raise Stop('STOP_DUPLICATE_SNAPSHOT_DATE')
     return result
@@ -239,20 +286,19 @@ def build_pre(current_root: Path, pl_prediction_path: Path, de_path: Path, ds_pa
     targets, today = _snapshot_records(date, de_path, ds_path, expected)
     _, history_snapshots, _ = historical.history_pool()
     history_snapshots = {d: rows for d, rows in history_snapshots.items() if d <= date}
-    for prior_date, root_rel, de_rel in (
-        ('20261024', 'reports/prospective_prediction_20261024_v1', 'data/raw/prediction_input/DE261024.CSV'),
-        ('20261025', 'reports/20261025_pre_v1/current_frozen', 'reports/20261025_pre_v1/filtered_source/DE261025.CSV'),
-    ):
+    formal_entries = validate_formal_manifest(date)
+    for entry in formal_entries:
+        prior_date = entry['date']
         if prior_date >= date:
             continue
-        prior_root = ROOT / root_rel
-        prior_de = ROOT / de_rel
-        prior_input = load(prior_root / 'input_manifest.json')['sources']['DE']
-        if (ROOT / str(prior_input['path']).replace('\\', '/')).resolve() != prior_de.resolve() or sha(prior_de) != prior_input['sha256']:
+        prior_root = (ROOT / entry['current_pre_path']).parent
+        prior_input = load(ROOT / entry['input_manifest_path'])['sources']['DE']
+        prior_de = ROOT / str(prior_input['path']).replace('\\', '/')
+        if not prior_de.is_file() or sha(prior_de) != prior_input['sha256']:
             raise Stop('STOP_PRIOR_DE_SOURCE_SHA:' + prior_date)
         scope = {(e['race_id'], int(h['horse_number'])) for e in load(prior_root / 'race_index.json')['race_index']
                  for h in load(prior_root / e['artifact'])['ranked_results']}
-        _, prior_records = _snapshot_records(prior_date, prior_de, KNOWN_LATE[prior_date][0], scope)
+        _, prior_records = _snapshot_records(prior_date, prior_de, ROOT / entry['ds_snapshot_path'], scope)
         history_snapshots[prior_date] = prior_records
     history_snapshots[date] = today
     features = jockey.feature_map_asof(targets, history_snapshots)
@@ -268,6 +314,8 @@ def build_pre(current_root: Path, pl_prediction_path: Path, de_path: Path, ds_pa
             'model_sha256': MODEL_SHA, 'beta': beta, 'beta_source_sha256': BETA_SHA,
             'jockey_feature_sha256': FEATURE_SHA, 'jockey_snapshot_manifest': snapshots,
             'jockey_snapshot_manifest_sha256': hashlib.sha256(canonical(snapshots)).hexdigest(),
+            'formal_snapshot_authority_manifest_sha256': sha(FORMAL_SNAPSHOT_MANIFEST),
+            'runtime_dependency_sha256': dict(RUNTIME_DEPENDENCIES),
             'eligible_race_count': len(races), 'candidate_selected_horse_count': sum(r['candidate_k'] for r in races),
             'current_selected_horse_count': sum(r['current_k'] for r in races),
             'fallback_race_ids': [r['race_id'] for r in races if r['provisional_fallback_race']],
@@ -297,6 +345,8 @@ def audit_for_freeze(selection: dict, *, freeze_timestamp: str, first_race_times
             'current_pre_sha256': selection['current_pre_sha256'], 'pl_prediction_sha256': selection['pl_prediction_sha256'],
             'beta_source_sha256': BETA_SHA, 'jockey_feature_sha256': FEATURE_SHA,
             'jockey_snapshot_manifest_sha256': selection['jockey_snapshot_manifest_sha256'],
+            'formal_snapshot_authority_manifest_sha256': selection['formal_snapshot_authority_manifest_sha256'],
+            'runtime_dependency_sha256': selection['runtime_dependency_sha256'],
             'eligible_race_count': selection['eligible_race_count'],
             'candidate_selected_horse_count': selection['candidate_selected_horse_count'],
             'current_selected_horse_count': selection['current_selected_horse_count'],

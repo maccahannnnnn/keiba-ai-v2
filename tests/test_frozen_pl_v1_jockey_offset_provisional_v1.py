@@ -1,5 +1,6 @@
 """Result-blind technical tests for the provisional review-layer candidate."""
 import unittest
+import copy
 from pathlib import Path
 from unittest.mock import patch
 
@@ -34,6 +35,31 @@ def fixture(k=2):
 
 
 class ProvisionalTests(unittest.TestCase):
+    @staticmethod
+    def formal_fixture():
+        value = copy.deepcopy(subject.load(subject.FORMAL_SNAPSHOT_MANIFEST))
+        value['entries'].append({
+            'date': '20261031',
+            'current_pre_path': 'reports/prospective_prediction_20261031_v1/prediction_manifest.json',
+            'current_pre_sha256': 'a' * 64,
+            'ds_snapshot_path': 'data/raw/prediction_input/DS261031.CSV',
+            'ds_snapshot_sha256': 'b' * 64,
+            'input_manifest_path': 'reports/prospective_prediction_20261031_v1/input_manifest.json',
+            'input_manifest_sha256': 'c' * 64,
+            'freeze_timestamp': '2026-10-31T08:00:00+09:00',
+            'previous_entries_sha256': subject.FORMAL_GENESIS_ENTRIES_SHA,
+            'status': 'FROZEN_PRE_SOURCE',
+        })
+        hashes = {}
+        inputs = {}
+        for row in value['entries']:
+            for key in ('current_pre', 'ds_snapshot', 'input_manifest'):
+                hashes[str(subject.ROOT / row[key + '_path'])] = row[key + '_sha256']
+            inputs[str(subject.ROOT / row['input_manifest_path'])] = {
+                'sources': {'DS': {'path': row['ds_snapshot_path'], 'sha256': row['ds_snapshot_sha256']}}
+            }
+        return value, hashes, inputs
+
     def test_exact_beta_and_model(self):
         _, beta = subject.verify_identity()
         self.assertEqual(beta, 1.1118321180295676)
@@ -135,6 +161,53 @@ class ProvisionalTests(unittest.TestCase):
         self.assertEqual(selection['candidate_selected_horse_count'], selection['current_selected_horse_count'])
         self.assertIn('20261024', {x['snapshot_date'] for x in selection['jockey_snapshot_manifest']})
         self.assertEqual(selection['result_access_count'], 0)
+
+    def test_20261101_missing_expected_1031_stops(self):
+        value = subject.load(subject.FORMAL_SNAPSHOT_MANIFEST)
+        with self.assertRaisesRegex(subject.Stop, 'STOP_EXPECTED_FORMAL_PRE_SNAPSHOT_MISSING:20261031'):
+            subject.validate_formal_manifest('20261101', require_target_entry=False, value=value)
+
+    def test_20261101_complete_1031_structural_pass(self):
+        value, hashes, inputs = self.formal_fixture()
+        with (patch.object(Path, 'is_file', return_value=True),
+              patch.object(subject, 'sha', side_effect=lambda path: hashes[str(path)]),
+              patch.object(subject, 'load', side_effect=lambda path: inputs[str(path)])):
+            rows = subject.validate_formal_manifest('20261101', require_target_entry=False, value=value)
+        self.assertEqual([row['date'] for row in rows], ['20261024', '20261025', '20261031'])
+
+    def test_formal_snapshot_sha_mismatch_stops(self):
+        value, hashes, inputs = self.formal_fixture()
+        hashes[str(subject.ROOT / value['entries'][-1]['ds_snapshot_path'])] = '0' * 64
+        with (patch.object(Path, 'is_file', return_value=True),
+              patch.object(subject, 'sha', side_effect=lambda path: hashes[str(path)]),
+              patch.object(subject, 'load', side_effect=lambda path: inputs[str(path)]),
+              self.assertRaisesRegex(subject.Stop, 'STOP_FORMAL_SNAPSHOT_SHA')):
+            subject.validate_formal_manifest('20261101', require_target_entry=False, value=value)
+
+    def test_duplicate_formal_date_stops(self):
+        value, _, _ = self.formal_fixture()
+        value['entries'].append(copy.deepcopy(value['entries'][-1]))
+        with self.assertRaisesRegex(subject.Stop, 'STOP_FORMAL_SNAPSHOT_DUPLICATE_OR_ORDER'):
+            subject.validate_formal_manifest('20261101', require_target_entry=False, value=value)
+
+    def test_future_snapshot_excluded(self):
+        value, hashes, inputs = self.formal_fixture()
+        with (patch.object(Path, 'is_file', return_value=True),
+              patch.object(subject, 'sha', side_effect=lambda path: hashes[str(path)]),
+              patch.object(subject, 'load', side_effect=lambda path: inputs[str(path)])):
+            rows = subject.validate_formal_manifest('20261025', value=value)
+        self.assertEqual([row['date'] for row in rows], ['20261024', '20261025'])
+
+    def test_runtime_dependency_sha_mismatch_stops(self):
+        with patch.object(subject, 'RUNTIME_DEPENDENCIES',
+                          {'review/adaptive_pl_jockey_research_v1.py': '0' * 64}), self.assertRaisesRegex(subject.Stop, 'STOP_RUNTIME_DEPENDENCY_SHA'):
+            subject.verify_identity()
+
+    def test_formal_manifest_order_is_deterministic(self):
+        value, _, _ = self.formal_fixture()
+        value['entries'][1], value['entries'][2] = value['entries'][2], value['entries'][1]
+        with self.assertRaises(subject.Stop):
+            subject.validate_formal_manifest('20261101', require_target_entry=False, value=value)
 
 
 if __name__ == '__main__':
