@@ -1,0 +1,21 @@
+{
+  "experiment_name": "CURRENT_UNCONVERGED_RANK1_RESOLUTION_SHADOW_V1",
+  "human_approval": "APPROVED",
+  "approval_date_jst": "2026-10-26",
+  "approval_instruction_sha256": "b4ee6a2118535f2f2ab9dbff93797a854dcf5ce328b2c2c3e52f9fe54254dcf9",
+  "limited_volume_authority_reopen": "APPROVED",
+  "reason_for_limited_reopening": "Diagnose the fixed Current-candidate Rank1 resolution of PLAY_UNCONVERGED_4PLUS without treating risk-safe candidate count as volume authority.",
+  "previous_volume_authority_do_not_repeat_relationship": "EXPLICIT_NARROW_HUMAN_EXCEPTION; prior frozen closure and DO_NOT_REPEAT remain unchanged; no risk_guard-pass count, tunable volume, or general race-level volume authority is reused",
+  "authorized_race_state": "PLAY_UNCONVERGED_4PLUS",
+  "authorized_candidate_set": "EXISTING_CURRENT_CANDIDATES_ONLY",
+  "authorized_order": "PERSISTED_CURRENT_SCORE_RANK",
+  "authorized_mechanism": "SELECT_ONE_CURRENT_CANDIDATE_RANK1",
+  "fixed_k": 1,
+  "threshold": null,
+  "tunable_parameters": [],
+  "formal_evidence_credit": 0,
+  "production_change": "NOT_AUTHORIZED",
+  "exp024_unchanged": true,
+  "old_volume_authority_records_unchanged": true,
+  "record_sha256_location": "sibling .sha256 sidecar; self-hash omitted to avoid recursion"
+}

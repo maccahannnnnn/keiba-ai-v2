@@ -1,0 +1,107 @@
+{
+  "block": "december",
+  "combined_current_plus_additions": {
+    "invalid_selected": 1,
+    "selected_raw": 161,
+    "selected_valid": 160,
+    "top3_hits": 45,
+    "top3_rate": 0.28125
+  },
+  "formal_evidence_credit": 0,
+  "new_evidence_credit": 0,
+  "original_current": {
+    "invalid_selected": 1,
+    "selected_raw": 131,
+    "selected_valid": 130,
+    "top3_hits": 36,
+    "top3_rate": 0.27692307692307694
+  },
+  "population": {
+    "dates": 8,
+    "horses": 2093,
+    "races": 146,
+    "unconverged_races": 30
+  },
+  "pre_source": {
+    "path": "reports/consumed_holdout_bounded_reproduction_v1/december/run_a/runtime_pre_only_output.json",
+    "sha256": "fe23cad3712405d115f478f8722eb5a33002729ea8e76105b574ceed8d5388db"
+  },
+  "rank1_additions": {
+    "invalid_selected": 0,
+    "selected_raw": 30,
+    "selected_valid": 30,
+    "top3_hits": 9,
+    "top3_rate": 0.3
+  },
+  "raw_combined_lift_vs_current_pt": 0.43269230769230616,
+  "replication": "REPEAT",
+  "replication_reason": "Added-hit and combined-lift directions both match the primary block.",
+  "result_sources": [
+    {
+      "path": "data/raw/target/daily_result_list/馬番順着順_20251206.csv",
+      "sha256": "b56cbce9706f2ce72685c97460fcf50d8042a450c95077c520e67555ad60175b"
+    },
+    {
+      "path": "data/raw/target/daily_result_list/着順馬番_20251206.csv",
+      "sha256": "865406a77c48f34d391e5a5f8b5f23c51c33a808f2ee85b788b26f51b2d22db8"
+    },
+    {
+      "path": "data/raw/target/daily_result_list/馬番順着順_20251207.csv",
+      "sha256": "cd1175074a16b1896db498653f3d72916b9f7a695654dac912438b1d97f8fea4"
+    },
+    {
+      "path": "data/raw/target/daily_result_list/着順馬番_20251207.csv",
+      "sha256": "55e2c6b22a300f19a218eb50da35227d5db9298887f767f0907919574833bd53"
+    },
+    {
+      "path": "data/raw/target/daily_result_list/馬番順着順_20251213.csv",
+      "sha256": "f091d7fa179223953412b909731550f1f0081cf844bd953f7be05449cd046200"
+    },
+    {
+      "path": "data/raw/target/daily_result_list/着順馬番_20251213.csv",
+      "sha256": "90e53feebf153f1d7780ebb9fb13bfc38e2d31162064ee0e48e46b0ac6bf64ae"
+    },
+    {
+      "path": "data/raw/target/daily_result_list/馬番順着順_20251214.csv",
+      "sha256": "614ae63fbf4043de841090abafb091e3c080acb8d6e93f849ad5367176989cb1"
+    },
+    {
+      "path": "data/raw/target/daily_result_list/着順馬番_20251214.csv",
+      "sha256": "a8a05b888f88f98a370769fee83fdcba7ecbbb1fc261f79594dd5f3ffd2277d2"
+    },
+    {
+      "path": "data/raw/target/daily_result_list/馬番順着順_20251220.csv",
+      "sha256": "297dd35d7ffb9c358a065e1f7a484d2e55d56d812851bc0b95d2b64957248f35"
+    },
+    {
+      "path": "data/raw/target/daily_result_list/着順馬番_20251220.csv",
+      "sha256": "c4a3d97be1476b69f88a39718380cb8c7aa1347233b7ada2bf0332e4c1afc6a0"
+    },
+    {
+      "path": "data/raw/target/daily_result_list/馬番順着順_20251221.csv",
+      "sha256": "894dd8688c51f8b602dd43cd692d8f08d4f0690832536f52ca576ecde84271e3"
+    },
+    {
+      "path": "data/raw/target/daily_result_list/着順馬番_20251221.csv",
+      "sha256": "7e256dd36b3bb16342b8fa218a0fd11cf143076d5ed01dce97834ed88f5ca6bc"
+    },
+    {
+      "path": "data/raw/target/daily_result_list/馬番順着順_20251227.csv",
+      "sha256": "ad518482e0f80cec236eb418fe54e3cdcaca51575dd98c2bcbde62c2f9a5c998"
+    },
+    {
+      "path": "data/raw/target/daily_result_list/着順馬番_20251227.csv",
+      "sha256": "0bdc54174c164c0077fe237f889f5c5c5e1d983d7e6ab5398d88ce8088bf43c5"
+    },
+    {
+      "path": "data/raw/target/daily_result_list/馬番順着順_20251228.csv",
+      "sha256": "c3d9f8bf8d990d7b27cdc8a7a29afc8e599bcf0b19ff63005d4ec273267d9120"
+    },
+    {
+      "path": "data/raw/target/daily_result_list/着順馬番_20251228.csv",
+      "sha256": "a96e822d33ec8d54bc0a79689373426ad701d12eedd34be6bf3ba8c0532add2b"
+    }
+  ],
+  "reuse_role": "REUSED_CONSUMED_HOLDOUT_FOR_DEVELOPMENT_ONLY",
+  "role": "DEVELOPMENT_ONLY_COUNTERFACTUAL_NOT_PRODUCTION"
+}

@@ -1,0 +1,52 @@
+{
+  "record_type": "POST_INDEPENDENT_REVIEW_ADDITIVE_CORRECTION",
+  "experiment": "CURRENT_UNCONVERGED_RANK1_RESOLUTION_SHADOW_V1",
+  "authority_instruction_sha256": "abf1e22f57ec6abb4e1064a2ce8df53929a885fbf8ddf74b01941c9c18d92614",
+  "independent_review_verdict": "PASS_WITH_MINOR",
+  "implementation_correct": true,
+  "development_signal": "MIXED_BUT_PROSPECTIVE_WORTHY",
+  "hypothesis_status": "PARTIALLY_SUPPORTED",
+  "primary_202603_to_202609": {
+    "addition_hits": 101,
+    "addition_valid_n": 228,
+    "addition_top3_rate": 0.44298245614035087,
+    "evidence_role": "DERIVATION_SET_REPRODUCTION",
+    "independent_confirmation": false,
+    "formal_evidence": false,
+    "prospective_evidence": false
+  },
+  "december_2025": {
+    "addition_hits": 9,
+    "addition_valid_n": 30,
+    "addition_rate": 0.3,
+    "same_period_current_hits": 36,
+    "same_period_current_valid_n": 130,
+    "same_period_current_rate": 0.27692307692307694,
+    "addition_minus_current_percentage_points": 2.3076923076923066,
+    "evidence_role": "REUSED_CONSUMED_HOLDOUT_FOR_DEVELOPMENT_ONLY"
+  },
+  "january_2026": {
+    "addition_hits": 9,
+    "addition_valid_n": 28,
+    "addition_rate": 0.32142857142857145,
+    "same_period_current_hits": 51,
+    "same_period_current_valid_n": 140,
+    "same_period_current_rate": 0.36428571428571427,
+    "addition_minus_current_percentage_points": -4.285714285714281,
+    "evidence_role": "REUSED_CONSUMED_HOLDOUT_FOR_DEVELOPMENT_ONLY"
+  },
+  "december_plus_january_descriptive_only": {
+    "addition_hits": 18,
+    "addition_valid_n": 58,
+    "addition_rate": 0.3103448275862069,
+    "same_period_current_hits": 87,
+    "same_period_current_valid_n": 270,
+    "same_period_current_rate": 0.32222222222222224,
+    "addition_minus_current_percentage_points": -1.187739463601533,
+    "evidence_credit": 0,
+    "pooling_for_formal_evidence": false
+  },
+  "old_replication_labels_not_authoritative_confirmation": true,
+  "frozen_primary_findings_951_sha256_unchanged": "39b9debf4db4f189488ac6a1ed92e70ac0a32a7c281a6144a7cd84786b88b4cd",
+  "formal_evidence_credit": 0
+}

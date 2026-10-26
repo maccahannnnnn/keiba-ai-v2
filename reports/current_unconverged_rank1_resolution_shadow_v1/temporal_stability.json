@@ -1,0 +1,534 @@
+{
+  "by_date": {
+    "20260301": {
+      "invalid_selected": 0,
+      "selected_raw": 7,
+      "selected_valid": 7,
+      "top3_hits": 2,
+      "top3_rate": 0.2857142857142857
+    },
+    "20260307": {
+      "invalid_selected": 0,
+      "selected_raw": 1,
+      "selected_valid": 1,
+      "top3_hits": 1,
+      "top3_rate": 1.0
+    },
+    "20260308": {
+      "invalid_selected": 0,
+      "selected_raw": 4,
+      "selected_valid": 4,
+      "top3_hits": 0,
+      "top3_rate": 0.0
+    },
+    "20260314": {
+      "invalid_selected": 0,
+      "selected_raw": 4,
+      "selected_valid": 4,
+      "top3_hits": 3,
+      "top3_rate": 0.75
+    },
+    "20260315": {
+      "invalid_selected": 0,
+      "selected_raw": 8,
+      "selected_valid": 8,
+      "top3_hits": 3,
+      "top3_rate": 0.375
+    },
+    "20260321": {
+      "invalid_selected": 0,
+      "selected_raw": 7,
+      "selected_valid": 7,
+      "top3_hits": 4,
+      "top3_rate": 0.5714285714285714
+    },
+    "20260322": {
+      "invalid_selected": 0,
+      "selected_raw": 6,
+      "selected_valid": 6,
+      "top3_hits": 4,
+      "top3_rate": 0.6666666666666666
+    },
+    "20260328": {
+      "invalid_selected": 0,
+      "selected_raw": 3,
+      "selected_valid": 3,
+      "top3_hits": 2,
+      "top3_rate": 0.6666666666666666
+    },
+    "20260329": {
+      "invalid_selected": 0,
+      "selected_raw": 6,
+      "selected_valid": 6,
+      "top3_hits": 4,
+      "top3_rate": 0.6666666666666666
+    },
+    "20260404": {
+      "invalid_selected": 0,
+      "selected_raw": 6,
+      "selected_valid": 6,
+      "top3_hits": 3,
+      "top3_rate": 0.5
+    },
+    "20260405": {
+      "invalid_selected": 0,
+      "selected_raw": 1,
+      "selected_valid": 1,
+      "top3_hits": 1,
+      "top3_rate": 1.0
+    },
+    "20260411": {
+      "invalid_selected": 0,
+      "selected_raw": 3,
+      "selected_valid": 3,
+      "top3_hits": 2,
+      "top3_rate": 0.6666666666666666
+    },
+    "20260412": {
+      "invalid_selected": 0,
+      "selected_raw": 4,
+      "selected_valid": 4,
+      "top3_hits": 1,
+      "top3_rate": 0.25
+    },
+    "20260418": {
+      "invalid_selected": 0,
+      "selected_raw": 4,
+      "selected_valid": 4,
+      "top3_hits": 2,
+      "top3_rate": 0.5
+    },
+    "20260419": {
+      "invalid_selected": 0,
+      "selected_raw": 6,
+      "selected_valid": 6,
+      "top3_hits": 4,
+      "top3_rate": 0.6666666666666666
+    },
+    "20260425": {
+      "invalid_selected": 0,
+      "selected_raw": 5,
+      "selected_valid": 5,
+      "top3_hits": 3,
+      "top3_rate": 0.6
+    },
+    "20260426": {
+      "invalid_selected": 0,
+      "selected_raw": 6,
+      "selected_valid": 6,
+      "top3_hits": 3,
+      "top3_rate": 0.5
+    },
+    "20260502": {
+      "invalid_selected": 0,
+      "selected_raw": 4,
+      "selected_valid": 4,
+      "top3_hits": 1,
+      "top3_rate": 0.25
+    },
+    "20260503": {
+      "invalid_selected": 0,
+      "selected_raw": 6,
+      "selected_valid": 6,
+      "top3_hits": 3,
+      "top3_rate": 0.5
+    },
+    "20260509": {
+      "invalid_selected": 0,
+      "selected_raw": 2,
+      "selected_valid": 2,
+      "top3_hits": 1,
+      "top3_rate": 0.5
+    },
+    "20260510": {
+      "invalid_selected": 0,
+      "selected_raw": 5,
+      "selected_valid": 5,
+      "top3_hits": 2,
+      "top3_rate": 0.4
+    },
+    "20260516": {
+      "invalid_selected": 0,
+      "selected_raw": 4,
+      "selected_valid": 4,
+      "top3_hits": 3,
+      "top3_rate": 0.75
+    },
+    "20260517": {
+      "invalid_selected": 0,
+      "selected_raw": 11,
+      "selected_valid": 11,
+      "top3_hits": 3,
+      "top3_rate": 0.2727272727272727
+    },
+    "20260523": {
+      "invalid_selected": 0,
+      "selected_raw": 6,
+      "selected_valid": 6,
+      "top3_hits": 3,
+      "top3_rate": 0.5
+    },
+    "20260524": {
+      "invalid_selected": 0,
+      "selected_raw": 10,
+      "selected_valid": 10,
+      "top3_hits": 3,
+      "top3_rate": 0.3
+    },
+    "20260530": {
+      "invalid_selected": 0,
+      "selected_raw": 2,
+      "selected_valid": 2,
+      "top3_hits": 1,
+      "top3_rate": 0.5
+    },
+    "20260531": {
+      "invalid_selected": 0,
+      "selected_raw": 4,
+      "selected_valid": 4,
+      "top3_hits": 3,
+      "top3_rate": 0.75
+    },
+    "20260620": {
+      "invalid_selected": 0,
+      "selected_raw": 8,
+      "selected_valid": 8,
+      "top3_hits": 2,
+      "top3_rate": 0.25
+    },
+    "20260621": {
+      "invalid_selected": 0,
+      "selected_raw": 3,
+      "selected_valid": 3,
+      "top3_hits": 1,
+      "top3_rate": 0.3333333333333333
+    },
+    "20260627": {
+      "invalid_selected": 0,
+      "selected_raw": 3,
+      "selected_valid": 3,
+      "top3_hits": 1,
+      "top3_rate": 0.3333333333333333
+    },
+    "20260628": {
+      "invalid_selected": 0,
+      "selected_raw": 2,
+      "selected_valid": 2,
+      "top3_hits": 0,
+      "top3_rate": 0.0
+    },
+    "20260704": {
+      "invalid_selected": 0,
+      "selected_raw": 4,
+      "selected_valid": 4,
+      "top3_hits": 3,
+      "top3_rate": 0.75
+    },
+    "20260705": {
+      "invalid_selected": 0,
+      "selected_raw": 1,
+      "selected_valid": 1,
+      "top3_hits": 0,
+      "top3_rate": 0.0
+    },
+    "20260711": {
+      "invalid_selected": 0,
+      "selected_raw": 4,
+      "selected_valid": 4,
+      "top3_hits": 3,
+      "top3_rate": 0.75
+    },
+    "20260712": {
+      "invalid_selected": 0,
+      "selected_raw": 1,
+      "selected_valid": 1,
+      "top3_hits": 0,
+      "top3_rate": 0.0
+    },
+    "20260718": {
+      "invalid_selected": 0,
+      "selected_raw": 3,
+      "selected_valid": 3,
+      "top3_hits": 0,
+      "top3_rate": 0.0
+    },
+    "20260725": {
+      "invalid_selected": 0,
+      "selected_raw": 4,
+      "selected_valid": 4,
+      "top3_hits": 2,
+      "top3_rate": 0.5
+    },
+    "20260726": {
+      "invalid_selected": 0,
+      "selected_raw": 5,
+      "selected_valid": 5,
+      "top3_hits": 3,
+      "top3_rate": 0.6
+    },
+    "20260801": {
+      "invalid_selected": 0,
+      "selected_raw": 6,
+      "selected_valid": 6,
+      "top3_hits": 2,
+      "top3_rate": 0.3333333333333333
+    },
+    "20260802": {
+      "invalid_selected": 0,
+      "selected_raw": 5,
+      "selected_valid": 5,
+      "top3_hits": 1,
+      "top3_rate": 0.2
+    },
+    "20260808": {
+      "invalid_selected": 0,
+      "selected_raw": 4,
+      "selected_valid": 4,
+      "top3_hits": 2,
+      "top3_rate": 0.5
+    },
+    "20260809": {
+      "invalid_selected": 0,
+      "selected_raw": 4,
+      "selected_valid": 4,
+      "top3_hits": 2,
+      "top3_rate": 0.5
+    },
+    "20260815": {
+      "invalid_selected": 0,
+      "selected_raw": 4,
+      "selected_valid": 4,
+      "top3_hits": 2,
+      "top3_rate": 0.5
+    },
+    "20260816": {
+      "invalid_selected": 0,
+      "selected_raw": 6,
+      "selected_valid": 6,
+      "top3_hits": 2,
+      "top3_rate": 0.3333333333333333
+    },
+    "20260822": {
+      "invalid_selected": 0,
+      "selected_raw": 3,
+      "selected_valid": 3,
+      "top3_hits": 1,
+      "top3_rate": 0.3333333333333333
+    },
+    "20260823": {
+      "invalid_selected": 0,
+      "selected_raw": 2,
+      "selected_valid": 2,
+      "top3_hits": 1,
+      "top3_rate": 0.5
+    },
+    "20260829": {
+      "invalid_selected": 0,
+      "selected_raw": 4,
+      "selected_valid": 4,
+      "top3_hits": 3,
+      "top3_rate": 0.75
+    },
+    "20260830": {
+      "invalid_selected": 0,
+      "selected_raw": 6,
+      "selected_valid": 6,
+      "top3_hits": 0,
+      "top3_rate": 0.0
+    },
+    "20260905": {
+      "invalid_selected": 0,
+      "selected_raw": 4,
+      "selected_valid": 4,
+      "top3_hits": 2,
+      "top3_rate": 0.5
+    },
+    "20260906": {
+      "invalid_selected": 0,
+      "selected_raw": 5,
+      "selected_valid": 5,
+      "top3_hits": 3,
+      "top3_rate": 0.6
+    },
+    "20260912": {
+      "invalid_selected": 0,
+      "selected_raw": 2,
+      "selected_valid": 2,
+      "top3_hits": 0,
+      "top3_rate": 0.0
+    }
+  },
+  "by_month": {
+    "202603": {
+      "invalid_selected": 0,
+      "selected_raw": 46,
+      "selected_valid": 46,
+      "top3_hits": 23,
+      "top3_rate": 0.5
+    },
+    "202604": {
+      "invalid_selected": 0,
+      "selected_raw": 35,
+      "selected_valid": 35,
+      "top3_hits": 19,
+      "top3_rate": 0.5428571428571428
+    },
+    "202605": {
+      "invalid_selected": 0,
+      "selected_raw": 54,
+      "selected_valid": 54,
+      "top3_hits": 23,
+      "top3_rate": 0.42592592592592593
+    },
+    "202606": {
+      "invalid_selected": 0,
+      "selected_raw": 16,
+      "selected_valid": 16,
+      "top3_hits": 4,
+      "top3_rate": 0.25
+    },
+    "202607": {
+      "invalid_selected": 0,
+      "selected_raw": 22,
+      "selected_valid": 22,
+      "top3_hits": 11,
+      "top3_rate": 0.5
+    },
+    "202608": {
+      "invalid_selected": 0,
+      "selected_raw": 44,
+      "selected_valid": 44,
+      "top3_hits": 16,
+      "top3_rate": 0.36363636363636365
+    },
+    "202609": {
+      "invalid_selected": 0,
+      "selected_raw": 11,
+      "selected_valid": 11,
+      "top3_hits": 5,
+      "top3_rate": 0.45454545454545453
+    }
+  },
+  "by_venue": {
+    "chuukyou": {
+      "invalid_selected": 0,
+      "selected_raw": 41,
+      "selected_valid": 41,
+      "top3_hits": 22,
+      "top3_rate": 0.5365853658536586
+    },
+    "fukushima": {
+      "invalid_selected": 0,
+      "selected_raw": 12,
+      "selected_valid": 12,
+      "top3_hits": 6,
+      "top3_rate": 0.5
+    },
+    "hakodate": {
+      "invalid_selected": 0,
+      "selected_raw": 9,
+      "selected_valid": 9,
+      "top3_hits": 4,
+      "top3_rate": 0.4444444444444444
+    },
+    "hanshin": {
+      "invalid_selected": 0,
+      "selected_raw": 43,
+      "selected_valid": 43,
+      "top3_hits": 20,
+      "top3_rate": 0.46511627906976744
+    },
+    "kokura": {
+      "invalid_selected": 0,
+      "selected_raw": 4,
+      "selected_valid": 4,
+      "top3_hits": 0,
+      "top3_rate": 0.0
+    },
+    "kyoto": {
+      "invalid_selected": 0,
+      "selected_raw": 21,
+      "selected_valid": 21,
+      "top3_hits": 10,
+      "top3_rate": 0.47619047619047616
+    },
+    "nakayama": {
+      "invalid_selected": 0,
+      "selected_raw": 26,
+      "selected_valid": 26,
+      "top3_hits": 13,
+      "top3_rate": 0.5
+    },
+    "niigata": {
+      "invalid_selected": 0,
+      "selected_raw": 29,
+      "selected_valid": 29,
+      "top3_hits": 9,
+      "top3_rate": 0.3103448275862069
+    },
+    "sapporo": {
+      "invalid_selected": 0,
+      "selected_raw": 13,
+      "selected_valid": 13,
+      "top3_hits": 4,
+      "top3_rate": 0.3076923076923077
+    },
+    "tokyo": {
+      "invalid_selected": 0,
+      "selected_raw": 30,
+      "selected_valid": 30,
+      "top3_hits": 13,
+      "top3_rate": 0.43333333333333335
+    }
+  },
+  "date_concentration": {
+    "all_dates_with_additions": 51,
+    "top_5_dates_hit_share": 0.18811881188118812,
+    "top_contributing_dates": [
+      {
+        "date": "20260321",
+        "invalid_selected": 0,
+        "selected_raw": 7,
+        "selected_valid": 7,
+        "top3_hits": 4,
+        "top3_rate": 0.5714285714285714
+      },
+      {
+        "date": "20260322",
+        "invalid_selected": 0,
+        "selected_raw": 6,
+        "selected_valid": 6,
+        "top3_hits": 4,
+        "top3_rate": 0.6666666666666666
+      },
+      {
+        "date": "20260329",
+        "invalid_selected": 0,
+        "selected_raw": 6,
+        "selected_valid": 6,
+        "top3_hits": 4,
+        "top3_rate": 0.6666666666666666
+      },
+      {
+        "date": "20260419",
+        "invalid_selected": 0,
+        "selected_raw": 6,
+        "selected_valid": 6,
+        "top3_hits": 4,
+        "top3_rate": 0.6666666666666666
+      },
+      {
+        "date": "20260314",
+        "invalid_selected": 0,
+        "selected_raw": 4,
+        "selected_valid": 4,
+        "top3_hits": 3,
+        "top3_rate": 0.75
+      }
+    ]
+  },
+  "lodo_top3_rate_range": {
+    "max": 0.45495495495495497,
+    "min": 0.4369369369369369
+  }
+}

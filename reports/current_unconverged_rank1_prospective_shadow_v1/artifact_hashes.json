@@ -1,0 +1,21 @@
+{
+  "schema": "SHA256_ARTIFACT_INDEX_V1",
+  "role": "PRE_PROSPECTIVE_CHECKPOINT_INPUT_IDENTITY",
+  "self_excluded": true,
+  "files": {
+    "docs/KeibaAI_CURRENT_UNCONVERGED_RANK1_RESOLUTION_SHADOW_V1_HUMAN_APPROVAL.json": "c9585bf4f7614abbf947446ecc9394502d17aa36b71e9d28fbebdb3c80eb3169",
+    "docs/KeibaAI_CURRENT_UNCONVERGED_RANK1_PROSPECTIVE_SHADOW_V1_HUMAN_APPROVAL.json": "0192c05d9244a7e4dcc78a4bdfa2e976b7229dc727e34dfda7ab7c706962ad03",
+    "docs/KeibaAI_CURRENT_UNCONVERGED_RANK1_PROSPECTIVE_SHADOW_V1_PROTOCOL.md": "358fa915c21692ea1af9ac49f5e67dc92e12a989e7de0571a6cf505f4028389b",
+    "docs/KeibaAI_EXP024_BLOCK001_ENVIRONMENT_PROVENANCE_ACK_20261026_V1.json": "ab7d663446a48830581feafb322f3fb7fc536dda1decc9bd9e66b3d50e300b63",
+    "review/current_unconverged_rank1_resolution_shadow_v1.py": "023f059240f051f199a4a594825c43bb2bea2ff2f552010f5e24cf8d335dfadb",
+    "review/current_unconverged_rank1_prospective_shadow_v1.py": "81e0a473675994fce64ccaac2709c1a417a662c75ac6a6242ab0070f2bfeda70",
+    "tests/test_current_unconverged_rank1_prospective_shadow_v1.py": "7ea80d67307f0509e30a2bc3238a54755f77442b5722e0db8ebc8615a4999f94",
+    "reports/current_unconverged_rank1_resolution_shadow_v1/post_independent_review_addendum_v1.json": "32af6ed4a3c6171e34b7612c601f56b3f7d6cde894def49cd8d099805ac0d2ed",
+    "reports/current_unconverged_rank1_resolution_shadow_v1/primary_development_replay.json": "9db4c09e111469c97ae4977a4bd6afe2ecc00fb18989bbab166b74bbdd2da996",
+    "reports/current_unconverged_rank1_resolution_shadow_v1/secondary_december_replay.json": "bcdcdd39ba8524b61fd375caaf14cb053a9b5ac68fa78e22483c01c31e477f1f",
+    "reports/current_unconverged_rank1_resolution_shadow_v1/secondary_january_replay.json": "b68a7a522a33848fcf017e68a659c7fdec8c7346b507be925e8ed98edaf3c550",
+    "reports/current_unconverged_rank1_resolution_shadow_v1/semantic_validation.json": "d80d1904ae6a510b2dffe7853265843c1ce913a2d0c2cb2c59b1c7b0cce31b3c",
+    "reports/current_unconverged_rank1_resolution_shadow_v1/determinism_check.json": "10dd6bae3e50cf51c24caedca0ea6db13b08f3d17f5f2a0105036274e62f7ec0",
+    "reports/current_unconverged_rank1_prospective_shadow_v1/readiness_validation.json": "52011f3aaef77d9d09a7b80a37ab31a6478d6aeec03b19f8f4a0c3a165558c5b"
+  }
+}
