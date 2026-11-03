@@ -1,0 +1,14 @@
+{
+  "status": "FROZEN_AND_SHA_VERIFIED",
+  "manifest_path": "reports/pl_jockey_step1_completion_v1/step1_completion_manifest.json",
+  "manifest_sha256": "ac563070253dc0c517320befdae9cec7dc826b2fbd81896b64bf5b391be241fb",
+  "parent_protocol_sha256": "d29c9c1e0deee7cd4dc4f61bb23e37456fb72a1c7d97e810e7b9d04008b51a58",
+  "addendum_sha256": "841b1b76df873d4e106b34af17fac2b1b644fdf98018d07e3b8ba34a4159787e",
+  "pl_model_sha256": "418fc9b4cefe1757f79dfc22a7d49b7c1592b91084cca97f88f55bb1389b0585",
+  "jockey_beta_source_sha256": "66bf159125786e258fd671be5b823bdfd0b79b3a3bb0db7c2e93713245b8b376",
+  "legacy_tests": "22/22 PASS",
+  "addendum_tests": "16/16 PASS",
+  "step1_operations_tests": "17/17 PASS",
+  "result_access": 0,
+  "first_new_gate_evidence_date": "NOT_ASSIGNED"
+}

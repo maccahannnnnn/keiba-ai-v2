@@ -1,0 +1,25 @@
+# PL+Jockey prospective decision addendum v1
+
+Status: `FROZEN_BEFORE_NEW_GATE_EVIDENCE`. Human authority: `APPROVED_ROLE_REALLOCATION_DESIGN_V1`. This is an addendum to `KeibaAI_FROZEN_PL_V1_JOCKEY_OFFSET_PROVISIONAL_PROTOCOL_V1.md`, not a replacement protocol or a new prediction lane. The parent protocol's Current race/`k` authority, same-race selection, PIT, technical STOP, fallback, and performance SUSPEND remain controlling. Current, EXP-024, E1, A_new, BUY and Production authorities are unchanged.
+
+## Eligible population and endpoint
+
+Only eligible dates with a Result-blind frozen PL+Jockey PRE *after this addendum freeze* contribute to this gate. The 2026-10-31 and 2026-11-01 observations are `PRE_ADDENDUM_OBSERVATION`; development and historical data are `REFERENCE_ONLY`. All have new-gate evidence credit 0. A date must pass the parent technical guards and identical Current race set, per-race `k`, and total selected slots. Missing Result does not trigger POST evaluation. A failed identity check is not counted as eligible and cannot be repaired from Result.
+
+Treatment is PL+Jockey; baseline is the same frozen Current authority. Rule A is the all-selected-slots paired count: each selected slot is frozen before Result; an invalid Result is a non-hit in Rule A for both arms, while each arm's ordinary `BUY_TOP3_RATE` excludes invalid selections from its valid denominator. Do not confuse the two. For the identical paired slot total `N`, `DELTA_HITS = PL_JOCKEY_HITS - CURRENT_HITS` and `DELTA_PT = 100 × DELTA_HITS / N`. Ordinary arm rates use valid selected horses only. The parent's reporting of valid denominators and any applicable pair-valid sensitivity remains in force; this addendum does not weaken it.
+
+## Decision timing and precedence
+
+Checkpoint 1 is the *first* eligible-date close with both dates >= 12 and races >= 60. The final checkpoint is the *first* eligible-date close with both dates >= 24 and races >= 120. No additional decision window follows the final checkpoint. A date with one bound met but not the other is not a checkpoint. The parent technical STOP and performance `SUSPENDED_PENDING_HUMAN_REVIEW` take precedence; this addendum cannot resume a suspended lane. At checkpoint 1, run the positive gate; failure to ACCEPT is continued observation, not a new rejection or suspension. After checkpoint 1, `z <= -1.645` produces a Human-review harm warning only. At final checkpoint, apply REJECT, then ACCEPT, otherwise `INCONCLUSIVE_CLOSE`. A prior ACCEPT closes the decision; it authorizes only `RANKING_BACKBONE_INTEGRATION_CANDIDATE` review, never Production.
+
+ACCEPT requires every condition: `DELTA_PT >= +5.0`; date-cluster bootstrap 95% lower bound for paired `DELTA_PT` > 0; PL+Jockey ordinary valid-result BUY_TOP3_RATE >= 40.0%; second chronological half's DELTA_HITS >= 0; deleting the two largest positive date contributions leaves DELTA_HITS > 0; same-race/same-`k`/same-volume identity on every eligible date. For an odd date count the first half is floor(n/2) and the second half is the remaining later dates. Top-two deletion uses descending date DELTA_HITS, then ascending date on ties. The bootstrap resamples complete dates with replacement, retains their race/slot counts, and recomputes pooled `100 × delta_hits / slots` each replicate; 10,000 draws, seed `20261103`, percentile interval with linear interpolation at 2.5/97.5%. Non-evaluable bootstrap means no ACCEPT.
+
+At the final checkpoint REJECT if pooled DELTA_HITS <= 0 or bootstrap upper 95% bound < 0. If neither REJECT nor ACCEPT applies, close `INCONCLUSIVE_CLOSE`. No subgroup rescue, threshold adjustment or extension. Existing SUSPEND is independent and stronger. The diagnostic approximate `z = DELTA_HITS / (0.5 × sqrt(N))`, two-sided normal `p`, is explicitly heuristic and not an ACCEPT/REJECT gate; only the stated harm warning uses z.
+
+Mandatory accompanying stability diagnostics: raw selected N and valid-result N per arm, DELTA_HITS/PT, date-bootstrap CI, approximate z/p, leave-one-date-out, chronological first/second half, chronological four-date blocks, month and venue concentration, and top-one/top-two date contributions. Only the second-half and top-two deletion checks participate in ACCEPT.
+
+## Derived diagnostics
+
+The separately frozen definitions are in `reports/pl_jockey_decision_addendum_v1/diagnostic_definition.md`. They include field-size correction for PL+Jockey, Current, E1; `SIMPLE_SMALLEST_FIELD_FIRST`; PL+Jockey ∩ E1 overlap; and PL+Jockey global allocation. These are descriptive, not BUY lanes or decision gates. `STATISTICAL_ODDS_RATIO` is an outcome odds ratio, never betting odds. No odds, popularity, marks or new calibrated-probability claim is permitted.
+
+This file and the diagnostic definition are SHA-pinned by `reports/pl_jockey_decision_addendum_v1/addendum_manifest.json`. Revision requires a new version and Human approval. This addendum does not execute EXP-026, LIVE_ADJUSTED, SAME_DAY automation, training, prediction or Result evaluation.

@@ -37,7 +37,12 @@ def fixture(k=2):
 class ProvisionalTests(unittest.TestCase):
     @staticmethod
     def formal_fixture():
-        value = copy.deepcopy(subject.load(subject.FORMAL_SNAPSHOT_MANIFEST))
+        live = subject.load(subject.FORMAL_SNAPSHOT_MANIFEST)
+        value = {
+            'manifest_version': 1,
+            'expected_formal_pre_dates': copy.deepcopy(live['expected_formal_pre_dates'][:3]),
+            'entries': copy.deepcopy(live['entries'][:2]),
+        }
         value['entries'].append({
             'date': '20261031',
             'current_pre_path': 'reports/prospective_prediction_20261031_v1/prediction_manifest.json',
@@ -163,7 +168,12 @@ class ProvisionalTests(unittest.TestCase):
         self.assertEqual(selection['result_access_count'], 0)
 
     def test_20261101_missing_expected_1031_stops(self):
-        value = subject.load(subject.FORMAL_SNAPSHOT_MANIFEST)
+        live = subject.load(subject.FORMAL_SNAPSHOT_MANIFEST)
+        value = {
+            'manifest_version': 1,
+            'expected_formal_pre_dates': copy.deepcopy(live['expected_formal_pre_dates'][:3]),
+            'entries': copy.deepcopy(live['entries'][:2]),
+        }
         with self.assertRaisesRegex(subject.Stop, 'STOP_EXPECTED_FORMAL_PRE_SNAPSHOT_MISSING:20261031'):
             subject.validate_formal_manifest('20261101', require_target_entry=False, value=value)
 
@@ -205,8 +215,12 @@ class ProvisionalTests(unittest.TestCase):
 
     def test_formal_manifest_order_is_deterministic(self):
         value, _, _ = self.formal_fixture()
-        value['entries'][1], value['entries'][2] = value['entries'][2], value['entries'][1]
-        with self.assertRaises(subject.Stop):
+        value['expected_formal_pre_dates'].append('20261101')
+        fourth = copy.deepcopy(value['entries'][2])
+        fourth['date'] = '20261101'
+        value['entries'].append(fourth)
+        value['entries'][2], value['entries'][3] = value['entries'][3], value['entries'][2]
+        with self.assertRaisesRegex(subject.Stop, 'STOP_FORMAL_SNAPSHOT_DUPLICATE_OR_ORDER'):
             subject.validate_formal_manifest('20261101', require_target_entry=False, value=value)
 
 

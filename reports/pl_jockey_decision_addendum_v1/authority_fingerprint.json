@@ -1,0 +1,13 @@
+{
+  "status": "SHA_VERIFIED",
+  "manifest_path": "reports/pl_jockey_decision_addendum_v1/addendum_manifest.json",
+  "manifest_sha256": "8dbfde23bd34a28153c354aae81b2e2f47e18455c888b968817fc1cfb43b8343",
+  "parent_protocol_sha256": "d29c9c1e0deee7cd4dc4f61bb23e37456fb72a1c7d97e810e7b9d04008b51a58",
+  "addendum_sha256": "841b1b76df873d4e106b34af17fac2b1b644fdf98018d07e3b8ba34a4159787e",
+  "diagnostic_definition_sha256": "68ab8f04e3aa1d2a69893147523575ce33e3841ac254372a0bc5ad7c51c9c2c1",
+  "decision_implementation_sha256": "908ed3efba8b5ebe403b54b9d5676ead9a3710ac8aa1c36644f45a8ab52386e0",
+  "test_file_sha256": "829fe22635d4d70bf8324cf8af4b5e74f00af3789652f6b8f0e505f7b9ba993b",
+  "pl_model_sha256": "418fc9b4cefe1757f79dfc22a7d49b7c1592b91084cca97f88f55bb1389b0585",
+  "jockey_beta_source_sha256": "66bf159125786e258fd671be5b823bdfd0b79b3a3bb0db7c2e93713245b8b376",
+  "new_gate_result_access": 0
+}
