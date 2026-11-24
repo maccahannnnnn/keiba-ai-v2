@@ -6,12 +6,12 @@ from pathlib import Path
 from evaluation.target_trial_adapter import TargetTrialAdapter
 from review.historical_replay_asset_locator import discover
 from review.historical_replay_ledger import entry as ledger_entry,save as save_ledger
-from review.historical_replay_post_race import join as post_join,sha
+from review.historical_replay_post_race import join as post_join,read_csv,result_horse_number,result_semantics,sha
 from review.ranking_provenance_exporter import PIPELINE_VERSION,export,write_weight_source
 
 ROOT=Path(__file__).resolve().parents[1];VERSION="HR_V1"
 SMOKE_RACES=("race_20260606_hanshin_10R","race_20260711_kokura_7R","race_20260802_niigata_6R")
-PHASE_LIMITS={"PHASE1_SMOKE":3,"PHASE2_ONE_DAY":10,"PHASE2_REPRODUCTION":6,"PHASE3_PILOT":20,"PHASE4_FULL":0}
+PHASE_LIMITS={"PHASE1_SMOKE":3,"PHASE2_ONE_DAY":10,"PHASE2_REPRODUCTION":6,"PHASE3_PILOT":20,"PHASE4_BATCH":30}
 SOURCE_FILES=("review/historical_replay_runner.py","evaluation/target_trial_adapter.py","review/historical_replay_asset_locator.py","review/historical_replay_post_race.py","review/historical_replay_ledger.py","review/historical_replay_safety_validator.py")
 RESULT_FIELDS={"actual_finish","actual_top3","actual_top5","finish_position","result","result_path","result_hash"}
 def now():return datetime.now(timezone.utc).isoformat()
@@ -32,13 +32,14 @@ def horse_rows(result,race_id,date):
     return rows
 def load_asset_manifest(path):
     source=Path(path);payload=json.loads(source.read_text(encoding="utf-8"))
-    required={"run_id","phase","race_ids","max_races","allowed_dates"}
+    if payload.get("execution_authorized") is not True:raise ValueError("EXECUTION_NOT_AUTHORIZED")
+    required={"run_id","phase","race_ids","max_races","allowed_dates","execution_authorized"}
     if not required.issubset(payload):raise ValueError("ASSET_MANIFEST_REQUIRED_FIELDS_MISSING")
     race_ids=payload["race_ids"]
     if not isinstance(race_ids,list) or not race_ids:raise ValueError("RACE_IDS_REQUIRED")
     if len(race_ids)!=len(set(race_ids)):raise ValueError("DUPLICATE_RACE_ID")
     phase=payload["phase"];limit=PHASE_LIMITS.get(phase)
-    if limit is None or phase=="PHASE4_FULL":raise ValueError("PHASE_NOT_EXECUTABLE")
+    if limit is None:raise ValueError("PHASE_NOT_EXECUTABLE")
     if len(race_ids)>limit or len(race_ids)>int(payload["max_races"]):raise ValueError("MAX_RACES_EXCEEDED")
     dates={x.split("_")[1] for x in race_ids if len(x.split("_"))>=4}
     if dates-set(payload["allowed_dates"]):raise ValueError("ALLOWED_DATES_VIOLATION")
@@ -53,10 +54,17 @@ def _source_evidence(run_root,execution_command):
         source=ROOT/relative;target=snapshot/relative;target.parent.mkdir(parents=True,exist_ok=True);shutil.copy2(source,target);hashes[relative]=sha(source)
     return {"runner_source_sha256":hashes[SOURCE_FILES[0]],"target_trial_adapter_sha256":hashes[SOURCE_FILES[1]],"asset_locator_sha256":hashes[SOURCE_FILES[2]],"post_runner_sha256":hashes[SOURCE_FILES[3]],"ledger_sha256":hashes[SOURCE_FILES[4]],"safety_validator_sha256":hashes[SOURCE_FILES[5]],"source_sha256":hashes,"execution_command":execution_command,"python_version":platform.python_version(),"code_snapshot":"code_snapshot/"}
 def run_manifest_file(path,execution_command=None):
-    source=Path(path).resolve();manifest=load_asset_manifest(source)
+    source=Path(path).resolve();manifest_sha=sha(source);manifest=load_asset_manifest(source);authorization={"execution_authorized":True,"authorization_checked_at":now(),"authorization_source_manifest_sha256":manifest_sha,"authorized_phase":manifest["phase"],"authorized_race_count":len(manifest["race_ids"])}
     command=execution_command or f'{sys.executable} -m review.historical_replay_runner --asset-manifest "{source}"'
-    return run_selection(manifest["run_id"],manifest["race_ids"],manifest["phase"],source,command)
-def run_selection(run_id,race_ids,phase,asset_manifest_path=None,execution_command=""):
+    result=run_selection(manifest["run_id"],manifest["race_ids"],manifest["phase"],source,command,authorization)
+    if sha(source)!=manifest_sha:raise ValueError("AUTHORIZATION_MANIFEST_CHANGED")
+    try:current=load_asset_manifest(source)
+    except ValueError as exc:raise ValueError("AUTHORIZATION_MANIFEST_CHANGED") from exc
+    if current["execution_authorized"] is not True or current["phase"]!=authorization["authorized_phase"] or len(current["race_ids"])!=authorization["authorized_race_count"]:raise ValueError("AUTHORIZATION_MANIFEST_CHANGED")
+    return result
+def run_selection(run_id,race_ids,phase,asset_manifest_path=None,execution_command="",authorization=None):
+    if asset_manifest_path and (not authorization or authorization.get("execution_authorized") is not True):raise ValueError("EXECUTION_NOT_AUTHORIZED")
+    if asset_manifest_path and sha(asset_manifest_path)!=authorization["authorization_source_manifest_sha256"]:raise ValueError("AUTHORIZATION_MANIFEST_CHANGED")
     assets={row["race_id"]:row for row in discover(ROOT/"data")}
     missing=[x for x in race_ids if x not in assets]
     if missing:raise ValueError(f"RACE_ID_NOT_DISCOVERED:{missing}")
@@ -67,8 +75,9 @@ def run_selection(run_id,race_ids,phase,asset_manifest_path=None,execution_comma
     run_root.mkdir(parents=True);flags,config_hash=config();generated=now();evidence=_source_evidence(run_root,execution_command)
     cohort={"cohort_type":"CURRENT_CODE_REPLAY","source_population":"HISTORICAL_RAW_ASSETS","baseline_membership":"EXCLUDED","comparison_baseline":"BASELINE_34_RACE_v1","comparison_baseline_usage":"REFERENCE_ONLY_NO_COMBINED_ROI","production_evidence":"NO","prospective_evidence":"NO","result_data_used_as_evaluation_input":"NO","historical_replay_version":VERSION}
     write_new(run_root/"cohort_manifest.json",cohort)
-    dirty=git(["status","--short"]);run_manifest={"run_id":run_id,"phase":phase,"generated_at":generated,"python_version":platform.python_version(),"git_commit_hash":git(["rev-parse","HEAD"]),"git_status_short":dirty,"dirty_files":dirty.splitlines(),"working_tree_dirty":bool(dirty),"code_version":git(["rev-parse","HEAD"]),"pipeline_version":VERSION,"knowledge_version":"CURRENT_READ_ONLY","entry_source_directory":str(ROOT/"data"),"horses_source_directory":str(ROOT/"data"),"result_source_directory":str(ROOT/"data/results"),"feature_flag_snapshot":flags,"configuration_hash":config_hash,"race_ids":list(race_ids),**evidence}
+    dirty=git(["status","--short"]);run_manifest={"run_id":run_id,"phase":phase,"generated_at":generated,"python_version":platform.python_version(),"git_commit_hash":git(["rev-parse","HEAD"]),"git_status_short":dirty,"dirty_files":dirty.splitlines(),"working_tree_dirty":bool(dirty),"code_version":git(["rev-parse","HEAD"]),"pipeline_version":VERSION,"knowledge_version":"CURRENT_READ_ONLY","entry_source_directory":str(ROOT/"data"),"horses_source_directory":str(ROOT/"data"),"result_source_directory":str(ROOT/"data/results"),"feature_flag_snapshot":flags,"configuration_hash":config_hash,"race_ids":list(race_ids),**evidence,**(authorization or {})}
     if asset_manifest_path:
+        if sha(asset_manifest_path)!=authorization["authorization_source_manifest_sha256"]:raise ValueError("AUTHORIZATION_MANIFEST_CHANGED")
         run_manifest["asset_manifest_path"]=str(asset_manifest_path);run_manifest["asset_manifest_sha256"]=sha(asset_manifest_path);shutil.copy2(asset_manifest_path,run_root/"asset_manifest.json")
     write_new(run_root/"run_manifest.json",run_manifest);ledger=[]
     for asset in selected:
@@ -86,15 +95,19 @@ def run_selection(run_id,race_ids,phase,asset_manifest_path=None,execution_comma
         manifest={"race_id":race_id,"race_date":date,"racecourse":asset["racecourse"],"race_number":asset["race_number"],"cohort_type":"CURRENT_CODE_REPLAY","run_id":run_id,"code_version":run_manifest["code_version"],"pipeline_version":VERSION,"source_sha256":sha(paths["entry"]),"pre_race_sha256":freeze["pre_race_sha256"],"post_race_sha256":post_hash,"result_data_used_as_evaluation_input":"NO","result_joined_after_pre_race_freeze":"YES","baseline_membership":"EXCLUDED","production_evidence":"NO","feature_flag_snapshot":flags,"configuration_hash":config_hash,"entry_source_directory":str(paths["entry"].parent)};write_new(race_root/"manifest.json",manifest)
         ledger.append(ledger_entry(race_id,date,len(rows),"POST_RACE_COMPLETE",provenance_complete_count=complete,trace_count=trace,top5_boundary_tie_count=pre["manifest"]["top5_boundary_tie_count"],pre_race_sha256=freeze["pre_race_sha256"],post_race_sha256=post_hash))
         del adapter
+    if asset_manifest_path and sha(asset_manifest_path)!=authorization["authorization_source_manifest_sha256"]:raise ValueError("AUTHORIZATION_MANIFEST_CHANGED")
     save_ledger(run_root/"ledger.json",run_id,ledger);summary={"run_id":run_id,"phase":phase,"status":"RUN_COMPLETE","race_count":len(ledger),"horse_count":sum(x["horse_count"] for x in ledger),"adapter_instance_count":len(ledger),"all_trace":all(x["trace_count"]==x["horse_count"]*9 for x in ledger),"entries":ledger};write_new(run_root/"summary.json",summary);return run_root,summary
-def run_smoke(run_id):return run_selection(run_id,SMOKE_RACES,"PHASE1_SMOKE",execution_command=f"run_smoke({run_id!r})")
+def run_smoke(run_id,asset_manifest_path=None):
+    if asset_manifest_path is None:raise ValueError("EXECUTION_NOT_AUTHORIZED")
+    manifest=load_asset_manifest(asset_manifest_path)
+    if manifest["phase"]!="PHASE1_SMOKE" or manifest["run_id"]!=run_id or tuple(manifest["race_ids"])!=SMOKE_RACES:raise ValueError("PHASE1_SMOKE_MANIFEST_MISMATCH")
+    return run_manifest_file(asset_manifest_path,execution_command=f"run_smoke({run_id!r}, asset_manifest_path={str(asset_manifest_path)!r})")
 def _post_with_sidecar(pre_file,freeze,paths,output):
     if sha(pre_file)!=freeze["pre_race_sha256"]:raise ValueError("PRE_SHA256_MISMATCH")
     payload=json.loads(Path(pre_file).read_text(encoding="utf-8"))
-    from review.historical_replay_post_race import read_csv
-    results=read_csv(paths["horse_result"]);lookup={str(r.get("馬番") or "").strip():r for r in results};joined=[]
+    results=read_csv(paths["horse_result"]);lookup={result_horse_number(r):r for r in results};joined=[]
     for row in payload["horses"]:
-        rr=lookup.get(str(row.get("horse_number") or "").strip(),{});f=str(rr.get("確定着順") or "").strip();valid=f.isdigit();x=dict(row);x.update({"actual_finish":int(f) if valid else "","actual_top3":valid and int(f)<=3,"actual_top5":valid and int(f)<=5,"valid_result":valid});joined.append(x)
+        rr=lookup.get(str(row.get("horse_number") or "").strip(),{});x=dict(row);x.update(result_semantics(rr));joined.append(x)
     out=Path(output)/"post_joined.json";write_new(out,{"cohort_type":"CURRENT_CODE_REPLAY","result_joined_after_pre_race_freeze":"YES","pre_race_sha256":freeze["pre_race_sha256"],"race_result_path":str(paths["race_result"]),"horse_result_path":str(paths["horse_result"]),"horses":joined});return out,sha(out),joined
 if __name__=="__main__":
     parser=argparse.ArgumentParser();parser.add_argument("--smoke",action="store_true");parser.add_argument("--run-id");parser.add_argument("--asset-manifest");args=parser.parse_args()

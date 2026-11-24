@@ -1,6 +1,0 @@
-{
-  "protocol_sha256": "8f1adabf7e5798519ca73c5d58e36599547da39d039e4243cef51d282c618352",
-  "implementation_sha256": "3c04dce476e925397dbb1f504657906100d7951b94858f4165b2f716d4340832",
-  "claude_implementation_review": "PASS",
-  "human_final_implementation_approval": true
-}

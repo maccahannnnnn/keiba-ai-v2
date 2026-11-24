@@ -4,10 +4,19 @@ from __future__ import annotations
 import csv
 import hashlib
 import json
+import subprocess
 from datetime import datetime, timezone
 from pathlib import Path
 
 PIPELINE_VERSION = "ranking_provenance_v1"
+PRE_PROVENANCE_VERSION = "PRE_PROVENANCE_V1"
+ROOT = Path(__file__).resolve().parents[1]
+PRE_PROVENANCE_CODE_PATHS = (
+    "evaluation/target_trial_adapter.py",
+    "evaluation/trial_batch_runner.py",
+    "evaluation/final_score_integrator.py",
+    "review/ranking_provenance_exporter.py",
+)
 EXPECTED_EVALUATORS = {
     "Bloodline":"bloodline_score", "PastPerformance":"past_performance_score", "PaceStyle":"pace_style_score",
     "Distance":"distance_score", "TrackCondition":"track_condition_score", "RaceShape":"shape_score",
@@ -20,6 +29,80 @@ LONG_FIELDS = ("race_id","horse_name","horse_number","evaluator_name","raw_score
 
 def sha256(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def _git(root: Path, args: list[str]) -> tuple[bool, str]:
+    """Return git stdout without guessing when git is unavailable."""
+    try:
+        result = subprocess.run(
+            ["git", *args], cwd=root, text=True, capture_output=True,
+            check=False, timeout=5,
+        )
+    except (OSError, subprocess.SubprocessError):
+        return False, ""
+    if result.returncode != 0:
+        return False, ""
+    return True, result.stdout.strip()
+
+
+def collect_pre_provenance(
+    root: Path | str = ROOT,
+    execution_entrypoint: str = "review.ranking_provenance_exporter.export",
+    code_paths: tuple[str, ...] = PRE_PROVENANCE_CODE_PATHS,
+) -> dict:
+    """Collect audit-only PRE code identity; never feeds evaluation inputs."""
+    root = Path(root).resolve()
+    commit_available, commit = _git(root, ["rev-parse", "HEAD"])
+    status_available, status_short = _git(root, ["status", "--porcelain", "--untracked-files=normal"])
+    if status_available:
+        worktree_status = "DIRTY" if status_short else "CLEAN"
+        dirty_file_count = len(status_short.splitlines()) if status_short else 0
+        status_sha256 = hashlib.sha256(status_short.encode("utf-8")).hexdigest()
+    else:
+        worktree_status = "UNAVAILABLE"
+        dirty_file_count = None
+        status_sha256 = "UNAVAILABLE"
+
+    code_sha256 = {}
+    unavailable = []
+    for relative in code_paths:
+        path = root / relative
+        if path.is_file():
+            code_sha256[relative] = sha256(path)
+        else:
+            code_sha256[relative] = "UNAVAILABLE"
+            unavailable.append(relative)
+
+    entrypoint = execution_entrypoint or "UNAVAILABLE"
+    missing = []
+    if not commit_available or not commit:
+        missing.append("git_commit_sha")
+    if not status_available:
+        missing.append("git_worktree_status")
+    if entrypoint == "UNAVAILABLE":
+        missing.append("execution_entrypoint")
+    missing.extend(f"code_sha256:{value}" for value in unavailable)
+    if missing:
+        provenance_status = "PROVENANCE_INSUFFICIENT"
+    elif worktree_status == "DIRTY":
+        provenance_status = "PROVENANCE_DIRTY_IDENTIFIED"
+    else:
+        provenance_status = "PROVENANCE_COMPLETE"
+
+    return {
+        "provenance_version": PRE_PROVENANCE_VERSION,
+        "provenance_status": provenance_status,
+        "generated_at": datetime.now(timezone.utc).isoformat(),
+        "execution_entrypoint": entrypoint,
+        "git_commit_sha": commit if commit_available and commit else "UNKNOWN",
+        "git_worktree_status": worktree_status,
+        "git_dirty_file_count": dirty_file_count,
+        "git_status_porcelain_sha256": status_sha256,
+        "major_code_sha256": code_sha256,
+        "unavailable_fields": missing,
+        "audit_metadata_only": True,
+        "used_as_evaluation_input": False,
+    }
 
 
 def number(value):
@@ -83,7 +166,7 @@ def _load_weight_source(path,race_date,source_version,pipeline_version):
     return {(str(row.get("race_id","")),str(row.get("horse_name","")),str(row.get("horse_number",""))):row for row in records}
 
 
-def export(rows,output_dir,race_date,source_version,source_file,pipeline_version=PIPELINE_VERSION,provenance_source_file=None):
+def export(rows,output_dir,race_date,source_version,source_file,pipeline_version=PIPELINE_VERSION,provenance_source_file=None,execution_entrypoint="review.ranking_provenance_exporter.export"):
     rows=[dict(row) for row in rows]
     if not rows:raise ValueError("EMPTY_PRE_RACE_INPUT")
     if any(RESULT_FIELDS.intersection(row) for row in rows):raise ValueError("RESULT_FIELDS_PROHIBITED_IN_PRE_RACE_INPUT")
@@ -127,7 +210,7 @@ def export(rows,output_dir,race_date,source_version,source_file,pipeline_version
     existing=[path for path in (summary_path,long_path,manifest_path) if path.exists()]
     if existing:raise FileExistsError("RANKING_PROVENANCE_ARTIFACT_ALREADY_EXISTS:"+",".join(str(path) for path in existing))
     _write_csv(summary_path,SUMMARY_FIELDS,summaries);_write_csv(long_path,LONG_FIELDS,long_rows)
-    manifest={"pipeline_version":pipeline_version,"race_date":race_date,"source_version":source_version,"source_file":str(source_file),"source_sha256":source_hash,"summary_file":str(summary_path),"summary_sha256":sha256(summary_path),"evaluator_long_file":str(long_path),"evaluator_long_sha256":sha256(long_path),"race_count":len(race_groups),"horse_count":len(summaries),"provenance_complete_count":sum(row["provenance_complete"] for row in summaries),"trace_count":sum(int(row["trace_count"]) for row in summaries),"top5_boundary_tie_count":len({row["race_id"] for row in summaries if row["top5_boundary_tie"]}),"result_data_used_as_evaluation_input":"NO"}
+    manifest={"pipeline_version":pipeline_version,"race_date":race_date,"source_version":source_version,"source_file":str(source_file),"source_sha256":source_hash,"summary_file":str(summary_path),"summary_sha256":sha256(summary_path),"evaluator_long_file":str(long_path),"evaluator_long_sha256":sha256(long_path),"race_count":len(race_groups),"horse_count":len(summaries),"provenance_complete_count":sum(row["provenance_complete"] for row in summaries),"trace_count":sum(int(row["trace_count"]) for row in summaries),"top5_boundary_tie_count":len({row["race_id"] for row in summaries if row["top5_boundary_tie"]}),"result_data_used_as_evaluation_input":"NO","pre_execution_provenance":collect_pre_provenance(execution_entrypoint=execution_entrypoint)}
     manifest_path.write_text(json.dumps(manifest,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
     return {"summary_path":summary_path,"long_path":long_path,"manifest_path":manifest_path,"summary_rows":summaries,"long_rows":long_rows,"manifest":manifest}
 

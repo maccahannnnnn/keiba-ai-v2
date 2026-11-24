@@ -1,0 +1,8 @@
+{
+  "schema_version": "prospective_prediction_schema_v1",
+  "population_scope_id": "PREDICTION_BUY_1WIN_PLUS_FLAT",
+  "race_fields": ["race_id", "race_decision", "race_confidence", "buy_count", "top5", "buys", "ranked_results"],
+  "horse_fields": ["horse_number", "horse_name", "rank", "final_score", "decision", "buy", "confidence", "past_race_count", "decision_score", "adjusted_score", "consensus_positive_count", "consensus_negative_count", "explain_summary", "warnings", "risks", "risk_count", "conflict_count", "buy_v1_rc1_status", "buy_v1_rc1_candidate", "buy_v1_rc1_race_state", "buy_v1_rc1_reason"],
+  "forbidden_fields": ["decision_diagnostics", "decision_result", "decision_trace"],
+  "trace": "OPTIONAL_DEFAULT_OFF_NOT_FORMALLY_FROZEN"
+}

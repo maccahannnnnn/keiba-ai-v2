@@ -435,6 +435,7 @@ class TrialBatchRunner:
             pre = export_ranking_provenance(
                 rows, output_root / "pre_race", race_date, self.BATCH_VERSION,
                 entry_file, provenance_source_file=source,
+                execution_entrypoint="evaluation.trial_batch_runner.TrialBatchRunner.run_single_race",
             )
             ledger = update_ledger(output_root / "ranking_provenance_ledger_v1.json", pre["manifest"])
             return {"status": "COMPLETE", "feature_flag": "ON", "source_file": str(source),
